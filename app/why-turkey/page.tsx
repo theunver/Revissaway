@@ -9,33 +9,27 @@ export default function WhyTurkeyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-[#FFF8DC] to-white">
       {/* Hero Section with Video Background */}
-      <section className="relative h-[85vh] w-full overflow-hidden flex items-center justify-center">
-        {/* Background Video */}
+      <div className="relative w-full h-[70vh] overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-[85vh] object-cover z-0"
-        >
-          <source src="/videos/whyturkeybanner.mp4" type="video/mp4" />
-        </video>
-
-        {/* Dark Overlay for Text Readability */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/30 z-[1]"></div>
-
-        {/* Hero Content */}
-        <div className="relative z-10 text-center px-6 max-w-4xl">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-            {language === 'en' ? 'Why Türkiye?' : 'Neden Türkiye?'}
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/aboutbanner.mp4"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
+          <h1 className="text-4xl md:text-6xl font-semibold">
+            {language === 'en' ? 'Why Turkey?' : 'Neden Türkiye?'}
           </h1>
-          <p className="text-xl text-white/95 leading-relaxed drop-shadow-md">
-            {language === 'en' 
-              ? 'Discover why Türkiye is the global leader in medical tourism and how EstheWay connects Australian and New Zealand patients with world-class care.'
-              : 'Türkiye\'nin neden medikal turizmde dünya lideri olduğunu ve EstheWay\'in Avustralya ve Yeni Zelanda hastalarını dünya standartlarında bakımla nasıl buluşturduğunu keşfedin.'}
+          <p className="mt-4 max-w-2xl text-lg md:text-xl">
+            {language === 'en'
+              ? 'Discover why thousands choose Turkey for world-class aesthetics and care'
+              : 'Binlerce kişinin neden dünya standartlarında estetik ve bakım için Türkiye\'yi seçtiğini keşfedin'}
           </p>
         </div>
-      </section>
+      </div>
 
       {/* Main Content */}
       <section className="py-20 px-6 max-w-7xl mx-auto">

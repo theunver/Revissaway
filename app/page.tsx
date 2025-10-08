@@ -199,11 +199,9 @@ export default function Home() {
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover"
-        >
-          <source src="/videos/8955660-uhd_3840_2160_24fps.mp4" type="video/mp4" />
-          {/* Fallback background */}
-        </video>
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/videos/lowbannerfirst.mp4"
+        />
 
         {/* Dark Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
