@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  min-height: 100vh;
+  color: #f5f5f5;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Video fallback background */
+video {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+/* Dark theme card styles */
+.dark-card {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1f1f1f 100%);
+}
+
+.dark-card-light {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2f2f2f 100%);
+}
+
+/* Fade-in animation for About page banner */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: brightness(30%);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(100%);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+/* Slide right animation for partner logos marquee */
+@keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+.animate-slideRight {
+  animation: slideRight 20s linear infinite;
+}
+

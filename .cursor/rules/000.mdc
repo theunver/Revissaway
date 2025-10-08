@@ -1,0 +1,55 @@
+alwaysApply: true
+---
+Project Rules — Estego AU Web (Next.js + Tailwind)
+
+1) Scope & Target
+- Framework: Next.js (App Router, TypeScript)
+- Styling: Tailwind CSS
+- Hosting: Vercel uyumlu
+- Kod kalitesi: temiz, linted, responsive
+
+2) Theme / Branding
+- Arka plan: açık krem/bej degrade (linear-gradient(#fffaf3, #f8f5f0))
+- Ana vurgu (Primary / CTA): altın–bej gradient (#d8c49a → #e7d9b4)
+- İkincil: soft gri (#e0e0e0)
+- Metin: siyah (#000000)
+- Kartlar: beyaz (#ffffff), shadow-md, rounded-xl
+- Hover: altın/bej koyusu (#c2a87d)
+- İkonlar: siyah outline
+
+3) Global UX Rules
+- Tüm yazılar Türkçe olacak
+- CTA: “WhatsApp’tan Ücretsiz Ön Görüşme” butonu her zaman görünür
+- Form alanları: Ad, E-posta, Telefon, Hizmet (dropdown: Saç Ekimi, Estetik Cerrahi, Diş Estetiği), Mesaj
+- Responsive: mobil öncelikli, tablet/desktop sorunsuz
+- Görseller optimize, lazy-load aktif
+- Butonlar rounded-xl, hover animasyonlu
+
+4) Site Sections
+- Hero: Başlık + alt başlık + CTA
+- Hizmetler: 3 kart (Saç Ekimi, Estetik Cerrahi, Diş Estetiği) → “Detay için tıklayın”
+- Dahil Hizmetler: ikonlu grid (Transfer, Otel, VIP, 1 Yıl Danışman)
+- Neden Türkiye: fiyat avantajı, uzman doktorlar, modern hastaneler
+- Süreç: 5 adım (Ön görüşme → Doktor değerlendirmesi → Planlama → Operasyon → Takip)
+- Referanslar: hasta yorumları (placeholder)
+- SSS: 5 soru-cevap (accordion)
+- İletişim: form + WhatsApp butonu
+- Footer: © text + “Şartlar & Koşullar”, “Gizlilik Politikası”
+
+5) Performance & SEO
+- Lighthouse skoru 90+ hedef
+- Meta title & description tanımlı
+- Open Graph paylaşım görseli ayarlı
+- Google Analytics entegrasyonu
+- Başlık yapısı SEO uyumlu (H1, H2)
+
+6) Prohibited
+- Tıbbi sonuç garantisi / yanıltıcı iddia yok
+- Öncesi-sonrası fotoğraf varsayılan olarak yok
+- Fazla animasyon yok → minimal ve profesyonel
+
+7) Acceptance
+- Site mobil + desktop’ta sorunsuz
+- WhatsApp butonu her zaman aktif
+- Form gönderimi demo backend veya mailto çalışır
+- Deploy sonrası site Vercel subdomain üzerinde açılır
