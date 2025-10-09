@@ -45,7 +45,7 @@ export default function WhyTurkeyPage() {
               playsInline
               preload="metadata"
               className="w-full h-full object-cover"
-              src="/videos/8955660-uhd_3840_2160_24fps.mp4"
+              src="/videos/aboutbanner.mp4"
             />
           </div>
 
