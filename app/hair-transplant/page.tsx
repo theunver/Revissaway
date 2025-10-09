@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HairTransplantPage() {
   const [selectedMethod, setSelectedMethod] = useState(0);
@@ -55,7 +56,14 @@ export default function HairTransplantPage() {
         "Natural-looking results with proper hairline design",
       ],
       icon: (
-        <img src="/icons/dhi.svg" alt="DHI Hair Transplant" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2" />
+        <Image
+          src="/icons/DHI.svg"
+          alt="DHI Hair Transplant"
+          width={96}
+          height={96}
+          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
+          priority
+        />
       ),
     },
     {
@@ -72,7 +80,14 @@ export default function HairTransplantPage() {
         "One of the most commonly used methods globally",
       ],
       icon: (
-        <img src="/icons/fue.svg" alt="FUE Hair Transplant" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2" />
+        <Image
+          src="/icons/FUE.svg"
+          alt="FUE Hair Transplant"
+          width={96}
+          height={96}
+          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
+          priority
+        />
       ),
     },
     {
@@ -89,7 +104,14 @@ export default function HairTransplantPage() {
         "An advanced, premium form of FUE",
       ],
       icon: (
-        <img src="/icons/sapphire.svg" alt="Sapphire Hair Transplant" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2" />
+        <Image
+          src="/icons/SAPPHIRE.svg"
+          alt="Sapphire Hair Transplant"
+          width={96}
+          height={96}
+          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
+          priority
+        />
       ),
     },
     {
@@ -106,7 +128,14 @@ export default function HairTransplantPage() {
         "Can be combined with mustache or goatee design",
       ],
       icon: (
-        <img src="/icons/beard.svg" alt="Beard Transplant" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2" />
+        <Image
+          src="/icons/BEARD.svg"
+          alt="Beard Transplant"
+          width={96}
+          height={96}
+          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
+          priority
+        />
       ),
     },
     {
@@ -123,7 +152,14 @@ export default function HairTransplantPage() {
         "Customized to match facial symmetry and features",
       ],
       icon: (
-        <img src="/icons/eyebrow.svg" alt="Eyebrow Transplant" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2" />
+        <Image
+          src="/icons/EYEBROW.svg"
+          alt="Eyebrow Transplant"
+          width={96}
+          height={96}
+          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
+          priority
+        />
       ),
     },
     {
@@ -140,7 +176,14 @@ export default function HairTransplantPage() {
         "Customized approach for each individual",
       ],
       icon: (
-        <img src="/icons/female.svg" alt="Female Hair Transplant" className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2" />
+        <Image
+          src="/icons/FEMALE.svg"
+          alt="Female Hair Transplant"
+          width={96}
+          height={96}
+          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
+          priority
+        />
       ),
     },
   ];
