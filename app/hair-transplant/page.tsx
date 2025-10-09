@@ -55,16 +55,7 @@ export default function HairTransplantPage() {
         "Performed under local anesthesia by specialist surgeons",
         "Natural-looking results with proper hairline design",
       ],
-      icon: (
-        <Image
-          src="/icons/DHI.svg"
-          alt="DHI Hair Transplant"
-          width={96}
-          height={96}
-          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
-          priority
-        />
-      ),
+      iconPath: "/icons/DHI.svg",
     },
     {
       id: 1,
@@ -79,16 +70,7 @@ export default function HairTransplantPage() {
         "Natural-looking, permanent results",
         "One of the most commonly used methods globally",
       ],
-      icon: (
-        <Image
-          src="/icons/FUE.svg"
-          alt="FUE Hair Transplant"
-          width={96}
-          height={96}
-          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
-          priority
-        />
-      ),
+      iconPath: "/icons/FUE.svg",
     },
     {
       id: 2,
@@ -103,16 +85,7 @@ export default function HairTransplantPage() {
         "Higher density placement possible",
         "An advanced, premium form of FUE",
       ],
-      icon: (
-        <Image
-          src="/icons/SAPPHIRE.svg"
-          alt="Sapphire Hair Transplant"
-          width={96}
-          height={96}
-          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
-          priority
-        />
-      ),
+      iconPath: "/icons/SAPPHIRE.svg",
     },
     {
       id: 3,
@@ -127,16 +100,7 @@ export default function HairTransplantPage() {
         "Permanent results when performed correctly",
         "Can be combined with mustache or goatee design",
       ],
-      icon: (
-        <Image
-          src="/icons/BEARD.svg"
-          alt="Beard Transplant"
-          width={96}
-          height={96}
-          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
-          priority
-        />
-      ),
+      iconPath: "/icons/BEARD.svg",
     },
     {
       id: 4,
@@ -151,16 +115,7 @@ export default function HairTransplantPage() {
         "Permanent solution for eyebrow restoration",
         "Customized to match facial symmetry and features",
       ],
-      icon: (
-        <Image
-          src="/icons/EYEBROW.svg"
-          alt="Eyebrow Transplant"
-          width={96}
-          height={96}
-          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
-          priority
-        />
-      ),
+      iconPath: "/icons/EYEBROW.svg",
     },
     {
       id: 5,
@@ -175,16 +130,7 @@ export default function HairTransplantPage() {
         "Can be combined with other hair restoration treatments",
         "Customized approach for each individual",
       ],
-      icon: (
-        <Image
-          src="/icons/FEMALE.svg"
-          alt="Female Hair Transplant"
-          width={96}
-          height={96}
-          className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
-          priority
-        />
-      ),
+      iconPath: "/icons/FEMALE.svg",
     },
   ];
 
@@ -236,7 +182,14 @@ export default function HairTransplantPage() {
                 >
                   {/* Icon */}
                   <div>
-                    {method.icon}
+                    <Image
+                      src={method.iconPath}
+                      alt={method.title}
+                      width={96}
+                      height={96}
+                      className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
+                      priority
+                    />
                   </div>
 
                   {/* Title */}
