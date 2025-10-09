@@ -44,7 +44,6 @@ export default function WhyTurkeyPage() {
               muted
               playsInline
               preload="metadata"
-              loading="lazy"
               className="w-full h-full object-cover"
               src="/videos/8955660-uhd_3840_2160_24fps.mp4"
             />
