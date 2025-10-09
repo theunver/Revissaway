@@ -5,37 +5,28 @@ import { useEffect, useState, useRef } from "react";
 interface AnimatedCounterProps {
   target: number;
   duration?: number;
-  suffix?: string;
   prefix?: string;
-  decimals?: number;
+  suffix?: string;
 }
 
 export default function AnimatedCounter({
   target,
   duration = 2000,
-  suffix = "",
   prefix = "",
-  decimals = 0,
+  suffix = "",
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const counterRef = useRef<HTMLSpanElement>(null);
-  const hasAnimated = useRef(false);
 
-  // Intersection Observer to trigger animation when element is visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated.current) {
-            setIsVisible(true);
-            hasAnimated.current = true;
-          }
-        });
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
       },
-      {
-        threshold: 0.3, // Trigger when 30% visible
-      }
+      { threshold: 0.1 }
     );
 
     if (counterRef.current) {
@@ -49,64 +40,37 @@ export default function AnimatedCounter({
     };
   }, []);
 
-  // Animate counter when visible
   useEffect(() => {
     if (!isVisible) return;
 
-    const startTime = Date.now();
-    const endTime = startTime + duration;
+    let startTime: number | null = null;
+    let animationFrame: number;
 
-    const updateCounter = () => {
-      const now = Date.now();
-      const progress = Math.min((now - startTime) / duration, 1);
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
 
-      // Easing function (easeOutQuart for smooth deceleration)
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      const currentCount = Math.floor(easeOutQuart * target);
-
-      setCount(currentCount);
+      setCount(Math.floor(progress * target));
 
       if (progress < 1) {
-        requestAnimationFrame(updateCounter);
-      } else {
-        setCount(target); // Ensure we end at exact target
+        animationFrame = requestAnimationFrame(animate);
       }
     };
 
-    requestAnimationFrame(updateCounter);
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
   }, [isVisible, target, duration]);
 
-  // Format number with commas
-  const formatNumber = (num: number): string => {
-    if (decimals > 0) {
-      return num.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-
-  // Special formatting for large numbers
-  const getDisplayValue = (): string => {
-    if (target >= 1000000) {
-      // For millions, show as "1.5M" format
-      const millions = count / 1000000;
-      return millions.toFixed(1);
-    }
-    return formatNumber(count);
-  };
-
-  // Get appropriate suffix
-  const getDisplaySuffix = (): string => {
-    if (target >= 1000000 && suffix === "+") {
-      return "M+";
-    }
-    return suffix;
-  };
-
   return (
-    <span ref={counterRef} className="inline-block">
+    <span ref={counterRef}>
       {prefix}
-      {getDisplayValue()}
-      {getDisplaySuffix()}
+      {count.toLocaleString()}
+      {suffix}
     </span>
   );
 }
