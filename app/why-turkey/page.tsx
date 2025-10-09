@@ -15,6 +15,8 @@ export default function WhyTurkeyPage() {
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/images/hakkinda-logo.png"
           className="absolute inset-0 w-full h-full object-cover"
           src="/videos/aboutbanner.mp4"
         />
@@ -41,10 +43,11 @@ export default function WhyTurkeyPage() {
               loop
               muted
               playsInline
+              preload="metadata"
+              loading="lazy"
               className="w-full h-full object-cover"
-            >
-              <source src="/videos/8955660-uhd_3840_2160_24fps.mp4" type="video/mp4" />
-            </video>
+              src="/videos/8955660-uhd_3840_2160_24fps.mp4"
+            />
           </div>
 
           {/* Text Content */}

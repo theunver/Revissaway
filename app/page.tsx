@@ -199,6 +199,8 @@ export default function Home() {
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/images/banner2.jpg"
           className="absolute inset-0 w-full h-full object-cover"
           src="/videos/lowbannerfirst.mp4"
         />
