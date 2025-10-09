@@ -55,7 +55,7 @@ export default function HairTransplantPage() {
         "Performed under local anesthesia by specialist surgeons",
         "Natural-looking results with proper hairline design",
       ],
-      iconPath: "/icons/DHI.svg",
+      iconPath: "/icons/dhi.svg",
     },
     {
       id: 1,
@@ -70,7 +70,7 @@ export default function HairTransplantPage() {
         "Natural-looking, permanent results",
         "One of the most commonly used methods globally",
       ],
-      iconPath: "/icons/FUE.svg",
+      iconPath: "/icons/fue.svg",
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ export default function HairTransplantPage() {
         "Higher density placement possible",
         "An advanced, premium form of FUE",
       ],
-      iconPath: "/icons/SAPPHIRE.svg",
+      iconPath: "/icons/sapphire.svg",
     },
     {
       id: 3,
@@ -100,7 +100,7 @@ export default function HairTransplantPage() {
         "Permanent results when performed correctly",
         "Can be combined with mustache or goatee design",
       ],
-      iconPath: "/icons/BEARD.svg",
+      iconPath: "/icons/beard.svg",
     },
     {
       id: 4,
@@ -115,7 +115,7 @@ export default function HairTransplantPage() {
         "Permanent solution for eyebrow restoration",
         "Customized to match facial symmetry and features",
       ],
-      iconPath: "/icons/EYEBROW.svg",
+      iconPath: "/icons/eyebrow.svg",
     },
     {
       id: 5,
@@ -130,7 +130,7 @@ export default function HairTransplantPage() {
         "Can be combined with other hair restoration treatments",
         "Customized approach for each individual",
       ],
-      iconPath: "/icons/FEMALE.svg",
+      iconPath: "/icons/female.svg",
     },
   ];
 
@@ -185,9 +185,9 @@ export default function HairTransplantPage() {
                     <Image
                       src={method.iconPath}
                       alt={method.title}
-                      width={96}
-                      height={96}
-                      className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2"
+                      width={64}
+                      height={64}
+                      className="mx-auto mb-3"
                       priority
                     />
                   </div>
