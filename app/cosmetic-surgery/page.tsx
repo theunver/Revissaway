@@ -89,7 +89,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/Face Lift.jpg" 
+              src="/icons/face lift.jpg" 
               alt="Face Lift" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -157,7 +157,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/Neck Lift.jpg" 
+              src="/icons/neck lift.jpg" 
               alt="Neck Lift" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -172,7 +172,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/Mummy Makeover.jpg" 
+              src="/icons/mummy makeover.jpg" 
               alt="Mummy Makeover" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -244,7 +244,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/Tummy Tuck.jpg" 
+              src="/icons/tummy tuck.jpg" 
               alt="Tummy Tuck" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -259,7 +259,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/Liposuction.jpg" 
+              src="/icons/liposuction.jpg" 
               alt="Liposuction" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -330,7 +330,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/Brazilian Butt Lift.jpg" 
+              src="/icons/brazilian butt lift.jpg" 
               alt="Brazilian Butt Lift" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -345,7 +345,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/Breast Reduction.jpg" 
+              src="/icons/breast reduction.jpg" 
               alt="Breast Reduction" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -416,7 +416,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/Breast Implants.jpg" 
+              src="/icons/breast implants.jpg" 
               alt="Breast Implants" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
