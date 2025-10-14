@@ -62,14 +62,18 @@ export default function WhyTurkeyPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
           {/* Text Content - Left Side */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Comprehensive Care Journey
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+              Comprehensive Care Journey in Turkey
             </h2>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              From the moment you reach out to RevissaWay, every step of your medical journey is carefully coordinated with precision and care. Our dedicated team ensures seamless communication between you and our partner clinics, handling all logistics including travel arrangements, accommodation bookings, and appointment scheduling.
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Choosing Turkey for medical tourism means accessing world-class healthcare that combines advanced medical expertise, internationally accredited hospitals, and exceptional hospitality.
+              RevissaWay acts as your trusted connection point — coordinating every aspect of your medical travel experience with certified hospitals and licensed aesthetic or dental clinics across Turkey.
             </p>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              We believe that quality healthcare extends beyond the procedure itself. Through our extensive network of accredited facilities and experienced medical professionals, we provide comprehensive support that encompasses pre-treatment consultations, during-procedure care, and thorough post-treatment follow-up — ensuring your complete peace of mind throughout your health tourism experience.
+            <p className="text-gray-700 leading-relaxed mb-4">
+              From your first consultation to post-treatment follow-up, every step is planned with precision and transparency. Our coordination team ensures smooth communication between you and our partner clinics, assisting with travel arrangements, accommodation options, and appointment scheduling.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              RevissaWay does not provide medical treatment directly. Instead, we facilitate your access to accredited medical institutions that meet global healthcare standards, ensuring safety, quality, and peace of mind throughout your treatment journey in Turkey.
             </p>
           </div>
 
