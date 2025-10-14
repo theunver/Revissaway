@@ -2,14 +2,12 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HairTransplantPage() {
   const { language } = useLanguage();
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [expanded, setExpanded] = useState(false);
 
   const whatsappLink = "https://wa.me/61000000000";
 
@@ -522,70 +520,6 @@ export default function HairTransplantPage() {
             </div>
           </div>
 
-          {/* Collapsible Blog Preview - Full Width Below */}
-          <div className="lg:col-span-2 mt-10">
-            <div id="hair-transplant-blog" className="bg-white rounded-2xl shadow-sm p-8 border border-[#e5e5e5]">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
-                Learn More About Hair Transplant in Turkey
-              </h2>
-
-              <p className="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
-                Hair transplantation in Turkey has become a global trend due to its advanced medical standards,
-                affordability, and expert surgeons. RevissaWay connects international patients with reputable clinics
-                offering DHI, FUE, and Sapphire techniques for natural-looking results.
-              </p>
-
-              <AnimatePresence>
-                {expanded && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.4 }}
-                    className="overflow-hidden mt-4 text-gray-700 leading-relaxed max-w-3xl mx-auto"
-                  >
-                    <article>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Advanced Techniques</h3>
-                      <p>
-                        Modern techniques such as DHI (Direct Hair Implantation), FUE (Follicular Unit Extraction),
-                        and Sapphire methods ensure high graft survival rates, minimal trauma, and natural density.
-                      </p>
-
-                      <h3 className="text-xl font-semibold text-gray-900 mt-4 mb-2">Why Turkey?</h3>
-                      <ul className="list-disc ml-6 space-y-1">
-                        <li>Globally recognized surgeons and clinics</li>
-                        <li>Affordable and transparent pricing</li>
-                        <li>High medical standards with advanced facilities</li>
-                        <li>Tourism-friendly process with short recovery time</li>
-                      </ul>
-
-                      <blockquote className="border-l-4 border-[#bfa980] pl-4 italic my-4 text-gray-600">
-                        "My experience with RevissaWay was seamless. From airport pickup to surgery coordination,
-                        everything was handled professionally." – John Carter
-                      </blockquote>
-
-                      <p className="mt-3 text-sm text-gray-600 bg-gray-50 p-3 rounded-md">
-                        <strong>Disclaimer:</strong> RevissaWay acts solely as a coordination and consultation platform
-                        in compliance with AHPRA and ACCC guidelines. We do not provide medical advice or diagnostic
-                        services. All medical procedures must be carried out by licensed professionals.
-                      </p>
-                    </article>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              <div className="text-center">
-                <button
-                  onClick={() => setExpanded(!expanded)}
-                  className="mt-4 text-[#bfa980] font-medium hover:underline transition-all"
-                  aria-expanded={expanded}
-                  aria-controls="hair-transplant-blog"
-                >
-                  {expanded ? "Show Less ▲" : "Read More ▼"}
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
         </div>
       </section>
