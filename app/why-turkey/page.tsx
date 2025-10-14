@@ -80,8 +80,8 @@ export default function WhyTurkeyPage() {
           {/* Image - Right Side */}
           <div className="rounded-2xl overflow-hidden shadow-2xl animate-fadeIn">
             <img 
-              src="/images/p2.jpg" 
-              alt="Comprehensive Medical Care in Turkey" 
+              src="/images/whyphoto.jpg" 
+              alt="Medical tourism in Turkey" 
               className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
             />
           </div>
