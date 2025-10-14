@@ -1,7 +1,10 @@
 "use client";
 
+import { useState } from "react";
+
 export default function CosmeticSurgeryPage() {
   const whatsappLink = "https://wa.me/61000000000";
+  const [processExpanded, setProcessExpanded] = useState(false);
 
   return (
     <main className="min-h-screen">
@@ -463,58 +466,56 @@ export default function CosmeticSurgeryPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-white py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-            Ready to Start Your Journey?
-          </h2>
-          <p className="text-lg text-gray-700 mb-8">
-            Contact us today for a free consultation with our expert surgeons.
-          </p>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-xl shadow-lg transition-all duration-300 font-semibold text-lg"
-          >
-            Get Free Consultation on WhatsApp
-          </a>
+      {/* Discover More About the Process Card */}
+      <section className="bg-gradient-to-b from-white to-[#FFF8DC] py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-sm p-8 border border-[#e5e5e5]">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
+                Discover More About the Process
+              </h2>
+
+              <p className="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto mb-3">
+                Understanding your cosmetic surgery journey is key to achieving the best outcome. 
+                Learn how RevissaWay guides you through consultation, operation, and recovery phases.
+              </p>
+
+              <div className="text-center">
+                <button
+                  onClick={() => setProcessExpanded(!processExpanded)}
+                  className="text-[#bfa980] font-medium hover:underline transition-all focus:outline-none"
+                  aria-expanded={processExpanded}
+                  aria-controls="process-details"
+                >
+                  {processExpanded ? "Read Less ▲" : "Read More ▼"}
+                </button>
+              </div>
+
+              <div
+                id="process-details"
+                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                  processExpanded ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
+                }`}
+              >
+                <div className="max-w-3xl mx-auto space-y-4 text-gray-700">
+                  <p className="leading-relaxed">
+                    During your consultation, expert surgeons assess your aesthetic goals, medical history, 
+                    and design the optimal surgical plan tailored to your body structure and expectations.
+                  </p>
+                  <p className="leading-relaxed">
+                    The operation itself is performed using advanced surgical techniques in accredited facilities 
+                    to ensure natural results, precise execution, and minimal downtime with maximum safety.
+                  </p>
+                  <p className="leading-relaxed">
+                    Post-surgery, RevissaWay provides continuous support and follow-up care to help you 
+                    achieve long-lasting and satisfying aesthetic results throughout your recovery journey.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <div className="flex justify-center items-center mb-6">
-              <img
-                src="/logo.png"
-                alt="EstheWay Logo"
-                className="w-32 md:w-40 opacity-90 hover:opacity-100 transition-all duration-300"
-              />
-            </div>
-            <div className="flex justify-center gap-6 mb-6">
-              <a href="#" className="hover:text-[#9B7E3E] transition-colors duration-200">
-                Terms & Conditions
-              </a>
-              <a href="#" className="hover:text-[#9B7E3E] transition-colors duration-200">
-                Privacy Policy
-              </a>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8">
-            <p className="text-center text-sm text-gray-400 mb-4">
-              © 2025 EstheWay. All rights reserved.
-            </p>
-            <div className="max-w-4xl mx-auto bg-gray-900 rounded-lg p-6">
-              <p className="text-xs text-gray-400 leading-relaxed text-center">
-                <strong className="text-gray-300">Disclaimer:</strong> EstheWay provides organization and consultation services only. All procedures are performed by licensed medical professionals at accredited hospitals in Turkey. Results may vary by individual. Information provided is for general informational purposes only and does not constitute medical advice.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

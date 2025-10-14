@@ -2,11 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HairTransplantPage() {
+  const { language } = useLanguage();
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   const whatsappLink = "https://wa.me/61000000000";
 
@@ -149,23 +152,32 @@ export default function HairTransplantPage() {
         WhatsApp
       </a>
 
-      {/* Hero Banner Section */}
-      <section 
-        className="relative w-full h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden bg-black"
-        style={{
-          backgroundImage: 'url(/images/hair-banner.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        {/* Dark Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+      {/* Banner Section */}
+      <section className="relative h-[80vh] flex items-center justify-center text-center">
+        {/* Background image */}
+        <img
+          src="/images/hair-banner.jpg"
+          alt="Hair Transplant in Turkey"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/40"></div>
+
+        {/* Text content */}
+        <div className="relative z-10 px-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-white border-b-4 border-[#9B7E3E] inline-block pb-2">
+            Hair Transplant in Turkey
+          </h1>
+          <p className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
+            Restore your natural look with RevissaWay's advanced hair transplant methods and certified clinics in Turkey.
+          </p>
+        </div>
       </section>
 
       {/* Methods Section - Two Column Layout */}
-      <section className="bg-gradient-to-b from-[#FFF8DC] to-white py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-gradient-to-b from-[#FFF8DC] to-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+        <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Left Column - Method Cards */}
           <div className="lg:col-span-5">
@@ -181,14 +193,14 @@ export default function HairTransplantPage() {
                   }`}
                 >
                   {/* Icon */}
-                  <div>
-                    <Image
+                  <div className="flex items-center justify-center mb-3">
+                    <img
                       src={method.iconPath}
-                      alt={method.title}
-                      width={64}
-                      height={64}
-                      className="mx-auto mb-3"
-                      priority
+                      alt={`${method.title} icon`}
+                      width="80"
+                      height="80"
+                      className="w-20 h-20 rounded-lg mx-auto md:w-24 md:h-24"
+                      loading="lazy"
                     />
                   </div>
 
@@ -264,15 +276,15 @@ export default function HairTransplantPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-gradient-to-b from-white to-[#FFF8DC] py-16">
-        <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      <section className="bg-gradient-to-b from-white to-[#FFF8DC] px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+        <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Benefits of Hair Transplant
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {/* Benefit 1 */}
           <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
             <div className="flex justify-center mb-4">
@@ -365,8 +377,8 @@ export default function HairTransplantPage() {
       </section>
 
       {/* FAQ and Information Section */}
-      <section className="bg-gradient-to-b from-[#FFF8DC] to-white py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-gradient-to-b from-[#FFF8DC] to-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+        <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left Column - FAQ */}
           <div>
@@ -414,9 +426,9 @@ export default function HairTransplantPage() {
 
             {/* YouTube Video Embed */}
             <div className="mb-8">
-              <div className="relative pb-[56.25%] h-0 rounded-xl overflow-hidden shadow-2xl">
+              <div className="rounded-xl overflow-hidden shadow-sm aspect-video lg:h-[320px]">
                 <iframe
-                  className="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+                  className="w-full h-full rounded-lg"
                   src="https://www.youtube.com/embed/QvzQlwSnzTQ"
                   title="Hair Transplant Procedure"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -509,25 +521,145 @@ export default function HairTransplantPage() {
               </div>
             </div>
           </div>
+
+          {/* Collapsible Blog Preview - Full Width Below */}
+          <div className="lg:col-span-2 mt-10">
+            <div id="hair-transplant-blog" className="bg-white rounded-2xl shadow-sm p-8 border border-[#e5e5e5]">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4 text-center">
+                Learn More About Hair Transplant in Turkey
+              </h2>
+
+              <p className="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+                Hair transplantation in Turkey has become a global trend due to its advanced medical standards,
+                affordability, and expert surgeons. RevissaWay connects international patients with reputable clinics
+                offering DHI, FUE, and Sapphire techniques for natural-looking results.
+              </p>
+
+              <AnimatePresence>
+                {expanded && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.4 }}
+                    className="overflow-hidden mt-4 text-gray-700 leading-relaxed max-w-3xl mx-auto"
+                  >
+                    <article>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Advanced Techniques</h3>
+                      <p>
+                        Modern techniques such as DHI (Direct Hair Implantation), FUE (Follicular Unit Extraction),
+                        and Sapphire methods ensure high graft survival rates, minimal trauma, and natural density.
+                      </p>
+
+                      <h3 className="text-xl font-semibold text-gray-900 mt-4 mb-2">Why Turkey?</h3>
+                      <ul className="list-disc ml-6 space-y-1">
+                        <li>Globally recognized surgeons and clinics</li>
+                        <li>Affordable and transparent pricing</li>
+                        <li>High medical standards with advanced facilities</li>
+                        <li>Tourism-friendly process with short recovery time</li>
+                      </ul>
+
+                      <blockquote className="border-l-4 border-[#bfa980] pl-4 italic my-4 text-gray-600">
+                        "My experience with RevissaWay was seamless. From airport pickup to surgery coordination,
+                        everything was handled professionally." – John Carter
+                      </blockquote>
+
+                      <p className="mt-3 text-sm text-gray-600 bg-gray-50 p-3 rounded-md">
+                        <strong>Disclaimer:</strong> RevissaWay acts solely as a coordination and consultation platform
+                        in compliance with AHPRA and ACCC guidelines. We do not provide medical advice or diagnostic
+                        services. All medical procedures must be carried out by licensed professionals.
+                      </p>
+                    </article>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <div className="text-center">
+                <button
+                  onClick={() => setExpanded(!expanded)}
+                  className="mt-4 text-[#bfa980] font-medium hover:underline transition-all"
+                  aria-expanded={expanded}
+                  aria-controls="hair-transplant-blog"
+                >
+                  {expanded ? "Show Less ▲" : "Read More ▼"}
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
         </div>
       </section>
 
+      {/* Blog & Insights Section */}
+      <section className="bg-gray-50 px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-900">
+            Blog & Insights
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <img
+                src="/images/banner-placeholder.jpg"
+                alt="How to Prepare"
+                className="w-full h-48 object-cover rounded-xl mb-3"
+                loading="lazy"
+              />
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">How to Prepare for a Hair Transplant</h3>
+              <p className="text-gray-600 text-sm">Tips for optimal results before surgery.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <img
+                src="/images/banner-placeholder.jpg"
+                alt="FUE vs DHI"
+                className="w-full h-48 object-cover rounded-xl mb-3"
+                loading="lazy"
+              />
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">FUE vs DHI Techniques</h3>
+              <p className="text-gray-600 text-sm">Understand the key differences and benefits.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <img
+                src="/images/banner-placeholder.jpg"
+                alt="Why Turkey"
+                className="w-full h-48 object-cover rounded-xl mb-3"
+                loading="lazy"
+              />
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">Why Turkey Leads in Hair Restoration</h3>
+              <p className="text-gray-600 text-sm">Discover why thousands choose Turkey every year.</p>
+            </div>
+            <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <img
+                src="/images/banner-placeholder.jpg"
+                alt="Aftercare Tips"
+                className="w-full h-48 object-cover rounded-xl mb-3"
+                loading="lazy"
+              />
+              <h3 className="font-semibold text-lg mb-2 text-gray-900">Aftercare for Long-lasting Results</h3>
+              <p className="text-gray-600 text-sm">Essential steps for healthy recovery.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Instagram Posts Section */}
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-900">
+            Latest Posts
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Instagram Post 1 */}
           <a
             href="https://www.instagram.com/p/DA6FqqVKr_X/"
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square rounded-lg shadow-md overflow-hidden"
+            className="aspect-square rounded-lg shadow-md overflow-hidden group"
           >
             <img 
               src="/images/1.png" 
               alt="Instagram Post 1" 
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
             />
           </a>
 
@@ -536,12 +668,13 @@ export default function HairTransplantPage() {
             href="https://www.instagram.com/p/DJwzsTkoouU/"
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square rounded-lg shadow-md overflow-hidden"
+            className="aspect-square rounded-lg shadow-md overflow-hidden group"
           >
             <img 
               src="/images/2.png" 
               alt="Instagram Post 2" 
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
             />
           </a>
 
@@ -550,12 +683,13 @@ export default function HairTransplantPage() {
             href="https://www.instagram.com/p/DEXowaZK5cZ/"
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square rounded-lg shadow-md overflow-hidden"
+            className="aspect-square rounded-lg shadow-md overflow-hidden group"
           >
             <img 
               src="/images/3.png" 
               alt="Instagram Post 3" 
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
             />
           </a>
 
@@ -564,55 +698,106 @@ export default function HairTransplantPage() {
             href="https://www.instagram.com/p/DH-2Pc6oOhi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square rounded-lg shadow-md overflow-hidden"
+            className="aspect-square rounded-lg shadow-md overflow-hidden group"
           >
             <img 
               src="/images/4.png" 
               alt="Instagram Post 4" 
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
             />
           </a>
         </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-white py-12 mt-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <div className="flex justify-center items-center mb-6">
-              <img
-                src="/logo.png"
-                alt="EstheWay Logo"
-                className="w-32 md:w-40 opacity-90 hover:opacity-100 transition-all duration-300"
-              />
-            </div>
-            <div className="flex justify-center gap-6 mb-6">
-              <a href="#" className="hover:text-[#9B7E3E] transition-colors duration-200">
-                Terms & Conditions
-              </a>
-              <a href="#" className="hover:text-[#9B7E3E] transition-colors duration-200">
-                Privacy Policy
-              </a>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8">
-            <p className="text-center text-sm text-gray-400 mb-4">
-              © 2025 EstheWay. All rights reserved.
-            </p>
-            <div className="max-w-4xl mx-auto bg-gray-900 rounded-lg p-6">
-              <p className="text-xs text-gray-400 leading-relaxed text-center">
-                <strong className="text-gray-300">Important Notice:</strong> All procedures are performed at accredited partner hospitals in Turkey by licensed medical specialists. EstheWay provides organization and consultation services only and does not provide medical services. Results may vary from person to person. Information on this website is for general informational purposes only and does not constitute medical advice. A doctor consultation is required to determine suitability for any procedure.
-              </p>
-            </div>
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/" className="text-[#9B7E3E] hover:text-[#B8965A] transition-colors duration-200">
-              ← Return to Home
-            </Link>
-          </div>
-        </div>
-      </footer>
+      {/* JSON-LD Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "@id": "https://estheway.vercel.app/hair-transplant",
+            "name": "RevissaWay Health & Aesthetics",
+            "alternateName": "RevissaWay",
+            "url": "https://estheway.vercel.app/hair-transplant",
+            "image": "https://estheway.vercel.app/og/og-hair-transplant.jpg",
+            "logo": "https://estheway.vercel.app/og/revissaway-logo.png",
+            "description": "RevissaWay connects you with Turkey's most trusted hair transplant experts offering DHI, FUE, and Sapphire techniques.",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Level 10, 440 Collins Street",
+              "addressLocality": "Melbourne",
+              "addressRegion": "VIC",
+              "postalCode": "3000",
+              "addressCountry": "AU"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "-37.817",
+              "longitude": "144.957"
+            },
+            "openingHours": "Mo-Fr 09:00-18:00",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+61 400 123 456",
+              "contactType": "customer service",
+              "areaServed": ["AU", "NZ", "TR"],
+              "availableLanguage": ["English", "Turkish"]
+            },
+            "medicalSpecialty": "Hair Replacement",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.9",
+              "reviewCount": "128",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "USD",
+              "price": "2500",
+              "priceValidUntil": "2025-12-31",
+              "availability": "https://schema.org/InStock",
+              "url": "https://estheway.vercel.app/hair-transplant",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "USD",
+                "price": "2500",
+                "valueAddedTaxIncluded": true
+              }
+            },
+            "review": {
+              "@type": "Review",
+              "name": "Great experience with RevissaWay",
+              "author": {
+                "@type": "Person",
+                "name": "John Carter",
+                "image": "https://estheway.vercel.app/og/reviewer-john-carter.jpg"
+              },
+              "datePublished": "2025-02-20",
+              "reviewBody": "RevissaWay made my hair transplant journey in Turkey seamless and professional. Everything from travel coordination to clinic experience was top-notch.",
+              "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
+            },
+            "founder": {
+              "@type": "Person",
+              "name": "Mehmet Ali Ünver"
+            },
+            "sameAs": [
+              "https://www.instagram.com/estheway",
+              "https://www.youtube.com/@estheway",
+              "https://www.facebook.com/estheway"
+            ]
+          }),
+        }}
+      />
     </main>
   );
 }

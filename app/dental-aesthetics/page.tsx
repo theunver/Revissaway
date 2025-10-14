@@ -248,39 +248,6 @@ export default function DentalAestheticsPage() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-black text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <div className="flex justify-center items-center mb-6">
-              <img
-                src="/logo.png"
-                alt="EstheWay Logo"
-                className="w-32 md:w-40 opacity-90 hover:opacity-100 transition-all duration-300"
-              />
-            </div>
-            <div className="flex justify-center gap-6 mb-6">
-              <a href="#" className="hover:text-[#9B7E3E] transition-colors duration-200">
-                Terms & Conditions
-              </a>
-              <a href="#" className="hover:text-[#9B7E3E] transition-colors duration-200">
-                Privacy Policy
-              </a>
-            </div>
-          </div>
-          <div className="border-t border-gray-700 pt-8">
-            <p className="text-center text-sm text-gray-400 mb-4">
-              © 2025 EstheWay. All rights reserved.
-            </p>
-            <div className="max-w-4xl mx-auto bg-gray-900 rounded-lg p-6">
-              <p className="text-xs text-gray-400 leading-relaxed text-center">
-                <strong className="text-gray-300">Disclaimer:</strong> EstheWay provides only organization and consultancy services. All medical procedures are the responsibility of contracted hospitals and licensed medical professionals in Turkey. Results may vary from person to person. The information on this website is for general informational purposes only and does not constitute medical advice.
-              </p>
-            </div>
-          </div>
-        </div>
-      </footer>
     </main>
   );
 }

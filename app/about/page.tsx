@@ -24,11 +24,11 @@ export default function AboutPage() {
         <div>
           <h2 className="text-4xl font-semibold mb-6">Who We Are</h2>
           <p className="text-gray-300 leading-relaxed">
-            EstheWay is an independent health tourism consultancy based in Australia, 
+            RevissaWay is an independent health tourism consultancy based in Australia, 
             dedicated to connecting clients from Australia and New Zealand with accredited 
             medical and aesthetic clinics across Turkey. We operate with transparency, 
             professionalism, and compliance — coordinating each step of the medical journey 
-            through ethical partnerships. EstheWay does not perform or advertise medical procedures; 
+            through ethical partnerships. RevissaWay does not perform or advertise medical procedures; 
             all treatments are delivered exclusively by independently licensed healthcare providers 
             under applicable Turkish regulations.
           </p>
@@ -71,7 +71,7 @@ export default function AboutPage() {
             <div className="p-8 border border-[#9B7E3E]/40 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(155,126,62,0.5)] text-center h-[180px] flex flex-col justify-center bg-white/80">
               <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">{t('about.expertise.transparentCoordination')}</h3>
               <p className="text-gray-700 text-sm">
-                EstheWay ensures clients receive clear, ethical, and transparent guidance at every stage.
+                RevissaWay ensures clients receive clear, ethical, and transparent guidance at every stage.
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                   Accredited Medical Partners
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  EstheWay cooperates only with internationally accredited and licensed clinics, ensuring patients are connected to verified, trusted, and professional healthcare providers.
+                  RevissaWay cooperates only with internationally accredited and licensed clinics, ensuring patients are connected to verified, trusted, and professional healthcare providers.
                 </p>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
                   Transparent and Affordable
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Patients receive premium-quality care through EstheWay's trusted network at transparent and competitive costs, often up to 70% lower than in Western countries.
+                  Patients receive premium-quality care through RevissaWay's trusted network at transparent and competitive costs, often up to 70% lower than in Western countries.
                 </p>
               </div>
             </div>
@@ -168,7 +168,7 @@ export default function AboutPage() {
                   Comprehensive Experience
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  EstheWay combines professional medical coordination with Turkey's cultural richness, providing patients a comfortable and memorable journey from arrival to recovery.
+                  RevissaWay combines professional medical coordination with Turkey's cultural richness, providing patients a comfortable and memorable journey from arrival to recovery.
                 </p>
               </div>
             </div>

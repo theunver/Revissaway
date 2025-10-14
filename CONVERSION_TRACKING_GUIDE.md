@@ -2,7 +2,7 @@
 
 ## 🎯 Google Ads Lead Submission Tracking
 
-Your EstheWay site now has conversion tracking configured for WhatsApp consultation button clicks!
+Your RevissaWay site now has conversion tracking configured for WhatsApp consultation button clicks!
 
 ---
 

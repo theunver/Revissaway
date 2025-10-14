@@ -1,55 +1,56 @@
 alwaysApply: true
 ---
-Project Rules — Estego AU Web (Next.js + Tailwind)
+Project Rules — RevissaWay AU Web (Next.js + Tailwind)
 
 1) Scope & Target
 - Framework: Next.js (App Router, TypeScript)
 - Styling: Tailwind CSS
-- Hosting: Vercel uyumlu
-- Kod kalitesi: temiz, linted, responsive
+- Hosting: Fully compatible with Vercel
+- Code quality: clean, linted, responsive, and production-ready
 
 2) Theme / Branding
-- Arka plan: açık krem/bej degrade (linear-gradient(#fffaf3, #f8f5f0))
-- Ana vurgu (Primary / CTA): altın–bej gradient (#d8c49a → #e7d9b4)
-- İkincil: soft gri (#e0e0e0)
-- Metin: siyah (#000000)
-- Kartlar: beyaz (#ffffff), shadow-md, rounded-xl
-- Hover: altın/bej koyusu (#c2a87d)
-- İkonlar: siyah outline
+- Background: soft cream/beige gradient (linear-gradient(#fffaf3, #f8f5f0))
+- Primary (CTA): gold–beige gradient (#d8c49a → #e7d9b4)
+- Secondary: soft grey (#e0e0e0)
+- Text: black (#000000)
+- Cards: white (#ffffff), shadow-md, rounded-xl
+- Hover: darker beige/gold (#c2a87d)
+- Icons: black outline style
 
 3) Global UX Rules
-- Tüm yazılar Türkçe olacak
-- CTA: “WhatsApp’tan Ücretsiz Ön Görüşme” butonu her zaman görünür
-- Form alanları: Ad, E-posta, Telefon, Hizmet (dropdown: Saç Ekimi, Estetik Cerrahi, Diş Estetiği), Mesaj
-- Responsive: mobil öncelikli, tablet/desktop sorunsuz
-- Görseller optimize, lazy-load aktif
-- Butonlar rounded-xl, hover animasyonlu
+- All on-page text and UI labels must be in **English**
+- Main CTA: “Free WhatsApp Consultation” button must always be visible
+- Form fields: Full Name, Email, Phone, Service (dropdown: Hair Transplant, Cosmetic Surgery, Dental Aesthetics), Message
+- Responsive: mobile-first; fully optimized for tablet and desktop
+- Images must be optimized and lazy-loaded
+- Buttons: rounded-xl with smooth hover animations
 
 4) Site Sections
-- Hero: Başlık + alt başlık + CTA
-- Hizmetler: 3 kart (Saç Ekimi, Estetik Cerrahi, Diş Estetiği) → “Detay için tıklayın”
-- Dahil Hizmetler: ikonlu grid (Transfer, Otel, VIP, 1 Yıl Danışman)
-- Neden Türkiye: fiyat avantajı, uzman doktorlar, modern hastaneler
-- Süreç: 5 adım (Ön görüşme → Doktor değerlendirmesi → Planlama → Operasyon → Takip)
-- Referanslar: hasta yorumları (placeholder)
-- SSS: 5 soru-cevap (accordion)
-- İletişim: form + WhatsApp butonu
-- Footer: © text + “Şartlar & Koşullar”, “Gizlilik Politikası”
+- **Hero:** headline + subheadline + CTA button  
+- **Services:** 3 cards (Hair Transplant, Cosmetic Surgery, Dental Aesthetics) → “Click for details”  
+- **Included Services:** icon grid (Transfer, Hotel, VIP Support, 1-Year Follow-Up)  
+- **Why Türkiye:** cost advantage, expert doctors, modern hospitals  
+- **Process:** 5 steps (Consultation → Doctor Evaluation → Planning → Operation → Follow-Up)  
+- **Testimonials:** section for client reviews (placeholder)  
+- **FAQ:** 5 question–answer accordion items  
+- **Contact:** form + persistent WhatsApp button  
+- **Footer:** © text + “Terms & Conditions” + “Privacy Policy” links  
 
 5) Performance & SEO
-- Lighthouse skoru 90+ hedef
-- Meta title & description tanımlı
-- Open Graph paylaşım görseli ayarlı
-- Google Analytics entegrasyonu
-- Başlık yapısı SEO uyumlu (H1, H2)
+- Lighthouse performance score target: **90+**
+- Every page must define a meta title and description
+- Open Graph image configured for social sharing
+- Google Analytics integrated
+- Proper heading hierarchy (H1 → H2 → H3)
+- Alt text required for all images
 
 6) Prohibited
-- Tıbbi sonuç garantisi / yanıltıcı iddia yok
-- Öncesi-sonrası fotoğraf varsayılan olarak yok
-- Fazla animasyon yok → minimal ve profesyonel
+- No medical guarantees or misleading claims
+- No before/after photos shown by default
+- No heavy or distracting animations — keep minimal and professional
 
-7) Acceptance
-- Site mobil + desktop’ta sorunsuz
-- WhatsApp butonu her zaman aktif
-- Form gönderimi demo backend veya mailto çalışır
-- Deploy sonrası site Vercel subdomain üzerinde açılır
+7) Acceptance Criteria
+- Fully responsive on mobile and desktop
+- WhatsApp CTA button always active
+- Contact form functional via demo backend or mailto
+- Deployment must open correctly under Vercel subdomain

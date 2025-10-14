@@ -192,18 +192,19 @@ export default function Home() {
       </a>
 
       {/* Hero Section with Video Background */}
-      <section id="home" className="relative h-[85vh] w-full overflow-hidden">
+      <section id="home" className="relative h-[85vh] w-full overflow-hidden bg-black pt-[55px]">
         {/* Video Background */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
-          poster="/images/banner2.jpg"
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/videos/lowbannerfirst.mp4"
-        />
+          preload="auto"
+          className="w-full h-full object-cover absolute inset-0"
+        >
+          <source src="/videos/lowbannerfirst.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         {/* Dark Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
@@ -211,11 +212,11 @@ export default function Home() {
         {/* Hero Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance">
-              Connecting You with Türkiye's Most Trusted<br />Aesthetic and Hair Transplant Experts
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance text-center leading-snug md:leading-normal">
+              Your Bridge to Turkey&apos;s Most Trusted Hair & Aesthetic Experts
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto text-balance">
-              EstheWay connects patients from Australia and New Zealand with accredited clinics in Turkey — offering world-class quality, expert surgeons, and transparent coordination.
+              RevissaWay connects patients from Australia and New Zealand with accredited clinics in Turkey — offering world-class quality, expert surgeons, and transparent coordination.
             </p>
             <a
               href={whatsappLink}
@@ -287,8 +288,8 @@ export default function Home() {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Turkey?</h2>
               <p className="text-gray-700 leading-relaxed">
-                EstheWay is a trusted health tourism brand that works in collaboration with internationally accredited and licensed medical and aesthetic clinics across Turkey. 
-                EstheWay does not provide medical treatment directly; it acts solely as a professional intermediary, ensuring that patients are connected only with certified hospitals, surgical centers, and clinics specialized in dental and aesthetic care. 
+                RevissaWay is a trusted health tourism brand that works in collaboration with internationally accredited and licensed medical and aesthetic clinics across Turkey. 
+                RevissaWay does not provide medical treatment directly; it acts solely as a professional intermediary, ensuring that patients are connected only with certified hospitals, surgical centers, and clinics specialized in dental and aesthetic care. 
                 Through these partnerships, patients gain access to qualified physicians, experienced surgeons, and multidisciplinary healthcare teams. 
                 This network combines world-class clinical expertise, evidence-based medical practices, advanced technology, and genuine Turkish hospitality — providing patients with a safe, transparent, and professionally coordinated treatment journey from their initial consultation to full recovery.
               </p>
@@ -302,7 +303,7 @@ export default function Home() {
                 <span className="text-[#9B7E3E] font-bold text-xl mr-3 flex-shrink-0">✔</span>
                 <div>
                   <strong className="block text-gray-900 mb-2">Accredited Medical Partners</strong>
-                  <p className="text-sm">EstheWay cooperates only with internationally accredited and licensed clinics, ensuring patients are connected to verified, trusted, and professional healthcare providers.</p>
+                  <p className="text-sm">RevissaWay cooperates only with internationally accredited and licensed clinics, ensuring patients are connected to verified, trusted, and professional healthcare providers.</p>
                 </div>
               </div>
             </div>
@@ -320,7 +321,7 @@ export default function Home() {
                 <span className="text-[#9B7E3E] font-bold text-xl mr-3 flex-shrink-0">✔</span>
                 <div>
                   <strong className="block text-gray-900 mb-2">Transparent and Affordable</strong>
-                  <p className="text-sm">Patients receive premium-quality care through EstheWay's trusted network at transparent and competitive costs, often up to 70% lower than in Western countries.</p>
+                  <p className="text-sm">Patients receive premium-quality care through RevissaWay's trusted network at transparent and competitive costs, often up to 70% lower than in Western countries.</p>
                 </div>
               </div>
             </div>
@@ -338,7 +339,7 @@ export default function Home() {
                 <span className="text-[#9B7E3E] font-bold text-xl mr-3 flex-shrink-0">✔</span>
                 <div>
                   <strong className="block text-gray-900 mb-2">Comprehensive Experience</strong>
-                  <p className="text-sm">EstheWay combines professional medical coordination with Turkey's cultural richness, providing patients a comfortable and memorable journey from arrival to recovery.</p>
+                  <p className="text-sm">RevissaWay combines professional medical coordination with Turkey's cultural richness, providing patients a comfortable and memorable journey from arrival to recovery.</p>
                 </div>
               </div>
             </div>
@@ -597,7 +598,7 @@ export default function Home() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500 text-black placeholder-gray-600"
               />
             </div>
 
@@ -612,7 +613,7 @@ export default function Home() {
                 placeholder="+61"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500 text-black placeholder-gray-600"
               />
             </div>
 
@@ -626,7 +627,7 @@ export default function Home() {
                 name="preferredDate"
                 value={formData.preferredDate}
                 onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500 text-black placeholder-gray-600"
               />
             </div>
 
@@ -639,7 +640,7 @@ export default function Home() {
                 name="service"
                 value={formData.service}
                 onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500 text-black placeholder-gray-600"
               >
                 <option value="">Select a service</option>
                 <option value="Hair Transplant">Hair Transplant</option>
@@ -658,7 +659,7 @@ export default function Home() {
                 rows={4}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500 text-black placeholder-gray-600"
               />
             </div>
             {formStatus === "success" && (

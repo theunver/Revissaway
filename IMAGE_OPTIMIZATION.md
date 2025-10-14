@@ -137,7 +137,7 @@ All files in `/public/icons/`:
 ```jsx
 <Image 
   src="/logo.png"
-  alt="EstheWay"
+  alt="RevissaWay"
   width={120}
   height={60}
 />
@@ -217,7 +217,7 @@ import Image from 'next/image';
 
 <Image 
   src="/logo.png" 
-  alt="EstheWay Logo" 
+  alt="RevissaWay Logo" 
   width={150}
   height={75}
   className="w-auto object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
@@ -230,7 +230,7 @@ import Image from 'next/image';
 // Already using Image component ✅
 <Image 
   src="/logo.png" 
-  alt="EstheWay" 
+  alt="RevissaWay" 
   width={120} 
   height={60} 
   className="mx-auto mb-3" 
