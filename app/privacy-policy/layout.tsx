@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Privacy Policy | RevissaWay Health & Aesthetics",
     description: "Learn how RevissaWay collects, uses, and protects your information. Privacy-first health tourism coordination.",
-    url: "https://estheway.com/privacy-policy",
+    url: "https://revissaway.vercel.app/privacy-policy",
   },
   robots: {
     index: true,

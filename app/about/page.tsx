@@ -200,6 +200,74 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Key Advantages Grid - Moved from Why Turkey */}
+      <section className="w-full bg-gradient-to-b from-white to-[#FFF8DC] py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            <div className="bg-white border border-[#9B7E3E]/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-5xl mb-4">💰</div>
+              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">
+                Cost Advantage
+              </h3>
+              <p className="text-gray-700">
+                Save up to 70% compared to Australian and New Zealand prices while receiving the same quality of care from internationally trained specialists.
+              </p>
+            </div>
+
+            <div className="bg-white border border-[#9B7E3E]/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-5xl mb-4">🏥</div>
+              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">
+                JCI Accreditation
+              </h3>
+              <p className="text-gray-700">
+                All partner clinics are internationally accredited by Joint Commission International (JCI) and meet the highest global healthcare standards.
+              </p>
+            </div>
+
+            <div className="bg-white border border-[#9B7E3E]/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
+              <div className="text-5xl mb-4">👨‍⚕️</div>
+              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">
+                Expert Surgeons
+              </h3>
+              <p className="text-gray-700">
+                Turkish surgeons perform thousands of procedures annually, gaining unparalleled experience and expertise in aesthetic and reconstructive surgery.
+              </p>
+            </div>
+          </div>
+
+          {/* Statistics Section - Moved from Why Turkey (3 items only) */}
+          <div className="bg-gradient-to-r from-[#9B7E3E]/10 to-[#f5e9cc]/30 rounded-2xl p-12">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+              Türkiye by the Numbers
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
+                  1,500,000+
+                </div>
+                <p className="text-gray-700">
+                  Medical Tourists Annually
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">JCI</div>
+                <p className="text-gray-700">
+                  Accredited Hospitals
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
+                  #1
+                </div>
+                <p className="text-gray-700">
+                  Hair Transplant Destination
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
   );
 }

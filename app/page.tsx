@@ -67,7 +67,7 @@ export default function Home() {
       ),
     },
     {
-      title: "Cosmetic Surgery",
+      title: "Esthetic Surgery Applications",
       description: "Wide range of procedures performed by experienced surgeons.",
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -397,7 +397,7 @@ export default function Home() {
               <div className="relative p-8 text-center h-full flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                    Cosmetic Surgery
+                    Esthetic Surgery Applications
                   </h3>
                   <p className="text-base text-gray-100 mb-6 leading-relaxed">
                     Wide range of procedures performed by experienced surgeons.
@@ -644,7 +644,7 @@ export default function Home() {
               >
                 <option value="">Select a service</option>
                 <option value="Hair Transplant">Hair Transplant</option>
-                <option value="Cosmetic Surgery">Cosmetic Surgery</option>
+                <option value="Esthetic Surgery Applications">Esthetic Surgery Applications</option>
                 <option value="Dental Aesthetics">Dental Aesthetics</option>
               </select>
             </div>

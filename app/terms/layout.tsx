@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Terms of Use | RevissaWay Health & Aesthetics",
     description: "Review the terms and conditions for using RevissaWay. Transparent and patient-focused health tourism coordination.",
-    url: "https://estheway.com/terms",
+    url: "https://revissaway.vercel.app/terms",
   },
   robots: {
     index: true,

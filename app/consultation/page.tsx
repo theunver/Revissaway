@@ -166,7 +166,7 @@ export default function ConsultationPage() {
               >
                 <option value="">Select a service</option>
                 <option value="Hair Transplant">Hair Transplant</option>
-                <option value="Cosmetic Surgery">Cosmetic Surgery</option>
+                <option value="Esthetic Surgery Applications">Esthetic Surgery Applications</option>
                 <option value="Dental Aesthetics">Dental Aesthetics</option>
               </select>
             </div>

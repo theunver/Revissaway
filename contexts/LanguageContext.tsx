@@ -41,7 +41,7 @@ const translations = {
     
     // Services
     'services.hairTransplant': 'Hair Transplant',
-    'services.cosmeticSurgery': 'Cosmetic Surgery',
+    'services.cosmeticSurgery': 'Esthetic Surgery Applications',
     'services.dentalAesthetics': 'Dental Aesthetics',
     
     // Footer

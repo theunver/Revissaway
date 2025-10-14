@@ -26,7 +26,7 @@ export default function CosmeticSurgeryPage() {
         {/* Background image */}
         <img
           src="/images/banner2.jpg"
-          alt="Cosmetic Surgery Banner"
+          alt="Esthetic Surgery Applications Banner"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
@@ -41,6 +41,57 @@ export default function CosmeticSurgeryPage() {
           <p className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
             Some of the areas our Aesthetic, Plastic, and Reconstructive Surgeons specialize in are listed below.
           </p>
+        </div>
+      </section>
+
+      {/* Hair Transplant Highlight Section (below banner) */}
+      <section className="bg-gradient-to-r from-[#fffaf3] to-[#f8f5f0] py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-6">
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
+            {/* Left: Image with soft beige background shape */}
+            <div className="relative animate-fadeIn order-2 md:order-1">
+              <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-br from-[#fffaf3] to-[#f8f5f0] rounded-3xl rotate-2" />
+              <div className="relative">
+                <img
+                  src="/images/hair-transplant-section.jpg"
+                  alt="Hair Transplant in Turkey - Personalized and Painless Results"
+                  className="w-full h-[380px] sm:h-[460px] lg:h-[520px] object-cover rounded-xl shadow-md"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            {/* Right: SEO text content */}
+            <div className="space-y-5 animate-fadeIn order-1 md:order-2">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                How Our Partner Clinics Differ from Conventional Hair Transplant Centers
+              </h2>
+
+              <p className="text-gray-700 leading-relaxed">
+                A truly <strong className="text-gray-900 font-semibold">personalized hair transplant experience</strong> is at the heart of our philosophy.
+                Each patient receives <strong className="text-gray-900 font-semibold">exclusive one-to-one care</strong>, ensuring comfort, safety, and natural results throughout every step — from consultation to aftercare.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed">
+                We accept only <strong className="text-gray-900 font-semibold">1–2 patients per day</strong>, allowing our medical team to focus completely on individual needs and maintain the highest standard of service.
+                Every detail is thoughtfully arranged — even small touches such as providing <strong className="text-gray-900 font-semibold">portable Wi-Fi devices</strong> so patients always feel connected, safe, and comfortable during their stay in Turkey.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed">
+                One of the most valued advantages is our <strong className="text-gray-900 font-semibold">complimentary sedation hair transplant service</strong>, which ensures a completely painless and relaxed procedure.
+                Sedation allows patients to enjoy a stress-free experience while achieving <strong className="text-gray-900 font-semibold">high graft survival rates</strong> and <strong className="text-gray-900 font-semibold">natural density</strong>.
+              </p>
+
+              <p className="text-gray-700 leading-relaxed">
+                All procedures are performed in a <strong className="text-gray-900 font-semibold">fully equipped private hospital</strong>, where hygiene, safety, and professionalism meet international medical standards.
+                This approach elevates the <strong className="text-gray-900 font-semibold">hair transplant experience in Turkey</strong>, combining world-class expertise with genuine personal care — for results that look natural and last a lifetime.
+              </p>
+
+              
+            </div>
+          </div>
         </div>
       </section>
 
@@ -92,7 +143,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/face lift.jpg" 
+              src="/icons/Face%20Lift.jpg" 
               alt="Face Lift" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -160,7 +211,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/neck lift.jpg" 
+              src="/icons/Neck%20Lift.jpg" 
               alt="Neck Lift" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -175,7 +226,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/mummy makeover.jpg" 
+              src="/icons/Mummy%20Makeover.jpg" 
               alt="Mummy Makeover" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -247,7 +298,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/tummy tuck.jpg" 
+              src="/icons/Tummy%20Tuck.jpg" 
               alt="Tummy Tuck" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -262,7 +313,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/liposuction.jpg" 
+              src="/icons/Liposuction.jpg" 
               alt="Liposuction" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -333,7 +384,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/brazilian butt lift.jpg" 
+              src="/icons/Brazilian%20Butt%20Lift.jpg" 
               alt="Brazilian Butt Lift" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -348,7 +399,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/breast reduction.jpg" 
+              src="/icons/Breast%20Reduction.jpg" 
               alt="Breast Reduction" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />
@@ -419,7 +470,7 @@ export default function CosmeticSurgeryPage() {
           {/* Image */}
           <div>
             <img 
-              src="/icons/breast implants.jpg" 
+              src="/icons/Breast%20Implants.jpg" 
               alt="Breast Implants" 
               className="rounded-lg shadow-lg object-cover w-full h-full"
             />

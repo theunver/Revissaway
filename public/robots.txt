@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://estheway.vercel.app
+Host: https://revissaway.vercel.app
 
 # Sitemaps
-Sitemap: https://estheway.vercel.app/sitemap.xml
+Sitemap: https://revissaway.vercel.app/sitemap.xml

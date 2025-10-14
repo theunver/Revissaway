@@ -56,7 +56,7 @@ export default function HairTransplantPage() {
         "Performed under local anesthesia by specialist surgeons",
         "Natural-looking results with proper hairline design",
       ],
-      iconPath: "/icons/dhi.svg",
+      iconPath: "/icons/DHI.svg",
     },
     {
       id: 1,
@@ -71,7 +71,7 @@ export default function HairTransplantPage() {
         "Natural-looking, permanent results",
         "One of the most commonly used methods globally",
       ],
-      iconPath: "/icons/fue.svg",
+      iconPath: "/icons/FUE.svg",
     },
     {
       id: 2,
@@ -86,7 +86,7 @@ export default function HairTransplantPage() {
         "Higher density placement possible",
         "An advanced, premium form of FUE",
       ],
-      iconPath: "/icons/sapphire.svg",
+      iconPath: "/icons/SAPPHIRE.svg",
     },
     {
       id: 3,
@@ -101,22 +101,23 @@ export default function HairTransplantPage() {
         "Permanent results when performed correctly",
         "Can be combined with mustache or goatee design",
       ],
-      iconPath: "/icons/beard.svg",
+      iconPath: "/icons/BEARD.svg",
     },
     {
       id: 4,
-      title: "Eyebrow Transplant",
-      shortName: "Eyebrow",
-      description: "Eyebrow transplantation is a delicate cosmetic procedure to restore or enhance eyebrow fullness. Individual hair follicles are carefully transplanted to create natural-looking, well-defined eyebrows that complement your facial features.",
+      title: "TDF Technique (Two Days FUE)",
+      shortName: "TDF",
+      description:
+        "TDF (Two Days FUE) is an advanced hair transplantation technique designed for patients with extensive hair loss and a strong donor area. Unlike traditional methods that require 6–8 months between sessions, TDF allows two consecutive transplantation sessions performed over two days — achieving faster, denser, and more natural results. This innovative approach is ideal for individuals with limited time who want to return to work or daily life quickly after the procedure.",
       features: [
-        "Suitable for thin, over-plucked, or missing eyebrows",
-        "Natural exit angle and direction carefully planned",
-        "Uses fine hair follicles for natural appearance",
-        "Results vary based on individual hair structure",
-        "Permanent solution for eyebrow restoration",
-        "Customized to match facial symmetry and features",
+        "Two sessions performed on consecutive days",
+        "No need to wait months between procedures",
+        "High graft survival rate and natural density",
+        "Shorter downtime and faster recovery",
+        "Effective for large bald areas (front and back)",
+        "Performed by specialized surgical teams",
       ],
-      iconPath: "/icons/eyebrow.svg",
+      iconPath: "/icons/TDF%20Technique.svg",
     },
     {
       id: 5,
@@ -131,7 +132,7 @@ export default function HairTransplantPage() {
         "Can be combined with other hair restoration treatments",
         "Customized approach for each individual",
       ],
-      iconPath: "/icons/female.svg",
+      iconPath: "/icons/FEMALE.svg",
     },
   ];
 
@@ -273,104 +274,53 @@ export default function HairTransplantPage() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="bg-gradient-to-b from-white to-[#FFF8DC] px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+      {/* Partner Clinics Difference Section */}
+      <section className="bg-gradient-to-b from-white to-[#FFF8DC] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Benefits of Hair Transplant
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          {/* Benefit 1 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="flex justify-center mb-4">
-              <svg className="w-12 h-12 text-[#9B7E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-              </svg>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <div className="space-y-6 animate-fadeIn">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                How Our Partner Clinics Differ from Conventional Hair Transplant Centers
+              </h2>
+              
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                A truly <strong className="text-gray-900 font-semibold">personalized hair transplant experience</strong> is at the heart of our philosophy.  
+                Each patient receives <strong className="text-gray-900 font-semibold">exclusive one-to-one care</strong>, ensuring comfort, safety, and natural results throughout every step — from consultation to aftercare.
+              </p>
+              
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                We accept only <strong className="text-gray-900 font-semibold">1–2 patients per day</strong>, allowing our medical team to focus completely on individual needs and maintain the highest standard of service.  
+                Every detail is thoughtfully arranged — even small touches such as providing <strong className="text-gray-900 font-semibold">portable Wi-Fi devices</strong> so patients always feel connected, safe, and comfortable during their stay in Turkey.
+              </p>
+              
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                One of the most valued advantages is our <strong className="text-gray-900 font-semibold">complimentary sedation hair transplant service</strong>, which ensures a completely painless and relaxed procedure.  
+                Sedation allows patients to enjoy a stress-free experience while achieving <strong className="text-gray-900 font-semibold">high graft survival rates</strong> and <strong className="text-gray-900 font-semibold">natural density</strong>.
+              </p>
+              
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                All procedures are performed in a <strong className="text-gray-900 font-semibold">fully equipped private hospital</strong>, where hygiene, safety, and professionalism meet international medical standards.  
+                This approach elevates the <strong className="text-gray-900 font-semibold">hair transplant experience in Turkey</strong>, combining world-class expertise with genuine personal care — for results that look natural and last a lifetime.
+              </p>
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Hair Style</h3>
-            <p className="text-sm text-gray-600">Hair direction can be shaped.</p>
-          </div>
 
-          {/* Benefit 2 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="flex justify-center mb-4">
-              <svg className="w-12 h-12 text-[#9B7E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+            {/* Right Column - Image with Background Shape */}
+            <div className="relative animate-fadeIn">
+              {/* Beige Background Shape */}
+              <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-br from-[#fffaf3] to-[#f8f5f0] rounded-3xl transform rotate-2"></div>
+              
+              {/* Image Container */}
+              <div className="relative">
+                <img
+                  src="/images/TDF-technique.jpg"
+                  alt="Personalized Hair Transplant Experience in Turkey - Private Hospital"
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover rounded-xl shadow-md"
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Bloodless Procedure</h3>
-            <p className="text-sm text-gray-600">Bleeding in the incision area is negligible.</p>
           </div>
-
-          {/* Benefit 3 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="flex justify-center mb-4">
-              <svg className="w-12 h-12 text-[#9B7E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">No-Shave Technique</h3>
-            <p className="text-sm text-gray-600">Advantage of performing a hair transplant without shaving.</p>
-          </div>
-
-          {/* Benefit 4 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="flex justify-center mb-4">
-              <svg className="w-12 h-12 text-[#9B7E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Fast Results</h3>
-            <p className="text-sm text-gray-600">Faster recovery after hair transplant.</p>
-          </div>
-
-          {/* Benefit 5 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="flex justify-center mb-4">
-              <svg className="w-12 h-12 text-[#9B7E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Quick Recovery</h3>
-            <p className="text-sm text-gray-600">Healing and revitalization occur more rapidly.</p>
-          </div>
-
-          {/* Benefit 6 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="flex justify-center mb-4">
-              <svg className="w-12 h-12 text-[#9B7E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Strong Roots</h3>
-            <p className="text-sm text-gray-600">Higher survival rate of transplanted hair follicles.</p>
-          </div>
-
-          {/* Benefit 7 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="flex justify-center mb-4">
-              <svg className="w-12 h-12 text-[#9B7E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Painless Procedure</h3>
-            <p className="text-sm text-gray-600">Less pain compared to classical methods.</p>
-          </div>
-
-          {/* Benefit 8 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
-            <div className="flex justify-center mb-4">
-              <svg className="w-12 h-12 text-[#9B7E3E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v7a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1H5a1 1 0 01-1-1v-3zM14 16a1 1 0 011-1h4a1 1 0 011 1v3a1 1 0 01-1 1h-4a1 1 0 01-1-1v-3z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Dense & Intense</h3>
-            <p className="text-sm text-gray-600">Enables denser and more intensive transplants.            </p>
-          </div>
-        </div>
         </div>
       </section>
 
@@ -601,12 +551,12 @@ export default function HairTransplantPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "MedicalBusiness",
-            "@id": "https://estheway.vercel.app/hair-transplant",
+            "@id": "https://revissaway.vercel.app/hair-transplant",
             "name": "RevissaWay Health & Aesthetics",
             "alternateName": "RevissaWay",
-            "url": "https://estheway.vercel.app/hair-transplant",
-            "image": "https://estheway.vercel.app/og/og-hair-transplant.jpg",
-            "logo": "https://estheway.vercel.app/og/revissaway-logo.png",
+            "url": "https://revissaway.vercel.app/hair-transplant",
+            "image": "https://revissaway.vercel.app/og/og-hair-transplant.jpg",
+            "logo": "https://revissaway.vercel.app/og/revissaway-logo.png",
             "description": "RevissaWay connects you with Turkey's most trusted hair transplant experts offering DHI, FUE, and Sapphire techniques.",
             "priceRange": "$$",
             "address": {
@@ -644,7 +594,7 @@ export default function HairTransplantPage() {
               "price": "2500",
               "priceValidUntil": "2025-12-31",
               "availability": "https://schema.org/InStock",
-              "url": "https://estheway.vercel.app/hair-transplant",
+              "url": "https://revissaway.vercel.app/hair-transplant",
               "priceSpecification": {
                 "@type": "PriceSpecification",
                 "priceCurrency": "USD",
@@ -658,7 +608,7 @@ export default function HairTransplantPage() {
               "author": {
                 "@type": "Person",
                 "name": "John Carter",
-                "image": "https://estheway.vercel.app/og/reviewer-john-carter.jpg"
+                "image": "https://revissaway.vercel.app/og/reviewer-john-carter.jpg"
               },
               "datePublished": "2025-02-20",
               "reviewBody": "RevissaWay made my hair transplant journey in Turkey seamless and professional. Everything from travel coordination to clinic experience was top-notch.",

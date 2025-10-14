@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://estheway.vercel.app',
+  siteUrl: 'https://revissaway.vercel.app',
   generateRobotsTxt: true, // robots.txt dosyası oluşturur
   sitemapSize: 7000,
   exclude: ['/404'],
@@ -14,7 +14,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      'https://estheway.vercel.app/sitemap.xml',
+      'https://revissaway.vercel.app/sitemap.xml',
     ],
   },
   transform: async (config, path) => {
