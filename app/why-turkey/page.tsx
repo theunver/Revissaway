@@ -46,7 +46,7 @@ export default function WhyTurkeyPage() {
 
           {/* Text Content */}
           <div className="space-y-6">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
               World-Class Medical Excellence
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
