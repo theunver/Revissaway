@@ -38,11 +38,14 @@ export default function AboutPage() {
             under applicable Turkish regulations.
           </p>
         </div>
-        <div className="rounded-xl shadow-lg w-full overflow-hidden bg-[#9B7E3E] flex items-center justify-center h-[320px] md:h-[360px]">
-          <img
-            src="/images/bizkimiz.svg"
-            alt="Who We Are Illustration"
-            className="w-full h-full object-cover"
+        <div className="rounded-xl shadow-lg w-full overflow-hidden bg-white flex items-center justify-center h-[320px] md:h-[360px]">
+          <Image
+            src="/images/revissaway.png"
+            alt="RevissaWay Logo"
+            width={300}
+            height={300}
+            className="w-auto h-auto max-w-[280px] max-h-[280px] object-contain"
+            priority
           />
         </div>
       </section>
