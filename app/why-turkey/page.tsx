@@ -58,6 +58,31 @@ export default function WhyTurkeyPage() {
           </div>
         </div>
 
+        {/* New Split Section - Text Left, Image Right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
+          {/* Text Content - Left Side */}
+          <div className="space-y-6">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Comprehensive Care Journey
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              From the moment you reach out to RevissaWay, every step of your medical journey is carefully coordinated with precision and care. Our dedicated team ensures seamless communication between you and our partner clinics, handling all logistics including travel arrangements, accommodation bookings, and appointment scheduling.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              We believe that quality healthcare extends beyond the procedure itself. Through our extensive network of accredited facilities and experienced medical professionals, we provide comprehensive support that encompasses pre-treatment consultations, during-procedure care, and thorough post-treatment follow-up — ensuring your complete peace of mind throughout your health tourism experience.
+            </p>
+          </div>
+
+          {/* Image - Right Side */}
+          <div className="rounded-2xl overflow-hidden shadow-2xl animate-fadeIn">
+            <img 
+              src="/images/alt-section.jpg" 
+              alt="Comprehensive Medical Care in Turkey" 
+              className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
+            />
+          </div>
+        </div>
+
         {/* Why RevissaWay Section */}
         <div className="bg-white border border-[#9B7E3E]/30 rounded-2xl p-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
