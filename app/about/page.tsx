@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/contexts/LanguageContext";
+import Image from "next/image";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -9,13 +10,17 @@ export default function AboutPage() {
     <main className="bg-black text-white overflow-hidden">
       
       {/* ABOUT PAGE FULL-WIDTH BANNER WITH FADE-IN */}
-      <section
-        className="relative h-[80vh] w-full bg-cover bg-center animate-fadeIn"
-        style={{
-          backgroundImage: "url('/images/hakkinda-logo.png')",
-        }}
-      >
-        {/* Empty content – image is the hero */}
+      <section className="relative h-[80vh] w-full overflow-hidden animate-fadeIn">
+        <Image
+          src="/images/revissaway-about.jpg"
+          alt="RevissaWay About Us"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={90}
+        />
+        {/* Gradient overlay for better text visibility if needed */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
         <div className="relative z-10"></div>
       </section>
 
