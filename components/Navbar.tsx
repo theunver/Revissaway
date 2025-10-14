@@ -20,7 +20,7 @@ export default function Navbar() {
             alt="RevissaWay Logo" 
             width={350}
             height={350}
-            className="w-auto max-h-[120px] md:max-h-[140px] object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
+            className="w-auto max-h-[70px] md:max-h-[90px] object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
             priority
           />
         </a>

@@ -227,7 +227,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         try {
           const response = await fetch('/api/translate', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+              'Content-Type': 'application/json; charset=UTF-8',
+              'Accept': 'application/json',
+            },
             body: JSON.stringify({
               text: textsToTranslate,
               targetLang: language,
@@ -235,35 +238,55 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
             }),
           });
 
-          if (response.ok) {
-            const data = await response.json();
-            const translations = data.translatedTexts || textsToTranslate;
-
-            let translationIndex = 0;
+          if (!response.ok) {
+            console.error(`Translation API error: ${response.status} ${response.statusText}`);
+            // On error, mark items as translated with original text to avoid retries
             batch.forEach(item => {
-              const cacheKey = `${language}:${item.text}`;
-              let translated: string;
-
-              if (translationCache[cacheKey]) {
-                translated = translationCache[cacheKey];
-              } else {
-                translated = translations[translationIndex] || item.text;
-                translationCache[cacheKey] = translated;
-                translationIndex++;
-              }
-
-              // Replace only text nodes, preserve child elements
-              Array.from(item.element.childNodes).forEach(node => {
-                if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
-                  node.textContent = translated;
-                }
-              });
-
               item.element.setAttribute(`data-translated-${language}`, 'true');
             });
+            return;
           }
+
+          const data = await response.json();
+          
+          if (!data || !data.translatedTexts) {
+            console.error('Invalid translation response:', data);
+            batch.forEach(item => {
+              item.element.setAttribute(`data-translated-${language}`, 'true');
+            });
+            return;
+          }
+
+          const translations = data.translatedTexts;
+
+          let translationIndex = 0;
+          batch.forEach(item => {
+            const cacheKey = `${language}:${item.text}`;
+            let translated: string;
+
+            if (translationCache[cacheKey]) {
+              translated = translationCache[cacheKey];
+            } else {
+              translated = translations[translationIndex] || item.text;
+              translationCache[cacheKey] = translated;
+              translationIndex++;
+            }
+
+            // Replace only text nodes, preserve child elements
+            Array.from(item.element.childNodes).forEach(node => {
+              if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
+                node.textContent = translated;
+              }
+            });
+
+            item.element.setAttribute(`data-translated-${language}`, 'true');
+          });
         } catch (error) {
           console.error('Batch translation error:', error);
+          // Mark as translated to prevent infinite retries
+          batch.forEach(item => {
+            item.element.setAttribute(`data-translated-${language}`, 'true');
+          });
         }
 
         // Delay between batches to avoid rate limiting
@@ -329,7 +352,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
               try {
                 const response = await fetch('/api/translate', {
                   method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
+                  headers: { 
+                    'Content-Type': 'application/json; charset=UTF-8',
+                    'Accept': 'application/json',
+                  },
                   body: JSON.stringify({
                     text: placeholder,
                     targetLang: language,
@@ -339,8 +365,14 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
                 if (response.ok) {
                   const data = await response.json();
-                  translated = data.translatedText;
-                  translationCache[cacheKey] = translated;
+                  if (data && data.translatedText) {
+                    translated = data.translatedText;
+                    translationCache[cacheKey] = translated;
+                  } else {
+                    translated = placeholder;
+                  }
+                } else {
+                  translated = placeholder;
                 }
               } catch (error) {
                 console.error('Placeholder translation error:', error);
@@ -354,6 +386,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
             }
           }
         }
+
+        // Update HTML lang attribute for better rendering
+        document.documentElement.lang = language;
 
         // Set up MutationObserver for dynamic content
         const observer = new MutationObserver((mutations) => {

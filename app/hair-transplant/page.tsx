@@ -590,57 +590,6 @@ export default function HairTransplantPage() {
         </div>
       </section>
 
-      {/* Blog & Insights Section */}
-      <section className="bg-gray-50 px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-900">
-            Blog & Insights
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <img
-                src="/images/banner-placeholder.jpg"
-                alt="How to Prepare"
-                className="w-full h-48 object-cover rounded-xl mb-3"
-                loading="lazy"
-              />
-              <h3 className="font-semibold text-lg mb-2 text-gray-900">How to Prepare for a Hair Transplant</h3>
-              <p className="text-gray-600 text-sm">Tips for optimal results before surgery.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <img
-                src="/images/banner-placeholder.jpg"
-                alt="FUE vs DHI"
-                className="w-full h-48 object-cover rounded-xl mb-3"
-                loading="lazy"
-              />
-              <h3 className="font-semibold text-lg mb-2 text-gray-900">FUE vs DHI Techniques</h3>
-              <p className="text-gray-600 text-sm">Understand the key differences and benefits.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <img
-                src="/images/banner-placeholder.jpg"
-                alt="Why Turkey"
-                className="w-full h-48 object-cover rounded-xl mb-3"
-                loading="lazy"
-              />
-              <h3 className="font-semibold text-lg mb-2 text-gray-900">Why Turkey Leads in Hair Restoration</h3>
-              <p className="text-gray-600 text-sm">Discover why thousands choose Turkey every year.</p>
-            </div>
-            <div className="bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <img
-                src="/images/banner-placeholder.jpg"
-                alt="Aftercare Tips"
-                className="w-full h-48 object-cover rounded-xl mb-3"
-                loading="lazy"
-              />
-              <h3 className="font-semibold text-lg mb-2 text-gray-900">Aftercare for Long-lasting Results</h3>
-              <p className="text-gray-600 text-sm">Essential steps for healthy recovery.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Instagram Posts Section */}
       <section className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
         <div className="max-w-7xl mx-auto">

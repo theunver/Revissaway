@@ -34,7 +34,8 @@ export async function POST(request: NextRequest) {
       {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json; charset=UTF-8',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
           q: textsToTranslate,
@@ -46,22 +47,45 @@ export async function POST(request: NextRequest) {
     );
 
     if (!response.ok) {
-      const error = await response.json();
-      console.error('Google Translate API error:', error);
+      const errorText = await response.text();
+      console.error('Google Translate API error:', response.status, errorText);
       return NextResponse.json(
-        { error: 'Translation failed', details: error },
+        { error: 'Translation failed', details: errorText },
         { status: response.status }
       );
     }
 
     const data = await response.json();
     
+    // Validate response structure
+    if (!data || !data.data || !data.data.translations) {
+      console.error('Invalid API response structure:', data);
+      return NextResponse.json(
+        { error: 'Invalid translation response' },
+        { status: 500 }
+      );
+    }
+
     if (Array.isArray(text)) {
       const translations = data.data.translations.map((t: any) => t.translatedText);
-      return NextResponse.json({ translatedTexts: translations });
+      return NextResponse.json(
+        { translatedTexts: translations },
+        {
+          headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+        }
+      );
     } else {
       const translatedText = data.data.translations[0].translatedText;
-      return NextResponse.json({ translatedText });
+      return NextResponse.json(
+        { translatedText },
+        {
+          headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+          },
+        }
+      );
     }
   } catch (error) {
     console.error('Translation error:', error);
