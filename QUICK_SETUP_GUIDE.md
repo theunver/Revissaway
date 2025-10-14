@@ -1,4 +1,4 @@
-# 🚀 EstheWay Quick Setup Guide
+# 🚀 RevissaWay Quick Setup Guide
 
 ## Complete Setup Checklist - Follow in Order
 
@@ -9,14 +9,14 @@
 ### 1.1 Create GA4 Property
 1. Go to [analytics.google.com](https://analytics.google.com/)
 2. Admin → Create Property
-3. Name: `EstheWay`
+3. Name: `RevissaWay`
 4. Time zone: `Sydney (GMT+11)`
 5. Currency: `AUD`
 
 ### 1.2 Create Data Stream
 1. Choose **Web**
 2. URL: `https://estheway.com`
-3. Stream name: `EstheWay Website`
+3. Stream name: `RevissaWay Website`
 4. ✅ Enable enhanced measurement
 
 ### 1.3 Copy Measurement ID
@@ -124,7 +124,7 @@ git push origin main
 1. Admin → Product Links → Search Console Links
 2. Click **Link**
 3. Select: `estheway.com`
-4. Select Web Stream: `EstheWay Website`
+4. Select Web Stream: `RevissaWay Website`
 5. Submit
 
 ### 6.2 Verify Link

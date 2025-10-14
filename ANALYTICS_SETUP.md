@@ -2,7 +2,7 @@
 
 ## 📊 Tracking Codes Installed
 
-Your EstheWay website now has **Google Ads** and **Meta Pixel** tracking codes installed globally.
+Your RevissaWay website now has **Google Ads** and **Meta Pixel** tracking codes installed globally.
 
 ---
 

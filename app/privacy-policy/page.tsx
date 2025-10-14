@@ -17,7 +17,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="text-lg text-gray-700">
-            How EstheWay collects, uses, and protects your information
+            How RevissaWay collects, uses, and protects your information
           </p>
         </div>
       </section>
@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
-                At EstheWay, we respect your privacy and are committed to protecting the personal information you share with us.
+                At RevissaWay, we respect your privacy and are committed to protecting the personal information you share with us.
               </p>
 
               <h3 className="text-xl font-semibold text-[#9B7E3E] mt-8 mb-3">
@@ -115,7 +115,7 @@ export default function PrivacyPolicyPage() {
               </p>
 
               <p className="text-gray-700 leading-relaxed mb-6">
-                EstheWay olarak gizliliğinize saygı duyuyor ve bizimle paylaştığınız kişisel bilgilerin korunmasına büyük önem veriyoruz.
+                RevissaWay olarak gizliliğinize saygı duyuyor ve bizimle paylaştığınız kişisel bilgilerin korunmasına büyük önem veriyoruz.
               </p>
 
               <h3 className="text-xl font-semibold text-[#9B7E3E] mt-8 mb-3">
@@ -184,7 +184,7 @@ export default function PrivacyPolicyPage() {
         {/* Bottom Notice */}
         <div className="mt-12 bg-[#9B7E3E]/10 border border-[#9B7E3E]/30 rounded-xl p-6 text-center">
           <p className="text-gray-700 text-sm leading-relaxed">
-            <strong>Important:</strong> EstheWay is a coordination service and not a medical provider. 
+            <strong>Important:</strong> RevissaWay is a coordination service and not a medical provider. 
             We connect patients with licensed clinics in Türkiye. All medical procedures are performed by our partner clinics, 
             and they maintain their own privacy policies regarding medical data.
           </p>

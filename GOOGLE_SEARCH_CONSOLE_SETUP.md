@@ -1,6 +1,6 @@
 # Google Search Console & Analytics Setup Guide
 
-## 🎯 Complete Setup for EstheWay
+## 🎯 Complete Setup for RevissaWay
 
 This guide covers:
 1. ✅ Google Search Console setup
@@ -20,7 +20,7 @@ This guide covers:
 3. Click **"Create Property"**
 
 **Property Details:**
-- Property name: `EstheWay`
+- Property name: `RevissaWay`
 - Reporting time zone: `(GMT+11:00) Sydney`
 - Currency: `Australian Dollar (AUD)`
 
@@ -43,7 +43,7 @@ This guide covers:
 1. Choose platform: **Web**
 2. Enter details:
    - Website URL: `https://estheway.com`
-   - Stream name: `EstheWay Website`
+   - Stream name: `RevissaWay Website`
    - ☑ Enable enhanced measurement (recommended)
 
 3. Click **"Create stream"**
@@ -233,7 +233,7 @@ You'll see two options:
 4. Click **"Search Console Links"**
 5. Click **"Link"**
 6. Select your Search Console property: `estheway.com`
-7. Select your Web Stream: `EstheWay Website`
+7. Select your Web Stream: `RevissaWay Website`
 8. Click **"Next"**
 9. Review and click **"Submit"**
 

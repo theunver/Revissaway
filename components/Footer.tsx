@@ -56,7 +56,7 @@ export default function Footer() {
 
       {/* Logo + Copyright */}
       <div className="text-center mt-10">
-        <Image src="/logo.png" alt="EstheWay" width={120} height={60} className="mx-auto mb-3" />
+        <Image src="/logo.png" alt="RevissaWay" width={120} height={60} className="mx-auto mb-3" />
         <p className="text-xs text-gray-600 mt-4">{t('footer.copyright')}</p>
         
         {/* Legal Links */}
@@ -74,10 +74,17 @@ export default function Footer() {
           >
             Terms of Use
           </a>
+          <span className="text-xs text-gray-400">|</span>
+          <a 
+            href="/about" 
+            className="text-xs text-[#a58a58] hover:underline transition-colors"
+          >
+            About RevissaWay
+          </a>
         </div>
         
         <p className="text-xs text-gray-500 mt-3">
-          EstheWay is not a medical provider. It connects patients with accredited clinics in Türkiye. 
+          RevissaWay is not a medical provider. It connects patients with accredited clinics in Türkiye. 
           All medical procedures are performed by licensed partner clinics.
         </p>
       </div>

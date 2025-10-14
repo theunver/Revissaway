@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: https://estheway.com/sitemap.xml
+
+# Host
+Host: https://estheway.vercel.app
+
+# Sitemaps
+Sitemap: https://estheway.vercel.app/sitemap.xml

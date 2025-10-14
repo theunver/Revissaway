@@ -1,4 +1,4 @@
-# EstheWay - Medical Tourism Landing Page
+# RevissaWay - Medical Tourism Landing Page
 
 Modern dark-themed professional landing page for health tourism from Australia to Turkey with video hero background and gold accents.
 
@@ -72,7 +72,7 @@ Deploy the project to Vercel using the Vercel CLI or by connecting your GitHub r
 
 #### Header
 - **Fixed Navigation Bar** (Black background with gold accents)
-  - Left: EstheWay logo
+  - Left: RevissaWay logo
   - Center: Menu items (Home, Services, About, Blog, Contact)
   - Right: "Free Consultation" CTA button (Gold)
   - Mobile: Hamburger menu with slide-in panel
@@ -220,4 +220,4 @@ The dark theme with gold accents creates a premium, professional appearance suit
 
 ## License
 
-© 2025 EstheWay. All rights reserved.
+© 2025 RevissaWay. All rights reserved.

@@ -2,7 +2,7 @@
 
 ## 🎯 Overview
 
-Your EstheWay site now tracks WhatsApp button clicks with Meta Pixel's `Contact` event, specifically tagged with `method: 'WhatsApp'` for better campaign optimization.
+Your RevissaWay site now tracks WhatsApp button clicks with Meta Pixel's `Contact` event, specifically tagged with `method: 'WhatsApp'` for better campaign optimization.
 
 ---
 

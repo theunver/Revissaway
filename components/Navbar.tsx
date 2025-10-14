@@ -2,32 +2,31 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, languageOptions } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  const { language, setLanguage, t, isLoading, isTranslating } = useLanguage();
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md h-16">
-      <div className="container mx-auto px-6 h-full">
-        <div className="flex justify-between items-center h-full">
-          {/* Logo - Left */}
-          <a href="/" className="flex items-center">
-            <Image 
-              src="/logo.png" 
-              alt="EstheWay Logo" 
-              width={150}
-              height={75}
-              style={{ height: '150px', marginTop: '20px' }}
-              className="w-auto object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
-              priority
-            />
-          </a>
-          
-          {/* Center Menu - Desktop Only */}
-          <div className="hidden md:flex items-center space-x-6">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md h-[55px]">
+      <div className="flex items-center justify-between h-full px-8 max-w-[1920px] mx-auto">
+        {/* Logo - Left */}
+        <a href="/" className="flex items-center translate-y-2">
+          <Image 
+            src="/logo.png" 
+            alt="RevissaWay Logo" 
+            width={350}
+            height={350}
+            className="w-auto max-h-[70px] md:max-h-[90px] object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
+            priority
+          />
+        </a>
+
+        {/* Center Menu - Desktop Only */}
+        <div className="hidden md:flex items-center justify-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
             <a href="/#home" className="text-white hover:text-[#B8965A] transition-colors duration-200">
               {t('nav.home')}
             </a>
@@ -102,28 +101,75 @@ export default function Navbar() {
               {t('nav.contact')}
             </a>
           </div>
-          
-          {/* Right Side Buttons */}
-          <div className="flex items-center gap-3">
-            {/* Language Toggle */}
-            <button
-              onClick={() => setLanguage(language === 'en' ? 'tr' : 'en')}
-              className="flex items-center gap-2 text-white hover:text-[#B8965A] transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-white/10"
-              aria-label="Switch Language"
+
+        {/* Right Side Buttons */}
+        <div className="flex items-center gap-3">
+            {/* Language Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setIsLanguageOpen(true)}
+              onMouseLeave={() => setIsLanguageOpen(false)}
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-              </svg>
-              <span className="font-medium text-sm">{language.toUpperCase()}</span>
-            </button>
+              <button
+                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                className="flex items-center gap-1 text-white hover:text-[#B8965A] transition-colors duration-200 px-2 py-2 rounded-lg hover:bg-white/10"
+                aria-label="Switch Language"
+                disabled={isTranslating}
+              >
+                {(isLoading || isTranslating) ? (
+                  <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                ) : (
+                  <span className="text-lg">{languageOptions.find(l => l.code === language)?.flag || '🌐'}</span>
+                )}
+                <span className="font-medium text-sm">{language.toUpperCase()}</span>
+                <svg 
+                  className={`w-4 h-4 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {/* Language Dropdown Menu */}
+              <div
+                className={`absolute right-0 mt-2 w-48 bg-black/95 backdrop-blur-md text-white rounded-lg shadow-xl overflow-hidden transition-all duration-200 max-h-80 overflow-y-auto ${
+                  isLanguageOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+                }`}
+              >
+                {languageOptions.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setLanguage(lang.code as any);
+                      setIsLanguageOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-3 hover:bg-[#9B7E3E] transition-colors duration-200 border-b border-gray-700 last:border-b-0 flex items-center gap-3 ${
+                      language === lang.code ? 'bg-[#9B7E3E]/50' : ''
+                    }`}
+                  >
+                    <span className="text-xl">{lang.flag}</span>
+                    <span className="text-sm">{lang.label}</span>
+                    {language === lang.code && (
+                      <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
 
             <a 
               href="/#contact"
-              className="bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 font-semibold text-sm md:text-base"
+              className="bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-3 py-2 rounded-lg shadow-md transition-all duration-300 font-semibold text-sm whitespace-nowrap"
             >
               {t('nav.consultation')}
             </a>
-          </div>
         </div>
       </div>
     </nav>

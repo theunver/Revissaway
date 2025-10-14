@@ -1,4 +1,4 @@
-# EstheWay Deployment Guide
+# RevissaWay Deployment Guide
 
 ## 🚀 Vercel Deployment (Sydney Region)
 
@@ -14,7 +14,7 @@
 ```bash
 git init
 git add .
-git commit -m "Initial commit - EstheWay"
+git commit -m "Initial commit - RevissaWay"
 git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/estheway.git
 git push -u origin main
