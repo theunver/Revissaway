@@ -55,8 +55,8 @@ export default function CosmeticSurgeryPage() {
               <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-br from-[#fffaf3] to-[#f8f5f0] rounded-3xl rotate-2" />
               <div className="relative">
                 <img
-                  src="/images/hair-transplant-section.jpg"
-                  alt="Hair Transplant in Turkey - Personalized and Painless Results"
+                  src="/images/foto002.png"
+                  alt="Aesthetic surgery facilities in Turkey"
                   className="w-full h-[380px] sm:h-[460px] lg:h-[520px] object-cover rounded-xl shadow-md"
                   loading="lazy"
                 />
