@@ -313,8 +313,8 @@ export default function HairTransplantPage() {
               {/* Image Container */}
               <div className="relative">
                 <img
-                  src="/images/TDF-technique.jpg"
-                  alt="Personalized Hair Transplant Experience in Turkey - Private Hospital"
+                  src="/images/foto001.png"
+                  alt="Modern hair transplant facilities in Turkey"
                   className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover rounded-xl shadow-md"
                   loading="lazy"
                 />
