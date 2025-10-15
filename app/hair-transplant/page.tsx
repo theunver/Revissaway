@@ -182,47 +182,91 @@ export default function HairTransplantPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Procedure Video 1 */}
-          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div className="relative group rounded-xl overflow-hidden flex items-center justify-center bg-black shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
-              src="/videos/hairreels1.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
-              controls 
-              loop 
+              src="/videos/hairreels1.mp4"
+              className="object-contain w-full h-[320px] md:h-[380px] lg:h-[420px]"
+              autoPlay
+              loop
+              muted
               playsInline
-            />
+            ></video>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <video 
+                src="/videos/hairreels1.mp4"
+                className="object-contain w-full h-[320px] md:h-[380px] lg:h-[420px]"
+                controls
+                loop
+                muted
+                playsInline
+              ></video>
+            </div>
           </div>
 
           {/* Procedure Video 2 */}
-          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div className="relative group rounded-xl overflow-hidden flex items-center justify-center bg-black shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
-              src="/videos/hairreels2.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
-              controls 
-              loop 
+              src="/videos/hairreels2.mp4"
+              className="object-contain w-full h-[320px] md:h-[380px] lg:h-[420px]"
+              autoPlay
+              loop
+              muted
               playsInline
-            />
+            ></video>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <video 
+                src="/videos/hairreels2.mp4"
+                className="object-contain w-full h-[320px] md:h-[380px] lg:h-[420px]"
+                controls
+                loop
+                muted
+                playsInline
+              ></video>
+            </div>
           </div>
 
           {/* Procedure Video 3 */}
-          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div className="relative group rounded-xl overflow-hidden flex items-center justify-center bg-black shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
-              src="/videos/hairreels3.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
-              controls 
-              loop 
+              src="/videos/hairreels3.mp4"
+              className="object-contain w-full h-[320px] md:h-[380px] lg:h-[420px]"
+              autoPlay
+              loop
+              muted
               playsInline
-            />
+            ></video>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <video 
+                src="/videos/hairreels3.mp4"
+                className="object-contain w-full h-[320px] md:h-[380px] lg:h-[420px]"
+                controls
+                loop
+                muted
+                playsInline
+              ></video>
+            </div>
           </div>
 
           {/* Procedure Video 4 */}
-          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div className="relative group rounded-xl overflow-hidden flex items-center justify-center bg-black shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
-              src="/videos/hairreels4.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
-              controls 
-              loop 
+              src="/videos/hairreels4.mp4"
+              className="object-contain w-full h-[320px] md:h-[380px] lg:h-[420px]"
+              autoPlay
+              loop
+              muted
               playsInline
-            />
+            ></video>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <video 
+                src="/videos/hairreels4.mp4"
+                className="object-contain w-full h-[320px] md:h-[380px] lg:h-[420px]"
+                controls
+                loop
+                muted
+                playsInline
+              ></video>
+            </div>
           </div>
         </div>
         </div>
