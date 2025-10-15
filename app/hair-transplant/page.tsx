@@ -483,10 +483,9 @@ export default function HairTransplantPage() {
           <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
             <video 
               src="/videos/hairreels1.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl"
-              autoPlay 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
+              controls 
               loop 
-              muted 
               playsInline
             />
           </div>
@@ -495,10 +494,9 @@ export default function HairTransplantPage() {
           <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
             <video 
               src="/videos/hairreels2.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl"
-              autoPlay 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
+              controls 
               loop 
-              muted 
               playsInline
             />
           </div>
@@ -507,10 +505,9 @@ export default function HairTransplantPage() {
           <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
             <video 
               src="/videos/hairreels3.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl"
-              autoPlay 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
+              controls 
               loop 
-              muted 
               playsInline
             />
           </div>
@@ -519,10 +516,9 @@ export default function HairTransplantPage() {
           <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
             <video 
               src="/videos/hairreels4.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl"
-              autoPlay 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
+              controls 
               loop 
-              muted 
               playsInline
             />
           </div>
