@@ -54,7 +54,7 @@ export default function CosmeticSurgeryPage() {
           {/* Procedure Video 1 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
-              src="/videos/esthetic1.mp4"
+              src="/videos/surgery1.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
@@ -67,7 +67,7 @@ export default function CosmeticSurgeryPage() {
           {/* Procedure Video 2 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
-              src="/videos/esthetic2.mp4"
+              src="/videos/surgery2.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
@@ -80,7 +80,7 @@ export default function CosmeticSurgeryPage() {
           {/* Procedure Video 3 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
-              src="/videos/esthetic3.mp4"
+              src="/videos/surgery3.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
@@ -93,7 +93,7 @@ export default function CosmeticSurgeryPage() {
           {/* Procedure Video 4 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
-              src="/videos/esthetic4.mp4"
+              src="/videos/surgery4.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
