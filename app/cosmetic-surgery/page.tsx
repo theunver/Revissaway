@@ -61,6 +61,8 @@ export default function CosmeticSurgeryPage() {
               muted
               playsInline
               controls
+              preload="metadata"
+              loading="lazy"
             />
           </div>
 
@@ -74,6 +76,8 @@ export default function CosmeticSurgeryPage() {
               muted
               playsInline
               controls
+              preload="metadata"
+              loading="lazy"
             />
           </div>
 
@@ -87,6 +91,8 @@ export default function CosmeticSurgeryPage() {
               muted
               playsInline
               controls
+              preload="metadata"
+              loading="lazy"
             />
           </div>
 
@@ -100,6 +106,8 @@ export default function CosmeticSurgeryPage() {
               muted
               playsInline
               controls
+              preload="metadata"
+              loading="lazy"
             />
           </div>
         </div>

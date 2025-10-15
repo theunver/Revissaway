@@ -191,6 +191,8 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
+              preload="metadata"
+              loading="lazy"
             />
           </div>
 
@@ -204,6 +206,8 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
+              preload="metadata"
+              loading="lazy"
             />
           </div>
 
@@ -217,6 +221,8 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
+              preload="metadata"
+              loading="lazy"
             />
           </div>
 
@@ -230,6 +236,8 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
+              preload="metadata"
+              loading="lazy"
             />
           </div>
         </div>
