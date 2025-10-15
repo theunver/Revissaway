@@ -480,72 +480,52 @@ export default function HairTransplantPage() {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Procedure Video 1 */}
-          <a
-            href="https://www.instagram.com/p/DA6FqqVKr_X/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300"
-          >
-            <div className="relative h-[320px] md:h-[380px] lg:h-[420px]">
-              <img 
-                src="/images/1.png" 
-                alt="Hair Transplant Procedure Video 1" 
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-          </a>
+          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <video 
+              src="/videos/hairreels1.mp4" 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl"
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            />
+          </div>
 
           {/* Procedure Video 2 */}
-          <a
-            href="https://www.instagram.com/p/DJwzsTkoouU/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300"
-          >
-            <div className="relative h-[320px] md:h-[380px] lg:h-[420px]">
-              <img 
-                src="/images/2.png" 
-                alt="Hair Transplant Procedure Video 2" 
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-          </a>
+          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <video 
+              src="/videos/hairreels2.mp4" 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl"
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            />
+          </div>
 
           {/* Procedure Video 3 */}
-          <a
-            href="https://www.instagram.com/p/DEXowaZK5cZ/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300"
-          >
-            <div className="relative h-[320px] md:h-[380px] lg:h-[420px]">
-              <img 
-                src="/images/3.png" 
-                alt="Hair Transplant Procedure Video 3" 
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-          </a>
+          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <video 
+              src="/videos/hairreels3.mp4" 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl"
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            />
+          </div>
 
           {/* Procedure Video 4 */}
-          <a
-            href="https://www.instagram.com/p/DH-2Pc6oOhi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300"
-          >
-            <div className="relative h-[320px] md:h-[380px] lg:h-[420px]">
-              <img 
-                src="/images/4.png" 
-                alt="Hair Transplant Procedure Video 4" 
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-          </a>
+          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <video 
+              src="/videos/hairreels4.mp4" 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl"
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+            />
+          </div>
         </div>
         </div>
       </section>
