@@ -474,71 +474,79 @@ export default function HairTransplantPage() {
         </div>
       </section>
 
-      {/* Instagram Posts Section */}
-      <section className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+      {/* Performed Procedures Section */}
+      <section className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 mt-20 mb-16">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-8 md:mb-12 text-gray-900">
-            Latest Posts
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Performed Procedures
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Instagram Post 1 */}
+          {/* Procedure Video 1 */}
           <a
             href="https://www.instagram.com/p/DA6FqqVKr_X/"
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square rounded-lg shadow-md overflow-hidden group"
+            className="rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300"
           >
-            <img 
-              src="/images/1.png" 
-              alt="Instagram Post 1" 
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-            />
+            <div className="relative h-[320px] md:h-[380px] lg:h-[420px]">
+              <img 
+                src="/images/1.png" 
+                alt="Hair Transplant Procedure Video 1" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </a>
 
-          {/* Instagram Post 2 */}
+          {/* Procedure Video 2 */}
           <a
             href="https://www.instagram.com/p/DJwzsTkoouU/"
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square rounded-lg shadow-md overflow-hidden group"
+            className="rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300"
           >
-            <img 
-              src="/images/2.png" 
-              alt="Instagram Post 2" 
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-            />
+            <div className="relative h-[320px] md:h-[380px] lg:h-[420px]">
+              <img 
+                src="/images/2.png" 
+                alt="Hair Transplant Procedure Video 2" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </a>
 
-          {/* Instagram Post 3 */}
+          {/* Procedure Video 3 */}
           <a
             href="https://www.instagram.com/p/DEXowaZK5cZ/"
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square rounded-lg shadow-md overflow-hidden group"
+            className="rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300"
           >
-            <img 
-              src="/images/3.png" 
-              alt="Instagram Post 3" 
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-            />
+            <div className="relative h-[320px] md:h-[380px] lg:h-[420px]">
+              <img 
+                src="/images/3.png" 
+                alt="Hair Transplant Procedure Video 3" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </a>
 
-          {/* Instagram Post 4 */}
+          {/* Procedure Video 4 */}
           <a
             href="https://www.instagram.com/p/DH-2Pc6oOhi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="aspect-square rounded-lg shadow-md overflow-hidden group"
+            className="rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-300"
           >
-            <img 
-              src="/images/4.png" 
-              alt="Instagram Post 4" 
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              loading="lazy"
-            />
+            <div className="relative h-[320px] md:h-[380px] lg:h-[420px]">
+              <img 
+                src="/images/4.png" 
+                alt="Hair Transplant Procedure Video 4" 
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </a>
         </div>
         </div>
