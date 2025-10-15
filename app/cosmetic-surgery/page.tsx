@@ -57,7 +57,7 @@ export default function CosmeticSurgeryPage() {
                 <img
                   src="/images/foto002.png"
                   alt="Aesthetic surgery facilities in Turkey"
-                  className="w-full h-[380px] sm:h-[460px] lg:h-[520px] object-cover rounded-xl shadow-md"
+                  className="w-full h-[480px] sm:h-[560px] md:h-[620px] lg:h-[680px] object-cover rounded-xl shadow-md"
                   loading="lazy"
                 />
               </div>
