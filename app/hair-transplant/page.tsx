@@ -15,17 +15,6 @@ export default function HairTransplantPage() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const handleFullscreenChange = (e: React.SyntheticEvent<HTMLVideoElement>) => {
-    const video = e.currentTarget;
-    if (document.fullscreenElement) {
-      video.classList.remove('object-cover');
-      video.classList.add('object-contain', 'bg-black');
-    } else {
-      video.classList.remove('object-contain', 'bg-black');
-      video.classList.add('object-cover');
-    }
-  };
-
   const faqs = [
     {
       question: "How long does the procedure take?",
@@ -202,7 +191,6 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
-              onFullscreenChange={handleFullscreenChange}
             />
           </div>
 
@@ -216,7 +204,6 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
-              onFullscreenChange={handleFullscreenChange}
             />
           </div>
 
@@ -230,7 +217,6 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
-              onFullscreenChange={handleFullscreenChange}
             />
           </div>
 
@@ -244,7 +230,6 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
-              onFullscreenChange={handleFullscreenChange}
             />
           </div>
         </div>
