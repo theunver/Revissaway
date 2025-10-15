@@ -159,37 +159,37 @@ export default function DentalAestheticsPage() {
 
             {/* Right: Auto-Scrolling Images */}
             <div className="md:w-1/2 overflow-hidden rounded-xl shadow-lg bg-white p-2">
-              <div className="flex gap-4 animate-[scroll_20s_linear_infinite]">
+              <div className="flex gap-4 animate-[scroll_15s_linear_infinite]">
                 <img 
                   src="/images/Dental Implants.jpg" 
                   alt="Dental Implants Results" 
-                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
                   src="/images/Dental Veneers.jpg" 
                   alt="Dental Veneers Results" 
-                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
                   src="/images/Hollywood Smile.jpg" 
                   alt="Hollywood Smile Results" 
-                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
                   src="/images/Dental Crowns.jpg" 
                   alt="Dental Crowns Results" 
-                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 {/* Duplicate for seamless loop */}
                 <img 
                   src="/images/Dental Implants.jpg" 
                   alt="Dental Implants Results" 
-                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
                   src="/images/Dental Veneers.jpg" 
                   alt="Dental Veneers Results" 
-                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
               </div>
             </div>
