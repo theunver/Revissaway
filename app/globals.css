@@ -84,3 +84,8 @@ video {
   }
 }
 
+/* Animation pause utility */
+.animation-paused {
+  animation-play-state: paused !important;
+}
+
