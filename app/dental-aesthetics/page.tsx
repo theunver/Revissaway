@@ -161,34 +161,34 @@ export default function DentalAestheticsPage() {
             <div className="md:w-1/2 overflow-x-auto overflow-y-hidden rounded-xl shadow-lg bg-white p-2 scroll-smooth [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-[#9B7E3E] [&::-webkit-scrollbar-thumb]:rounded-full hover:[&>div]:animation-paused">
               <div className="flex gap-4 animate-[scroll_15s_linear_infinite]">
                 <img 
-                  src="/images/Dental Implants.jpg" 
-                  alt="Dental Implants Results" 
+                  src="/images/dental001.jpg" 
+                  alt="Dental Aesthetics Before & After 1" 
                   className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
-                  src="/images/Dental Veneers.jpg" 
-                  alt="Dental Veneers Results" 
+                  src="/images/dental002.jpg" 
+                  alt="Dental Aesthetics Before & After 2" 
                   className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
-                  src="/images/Hollywood Smile.jpg" 
-                  alt="Hollywood Smile Results" 
+                  src="/images/dental003.jpg" 
+                  alt="Dental Aesthetics Before & After 3" 
                   className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
-                  src="/images/Dental Crowns.jpg" 
-                  alt="Dental Crowns Results" 
+                  src="/images/dental004.jpg" 
+                  alt="Dental Aesthetics Before & After 4" 
                   className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 {/* Duplicate for seamless loop */}
                 <img 
-                  src="/images/Dental Implants.jpg" 
-                  alt="Dental Implants Results" 
+                  src="/images/dental001.jpg" 
+                  alt="Dental Aesthetics Before & After 1" 
                   className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
-                  src="/images/Dental Veneers.jpg" 
-                  alt="Dental Veneers Results" 
+                  src="/images/dental002.jpg" 
+                  alt="Dental Aesthetics Before & After 2" 
                   className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
                 />
               </div>
