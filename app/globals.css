@@ -74,3 +74,13 @@ video {
   animation: slideRight 20s linear infinite;
 }
 
+/* Horizontal scroll animation for dental carousel */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+

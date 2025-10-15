@@ -141,48 +141,58 @@ export default function DentalAestheticsPage() {
         </div>
       </section>
 
-      {/* 3️⃣ Complementary Details Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
-        <div className="max-w-6xl mx-auto px-6 text-center mb-10">
-          <h2 className="text-3xl font-bold mb-4 text-gray-900">Complementary Details</h2>
-          <p className="text-lg text-gray-700">Visuals & Marketing Assets from our Dental Aesthetic Procedures</p>
-        </div>
+      {/* Dental Aesthetics Before & After Section */}
+      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-16 mt-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            {/* Left: Text Content */}
+            <div className="md:w-1/2 text-left space-y-6">
+              <h2 className="text-3xl font-bold text-gray-900">Dental Aesthetics Before & After</h2>
+              <p className="text-gray-700 leading-relaxed text-lg">
+                Discover the transformation achieved through our partner clinics' dental aesthetic procedures.
+                Each treatment is designed to enhance both function and appearance, delivering healthy and confident smiles.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                From dental implants to Hollywood smiles, our accredited partners use state-of-the-art technology and proven techniques to create natural-looking, long-lasting results.
+              </p>
+            </div>
 
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-            <img 
-              src="/images/Dental Implants.jpg" 
-              alt="Dental Implants Visual" 
-              className="rounded-lg mb-3 object-cover w-full h-44" 
-            />
-            <p className="text-gray-700">Smiling couple with dental implants</p>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-            <img 
-              src="/images/Dental Crowns.jpg" 
-              alt="Dental Crowns Visual" 
-              className="rounded-lg mb-3 object-cover w-full h-44" 
-            />
-            <p className="text-gray-700">Woman choosing tooth shade for dental crowns</p>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-            <img 
-              src="/images/Dental Veneers.jpg" 
-              alt="Dental Veneers Visual" 
-              className="rounded-lg mb-3 object-cover w-full h-44" 
-            />
-            <p className="text-gray-700">Woman selecting tooth shade for dental veneers</p>
-          </div>
-
-          <div className="bg-white rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow">
-            <img 
-              src="/images/Hollywood Smile.jpg" 
-              alt="Hollywood Smile Visual" 
-              className="rounded-lg mb-3 object-cover w-full h-44" 
-            />
-            <p className="text-gray-700">Woman's perfect smile from Hollywood Smile treatment</p>
+            {/* Right: Auto-Scrolling Images */}
+            <div className="md:w-1/2 overflow-hidden rounded-xl shadow-lg bg-white p-2">
+              <div className="flex gap-4 animate-[scroll_20s_linear_infinite]">
+                <img 
+                  src="/images/Dental Implants.jpg" 
+                  alt="Dental Implants Results" 
+                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                />
+                <img 
+                  src="/images/Dental Veneers.jpg" 
+                  alt="Dental Veneers Results" 
+                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                />
+                <img 
+                  src="/images/Hollywood Smile.jpg" 
+                  alt="Hollywood Smile Results" 
+                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                />
+                <img 
+                  src="/images/Dental Crowns.jpg" 
+                  alt="Dental Crowns Results" 
+                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                />
+                {/* Duplicate for seamless loop */}
+                <img 
+                  src="/images/Dental Implants.jpg" 
+                  alt="Dental Implants Results" 
+                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                />
+                <img 
+                  src="/images/Dental Veneers.jpg" 
+                  alt="Dental Veneers Results" 
+                  className="w-[320px] h-[240px] object-cover rounded-lg flex-shrink-0" 
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
