@@ -174,6 +174,60 @@ export default function HairTransplantPage() {
         </div>
       </section>
 
+      {/* Performed Procedures Section */}
+      <section className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 mt-20 mb-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Performed Procedures
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Procedure Video 1 */}
+          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <video 
+              src="/videos/hairreels1.mp4" 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
+              controls 
+              loop 
+              playsInline
+            />
+          </div>
+
+          {/* Procedure Video 2 */}
+          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <video 
+              src="/videos/hairreels2.mp4" 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
+              controls 
+              loop 
+              playsInline
+            />
+          </div>
+
+          {/* Procedure Video 3 */}
+          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <video 
+              src="/videos/hairreels3.mp4" 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
+              controls 
+              loop 
+              playsInline
+            />
+          </div>
+
+          {/* Procedure Video 4 */}
+          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
+            <video 
+              src="/videos/hairreels4.mp4" 
+              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
+              controls 
+              loop 
+              playsInline
+            />
+          </div>
+        </div>
+        </div>
+      </section>
+
       {/* Methods Section - Two Column Layout */}
       <section className="bg-gradient-to-b from-[#FFF8DC] to-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
         <div className="max-w-7xl mx-auto">
@@ -468,60 +522,6 @@ export default function HairTransplantPage() {
             </div>
           </div>
 
-        </div>
-        </div>
-      </section>
-
-      {/* Performed Procedures Section */}
-      <section className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 mt-20 mb-16">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Performed Procedures
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Procedure Video 1 */}
-          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <video 
-              src="/videos/hairreels1.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
-              controls 
-              loop 
-              playsInline
-            />
-          </div>
-
-          {/* Procedure Video 2 */}
-          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <video 
-              src="/videos/hairreels2.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
-              controls 
-              loop 
-              playsInline
-            />
-          </div>
-
-          {/* Procedure Video 3 */}
-          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <video 
-              src="/videos/hairreels3.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
-              controls 
-              loop 
-              playsInline
-            />
-          </div>
-
-          {/* Procedure Video 4 */}
-          <div className="rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300">
-            <video 
-              src="/videos/hairreels4.mp4" 
-              className="w-full h-[320px] md:h-[380px] lg:h-[420px] object-cover rounded-xl cursor-pointer"
-              controls 
-              loop 
-              playsInline
-            />
-          </div>
         </div>
         </div>
       </section>
