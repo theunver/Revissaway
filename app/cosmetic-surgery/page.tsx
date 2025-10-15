@@ -44,6 +44,68 @@ export default function CosmeticSurgeryPage() {
         </div>
       </section>
 
+      {/* Inside Our Partner Clinics Section */}
+      <section className="bg-gradient-to-b from-[#fffaf3] to-[#f8f5f0] px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Inside Our Partner Clinics
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Procedure Video 1 */}
+          <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
+            <video 
+              src="/videos/esthetic1.mp4"
+              className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            />
+          </div>
+
+          {/* Procedure Video 2 */}
+          <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
+            <video 
+              src="/videos/esthetic2.mp4"
+              className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            />
+          </div>
+
+          {/* Procedure Video 3 */}
+          <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
+            <video 
+              src="/videos/esthetic3.mp4"
+              className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            />
+          </div>
+
+          {/* Procedure Video 4 */}
+          <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
+            <video 
+              src="/videos/esthetic4.mp4"
+              className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            />
+          </div>
+        </div>
+        </div>
+      </section>
+
       {/* Hair Transplant Highlight Section (below banner) */}
       <section className="bg-gradient-to-r from-[#fffaf3] to-[#f8f5f0] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
