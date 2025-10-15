@@ -175,7 +175,7 @@ export default function HairTransplantPage() {
       </section>
 
       {/* Performed Procedures Section */}
-      <section className="bg-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16 mt-20 mb-16">
+      <section className="bg-gradient-to-b from-[#fffaf3] to-[#f8f5f0] px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Performed Procedures
@@ -237,7 +237,7 @@ export default function HairTransplantPage() {
       </section>
 
       {/* Methods Section - Two Column Layout */}
-      <section className="bg-gradient-to-b from-[#FFF8DC] to-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+      <section className="bg-gradient-to-b from-[#f8f5f0] to-[#FFF8DC] px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
         <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Left Column - Method Cards */}
@@ -337,7 +337,7 @@ export default function HairTransplantPage() {
       </section>
 
       {/* Partner Clinics Difference Section */}
-      <section className="bg-gradient-to-b from-white to-[#FFF8DC] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24">
+      <section className="bg-gradient-to-b from-[#FFF8DC] to-[#fffaf3] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
@@ -385,7 +385,7 @@ export default function HairTransplantPage() {
       </section>
 
       {/* FAQ and Information Section */}
-      <section className="bg-gradient-to-b from-[#FFF8DC] to-white px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
+      <section className="bg-gradient-to-b from-[#fffaf3] to-[#f8f5f0] px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
         <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Left Column - FAQ */}
