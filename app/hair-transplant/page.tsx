@@ -285,23 +285,21 @@ export default function HairTransplantPage() {
               </h2>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                A truly <strong className="text-gray-900 font-semibold">personalized hair transplant experience</strong> is at the heart of our philosophy.  
-                Each patient receives <strong className="text-gray-900 font-semibold">exclusive one-to-one care</strong>, ensuring comfort, safety, and natural results throughout every step — from consultation to aftercare.
+                At the heart of RevissaWay's philosophy lies a truly personalized hair transplant experience.
+                Each patient receives one-to-one care, ensuring comfort, safety, and natural results at every step — from consultation to post-treatment follow-up.
               </p>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                We accept only <strong className="text-gray-900 font-semibold">1–2 patients per day</strong>, allowing our medical team to focus completely on individual needs and maintain the highest standard of service.  
-                Every detail is thoughtfully arranged — even small touches such as providing <strong className="text-gray-900 font-semibold">portable Wi-Fi devices</strong> so patients always feel connected, safe, and comfortable during their stay in Turkey.
+                Our partner clinics accept only 1–2 patients per day, allowing the medical team to focus entirely on individual needs and maintain the highest standards of service. Every detail is carefully planned to ensure patients feel safe, connected, and comfortable during their stay in Türkiye — even small touches like portable Wi-Fi devices enhance the overall experience.
               </p>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                One of the most valued advantages is our <strong className="text-gray-900 font-semibold">complimentary sedation hair transplant service</strong>, which ensures a completely painless and relaxed procedure.  
-                Sedation allows patients to enjoy a stress-free experience while achieving <strong className="text-gray-900 font-semibold">high graft survival rates</strong> and <strong className="text-gray-900 font-semibold">natural density</strong>.
+                One of our key advantages is the complimentary sedation hair transplant service, providing a completely pain-free and relaxing procedure while achieving high graft survival rates and natural density.
               </p>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                All procedures are performed in a <strong className="text-gray-900 font-semibold">fully equipped private hospital</strong>, where hygiene, safety, and professionalism meet international medical standards.  
-                This approach elevates the <strong className="text-gray-900 font-semibold">hair transplant experience in Turkey</strong>, combining world-class expertise with genuine personal care — for results that look natural and last a lifetime.
+                All procedures are performed in fully equipped private hospitals that meet international medical standards.
+                RevissaWay combines world-class medical expertise with genuine personalized care, ensuring safe, natural, and long-lasting results for every patient.
               </p>
             </div>
 
