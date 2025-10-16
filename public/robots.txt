@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://revissaway.vercel.app
+Host: https://www.revissaway.com.au
 
 # Sitemaps
-Sitemap: https://revissaway.vercel.app/sitemap.xml
+Sitemap: https://www.revissaway.com.au/sitemap.xml
