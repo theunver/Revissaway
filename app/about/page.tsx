@@ -253,42 +253,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Key Advantages Grid - Moved from Why Turkey */}
-      <section className="w-full bg-gradient-to-b from-white to-[#FFF8DC] py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            <div className="bg-white border border-[#9B7E3E]/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
-              <div className="text-5xl mb-4">💰</div>
-              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">
-                Cost Advantage
-              </h3>
-              <p className="text-gray-700">
-                Save up to 70% compared to Australian and New Zealand prices while receiving the same quality of care from internationally trained specialists.
-              </p>
-            </div>
-
-            <div className="bg-white border border-[#9B7E3E]/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
-              <div className="text-5xl mb-4">🏥</div>
-              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">
-                JCI Accreditation
-              </h3>
-              <p className="text-gray-700">
-                All partner clinics are internationally accredited by Joint Commission International (JCI) and meet the highest global healthcare standards.
-              </p>
-            </div>
-
-            <div className="bg-white border border-[#9B7E3E]/30 rounded-2xl p-8 hover:shadow-xl transition-all duration-300">
-              <div className="text-5xl mb-4">👨‍⚕️</div>
-              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">
-                Expert Surgeons
-              </h3>
-              <p className="text-gray-700">
-                Turkish surgeons perform thousands of procedures annually, gaining unparalleled experience and expertise in aesthetic and reconstructive surgery.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
     </main>
   );
