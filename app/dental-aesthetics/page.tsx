@@ -114,6 +114,10 @@ export default function DentalAestheticsPage() {
             <video
               src="/videos/dental-collage.mp4"
               poster="/images/dental-placeholder.jpg"
+              autoPlay
+              muted
+              loop
+              playsInline
               controls
               preload="metadata"
               className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
