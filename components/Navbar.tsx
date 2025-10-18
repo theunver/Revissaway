@@ -8,6 +8,7 @@ import { useLanguage, languageOptions } from "@/contexts/LanguageContext";
 export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const { language, setLanguage, t, isLoading, isTranslating } = useLanguage();
 
@@ -212,7 +213,7 @@ export default function Navbar() {
       <div className="relative h-full flex flex-col items-center justify-center px-6 py-20">
         
         {/* Navigation Links */}
-        <nav className="flex flex-col items-center space-y-6 mb-12">
+        <nav className="flex flex-col items-center space-y-6 mb-12 w-full max-w-md">
           <Link 
             href="/#home" 
             onClick={() => setIsMobileMenuOpen(false)}
@@ -221,28 +222,72 @@ export default function Navbar() {
             {t('nav.home')}
           </Link>
           
-          <Link 
-            href="/hair-transplant" 
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
-          >
-            {t('services.hairTransplant')}
-          </Link>
+          {/* Services Dropdown */}
+          <div className="w-full">
+            <button
+              onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+              className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300 flex items-center justify-center gap-2 w-full"
+            >
+              {t('nav.services')}
+              <svg 
+                className={`w-5 h-5 transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Services Submenu */}
+            <div 
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                isMobileServicesOpen ? 'max-h-48 opacity-100 mt-4' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <div className="bg-[#111111] rounded-lg py-2 px-4 space-y-3">
+                <Link 
+                  href="/hair-transplant" 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsMobileServicesOpen(false);
+                  }}
+                  className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
+                >
+                  {t('services.hairTransplant')}
+                </Link>
+                
+                <Link 
+                  href="/dental-aesthetics" 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsMobileServicesOpen(false);
+                  }}
+                  className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
+                >
+                  {t('services.dentalAesthetics')}
+                </Link>
+                
+                <Link 
+                  href="/cosmetic-surgery" 
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    setIsMobileServicesOpen(false);
+                  }}
+                  className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
+                >
+                  {t('services.cosmeticSurgery')}
+                </Link>
+              </div>
+            </div>
+          </div>
           
           <Link 
-            href="/dental-aesthetics" 
+            href="/why-turkey" 
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
           >
-            {t('services.dentalAesthetics')}
-          </Link>
-          
-          <Link 
-            href="/cosmetic-surgery" 
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
-          >
-            {t('services.cosmeticSurgery')}
+            {t('nav.whyTurkey')}
           </Link>
           
           <Link 
@@ -266,7 +311,7 @@ export default function Navbar() {
         <Link
           href="/#contact"
           onClick={() => setIsMobileMenuOpen(false)}
-          className="bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-full shadow-lg transition-all duration-300 font-bold text-lg mb-8"
+          className="w-full max-w-md bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-full shadow-lg transition-all duration-300 font-bold text-lg mb-8 text-center"
         >
           {t('nav.consultation')}
         </Link>
