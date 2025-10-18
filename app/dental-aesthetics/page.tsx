@@ -45,18 +45,18 @@ export default function DentalAestheticsPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Inside Our Partner Clinics
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Procedure Video 1 */}
             <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
               <video 
                 src="/videos/dental-video1.mp4"
+                className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
                 autoPlay
-                muted
                 loop
+                muted
                 playsInline
                 controls
                 preload="metadata"
-                className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               />
             </div>
 
@@ -64,13 +64,13 @@ export default function DentalAestheticsPage() {
             <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
               <video 
                 src="/videos/dental-video2.mp4"
+                className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
                 autoPlay
-                muted
                 loop
+                muted
                 playsInline
                 controls
                 preload="metadata"
-                className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               />
             </div>
           </div>
