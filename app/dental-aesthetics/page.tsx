@@ -105,37 +105,28 @@ export default function DentalAestheticsPage() {
         </div>
       </section>
 
-      {/* How Our Partner Dental Clinics Stand Out */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-[#FAF6F1] rounded-3xl shadow-xl p-8 md:p-12 lg:p-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              {/* Left Column - Video */}
-              <div className="order-2 lg:order-1">
-                <div className="rounded-2xl overflow-hidden shadow-lg h-full min-h-[400px] flex items-center justify-center bg-gray-100">
-                  <video 
-                    src="/videos/dental-treatment.mp4"
-                    poster="/images/dental-placeholder.jpg"
-                    controls
-                    className="w-full h-full object-cover"
-                    preload="metadata"
-                  />
-                </div>
-              </div>
+      {/* Excellence in Dental Aesthetics - World-Class Medical Excellence Style */}
+      <section className="py-20 px-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
+          {/* Video */}
+          <div className="rounded-2xl overflow-hidden shadow-2xl animate-fadeIn">
+            <video
+              src="/videos/dental-highlight.mp4"
+              poster="/images/dental-placeholder.jpg"
+              controls
+              preload="metadata"
+              className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
+            />
+          </div>
 
-              {/* Right Column - Text Content */}
-              <div className="order-1 lg:order-2 py-6 lg:py-12">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                  How Our Partner Dental Clinics Stand Out
-                </h2>
-                <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-6">
-                  Our partner dental clinics offer state-of-the-art facilities and personalized care, ensuring each patient experiences comfort and precision.
-                </p>
-                <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-                  Whether for implants, veneers, or full-smile makeovers, RevissaWay clinics guarantee world-class results with safety and excellence at every step.
-                </p>
-              </div>
-            </div>
+          {/* Text Content */}
+          <div className="space-y-6">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Excellence in Dental Aesthetics
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              RevissaWay's partner dental clinics deliver advanced aesthetic dentistry solutions in fully equipped hospitals, combining medical precision with artistic design. Every treatment is carried out by accredited experts, ensuring long-lasting, natural, and confident smiles.
+            </p>
           </div>
         </div>
       </section>
