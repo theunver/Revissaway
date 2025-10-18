@@ -2,6 +2,7 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import Image from "next/image";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -34,21 +35,23 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
-                  1,500,000+
+                  <AnimatedCounter target={1500000} suffix="+" duration={2500} />
                 </div>
                 <p className="text-[#9B7E3E] font-semibold">
                   Medical Tourists Annually
                 </p>
               </div>
               <div>
-                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">JCI</div>
+                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
+                  <AnimatedCounter target={50} suffix="+" duration={2000} prefix="JCI " />
+                </div>
                 <p className="text-[#9B7E3E] font-semibold">
                   Accredited Hospitals
                 </p>
               </div>
               <div>
                 <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
-                  #1
+                  <span className="animate-pulse">#1</span>
                 </div>
                 <p className="text-[#9B7E3E] font-semibold">
                   Hair Transplant Destination
