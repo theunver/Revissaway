@@ -43,7 +43,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
-                  <AnimatedCounter target={50} suffix="+" duration={2000} prefix="JCI " />
+                  JCI
                 </div>
                 <p className="text-[#9B7E3E] font-semibold">
                   Accredited Hospitals
