@@ -45,63 +45,31 @@ export default function DentalAestheticsPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
             Inside Our Partner Clinics
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Procedure Video 1 */}
-          <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
-              src="/videos/dental-video1.mp4"
-              className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls
-              preload="metadata"
-            />
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
+            {/* Procedure Video 1 */}
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <video 
+                src="/videos/dental-video1.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
+            </div>
 
-          {/* Procedure Video 2 */}
-          <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
-              src="/videos/dental-video2.mp4"
-              className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls
-              preload="metadata"
-            />
+            {/* Procedure Video 2 */}
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <video 
+                src="/videos/dental-video2.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
+            </div>
           </div>
-
-          {/* Procedure Video 3 */}
-          <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
-              src="/videos/dental-video3.mp4"
-              className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls
-              preload="metadata"
-            />
-          </div>
-
-          {/* Procedure Video 4 */}
-          <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
-              src="/videos/dental-video4.mp4"
-              className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls
-              preload="metadata"
-            />
-          </div>
-        </div>
         </div>
       </section>
 
