@@ -21,7 +21,42 @@ export default function AboutPage() {
         />
         {/* Gradient overlay for better text visibility if needed */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
-        <div className="relative z-10"></div>
+        <div className="relative z-10">        </div>
+      </section>
+
+      {/* TÜRKIYE BY THE NUMBERS - Moved to top */}
+      <section className="w-full bg-gradient-to-b from-black to-[#1a1a1a] py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-r from-[#9B7E3E]/10 to-[#f5e9cc]/30 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+              Türkiye by the Numbers
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
+                  1,500,000+
+                </div>
+                <p className="text-gray-700">
+                  Medical Tourists Annually
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">JCI</div>
+                <p className="text-gray-700">
+                  Accredited Hospitals
+                </p>
+              </div>
+              <div>
+                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
+                  #1
+                </div>
+                <p className="text-gray-700">
+                  Hair Transplant Destination
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* COMPANY OVERVIEW */}
@@ -250,37 +285,6 @@ export default function AboutPage() {
               <p className="text-gray-700">
                 Turkish surgeons perform thousands of procedures annually, gaining unparalleled experience and expertise in aesthetic and reconstructive surgery.
               </p>
-            </div>
-          </div>
-
-          {/* Statistics Section - Moved from Why Turkey (3 items only) */}
-          <div className="bg-gradient-to-r from-[#9B7E3E]/10 to-[#f5e9cc]/30 rounded-2xl p-12">
-            <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-              Türkiye by the Numbers
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
-                  1,500,000+
-                </div>
-                <p className="text-gray-700">
-                  Medical Tourists Annually
-                </p>
-              </div>
-              <div>
-                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">JCI</div>
-                <p className="text-gray-700">
-                  Accredited Hospitals
-                </p>
-              </div>
-              <div>
-                <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
-                  #1
-                </div>
-                <p className="text-gray-700">
-                  Hair Transplant Destination
-                </p>
-              </div>
             </div>
           </div>
         </div>
