@@ -245,33 +245,33 @@ export default function DentalAestheticsPage() {
                 <img 
                   src="/images/dental001.jpg" 
                   alt="Dental Aesthetics Before & After 1" 
-                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[480px] h-[360px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
                   src="/images/dental002.jpg" 
                   alt="Dental Aesthetics Before & After 2" 
-                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[480px] h-[360px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
                   src="/images/dental003.jpg" 
                   alt="Dental Aesthetics Before & After 3" 
-                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[480px] h-[360px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
                   src="/images/dental004.jpg" 
                   alt="Dental Aesthetics Before & After 4" 
-                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[480px] h-[360px] object-cover rounded-lg flex-shrink-0" 
                 />
                 {/* Duplicate for seamless loop */}
                 <img 
                   src="/images/dental001.jpg" 
                   alt="Dental Aesthetics Before & After 1" 
-                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[480px] h-[360px] object-cover rounded-lg flex-shrink-0" 
                 />
                 <img 
                   src="/images/dental002.jpg" 
                   alt="Dental Aesthetics Before & After 2" 
-                  className="w-[380px] h-[280px] object-cover rounded-lg flex-shrink-0" 
+                  className="w-[480px] h-[360px] object-cover rounded-lg flex-shrink-0" 
                 />
               </div>
             </div>
