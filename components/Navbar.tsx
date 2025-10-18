@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage, languageOptions } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
@@ -10,20 +11,33 @@ export default function Navbar() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const { language, setLanguage, t, isLoading, isTranslating } = useLanguage();
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md h-[55px]">
-      <div className="flex items-center justify-between h-full px-8 max-w-[1920px] mx-auto">
-        {/* Logo - Left */}
-        <a href="/" className="flex items-center translate-y-2">
-          <Image 
-            src="/logo.png" 
-            alt="RevissaWay Logo" 
-            width={350}
-            height={350}
-            className="w-auto max-h-[95px] md:max-h-[115px] object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
-            priority
-          />
-        </a>
+    <>
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md h-[55px]">
+        <div className="flex items-center justify-between h-full px-4 md:px-8 max-w-[1920px] mx-auto">
+          {/* Logo - Centered on mobile, left on desktop */}
+          <a href="/" className="flex items-center translate-y-2 absolute left-1/2 -translate-x-1/2 md:relative md:left-0 md:translate-x-0">
+            <Image 
+              src="/logo.png" 
+              alt="RevissaWay Logo" 
+              width={350}
+              height={350}
+              className="w-auto max-h-[85px] md:max-h-[95px] lg:max-h-[115px] object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
+              priority
+            />
+          </a>
 
         {/* Center Menu - Desktop Only */}
         <div className="hidden md:flex items-center justify-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
@@ -102,8 +116,8 @@ export default function Navbar() {
             </a>
           </div>
 
-        {/* Right Side Buttons */}
-        <div className="flex items-center gap-3">
+        {/* Right Side Buttons - Desktop Only */}
+        <div className="hidden md:flex items-center gap-3">
             {/* Language Dropdown */}
             <div
               className="relative"
@@ -171,8 +185,117 @@ export default function Navbar() {
               {t('nav.consultation')}
             </a>
         </div>
+
+        {/* Hamburger Menu Button - Mobile Only */}
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+          aria-label="Toggle Menu"
+        >
+          <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+        </button>
       </div>
     </nav>
+
+    {/* Full-Screen Mobile Menu Overlay */}
+    <div
+      className={`fixed inset-0 z-40 md:hidden transition-all duration-500 ${
+        isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}
+    >
+      {/* Backdrop with blur */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000000] to-[#1a1a1a] backdrop-blur-sm"></div>
+      
+      {/* Menu Content */}
+      <div className="relative h-full flex flex-col items-center justify-center px-6 py-20">
+        
+        {/* Navigation Links */}
+        <nav className="flex flex-col items-center space-y-6 mb-12">
+          <Link 
+            href="/#home" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+          >
+            {t('nav.home')}
+          </Link>
+          
+          <Link 
+            href="/hair-transplant" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+          >
+            {t('services.hairTransplant')}
+          </Link>
+          
+          <Link 
+            href="/dental-aesthetics" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+          >
+            {t('services.dentalAesthetics')}
+          </Link>
+          
+          <Link 
+            href="/cosmetic-surgery" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+          >
+            {t('services.cosmeticSurgery')}
+          </Link>
+          
+          <Link 
+            href="/about" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+          >
+            {t('nav.about')}
+          </Link>
+          
+          <Link 
+            href="/#contact" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+          >
+            {t('nav.contact')}
+          </Link>
+        </nav>
+
+        {/* Free Consultation Button */}
+        <Link
+          href="/#contact"
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-full shadow-lg transition-all duration-300 font-bold text-lg mb-8"
+        >
+          {t('nav.consultation')}
+        </Link>
+
+        {/* Language Switcher - All Languages */}
+        <div className="w-full max-w-md">
+          <p className="text-center text-sm text-white/70 mb-3 uppercase tracking-wider">
+            Select Language
+          </p>
+          <div className="grid grid-cols-3 gap-3">
+            {languageOptions.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => setLanguage(lang.code as any)}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
+                  language === lang.code 
+                    ? 'bg-[#9B7E3E] border-2 border-[#9B7E3E] text-white' 
+                    : 'border-2 border-[#B8965A] text-white hover:bg-[#9B7E3E] hover:border-[#9B7E3E]'
+                }`}
+              >
+                <span>{lang.flag}</span>
+                <span className="text-xs">{lang.code.toUpperCase()}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    </>
   );
 }
 
