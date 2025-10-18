@@ -106,8 +106,9 @@ export default function DentalAestheticsPage() {
       </section>
 
       {/* Excellence in Dental Aesthetics - World-Class Medical Excellence Style */}
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
+      <section className="bg-gradient-to-b from-[#FFF8DC] to-[#f8f5f0] py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Video */}
           <div className="rounded-2xl overflow-hidden shadow-2xl animate-fadeIn">
             <video
@@ -128,6 +129,7 @@ export default function DentalAestheticsPage() {
               RevissaWay's partner dental clinics deliver advanced aesthetic dentistry solutions in fully equipped hospitals, combining medical precision with artistic design. Every treatment is carried out by accredited experts, ensuring long-lasting, natural, and confident smiles.
             </p>
           </div>
+        </div>
         </div>
       </section>
 
