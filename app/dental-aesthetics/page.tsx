@@ -180,7 +180,7 @@ export default function DentalAestheticsPage() {
       </section>
 
       {/* 2️⃣ Dental Veneers & Cosmetic Enhancements Section */}
-      <section className="bg-white text-black py-12">
+      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
           {/* Image */}
@@ -224,7 +224,7 @@ export default function DentalAestheticsPage() {
       </section>
 
       {/* Dental Aesthetics Before & After Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-16 mt-20">
+      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             {/* Left: Text Content */}
@@ -280,7 +280,7 @@ export default function DentalAestheticsPage() {
       </section>
 
       {/* Informational Section */}
-      <section className="bg-white text-black py-20">
+      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-20">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="p-6 rounded-lg shadow-md bg-gray-50 hover:shadow-xl transition-shadow duration-300">
             <div className="text-[#9B7E3E] mb-4">
