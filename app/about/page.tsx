@@ -52,16 +52,34 @@ export default function AboutPage() {
 
       {/* EXPERTISE & PARTNERSHIPS */}
       <section className="w-full bg-gradient-to-b from-white via-[#f8f3e4] to-[#f6ebc7] py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl font-semibold mb-8 text-gray-800">{t('about.expertise.title')}</h2>
-          <p className="text-gray-700 mb-12 max-w-3xl mx-auto">
-            {t('about.expertise.description')}
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-semibold mb-8 text-gray-800 text-center">About RevissaWay – Expertise and Partnerships</h2>
+          
+          <div className="space-y-6 text-left max-w-4xl mx-auto mb-12">
+            <p className="text-gray-700 text-lg leading-relaxed">
+              RevissaWay operates in close collaboration with <strong>accredited, licensed, and internationally recognized medical partners across Turkey</strong>. 
+              Each clinic is carefully selected for its <strong>high ethical standards</strong>, <strong>advanced medical technology</strong>, 
+              <strong>experienced specialists</strong>, and <strong>proven record of patient satisfaction</strong>.
+            </p>
+
+            <p className="text-gray-700 text-lg leading-relaxed">
+              At RevissaWay, our goal is not only to connect clients with medical treatments but to create a <strong>comfortable, safe, and fully supported health travel experience</strong>. 
+              From initial consultation and clinic matching to accommodation and transportation coordination, we ensure that every stage of the journey 
+              is managed with <strong>transparency, professionalism, and trust</strong>.
+            </p>
+
+            <p className="text-gray-700 text-lg leading-relaxed">
+              Our mission is to <strong>bridge clients from Australia and New Zealand</strong> with Turkey's most reputable and trusted healthcare providers, 
+              delivering a <strong>personalized, ethical, and internationally compliant medical experience</strong>. 
+              RevissaWay acts solely as an <strong>independent health tourism consultancy</strong>, partnering only with 
+              <strong>licensed and accredited healthcare institutions</strong> that meet both <strong>national and international medical standards</strong>.
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             {/* Column 1: Multiple Partners */}
             <div className="p-8 border border-[#9B7E3E]/40 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(155,126,62,0.5)] text-center h-[180px] flex flex-col justify-center bg-white/80">
-              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">{t('about.expertise.multiplePartners')}</h3>
+              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">Multiple Partners</h3>
               <p className="text-gray-700 text-sm">
                 Collaborating with a wide range of accredited and licensed healthcare institutions across Turkey.
               </p>
@@ -69,7 +87,7 @@ export default function AboutPage() {
             
             {/* Column 2: Accredited Clinics */}
             <div className="p-8 border border-[#9B7E3E]/40 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(155,126,62,0.5)] text-center h-[180px] flex flex-col justify-center bg-white/80">
-              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">{t('about.expertise.accreditedClinics')}</h3>
+              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">Accredited Clinics</h3>
               <p className="text-gray-700 text-sm">
                 Partner facilities meet national licensing requirements and international accreditation standards.
               </p>
@@ -77,7 +95,7 @@ export default function AboutPage() {
             
             {/* Column 3: Transparent Coordination */}
             <div className="p-8 border border-[#9B7E3E]/40 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(155,126,62,0.5)] text-center h-[180px] flex flex-col justify-center bg-white/80">
-              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">{t('about.expertise.transparentCoordination')}</h3>
+              <h3 className="text-2xl font-semibold text-[#9B7E3E] mb-3">Transparent Coordination</h3>
               <p className="text-gray-700 text-sm">
                 RevissaWay ensures clients receive clear, ethical, and transparent guidance at every stage.
               </p>
