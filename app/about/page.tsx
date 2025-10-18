@@ -53,7 +53,7 @@ export default function AboutPage() {
       {/* EXPERTISE & PARTNERSHIPS */}
       <section className="w-full bg-gradient-to-b from-white via-[#f8f3e4] to-[#f6ebc7] py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-semibold mb-8 text-gray-800 text-center">About RevissaWay – Expertise and Partnerships</h2>
+          <h2 className="text-4xl font-semibold mb-8 text-gray-800 text-center">Expertise and Partnerships</h2>
           
           <div className="space-y-6 text-left max-w-4xl mx-auto mb-12">
             <p className="text-gray-700 text-lg leading-relaxed">
