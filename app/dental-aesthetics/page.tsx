@@ -112,7 +112,7 @@ export default function DentalAestheticsPage() {
           {/* Video */}
           <div className="rounded-2xl overflow-hidden shadow-2xl animate-fadeIn">
             <video
-              src="/videos/dental-highlight.mp4"
+              src="/videos/dental-collage.mp4"
               poster="/images/dental-placeholder.jpg"
               controls
               preload="metadata"
