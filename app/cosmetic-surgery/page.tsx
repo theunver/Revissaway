@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function CosmeticSurgeryPage() {
-  const whatsappLink = "https://wa.me/61000000000";
+  const whatsappLink = "https://wa.me/61483898360";
   const [processExpanded, setProcessExpanded] = useState(false);
 
   return (

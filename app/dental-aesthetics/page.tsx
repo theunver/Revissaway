@@ -1,7 +1,7 @@
 "use client";
 
 export default function DentalAestheticsPage() {
-  const whatsappLink = "https://wa.me/61000000000";
+  const whatsappLink = "https://wa.me/61483898360";
 
   return (
     <main className="min-h-screen">
