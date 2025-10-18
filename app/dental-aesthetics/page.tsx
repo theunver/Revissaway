@@ -106,30 +106,33 @@ export default function DentalAestheticsPage() {
       </section>
 
       {/* How Our Partner Dental Clinics Stand Out */}
-      <section className="bg-white py-12 md:py-16">
+      <section className="bg-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-[#FAF6F1] rounded-3xl shadow-xl p-6 md:p-10 lg:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="bg-[#FAF6F1] rounded-3xl shadow-xl p-8 md:p-12 lg:p-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               {/* Left Column - Video */}
               <div className="order-2 lg:order-1">
-                <div className="rounded-2xl overflow-hidden shadow-lg">
+                <div className="rounded-2xl overflow-hidden shadow-lg h-full min-h-[400px] flex items-center justify-center bg-gray-100">
                   <video 
                     src="/videos/dental-treatment.mp4"
                     poster="/images/dental-placeholder.jpg"
                     controls
-                    className="w-full h-auto"
+                    className="w-full h-full object-cover"
                     preload="metadata"
                   />
                 </div>
               </div>
 
               {/* Right Column - Text Content */}
-              <div className="order-1 lg:order-2">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <div className="order-1 lg:order-2 py-6 lg:py-12">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
                   How Our Partner Dental Clinics Stand Out
                 </h2>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Our partner dental clinics offer state-of-the-art facilities and personalized care, ensuring each patient experiences comfort and precision. Whether for implants, veneers, or full-smile makeovers, RevissaWay clinics guarantee world-class results with safety and excellence at every step.
+                <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-6">
+                  Our partner dental clinics offer state-of-the-art facilities and personalized care, ensuring each patient experiences comfort and precision.
+                </p>
+                <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+                  Whether for implants, veneers, or full-smile makeovers, RevissaWay clinics guarantee world-class results with safety and excellence at every step.
                 </p>
               </div>
             </div>
