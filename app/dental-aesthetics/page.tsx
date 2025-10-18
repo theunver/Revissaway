@@ -105,6 +105,38 @@ export default function DentalAestheticsPage() {
         </div>
       </section>
 
+      {/* How Our Partner Dental Clinics Stand Out */}
+      <section className="bg-white py-12 md:py-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-[#FAF6F1] rounded-3xl shadow-xl p-6 md:p-10 lg:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Left Column - Video */}
+              <div className="order-2 lg:order-1">
+                <div className="rounded-2xl overflow-hidden shadow-lg">
+                  <video 
+                    src="/videos/dental-treatment.mp4"
+                    poster="/images/dental-placeholder.jpg"
+                    controls
+                    className="w-full h-auto"
+                    preload="metadata"
+                  />
+                </div>
+              </div>
+
+              {/* Right Column - Text Content */}
+              <div className="order-1 lg:order-2">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  How Our Partner Dental Clinics Stand Out
+                </h2>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  Our partner dental clinics offer state-of-the-art facilities and personalized care, ensuring each patient experiences comfort and precision. Whether for implants, veneers, or full-smile makeovers, RevissaWay clinics guarantee world-class results with safety and excellence at every step.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 1️⃣ Dental Implants & Restorations Section */}
       <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
