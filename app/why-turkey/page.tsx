@@ -26,41 +26,6 @@ export default function WhyTurkeyPage() {
         </div>
       </div>
 
-      {/* How Our Partner Dental Clinics Stand Out */}
-      <section className="bg-white py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-[#FAF6F1] rounded-3xl shadow-xl p-8 md:p-12 lg:p-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              {/* Left Column - Video */}
-              <div className="order-2 lg:order-1">
-                <div className="rounded-2xl overflow-hidden shadow-lg h-full min-h-[400px] flex items-center justify-center bg-gray-100">
-                  <video 
-                    src="/videos/001why.mp4"
-                    poster="/images/whyphoto.jpg"
-                    controls
-                    className="w-full h-full object-cover"
-                    preload="metadata"
-                  />
-                </div>
-              </div>
-
-              {/* Right Column - Text Content */}
-              <div className="order-1 lg:order-2 py-6 lg:py-12">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-                  How Our Partner Clinics Stand Out
-                </h2>
-                <p className="text-gray-700 text-lg md:text-xl leading-relaxed mb-6">
-                  Our partner clinics across Turkey offer state-of-the-art facilities and personalized care, ensuring each patient experiences comfort and precision throughout their medical journey.
-                </p>
-                <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
-                  Whether for hair transplant, cosmetic surgery, or dental treatments, RevissaWay connects you with internationally accredited clinics that guarantee world-class results with safety and excellence at every step.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Main Content */}
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
