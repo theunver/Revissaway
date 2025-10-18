@@ -130,7 +130,19 @@ export default function DentalAestheticsPage() {
               Excellence in Dental Aesthetics
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
-              RevissaWay's partner dental clinics deliver advanced aesthetic dentistry solutions in fully equipped hospitals, combining medical precision with artistic design. Every treatment is carried out by accredited experts, ensuring long-lasting, natural, and confident smiles.
+              A beautiful smile plays a vital role in enhancing self-confidence and overall attractiveness. Aesthetic dental treatments are designed to improve the appearance of teeth and help individuals achieve their ideal smile. These modern dental solutions focus on enhancing tooth color, closing gaps, aligning teeth, and perfecting overall harmony. In addition to creating a more appealing smile, they also boost confidence and quality of life.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              <strong>Examination and Evaluation:</strong> The journey begins with a detailed examination by a specialist who creates a personalized treatment plan based on the patient's smile goals.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              <strong>Discussion of Treatment Options:</strong> The dentist provides a clear explanation of the available procedures and expected results.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              <strong>Treatment Procedure:</strong> Depending on the chosen plan, treatments such as whitening, veneers, implants, or orthodontic adjustments are performed.
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg">
+              <strong>Aftercare and Checkups:</strong> Once treatment is complete, results are maintained through regular checkups and professional aftercare.
             </p>
           </div>
         </div>
