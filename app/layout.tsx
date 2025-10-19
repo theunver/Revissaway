@@ -63,6 +63,7 @@ export const metadata: Metadata = {
     'geo.placename': 'Australia, New Zealand',
     'geo.position': '-33.8688;151.2093',
     'ICBM': '-33.8688,151.2093',
+    'facebook-domain-verification': 'knjdf967wkbfnojvoneqycherufakb',
   },
   verification: {
     google: '_8urZPE4UoCqVJf2e8zLMc-ln5xd2cAWCuBmHuQS_Uk',
