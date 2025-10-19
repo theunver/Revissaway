@@ -50,13 +50,14 @@ export default function DentalAestheticsPage() {
             <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
               <video 
                 src="/videos/dental9.mp4"
+                poster="/images/banner-placeholder.jpg"
                 className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
                 autoPlay
                 loop
                 muted
                 playsInline
                 controls
-                preload="metadata"
+                preload="none"
               />
             </div>
 
@@ -64,13 +65,14 @@ export default function DentalAestheticsPage() {
             <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
               <video 
                 src="/videos/dental10.mp4"
+                poster="/images/banner-placeholder.jpg"
                 className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
                 autoPlay
                 loop
                 muted
                 playsInline
                 controls
-                preload="metadata"
+                preload="none"
               />
             </div>
           </div>
@@ -91,7 +93,7 @@ export default function DentalAestheticsPage() {
               loop
               playsInline
               controls
-              preload="metadata"
+              preload="none"
               className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
             />
           </div>
