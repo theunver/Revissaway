@@ -219,42 +219,68 @@ export default function Home() {
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto text-balance">
               RevissaWay connects patients from Australia and New Zealand with accredited clinics in Turkey — offering world-class quality, expert surgeons, and transparent coordination.
             </p>
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                // Track Google Ads Lead Submission Conversion
-                if (typeof window !== 'undefined' && window.trackLeadSubmission) {
-                  window.trackLeadSubmission();
-                }
-                
-                // Track GA4 Event
-                if (typeof window !== 'undefined' && window.trackGA4Event) {
-                  window.trackGA4Event('lead_submission', {
-                    event_category: 'engagement',
-                    event_label: 'WhatsApp Hero Button',
-                    value: 1
-                  });
-                }
-                
-                // Track Meta Pixel Contact Event (WhatsApp)
-                if (typeof window !== 'undefined' && window.trackWhatsAppContact) {
-                  window.trackWhatsAppContact();
-                }
-                
-                // Track Meta Pixel Lead Event
-                if (typeof window !== 'undefined' && window.trackMetaEvent) {
-                  window.trackMetaEvent('Lead', {
-                    content_name: 'WhatsApp Consultation',
-                    value: 1
-                  });
-                }
-              }}
-              className="inline-block bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-xl shadow-lg transition-all duration-300 font-semibold text-lg"
-            >
-              Book Free Consultation on WhatsApp
-            </a>
+            
+            {/* CTA Buttons - Stacked Vertically */}
+            <div className="flex flex-col items-center gap-3 max-w-xs mx-auto">
+              {/* Primary CTA: Book Free Consultation */}
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  
+                  // Track GA4 Event
+                  if (typeof window !== 'undefined' && window.trackGA4Event) {
+                    window.trackGA4Event('consultation_click', {
+                      event_category: 'engagement',
+                      event_label: 'Hero Consultation Button',
+                      value: 1
+                    });
+                  }
+                }}
+                className="w-full text-center bg-[#C9A861] hover:bg-[#B28A4D] text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium text-lg"
+              >
+                Book Free Consultation
+              </a>
+
+              {/* Secondary CTA: WhatsApp */}
+              <a
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  // Track Google Ads Lead Submission Conversion
+                  if (typeof window !== 'undefined' && window.trackLeadSubmission) {
+                    window.trackLeadSubmission();
+                  }
+                  
+                  // Track GA4 Event
+                  if (typeof window !== 'undefined' && window.trackGA4Event) {
+                    window.trackGA4Event('lead_submission', {
+                      event_category: 'engagement',
+                      event_label: 'WhatsApp Hero Button',
+                      value: 1
+                    });
+                  }
+                  
+                  // Track Meta Pixel Contact Event (WhatsApp)
+                  if (typeof window !== 'undefined' && window.trackWhatsAppContact) {
+                    window.trackWhatsAppContact();
+                  }
+                  
+                  // Track Meta Pixel Lead Event
+                  if (typeof window !== 'undefined' && window.trackMetaEvent) {
+                    window.trackMetaEvent('Lead', {
+                      content_name: 'WhatsApp Consultation',
+                      value: 1
+                    });
+                  }
+                }}
+                className="w-full text-center border-2 border-white bg-transparent hover:bg-[#C9A861] text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium text-lg"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
 
