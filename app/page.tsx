@@ -199,7 +199,8 @@ export default function Home() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="none"
+          poster="/images/banner-placeholder.jpg"
           className="w-full h-full object-cover absolute inset-0"
         >
           <source src="/videos/lowbannerfirst_optimized.mp4" type="video/mp4" />

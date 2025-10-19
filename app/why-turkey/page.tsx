@@ -11,7 +11,8 @@ export default function WhyTurkeyPage() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="none"
+          poster="/images/banner-placeholder.jpg"
           className="w-full h-full object-cover absolute inset-0"
           src="/videos/aboutbanner.mp4"
         />
