@@ -238,7 +238,7 @@ export default function Home() {
                     });
                   }
                 }}
-                className="w-full text-center bg-[#C9A861] hover:bg-[#B28A4D] text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium text-lg"
+                className="w-full text-center border-2 border-white bg-transparent hover:bg-[#C9A861] text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium text-lg"
               >
                 Book Free Consultation
               </a>
