@@ -454,10 +454,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLanguage = async (lang: Language) => {
     setIsLoading(true);
-    setLanguageState(lang);
     localStorage.setItem('language', lang);
-    await new Promise(resolve => setTimeout(resolve, 300));
-    setIsLoading(false);
+    
+    // Force full page reload for clean translation
+    // This ensures no cache conflicts between language switches
+    window.location.reload();
   };
 
   const t = (key: string): string => {
