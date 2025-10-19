@@ -39,7 +39,7 @@ export default function WhyTurkeyPage() {
               preload="metadata"
               className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
             >
-              <source src="/videos/002bane.mp4" type="video/mp4" />
+              <source src="/videos/002bane_optimized.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>

@@ -4,10 +4,10 @@ import Script from "next/script";
 
 export default function Analytics() {
   // Replace these with your actual tracking IDs
-  const GA4_MEASUREMENT_ID = "G-XXXXXXXXXX"; // Replace with your Google Analytics 4 ID
+  const GA4_MEASUREMENT_ID = "G-XXXXXXXXXX"; // TODO: Replace with your Google Analytics 4 ID from console.google.com
   const GOOGLE_ADS_ID = "AW-XXXXXXX"; // Replace with your Google Ads ID (optional)
   const GOOGLE_ADS_CONVERSION_LABEL = "abcd1234"; // Replace with your conversion label
-  const META_PIXEL_ID = "XXXXXXXXXXXXXXX"; // Replace with your Meta Pixel ID
+  const META_PIXEL_ID = "1538401167354551"; // Meta Pixel ID - UPDATED
 
   return (
     <>
