@@ -22,7 +22,7 @@ export default function Home() {
     setFormStatus("submitting");
 
     try {
-      const response = await fetch("https://formspree.io/f/maypkdzz", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
