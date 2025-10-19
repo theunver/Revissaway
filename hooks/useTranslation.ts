@@ -12,6 +12,10 @@ export function useTranslation(targetLang: string, isEnabled: boolean = true) {
   const [isTranslating, setIsTranslating] = useState(false);
   const observerRef = useRef<MutationObserver | null>(null);
   const translationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const idleCallbackRef = useRef<number | null>(null);
+  const completedRef = useRef<boolean>(false);
+  const retriesRef = useRef<number>(0);
 
   // Clear stale cache when language changes
   const clearStaleCache = useCallback(() => {
@@ -260,40 +264,162 @@ export function useTranslation(targetLang: string, isEnabled: boolean = true) {
     }
   }, [targetLang, isEnabled, translateText, translateBatch]);
 
-  // Setup MutationObserver to watch for dynamic content
+  // Check if all nodes are translated
+  const checkTranslationComplete = useCallback((): boolean => {
+    const walker = document.createTreeWalker(
+      document.body,
+      NodeFilter.SHOW_TEXT,
+      {
+        acceptNode: (node) => {
+          const parent = node.parentElement;
+          if (!parent) return NodeFilter.FILTER_REJECT;
+          
+          const tagName = parent.tagName.toLowerCase();
+          if (['script', 'style', 'noscript', 'iframe', 'svg'].includes(tagName)) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          
+          const text = node.textContent?.trim() || '';
+          // Check if text contains untranslated English content
+          if (text.length > 2 && /[a-zA-Z]{3,}/.test(text)) {
+            return NodeFilter.FILTER_ACCEPT;
+          }
+          
+          return NodeFilter.FILTER_REJECT;
+        },
+      }
+    );
+
+    let hasUntranslated = false;
+    while (walker.nextNode()) {
+      hasUntranslated = true;
+      break;
+    }
+
+    return !hasUntranslated;
+  }, []);
+
+  // Hybrid scheduler with requestIdleCallback fallback
+  const scheduleTranslation = useCallback(async () => {
+    const MAX_RETRIES = 10;
+    
+    const checkAndTranslate = async () => {
+      if (completedRef.current || retriesRef.current >= MAX_RETRIES) {
+        setIsTranslating(false);
+        completedRef.current = true;
+        
+        // Cleanup
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+          intervalRef.current = null;
+        }
+        if (idleCallbackRef.current && typeof window !== 'undefined' && 'cancelIdleCallback' in window) {
+          (window as any).cancelIdleCallback(idleCallbackRef.current);
+          idleCallbackRef.current = null;
+        }
+        return;
+      }
+
+      await translateDOM(true);
+      retriesRef.current++;
+
+      // Check if translation is complete
+      if (targetLang !== 'en' && targetLang !== 'tr') {
+        const isComplete = checkTranslationComplete();
+        if (isComplete) {
+          completedRef.current = true;
+          setIsTranslating(false);
+          
+          // Cleanup
+          if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+          }
+          return;
+        }
+      }
+
+      // Schedule next check using requestIdleCallback if available
+      if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+        idleCallbackRef.current = (window as any).requestIdleCallback(
+          checkAndTranslate,
+          { timeout: 2000 }
+        );
+      }
+    };
+
+    // Initial translation
+    await checkAndTranslate();
+
+    // Fallback: use setInterval if requestIdleCallback not available
+    if (typeof window !== 'undefined' && !('requestIdleCallback' in window)) {
+      intervalRef.current = setInterval(async () => {
+        if (completedRef.current) {
+          if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+            intervalRef.current = null;
+          }
+          return;
+        }
+        await checkAndTranslate();
+      }, 1000);
+    }
+  }, [targetLang, translateDOM, checkTranslationComplete]);
+
+  // Setup translation and observer
   useEffect(() => {
     if (!isEnabled || targetLang === 'en' || targetLang === 'tr') {
-      // Disconnect observer if not translating
+      // Reset to LTR and cleanup
+      if (typeof document !== 'undefined') {
+        document.documentElement.setAttribute('dir', 'ltr');
+        document.body.setAttribute('dir', 'ltr');
+      }
+      
       if (observerRef.current) {
         observerRef.current.disconnect();
         observerRef.current = null;
       }
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      if (idleCallbackRef.current && typeof window !== 'undefined' && 'cancelIdleCallback' in window) {
+        (window as any).cancelIdleCallback(idleCallbackRef.current);
+        idleCallbackRef.current = null;
+      }
+      
+      setIsTranslating(false);
       return;
     }
+
+    // Reset state
+    completedRef.current = false;
+    retriesRef.current = 0;
+    setIsTranslating(true);
 
     // Clear stale cache when language changes
     clearStaleCache();
 
-    // Initial translation
-    translateDOM(false);
+    // Start hybrid translation scheduler
+    scheduleTranslation();
 
-    // Setup observer for dynamic content
+    // Setup MutationObserver for dynamic content
     const observer = new MutationObserver((mutations) => {
-      // Debounce rapid mutations
-      if (translationTimeoutRef.current) {
-        clearTimeout(translationTimeoutRef.current);
-      }
+      // Only react to new content additions
+      const hasNewContent = mutations.some(mutation => 
+        mutation.type === 'childList' && mutation.addedNodes.length > 0
+      );
 
-      translationTimeoutRef.current = setTimeout(() => {
-        // Only translate if we have meaningful additions
-        const hasNewContent = mutations.some(mutation => 
-          mutation.type === 'childList' && mutation.addedNodes.length > 0
-        );
-
-        if (hasNewContent) {
-          translateDOM(true); // Skip loader for dynamic content
+      if (hasNewContent && !completedRef.current) {
+        // Debounce rapid mutations
+        if (translationTimeoutRef.current) {
+          clearTimeout(translationTimeoutRef.current);
         }
-      }, 300); // Wait 300ms after last mutation
+
+        translationTimeoutRef.current = setTimeout(() => {
+          translateDOM(true); // Translate new content silently
+        }, 300);
+      }
     });
 
     observer.observe(document.body, {
@@ -311,8 +437,14 @@ export function useTranslation(targetLang: string, isEnabled: boolean = true) {
       if (translationTimeoutRef.current) {
         clearTimeout(translationTimeoutRef.current);
       }
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+      if (idleCallbackRef.current && typeof window !== 'undefined' && 'cancelIdleCallback' in window) {
+        (window as any).cancelIdleCallback(idleCallbackRef.current);
+      }
     };
-  }, [targetLang, isEnabled, translateDOM, clearStaleCache]);
+  }, [targetLang, isEnabled, clearStaleCache, scheduleTranslation, translateDOM]);
 
   return {
     translateText,
