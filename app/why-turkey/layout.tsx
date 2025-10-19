@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Why Türkiye? | RevissaWay Health & Aesthetics",
     description: "Learn why Türkiye is the global leader in medical tourism. RevissaWay connects Australian and New Zealand patients with accredited clinics and experienced doctors.",
-    url: "https://revissaway.vercel.app/why-turkey",
+    url: "https://www.revissaway.com.au/why-turkey",
   },
 };
 

@@ -9,7 +9,7 @@ import TranslationOverlayWrapper from "@/components/TranslationOverlayWrapper";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://revissaway.vercel.app"),
+  metadataBase: new URL("https://www.revissaway.com.au"),
   title: "Hair Transplant & Esthetic Surgery Applications in Turkey | RevissaWay",
   description: "Connect with Türkiye's most trusted clinics for hair transplant, cosmetic, and dental aesthetics. RevissaWay serves patients from Australia and New Zealand with expert coordination and transparency.",
   keywords: ["hair transplant Turkey", "cosmetic surgery Turkey", "dental aesthetics Turkey", "medical tourism Australia", "health tourism Turkey", "RevissaWay"],
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     alternateLocale: "tr_TR",
-    url: "https://revissaway.vercel.app",
+    url: "https://www.revissaway.com.au",
     title: "RevissaWay | Health & Aesthetics Tourism",
     description: "Premium aesthetic and health tourism services in Turkey. Connecting Australia, New Zealand, and Turkey.",
     siteName: "RevissaWay",
@@ -51,12 +51,12 @@ export const metadata: Metadata = {
     images: ["/logo.png"],
   },
   alternates: {
-    canonical: "https://revissaway.vercel.app",
+    canonical: "https://www.revissaway.com.au",
     languages: {
-      'en-US': 'https://revissaway.vercel.app',
-      'en-AU': 'https://revissaway.vercel.app',
-      'en-NZ': 'https://revissaway.vercel.app',
-      'tr-TR': 'https://revissaway.vercel.app',
+      'en-US': 'https://www.revissaway.com.au',
+      'en-AU': 'https://www.revissaway.com.au',
+      'en-NZ': 'https://www.revissaway.com.au',
+      'tr-TR': 'https://www.revissaway.com.au',
     },
   },
   other: {

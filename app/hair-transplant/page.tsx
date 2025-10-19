@@ -545,12 +545,12 @@ export default function HairTransplantPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "MedicalBusiness",
-            "@id": "https://revissaway.vercel.app/hair-transplant",
+            "@id": "https://www.revissaway.com.au/hair-transplant",
             "name": "RevissaWay Health & Aesthetics",
             "alternateName": "RevissaWay",
-            "url": "https://revissaway.vercel.app/hair-transplant",
-            "image": "https://revissaway.vercel.app/og/og-hair-transplant.jpg",
-            "logo": "https://revissaway.vercel.app/og/revissaway-logo.png",
+            "url": "https://www.revissaway.com.au/hair-transplant",
+            "image": "https://www.revissaway.com.au/og/og-hair-transplant.jpg",
+            "logo": "https://www.revissaway.com.au/og/revissaway-logo.png",
             "description": "RevissaWay connects you with Turkey's most trusted hair transplant experts offering DHI, FUE, and Sapphire techniques.",
             "priceRange": "$$",
             "address": {
@@ -588,7 +588,7 @@ export default function HairTransplantPage() {
               "price": "2500",
               "priceValidUntil": "2025-12-31",
               "availability": "https://schema.org/InStock",
-              "url": "https://revissaway.vercel.app/hair-transplant",
+              "url": "https://www.revissaway.com.au/hair-transplant",
               "priceSpecification": {
                 "@type": "PriceSpecification",
                 "priceCurrency": "USD",
@@ -602,7 +602,7 @@ export default function HairTransplantPage() {
               "author": {
                 "@type": "Person",
                 "name": "John Carter",
-                "image": "https://revissaway.vercel.app/og/reviewer-john-carter.jpg"
+                "image": "https://www.revissaway.com.au/og/reviewer-john-carter.jpg"
               },
               "datePublished": "2025-02-20",
               "reviewBody": "RevissaWay made my hair transplant journey in Turkey seamless and professional. Everything from travel coordination to clinic experience was top-notch.",

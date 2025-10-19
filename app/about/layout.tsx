@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About RevissaWay | Health Tourism Consultancy",
     description: "RevissaWay is an independent health tourism consultancy based in Australia, connecting clients from Australia and New Zealand with accredited medical and aesthetic clinics across Turkey.",
-    url: "https://revissaway.vercel.app/about",
+    url: "https://www.revissaway.com.au/about",
     type: "website",
   },
 };
