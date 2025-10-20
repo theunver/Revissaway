@@ -183,6 +183,16 @@ export default function Home() {
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => {
+          // Track GA4 Event - WhatsApp Click (Fixed Button)
+          if (typeof window !== 'undefined' && window.trackGA4Event) {
+            window.trackGA4Event('whatsapp_click', {
+              event_category: 'engagement',
+              event_label: 'Chat on WhatsApp'
+            });
+            console.log('GA4 event fired: whatsapp_click');
+          }
+        }}
         className="fixed bottom-6 right-6 z-50 bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-6 py-3 rounded-xl shadow-lg transition-all duration-300 font-semibold flex items-center gap-2"
       >
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -229,13 +239,13 @@ export default function Home() {
                   e.preventDefault();
                   document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
                   
-                  // Track GA4 Event
+                  // Track GA4 Event - Book Free Consultation
                   if (typeof window !== 'undefined' && window.trackGA4Event) {
                     window.trackGA4Event('consultation_click', {
                       event_category: 'engagement',
-                      event_label: 'Hero Consultation Button',
-                      value: 1
+                      event_label: 'Book Free Consultation'
                     });
+                    console.log('GA4 event fired: consultation_click');
                   }
                 }}
                 className="w-full text-center border-2 border-white bg-transparent hover:bg-[#C9A861] text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium text-lg"
@@ -249,18 +259,18 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
+                  // Track GA4 Event - WhatsApp Click
+                  if (typeof window !== 'undefined' && window.trackGA4Event) {
+                    window.trackGA4Event('whatsapp_click', {
+                      event_category: 'engagement',
+                      event_label: 'Chat on WhatsApp'
+                    });
+                    console.log('GA4 event fired: whatsapp_click');
+                  }
+                  
                   // Track Google Ads Lead Submission Conversion
                   if (typeof window !== 'undefined' && window.trackLeadSubmission) {
                     window.trackLeadSubmission();
-                  }
-                  
-                  // Track GA4 Event
-                  if (typeof window !== 'undefined' && window.trackGA4Event) {
-                    window.trackGA4Event('lead_submission', {
-                      event_category: 'engagement',
-                      event_label: 'WhatsApp Hero Button',
-                      value: 1
-                    });
                   }
                   
                   // Track Meta Pixel Contact Event (WhatsApp)
@@ -723,6 +733,16 @@ export default function Home() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                // Track GA4 Event - WhatsApp Click (Contact Form)
+                if (typeof window !== 'undefined' && window.trackGA4Event) {
+                  window.trackGA4Event('whatsapp_click', {
+                    event_category: 'engagement',
+                    event_label: 'Chat on WhatsApp'
+                  });
+                  console.log('GA4 event fired: whatsapp_click');
+                }
+              }}
               className="inline-flex items-center gap-2 bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-xl shadow-md transition-all duration-300 font-semibold"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

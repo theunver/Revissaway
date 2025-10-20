@@ -183,6 +183,16 @@ export default function Navbar() {
 
             <a 
               href="/#contact"
+              onClick={() => {
+                // Track GA4 Event - Consultation Click (Navbar)
+                if (typeof window !== 'undefined' && window.trackGA4Event) {
+                  window.trackGA4Event('consultation_click', {
+                    event_category: 'engagement',
+                    event_label: 'Book Free Consultation'
+                  });
+                  console.log('GA4 event fired: consultation_click');
+                }
+              }}
               className="bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-3 py-2 rounded-lg shadow-md transition-all duration-300 font-semibold text-sm whitespace-nowrap"
             >
               {t('nav.consultation')}
@@ -312,7 +322,17 @@ export default function Navbar() {
         {/* Free Consultation Button */}
         <Link
           href="/#contact"
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={() => {
+            setIsMobileMenuOpen(false);
+            // Track GA4 Event - Consultation Click (Mobile Menu)
+            if (typeof window !== 'undefined' && window.trackGA4Event) {
+              window.trackGA4Event('consultation_click', {
+                event_category: 'engagement',
+                event_label: 'Book Free Consultation'
+              });
+              console.log('GA4 event fired: consultation_click');
+            }
+          }}
           className="w-full max-w-md bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-full shadow-lg transition-all duration-300 font-bold text-lg mb-8 text-center"
         >
           {t('nav.consultation')}
