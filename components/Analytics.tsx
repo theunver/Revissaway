@@ -5,9 +5,7 @@ import Script from "next/script";
 export default function Analytics() {
   // Google Analytics 4 Measurement ID
   const GA4_MEASUREMENT_ID = "G-Y7E9BLZXRX"; // RevissaWay GA4 ID
-  const GOOGLE_ADS_ID = "AW-XXXXXXX"; // Replace with your Google Ads ID (optional)
-  const GOOGLE_ADS_CONVERSION_LABEL = "abcd1234"; // Replace with your conversion label
-  const META_PIXEL_ID = "1538401167354551"; // Meta Pixel ID - UPDATED
+  const META_PIXEL_ID = "1538401167354551"; // Meta Pixel ID
 
   return (
     <>
@@ -21,44 +19,29 @@ export default function Analytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          
-          // GA4 Configuration
-          gtag('config', '${GA4_MEASUREMENT_ID}', {
-            page_path: window.location.pathname,
-          });
-          
-          // Google Ads Configuration (if you have Google Ads)
-          ${GOOGLE_ADS_ID !== 'AW-XXXXXXX' ? `gtag('config', '${GOOGLE_ADS_ID}');` : ''}
-          
-          // Google Ads Conversion Tracking Helper Function
-          window.trackLeadSubmission = function() {
-            if (typeof gtag !== 'undefined' && '${GOOGLE_ADS_ID}' !== 'AW-XXXXXXX') {
-              gtag('event', 'conversion', {
-                'send_to': '${GOOGLE_ADS_ID}/${GOOGLE_ADS_CONVERSION_LABEL}',
-                'event_callback': function() {
-                  console.log('Conversion tracked: Lead_Submission');
-                }
-              });
+          gtag('config', '${GA4_MEASUREMENT_ID}');
+
+          // Safe GA4 Event Tracking Helper
+          window.trackGA4Event = function(eventName, params = {}) {
+            try {
+              if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, params);
+                console.log('✅ GA4 Event Sent:', eventName, params);
+              } else {
+                console.warn('⚠️ GA4 not ready yet');
+              }
+            } catch (err) {
+              console.error('GA4 Event Error:', err);
             }
           };
-          
-              // GA4 Event Tracking Helper
-              window.trackGA4Event = function(eventName, params) {
-                if (typeof gtag !== 'undefined') {
-                  gtag('event', eventName, params);
-                }
-              };
 
-              // GA4 Event Registration Confirmation
-              console.log("GA4 Event manually registered: consultation_click & whatsapp_click");
-          
           // Meta Pixel Event Tracking Helper
           window.trackMetaEvent = function(eventName, params) {
             if (typeof fbq !== 'undefined') {
               fbq('track', eventName, params);
             }
           };
-          
+
           // Meta Pixel WhatsApp Contact Tracking
           window.trackWhatsAppContact = function() {
             if (typeof fbq !== 'undefined') {
@@ -68,6 +51,8 @@ export default function Analytics() {
               console.log('Meta Pixel tracked: Contact (WhatsApp)');
             }
           };
+
+          console.log("✅ GA4 tracking initialized safely");
         `}
       </Script>
 
