@@ -11,10 +11,10 @@ export default function WhyTurkeyPage() {
           loop
           muted
           playsInline
-          preload="none"
-          poster="/images/banner-placeholder.jpg"
+          preload="auto"
           className="w-full h-full object-cover absolute inset-0"
           src="/videos/aboutbanner.mp4"
+          style={{ opacity: 1 }}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
@@ -31,15 +31,15 @@ export default function WhyTurkeyPage() {
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
           {/* Portrait Video (replaces portrait image) */}
-          <div className="rounded-2xl overflow-hidden shadow-2xl animate-fadeIn">
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
             <video
               autoPlay
               loop
               muted
               playsInline
-              preload="none"
-              poster="/images/banner-placeholder.jpg"
+              preload="auto"
               className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
+              style={{ opacity: 1 }}
             >
               <source src="/videos/002bane_optimized.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -80,11 +80,13 @@ export default function WhyTurkeyPage() {
           </div>
 
           {/* Image - Right Side */}
-          <div className="rounded-2xl overflow-hidden shadow-2xl animate-fadeIn">
+          <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img 
               src="/images/whyphoto.jpg" 
               alt="Medical tourism in Turkey" 
               className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
+              loading="eager"
+              style={{ opacity: 1 }}
             />
           </div>
         </div>

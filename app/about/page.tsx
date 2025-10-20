@@ -10,8 +10,8 @@ export default function AboutPage() {
   return (
     <main className="bg-black text-white overflow-hidden">
       
-      {/* ABOUT PAGE FULL-WIDTH BANNER WITH FADE-IN */}
-      <section className="relative h-[80vh] w-full overflow-hidden animate-fadeIn">
+      {/* ABOUT PAGE FULL-WIDTH BANNER */}
+      <section className="relative h-[80vh] w-full overflow-hidden">
         <Image
           src="/images/revissaway-about.jpg"
           alt="RevissaWay About Us"
@@ -19,6 +19,8 @@ export default function AboutPage() {
           className="object-cover object-center"
           priority
           quality={90}
+          loading="eager"
+          style={{ opacity: 1 }}
         />
         {/* Gradient overlay for better text visibility if needed */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
@@ -82,8 +84,9 @@ export default function AboutPage() {
             alt="RevissaWay About Visual"
             fill
             className="w-full h-full object-cover rounded-xl shadow-md"
-            priority
+            loading="eager"
             quality={90}
+            style={{ opacity: 1 }}
           />
         </div>
       </section>

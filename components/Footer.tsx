@@ -56,7 +56,15 @@ export default function Footer() {
 
       {/* Logo + Copyright */}
       <div className="text-center mt-10">
-        <Image src="/logo.png" alt="RevissaWay" width={120} height={60} className="mx-auto mb-3" />
+        <Image 
+          src="/logo.png" 
+          alt="RevissaWay" 
+          width={120} 
+          height={60} 
+          className="mx-auto mb-3"
+          loading="eager"
+          style={{ opacity: 1 }}
+        />
         <p className="text-xs text-gray-600 mt-4">{t('footer.copyright')}</p>
         
         {/* Legal Links */}

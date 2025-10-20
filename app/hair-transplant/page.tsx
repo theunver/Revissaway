@@ -158,6 +158,8 @@ export default function HairTransplantPage() {
           src="/images/hair-banner.jpg"
           alt="Hair Transplant in Turkey"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          style={{ opacity: 1 }}
         />
 
         {/* Overlay gradient */}
@@ -185,14 +187,14 @@ export default function HairTransplantPage() {
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
               src="/videos/hairreels1.mp4"
-              poster="/images/banner-placeholder.jpg"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
               muted
               playsInline
               controls
-              preload="none"
+              preload="auto"
+              style={{ opacity: 1 }}
             />
           </div>
 
@@ -200,14 +202,14 @@ export default function HairTransplantPage() {
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
               src="/videos/hairreels2.mp4"
-              poster="/images/banner-placeholder.jpg"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
               muted
               playsInline
               controls
-              preload="none"
+              preload="auto"
+              style={{ opacity: 1 }}
             />
           </div>
 
@@ -215,14 +217,14 @@ export default function HairTransplantPage() {
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
               src="/videos/hairreels3.mp4"
-              poster="/images/banner-placeholder.jpg"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
               muted
               playsInline
               controls
-              preload="none"
+              preload="auto"
+              style={{ opacity: 1 }}
             />
           </div>
 
@@ -230,14 +232,14 @@ export default function HairTransplantPage() {
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
               src="/videos/hairreels4.mp4"
-              poster="/images/banner-placeholder.jpg"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
               muted
               playsInline
               controls
-              preload="none"
+              preload="auto"
+              style={{ opacity: 1 }}
             />
           </div>
         </div>
@@ -349,7 +351,7 @@ export default function HairTransplantPage() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
-            <div className="space-y-6 animate-fadeIn">
+            <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
                 How Our Partner Clinics Differ from Conventional Hair Transplant Centers
               </h2>
@@ -374,7 +376,7 @@ export default function HairTransplantPage() {
             </div>
 
             {/* Right Column - Image with Background Shape */}
-            <div className="relative animate-fadeIn">
+            <div className="relative">
               {/* Beige Background Shape */}
               <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-br from-[#fffaf3] to-[#f8f5f0] rounded-3xl transform rotate-2"></div>
               
@@ -385,6 +387,7 @@ export default function HairTransplantPage() {
                   alt="Modern hair transplant facilities in Turkey"
                   className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover rounded-xl shadow-md"
                   loading="lazy"
+                  style={{ opacity: 1 }}
                 />
               </div>
             </div>

@@ -44,11 +44,11 @@ video {
   background: linear-gradient(135deg, #3a3a3a 0%, #2f2f2f 100%);
 }
 
-/* Fade-in animation for About page banner */
+/* Fade-in animation disabled for instant display */
 @keyframes fadeIn {
   0% {
-    opacity: 0;
-    filter: brightness(30%);
+    opacity: 1;
+    filter: brightness(100%);
   }
   100% {
     opacity: 1;
@@ -57,7 +57,8 @@ video {
 }
 
 .animate-fadeIn {
-  animation: fadeIn 2.5s ease-in-out forwards;
+  animation: none;
+  opacity: 1;
 }
 
 /* Slide right animation for partner logos marquee */

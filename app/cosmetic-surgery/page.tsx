@@ -28,6 +28,8 @@ export default function CosmeticSurgeryPage() {
           src="/images/banner2.jpg"
           alt="Esthetic Surgery Applications Banner"
           className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          style={{ opacity: 1 }}
         />
 
         {/* Overlay gradient */}
@@ -55,14 +57,14 @@ export default function CosmeticSurgeryPage() {
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
               src="/videos/surgery1.mp4"
-              poster="/images/banner-placeholder.jpg"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
               muted
               playsInline
               controls
-              preload="none"
+              preload="auto"
+              style={{ opacity: 1 }}
             />
           </div>
 
@@ -70,14 +72,14 @@ export default function CosmeticSurgeryPage() {
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
               src="/videos/surgery2.mp4"
-              poster="/images/banner-placeholder.jpg"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
               muted
               playsInline
               controls
-              preload="none"
+              preload="auto"
+              style={{ opacity: 1 }}
             />
           </div>
 
@@ -85,14 +87,14 @@ export default function CosmeticSurgeryPage() {
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
               src="/videos/surgery3.mp4"
-              poster="/images/banner-placeholder.jpg"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
               muted
               playsInline
               controls
-              preload="none"
+              preload="auto"
+              style={{ opacity: 1 }}
             />
           </div>
 
@@ -100,14 +102,14 @@ export default function CosmeticSurgeryPage() {
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
             <video 
               src="/videos/surgery4.mp4"
-              poster="/images/banner-placeholder.jpg"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
               loop
               muted
               playsInline
               controls
-              preload="none"
+              preload="auto"
+              style={{ opacity: 1 }}
             />
           </div>
         </div>
@@ -121,7 +123,7 @@ export default function CosmeticSurgeryPage() {
           {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
             {/* Left: Image with soft beige background shape */}
-            <div className="relative animate-fadeIn order-2 md:order-1">
+            <div className="relative order-2 md:order-1">
               <div className="absolute -inset-4 sm:-inset-6 bg-gradient-to-br from-[#fffaf3] to-[#f8f5f0] rounded-3xl rotate-2" />
               <div className="relative">
                 <img
@@ -129,12 +131,13 @@ export default function CosmeticSurgeryPage() {
                   alt="Aesthetic surgery facilities in Turkey"
                   className="w-full h-[480px] sm:h-[560px] md:h-[620px] lg:h-[680px] object-cover rounded-xl shadow-md"
                   loading="lazy"
+                  style={{ opacity: 1 }}
                 />
               </div>
             </div>
 
             {/* Right: SEO text content */}
-            <div className="space-y-5 animate-fadeIn order-1 md:order-2">
+            <div className="space-y-5 order-1 md:order-2">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
                 How Our Partner Clinics Differ from Conventional Hair Transplant Centers
               </h2>

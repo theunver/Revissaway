@@ -37,6 +37,8 @@ export default function Navbar() {
               height={350}
               className="w-auto max-h-[85px] md:max-h-[95px] lg:max-h-[115px] object-contain drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
               priority
+              loading="eager"
+              style={{ opacity: 1 }}
             />
           </a>
 
