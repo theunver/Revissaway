@@ -3,20 +3,20 @@
 import Script from "next/script";
 
 export default function Analytics() {
-  // Replace these with your actual tracking IDs
-  const GA4_MEASUREMENT_ID = "G-XXXXXXXXXX"; // TODO: Replace with your Google Analytics 4 ID from console.google.com
+  // Google Analytics 4 Measurement ID
+  const GA4_MEASUREMENT_ID = "G-Y7E9BLZXRX"; // RevissaWay GA4 ID
   const GOOGLE_ADS_ID = "AW-XXXXXXX"; // Replace with your Google Ads ID (optional)
   const GOOGLE_ADS_CONVERSION_LABEL = "abcd1234"; // Replace with your conversion label
   const META_PIXEL_ID = "1538401167354551"; // Meta Pixel ID - UPDATED
 
   return (
     <>
-      {/* Google Analytics 4 (GA4) */}
+      {/* Google Analytics 4 (GA4) - G-Y7E9BLZXRX */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA4_MEASUREMENT_ID}`}
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="lazyOnload">
+      <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -69,7 +69,7 @@ export default function Analytics() {
       </Script>
 
       {/* Meta Pixel */}
-      <Script id="meta-pixel" strategy="lazyOnload">
+      <Script id="meta-pixel" strategy="afterInteractive">
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
