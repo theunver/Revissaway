@@ -42,12 +42,15 @@ export default function Analytics() {
             }
           };
           
-          // GA4 Event Tracking Helper
-          window.trackGA4Event = function(eventName, params) {
-            if (typeof gtag !== 'undefined') {
-              gtag('event', eventName, params);
-            }
-          };
+              // GA4 Event Tracking Helper
+              window.trackGA4Event = function(eventName, params) {
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', eventName, params);
+                }
+              };
+
+              // GA4 Event Registration Confirmation
+              console.log("GA4 Event manually registered: consultation_click & whatsapp_click");
           
           // Meta Pixel Event Tracking Helper
           window.trackMetaEvent = function(eventName, params) {
