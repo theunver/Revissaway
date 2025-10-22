@@ -184,13 +184,13 @@ export default function Home() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => {
-          // Track GA4 Event - WhatsApp Click (Fixed Button)
-          if (typeof window !== 'undefined' && window.trackGA4Event) {
-            window.trackGA4Event('whatsapp_click', {
+          try {
+            window.trackGA4Event?.('whatsapp_click', {
               event_category: 'engagement',
               event_label: 'Chat on WhatsApp'
             });
-            console.log('GA4 event fired: whatsapp_click');
+          } catch (err) {
+            console.log('Tracking error:', err);
           }
         }}
         className="fixed bottom-6 right-6 z-50 bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-6 py-3 rounded-xl shadow-lg transition-all duration-300 font-semibold flex items-center gap-2"
@@ -259,32 +259,22 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  // Track GA4 Event - WhatsApp Click
-                  if (typeof window !== 'undefined' && window.trackGA4Event) {
-                    window.trackGA4Event('whatsapp_click', {
+                  // Tracking (non-blocking)
+                  try {
+                    window.trackGA4Event?.('whatsapp_click', {
                       event_category: 'engagement',
                       event_label: 'Chat on WhatsApp'
                     });
-                    console.log('GA4 event fired: whatsapp_click');
-                  }
-                  
-                  // Track Google Ads Lead Submission Conversion
-                  if (typeof window !== 'undefined' && window.trackLeadSubmission) {
-                    window.trackLeadSubmission();
-                  }
-                  
-                  // Track Meta Pixel Contact Event (WhatsApp)
-                  if (typeof window !== 'undefined' && window.trackWhatsAppContact) {
-                    window.trackWhatsAppContact();
-                  }
-                  
-                  // Track Meta Pixel Lead Event
-                  if (typeof window !== 'undefined' && window.trackMetaEvent) {
-                    window.trackMetaEvent('Lead', {
+                    window.trackLeadSubmission?.();
+                    window.trackWhatsAppContact?.();
+                    window.trackMetaEvent?.('Lead', {
                       content_name: 'WhatsApp Consultation',
                       value: 1
                     });
+                  } catch (err) {
+                    console.log('Tracking error (non-critical):', err);
                   }
+                  // Link will open regardless of tracking
                 }}
                 className="w-full text-center border-2 border-white bg-transparent hover:bg-[#C9A861] text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium text-lg"
               >
@@ -734,13 +724,13 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                // Track GA4 Event - WhatsApp Click (Contact Form)
-                if (typeof window !== 'undefined' && window.trackGA4Event) {
-                  window.trackGA4Event('whatsapp_click', {
+                try {
+                  window.trackGA4Event?.('whatsapp_click', {
                     event_category: 'engagement',
                     event_label: 'Chat on WhatsApp'
                   });
-                  console.log('GA4 event fired: whatsapp_click');
+                } catch (err) {
+                  console.log('Tracking error:', err);
                 }
               }}
               className="inline-flex items-center gap-2 bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-xl shadow-md transition-all duration-300 font-semibold"

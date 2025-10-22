@@ -144,13 +144,13 @@ export default function HairTransplantPage() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => {
-          // Track GA4 Event - WhatsApp Click (Hair Transplant Page)
-          if (typeof window !== 'undefined' && window.trackGA4Event) {
-            window.trackGA4Event('whatsapp_click', {
+          try {
+            window.trackGA4Event?.('whatsapp_click', {
               event_category: 'engagement',
               event_label: 'Chat on WhatsApp'
             });
-            console.log('GA4 event fired: whatsapp_click');
+          } catch (err) {
+            console.log('Tracking error:', err);
           }
         }}
         className="fixed bottom-6 right-6 z-50 bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-6 py-3 rounded-xl shadow-lg transition-all duration-300 font-semibold flex items-center gap-2"
