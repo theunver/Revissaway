@@ -35,20 +35,37 @@ export default function Analytics() {
             }
           };
 
+          // Google Ads Lead Submission Helper (placeholder)
+          window.trackLeadSubmission = function() {
+            try {
+              console.log('✅ Lead submission tracked');
+            } catch (err) {
+              console.error('Lead tracking error:', err);
+            }
+          };
+
           // Meta Pixel Event Tracking Helper
           window.trackMetaEvent = function(eventName, params) {
-            if (typeof fbq !== 'undefined') {
-              fbq('track', eventName, params);
+            try {
+              if (typeof fbq !== 'undefined') {
+                fbq('track', eventName, params);
+              }
+            } catch (err) {
+              console.error('Meta Pixel error:', err);
             }
           };
 
           // Meta Pixel WhatsApp Contact Tracking
           window.trackWhatsAppContact = function() {
-            if (typeof fbq !== 'undefined') {
-              fbq('track', 'Contact', {
-                method: 'WhatsApp'
-              });
-              console.log('Meta Pixel tracked: Contact (WhatsApp)');
+            try {
+              if (typeof fbq !== 'undefined') {
+                fbq('track', 'Contact', {
+                  method: 'WhatsApp'
+                });
+                console.log('Meta Pixel tracked: Contact (WhatsApp)');
+              }
+            } catch (err) {
+              console.error('WhatsApp tracking error:', err);
             }
           };
 
