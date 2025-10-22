@@ -50,7 +50,7 @@ export default function Footer() {
           <p>International: +61 483 898 360</p>
 
           <h3 className="text-[#a58a58] font-semibold mt-4">{t('footer.email')}</h3>
-          <p>contact@mehmetaliunvers.com</p>
+          <p>info@revissaway.com.au</p>
         </div>
       </div>
 

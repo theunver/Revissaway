@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     // Email content
     const mailOptions = {
       from: `"RevissaWay Website" <${process.env.GMAIL_USER}>`,
-      to: "revissaway@gmail.com",
+      to: "info@revissaway.com.au",
       subject: "New Consultation / Contact Form Submission - RevissaWay",
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f5f0; border-radius: 10px;">

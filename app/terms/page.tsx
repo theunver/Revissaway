@@ -90,7 +90,7 @@ export default function TermsPage() {
               </p>
               <div className="bg-[#FFF8DC] p-4 rounded-lg border-l-4 border-[#9B7E3E]">
                 <p className="text-gray-800 mb-2">
-                  📧 <a href="mailto:contact@mehmetaliunvers.com" className="text-[#9B7E3E] hover:underline">contact@mehmetaliunvers.com</a>
+                  📧 <a href="mailto:info@revissaway.com.au" className="text-[#9B7E3E] hover:underline">info@revissaway.com.au</a>
                 </p>
                 <p className="text-gray-800">
                   📞 <a href="tel:+61483898360" className="text-[#9B7E3E] hover:underline">+61 483 898 360</a>
@@ -164,7 +164,7 @@ export default function TermsPage() {
               </p>
               <div className="bg-[#FFF8DC] p-4 rounded-lg border-l-4 border-[#9B7E3E]">
                 <p className="text-gray-800 mb-2">
-                  📧 <a href="mailto:contact@mehmetaliunvers.com" className="text-[#9B7E3E] hover:underline">contact@mehmetaliunvers.com</a>
+                  📧 <a href="mailto:info@revissaway.com.au" className="text-[#9B7E3E] hover:underline">info@revissaway.com.au</a>
                 </p>
                 <p className="text-gray-800">
                   📞 <a href="tel:+61483898360" className="text-[#9B7E3E] hover:underline">+61 483 898 360</a>

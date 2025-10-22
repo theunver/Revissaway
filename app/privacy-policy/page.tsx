@@ -73,8 +73,8 @@ export default function PrivacyPolicyPage() {
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 You can request to access, correct, or delete your personal data at any time by contacting us at{' '}
-                <a href="mailto:contact@mehmetaliunvers.com" className="text-[#9B7E3E] hover:underline">
-                  contact@mehmetaliunvers.com
+                <a href="mailto:info@revissaway.com.au" className="text-[#9B7E3E] hover:underline">
+                  info@revissaway.com.au
                 </a>
                 .
               </p>
@@ -94,7 +94,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="bg-[#FFF8DC] p-4 rounded-lg border-l-4 border-[#9B7E3E]">
                 <p className="text-gray-800 mb-2">
-                  📧 <a href="mailto:contact@mehmetaliunvers.com" className="text-[#9B7E3E] hover:underline">contact@mehmetaliunvers.com</a>
+                  📧 <a href="mailto:info@revissaway.com.au" className="text-[#9B7E3E] hover:underline">info@revissaway.com.au</a>
                 </p>
                 <p className="text-gray-800">
                   📞 <a href="tel:+61483898360" className="text-[#9B7E3E] hover:underline">+61 483 898 360</a>
@@ -151,8 +151,8 @@ export default function PrivacyPolicyPage() {
               </h3>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Kişisel verilerinize erişim, düzeltme veya silme talebinde bulunabilirsiniz. Bunun için bizimle iletişime geçin:{' '}
-                <a href="mailto:contact@mehmetaliunvers.com" className="text-[#9B7E3E] hover:underline">
-                  contact@mehmetaliunvers.com
+                <a href="mailto:info@revissaway.com.au" className="text-[#9B7E3E] hover:underline">
+                  info@revissaway.com.au
                 </a>
               </p>
 
@@ -171,7 +171,7 @@ export default function PrivacyPolicyPage() {
               </p>
               <div className="bg-[#FFF8DC] p-4 rounded-lg border-l-4 border-[#9B7E3E]">
                 <p className="text-gray-800 mb-2">
-                  📧 <a href="mailto:contact@mehmetaliunvers.com" className="text-[#9B7E3E] hover:underline">contact@mehmetaliunvers.com</a>
+                  📧 <a href="mailto:info@revissaway.com.au" className="text-[#9B7E3E] hover:underline">info@revissaway.com.au</a>
                 </p>
                 <p className="text-gray-800">
                   📞 <a href="tel:+61483898360" className="text-[#9B7E3E] hover:underline">+61 483 898 360</a>
