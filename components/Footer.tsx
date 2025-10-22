@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
 
         {/* Right: Info */}
-        <div className="text-sm text-right space-y-3">
+        <div id="contact-info" className="text-sm text-right space-y-3">
           <h3 className="text-[#a58a58] font-semibold">{t('footer.address')}</h3>
           <p>58 Clarke St<br />Southbank VIC 3006</p>
 

@@ -114,7 +114,21 @@ export default function Navbar() {
             <a href="/about" className="text-white hover:text-[#B8965A] transition-colors duration-200">
               {t('nav.about')}
             </a>
-            <a href="/#contact" className="text-white hover:text-[#B8965A] transition-colors duration-200">
+            <a 
+              href="/#contact-info" 
+              onClick={(e) => {
+                e.preventDefault();
+                // Check if we're on the homepage
+                if (window.location.pathname === '/') {
+                  // Scroll to contact info in footer
+                  document.getElementById('contact-info')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  // Navigate to homepage contact info
+                  window.location.href = '/#contact-info';
+                }
+              }}
+              className="text-white hover:text-[#B8965A] transition-colors duration-200"
+            >
               {t('nav.contact')}
             </a>
           </div>
@@ -310,13 +324,24 @@ export default function Navbar() {
             {t('nav.about')}
           </Link>
           
-          <Link 
-            href="/#contact" 
-            onClick={() => setIsMobileMenuOpen(false)}
+          <a 
+            href="/#contact-info" 
+            onClick={(e) => {
+              e.preventDefault();
+              setIsMobileMenuOpen(false);
+              // Check if we're on the homepage
+              if (window.location.pathname === '/') {
+                // Scroll to contact info in footer
+                document.getElementById('contact-info')?.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                // Navigate to homepage contact info
+                window.location.href = '/#contact-info';
+              }
+            }}
             className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
           >
             {t('nav.contact')}
-          </Link>
+          </a>
         </nav>
 
         {/* Free Consultation Button */}
