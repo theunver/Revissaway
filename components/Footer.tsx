@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
         {/* Left: Socials */}
         <div className="flex flex-col gap-3 text-base">
-          <a href="https://wa.me/61483898360" target="_blank" className="flex items-center gap-3 hover:opacity-80">
+          <a href="https://api.whatsapp.com/send?phone=61483898360" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:opacity-80">
             <FaWhatsapp className="text-[#a58a58] text-xl" /> WhatsApp
           </a>
           <a href="https://instagram.com/estheway" target="_blank" className="flex items-center gap-3 hover:opacity-80">
