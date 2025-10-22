@@ -8,7 +8,7 @@ export default function Footer() {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-gradient-to-b from-white to-[#f5e9cc] px-6 py-14 text-[#3a3a3a] font-sans">
+    <footer className="bg-gradient-to-b from-white to-[#f5e9cc] px-4 py-8 md:px-8 md:py-12 text-[#3a3a3a] font-sans pb-16">
       {/* Title & Text */}
       <div className="max-w-6xl mx-auto text-center mb-10">
         <h2 className="text-2xl font-semibold text-[#a58a58] mb-4">{t('footer.title')}</h2>
@@ -23,33 +23,42 @@ export default function Footer() {
         </a>
       </div>
 
-      {/* Content Row */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
-        {/* Left: Socials */}
-        <div className="flex flex-col gap-3 text-base">
-          <a href="https://api.whatsapp.com/send?phone=61483898360" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:opacity-80">
-            <FaWhatsapp className="text-[#a58a58] text-xl" /> WhatsApp
+      {/* Social Media Links - Mobile Optimized */}
+      <div className="max-w-6xl mx-auto flex flex-col items-center gap-2 mb-6">
+        <div className="flex gap-4 mt-2">
+          <a href="https://api.whatsapp.com/send?phone=61483898360" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80">
+            <FaWhatsapp className="text-[#9B7E3E] text-xl" />
+            <span className="text-sm text-[#9B7E3E]">WhatsApp</span>
           </a>
-          <a href="https://instagram.com/estheway" target="_blank" className="flex items-center gap-3 hover:opacity-80">
-            <FaInstagram className="text-[#a58a58] text-xl" /> Instagram
+          <a href="https://instagram.com/estheway" target="_blank" className="flex items-center gap-2 hover:opacity-80">
+            <FaInstagram className="text-[#9B7E3E] text-xl" />
+            <span className="text-sm text-[#9B7E3E]">Instagram</span>
           </a>
-          <a href="https://tiktok.com/@estheway" target="_blank" className="flex items-center gap-3 hover:opacity-80">
-            <FaTiktok className="text-[#a58a58] text-xl" /> Tiktok
+          <a href="https://tiktok.com/@estheway" target="_blank" className="flex items-center gap-2 hover:opacity-80">
+            <FaTiktok className="text-[#9B7E3E] text-xl" />
+            <span className="text-sm text-[#9B7E3E]">Tiktok</span>
           </a>
-          <a href="https://facebook.com/estheway" target="_blank" className="flex items-center gap-3 hover:opacity-80">
-            <FaFacebookF className="text-[#a58a58] text-xl" /> Facebook
+          <a href="https://facebook.com/estheway" target="_blank" className="flex items-center gap-2 hover:opacity-80">
+            <FaFacebookF className="text-[#9B7E3E] text-xl" />
+            <span className="text-sm text-[#9B7E3E]">Facebook</span>
           </a>
         </div>
+      </div>
 
-        {/* Right: Info */}
-        <div id="contact-info" className="text-sm text-right space-y-3">
-          <h3 className="text-[#a58a58] font-semibold">{t('footer.address')}</h3>
+      {/* Contact Info - Mobile Optimized */}
+      <div id="contact-info" className="max-w-6xl mx-auto mt-6 flex flex-col items-center gap-1 text-sm text-[#9B7E3E] text-center">
+        <div className="mt-4">
+          <h3 className="text-[#9B7E3E] font-semibold">{t('footer.address')}</h3>
           <p>58 Clarke St<br />Southbank VIC 3006</p>
-
-          <h3 className="text-[#a58a58] font-semibold mt-4">{t('footer.phone')}</h3>
+        </div>
+        
+        <div className="mt-4">
+          <h3 className="text-[#9B7E3E] font-semibold">{t('footer.phone')}</h3>
           <p>International: +61 483 898 360</p>
-
-          <h3 className="text-[#a58a58] font-semibold mt-4">{t('footer.email')}</h3>
+        </div>
+        
+        <div className="mt-4">
+          <h3 className="text-[#9B7E3E] font-semibold">{t('footer.email')}</h3>
           <p>info@revissaway.com.au</p>
         </div>
       </div>
@@ -71,27 +80,27 @@ export default function Footer() {
         <div className="mt-3 flex gap-4 justify-center">
           <a 
             href="/privacy-policy" 
-            className="text-xs text-[#a58a58] hover:underline transition-colors"
+            className="text-xs text-[#9B7E3E] hover:underline transition-colors"
           >
             Privacy Policy
           </a>
           <span className="text-xs text-gray-400">|</span>
           <a 
             href="/terms" 
-            className="text-xs text-[#a58a58] hover:underline transition-colors"
+            className="text-xs text-[#9B7E3E] hover:underline transition-colors"
           >
             Terms of Use
           </a>
           <span className="text-xs text-gray-400">|</span>
           <a 
             href="/about" 
-            className="text-xs text-[#a58a58] hover:underline transition-colors"
+            className="text-xs text-[#9B7E3E] hover:underline transition-colors"
           >
             About RevissaWay
           </a>
         </div>
         
-        <p className="text-xs text-gray-500 mt-3">
+        <p className="text-xs text-gray-500 mt-6">
           RevissaWay is not a medical provider. It connects patients with accredited clinics in Türkiye. 
           All medical procedures are performed by licensed partner clinics.
         </p>
