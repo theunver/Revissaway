@@ -1,5 +1,7 @@
 "use client";
 
+import OptimizedVideo from "@/components/OptimizedVideo";
+
 export default function DentalAestheticsPage() {
   const whatsappLink = "https://api.whatsapp.com/send?phone=61483898360";
 
@@ -58,7 +60,7 @@ export default function DentalAestheticsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Procedure Video 1 */}
             <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-              <video 
+              <OptimizedVideo 
                 src="/videos/dental9.mp4"
                 className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
                 autoPlay
@@ -66,14 +68,12 @@ export default function DentalAestheticsPage() {
                 muted
                 playsInline
                 controls
-                preload="auto"
-                style={{ opacity: 1 }}
               />
             </div>
 
             {/* Procedure Video 2 */}
             <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-              <video 
+              <OptimizedVideo 
                 src="/videos/dental10.mp4"
                 className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
                 autoPlay
@@ -81,8 +81,6 @@ export default function DentalAestheticsPage() {
                 muted
                 playsInline
                 controls
-                preload="auto"
-                style={{ opacity: 1 }}
               />
             </div>
           </div>
@@ -95,16 +93,14 @@ export default function DentalAestheticsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           {/* Video */}
           <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <video
+            <OptimizedVideo
               src="/videos/dental-collage.mp4"
               autoPlay
               muted
               loop
               playsInline
               controls
-              preload="auto"
               className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
-              style={{ opacity: 1 }}
             />
           </div>
 

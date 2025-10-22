@@ -1,20 +1,21 @@
 "use client";
 
+import OptimizedVideo from "@/components/OptimizedVideo";
+
 export default function WhyTurkeyPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-[#FFF8DC] to-white">
       {/* Hero Section with Video Background */}
   <div className="relative w-full h-[70vh] overflow-hidden bg-black">
-        <video
+        <OptimizedVideo
+          src="/videos/aboutbanner.mp4"
+          className="w-full h-full object-cover absolute inset-0"
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
-          className="w-full h-full object-cover absolute inset-0"
-          src="/videos/aboutbanner.mp4"
-          style={{ opacity: 1 }}
+          priority={true}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
@@ -32,18 +33,14 @@ export default function WhyTurkeyPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-20">
           {/* Portrait Video (replaces portrait image) */}
           <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <video
+            <OptimizedVideo
+              src="/videos/002bane_optimized.mp4"
+              className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
               autoPlay
               loop
               muted
               playsInline
-              preload="auto"
-              className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
-              style={{ opacity: 1 }}
-            >
-              <source src="/videos/002bane_optimized.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            />
           </div>
 
           {/* Text Content */}

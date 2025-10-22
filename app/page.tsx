@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import OptimizedVideo from "@/components/OptimizedVideo";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -204,18 +205,15 @@ export default function Home() {
       {/* Hero Section with Video Background */}
       <section id="home" className="relative h-[85vh] w-full overflow-hidden bg-black pt-[55px]">
         {/* Video Background */}
-        <video
+        <OptimizedVideo
+          src="/videos/lowbannerfirst_optimized.mp4"
+          className="w-full h-full object-cover absolute inset-0"
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
-          className="w-full h-full object-cover absolute inset-0"
-          style={{ opacity: 1 }}
-        >
-          <source src="/videos/lowbannerfirst_optimized.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          priority={true}
+        />
 
         {/* Dark Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>

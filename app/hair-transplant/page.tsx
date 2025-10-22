@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import OptimizedVideo from "@/components/OptimizedVideo";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -195,7 +196,7 @@ export default function HairTransplantPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Procedure Video 1 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
+            <OptimizedVideo 
               src="/videos/hairreels1.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
@@ -203,14 +204,12 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
-              preload="auto"
-              style={{ opacity: 1 }}
             />
           </div>
 
           {/* Procedure Video 2 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
+            <OptimizedVideo 
               src="/videos/hairreels2.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
@@ -218,14 +217,12 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
-              preload="auto"
-              style={{ opacity: 1 }}
             />
           </div>
 
           {/* Procedure Video 3 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
+            <OptimizedVideo 
               src="/videos/hairreels3.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
@@ -233,14 +230,12 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
-              preload="auto"
-              style={{ opacity: 1 }}
             />
           </div>
 
           {/* Procedure Video 4 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
+            <OptimizedVideo 
               src="/videos/hairreels4.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
@@ -248,8 +243,6 @@ export default function HairTransplantPage() {
               muted
               playsInline
               controls
-              preload="auto"
-              style={{ opacity: 1 }}
             />
           </div>
         </div>

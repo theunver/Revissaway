@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import OptimizedVideo from "@/components/OptimizedVideo";
 
 export default function CosmeticSurgeryPage() {
   const whatsappLink = "https://api.whatsapp.com/send?phone=61483898360";
@@ -65,7 +66,7 @@ export default function CosmeticSurgeryPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Procedure Video 1 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
+            <OptimizedVideo 
               src="/videos/surgery1.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
@@ -73,14 +74,12 @@ export default function CosmeticSurgeryPage() {
               muted
               playsInline
               controls
-              preload="auto"
-              style={{ opacity: 1 }}
             />
           </div>
 
           {/* Procedure Video 2 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
+            <OptimizedVideo 
               src="/videos/surgery2.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
@@ -88,14 +87,12 @@ export default function CosmeticSurgeryPage() {
               muted
               playsInline
               controls
-              preload="auto"
-              style={{ opacity: 1 }}
             />
           </div>
 
           {/* Procedure Video 3 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
+            <OptimizedVideo 
               src="/videos/surgery3.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
@@ -103,14 +100,12 @@ export default function CosmeticSurgeryPage() {
               muted
               playsInline
               controls
-              preload="auto"
-              style={{ opacity: 1 }}
             />
           </div>
 
           {/* Procedure Video 4 */}
           <div className="rounded-xl overflow-hidden shadow-[0_0_40px_10px_rgba(255,215,0,0.25)] transition-all duration-500">
-            <video 
+            <OptimizedVideo 
               src="/videos/surgery4.mp4"
               className="object-cover w-full h-[320px] md:h-[380px] lg:h-[420px] cursor-pointer [&::-webkit-media-controls]:opacity-0 [&::-webkit-media-controls]:hover:opacity-100"
               autoPlay
@@ -118,8 +113,6 @@ export default function CosmeticSurgeryPage() {
               muted
               playsInline
               controls
-              preload="auto"
-              style={{ opacity: 1 }}
             />
           </div>
         </div>
