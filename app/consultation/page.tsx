@@ -75,9 +75,6 @@ export default function ConsultationPage() {
             <p className="text-gray-600 text-lg">
               Fill out the form below and we'll get back to you within 24 hours.
             </p>
-            <p className="text-gray-600 text-base mt-4">
-              We provide consultations exclusively via written communication (email or WhatsApp) to ensure clarity, accuracy, and confidentiality for every client. Calls or in-person meetings are by appointment only.
-            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

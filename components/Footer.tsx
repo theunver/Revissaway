@@ -74,10 +74,7 @@ export default function Footer() {
           loading="eager"
           style={{ opacity: 1 }}
         />
-        <p className="text-xs text-gray-500 mt-4 mb-2">
-          Consultations via email or WhatsApp only — ensuring clarity & confidentiality.
-        </p>
-        <p className="text-xs text-gray-600">{t('footer.copyright')}</p>
+        <p className="text-xs text-gray-600 mt-4">{t('footer.copyright')}</p>
         
         {/* Legal Links */}
         <div className="mt-3 flex gap-4 justify-center">

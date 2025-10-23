@@ -250,11 +250,6 @@ export default function Home() {
               >
                 Book Free Consultation
               </a>
-              
-              {/* Consultation Explanation */}
-              <p className="text-sm text-[#b4b4b4] text-center mt-2 max-w-xs">
-                All consultations are provided in writing via email or WhatsApp to ensure clarity and confidentiality.
-              </p>
 
               {/* Secondary CTA: WhatsApp */}
               <a
