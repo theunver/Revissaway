@@ -697,19 +697,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (['en', 'tr', 'fr', 'es'].includes(language)) {
       const langData = translations[language as 'en' | 'tr' | 'fr' | 'es'] || translations.en;
       
-      // Handle nested keys like 'home.hero.title'
-      const keys = key.split('.');
-      let result: any = langData;
-      
-      for (const k of keys) {
-        if (result && typeof result === 'object' && k in result) {
-          result = result[k];
-        } else {
-          return key; // Return the key if translation not found
-        }
+      // Check if the key exists directly in the translations
+      if (key in langData) {
+        return langData[key as keyof typeof langData] || key;
       }
       
-      return typeof result === 'string' ? result : key;
+      // If not found, return the key
+      return key;
     }
     // For other languages, return the key (they use dynamic translation)
     return key;
