@@ -422,6 +422,11 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         return;
       }
 
+      // For static translation languages (tr, fr, es), don't use dynamic translation
+      if (['tr', 'fr', 'es'].includes(language)) {
+        return;
+      }
+
       setIsTranslating(true);
 
       try {
@@ -576,8 +581,13 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const t = (key: string): string => {
-    const langData = translations[language as 'en' | 'tr' | 'fr' | 'es'] || translations.en;
-    return langData[key as keyof typeof translations.en] || key;
+    // For languages with static translations (en, tr, fr, es), use them
+    if (['en', 'tr', 'fr', 'es'].includes(language)) {
+      const langData = translations[language as 'en' | 'tr' | 'fr' | 'es'] || translations.en;
+      return langData[key as keyof typeof translations.en] || key;
+    }
+    // For other languages, return the key (they use dynamic translation)
+    return key;
   };
 
   return (
