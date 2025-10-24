@@ -45,7 +45,7 @@ export function useTranslation(targetLang: string, isEnabled: boolean = true) {
 
   // Translate all text nodes with parallel batch processing
   const translateAllNodes = useCallback(async () => {
-    if (!isEnabled || targetLang === 'en' || targetLang === 'tr' || targetLang === 'fr') {
+    if (!isEnabled || targetLang === 'en' || targetLang === 'tr' || targetLang === 'fr' || targetLang === 'es') {
       // Reset to LTR for English/Turkish
       if (typeof document !== 'undefined') {
         document.documentElement.setAttribute('dir', 'ltr');
@@ -233,7 +233,7 @@ export function useTranslation(targetLang: string, isEnabled: boolean = true) {
 
   // Main translation effect
   useEffect(() => {
-    if (!isEnabled || targetLang === 'en' || targetLang === 'tr' || targetLang === 'fr') {
+    if (!isEnabled || targetLang === 'en' || targetLang === 'tr' || targetLang === 'fr' || targetLang === 'es') {
       // Reset to LTR and cleanup
       if (typeof document !== 'undefined') {
         document.documentElement.setAttribute('dir', 'ltr');
@@ -330,7 +330,7 @@ export function useTranslation(targetLang: string, isEnabled: boolean = true) {
   const translateText = useCallback(async (text: string, sourceLang: string = 'en'): Promise<string> => {
     if (!text || !text.trim()) return text;
     if (sourceLang === targetLang) return text;
-    if (targetLang === 'en' || targetLang === 'tr' || targetLang === 'fr') return text;
+    if (targetLang === 'en' || targetLang === 'tr' || targetLang === 'fr' || targetLang === 'es') return text;
 
     const cacheKey = `${sourceLang}_${targetLang}_${text}`;
     if (translationCache[cacheKey]) {
@@ -359,7 +359,7 @@ export function useTranslation(targetLang: string, isEnabled: boolean = true) {
   const translateBatch = useCallback(async (texts: string[], sourceLang: string = 'en'): Promise<string[]> => {
     if (!texts.length) return texts;
     if (sourceLang === targetLang) return texts;
-    if (targetLang === 'en' || targetLang === 'tr' || targetLang === 'fr') return texts;
+    if (targetLang === 'en' || targetLang === 'tr' || targetLang === 'fr' || targetLang === 'es') return texts;
 
     try {
       const response = await fetch('/api/translate', {
