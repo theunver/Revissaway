@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import OptimizedVideo from "@/components/OptimizedVideo";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -222,10 +224,10 @@ export default function Home() {
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance text-center leading-snug md:leading-normal">
-              Your Bridge to Turkey&apos;s Most Trusted Hair & Aesthetic Experts
+              {t('home.hero.title')}
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto text-balance">
-              RevissaWay connects patients from Australia and New Zealand with accredited clinics in Turkey — offering world-class quality, expert surgeons, and transparent coordination.
+              {t('home.hero.subtitle')}
             </p>
             
             {/* CTA Buttons - Stacked Vertically */}
@@ -248,7 +250,7 @@ export default function Home() {
                 }}
                 className="w-full text-center border-2 border-white bg-transparent hover:bg-[#C9A861] text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium text-lg"
               >
-                Book Free Consultation
+{t('home.hero.cta')}
               </a>
 
               {/* Secondary CTA: WhatsApp */}
@@ -276,7 +278,7 @@ export default function Home() {
                 }}
                 className="w-full text-center border-2 border-white bg-transparent hover:bg-[#C9A861] text-white px-8 py-4 rounded-lg shadow-lg transition-all duration-300 font-medium text-lg"
               >
-                Chat on WhatsApp
+{t('home.contact.whatsapp')}
               </a>
             </div>
           </div>
@@ -311,12 +313,9 @@ export default function Home() {
 
             {/* Text Content */}
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Turkey?</h2>
+              <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('home.whyTurkey.title')}</h2>
               <p className="text-gray-700 leading-relaxed">
-                RevissaWay is a trusted health tourism brand that works in collaboration with internationally accredited and licensed medical and aesthetic clinics across Turkey. 
-                RevissaWay does not provide medical treatment directly; it acts solely as a professional intermediary, ensuring that patients are connected only with certified hospitals, surgical centers, and clinics specialized in dental and aesthetic care. 
-                Through these partnerships, patients gain access to qualified physicians, experienced surgeons, and multidisciplinary healthcare teams. 
-                This network combines world-class clinical expertise, evidence-based medical practices, advanced technology, and genuine Turkish hospitality — providing patients with a safe, transparent, and professionally coordinated treatment journey from their initial consultation to full recovery.
+                {t('home.whyTurkey.description')}
               </p>
             </div>
           </div>
@@ -377,7 +376,7 @@ export default function Home() {
       <section id="services" className="bg-gradient-to-b from-white to-gray-50 py-20 relative">
         <div className="max-w-7xl mx-auto px-6">
           <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-12">
-            Our Services
+            {t('home.services.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
@@ -394,10 +393,10 @@ export default function Home() {
               <div className="relative p-8 text-center h-full flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                    Hair Transplant
+                    {t('home.services.hairTransplant.title')}
                   </h3>
                   <p className="text-base text-gray-100 mb-6 leading-relaxed">
-                    Modern techniques at internationally accredited hospitals.
+                    {t('home.services.hairTransplant.description')}
                   </p>
                 </div>
                 <a
@@ -422,10 +421,10 @@ export default function Home() {
               <div className="relative p-8 text-center h-full flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                    Esthetic Surgery Applications
+                    {t('home.services.cosmeticSurgery.title')}
                   </h3>
                   <p className="text-base text-gray-100 mb-6 leading-relaxed">
-                    Wide range of procedures performed by experienced surgeons.
+                    {t('home.services.cosmeticSurgery.description')}
                   </p>
                 </div>
                 <a
@@ -450,10 +449,10 @@ export default function Home() {
               <div className="relative p-8 text-center h-full flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
-                    Dental Aesthetics
+                    {t('home.services.dentalAesthetics.title')}
                   </h3>
                   <p className="text-base text-gray-100 mb-6 leading-relaxed">
-                    Smile design and oral health with modern treatments.
+                    {t('home.services.dentalAesthetics.description')}
                   </p>
                 </div>
                 <a
@@ -572,19 +571,19 @@ export default function Home() {
       <section id="contact" className="bg-gradient-to-b from-white to-[#FFF8DC] py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">
-            Book Your Free Consultation
+            {t('home.contact.title')}
           </h2>
           <div id="consultation-form" className="max-w-2xl mx-auto bg-white border border-[#9B7E3E]/30 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-8 md:p-12">
             <div className="text-center mb-8">
               <p className="text-gray-600 text-lg">
-              Fill out the form below and we'll get back to you within 24 hours.
+              {t('home.contact.subtitle')}
             </p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-semibold text-black mb-2">
-                  First Name <span className="text-red-500">*</span>
+{t('home.contact.firstName')} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -598,7 +597,7 @@ export default function Home() {
               </div>
               <div>
                 <label htmlFor="lastName" className="block text-sm font-semibold text-black mb-2">
-                  Last Name <span className="text-red-500">*</span>
+{t('home.contact.lastName')} <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="text"
@@ -614,7 +613,7 @@ export default function Home() {
 
             <div>
               <label htmlFor="email" className="block text-sm font-semibold text-black mb-2">
-                Email <span className="text-red-500">*</span>
+{t('home.contact.email')} <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -629,7 +628,7 @@ export default function Home() {
 
             <div>
               <label htmlFor="phone" className="block text-sm font-semibold text-black mb-2">
-                Phone
+{t('home.contact.phone')}
               </label>
               <input
                 type="tel"
@@ -644,7 +643,7 @@ export default function Home() {
 
             <div>
               <label htmlFor="preferredDate" className="block text-sm font-semibold text-black mb-2">
-                Preferred Date/Time
+{t('home.contact.preferredDate')}
               </label>
               <input
                 type="datetime-local"
@@ -658,7 +657,7 @@ export default function Home() {
 
             <div>
               <label htmlFor="service" className="block text-sm font-semibold text-black mb-2">
-                Service
+{t('home.contact.service')}
               </label>
               <select
                 id="service"
@@ -676,7 +675,7 @@ export default function Home() {
 
             <div>
               <label htmlFor="message" className="block text-sm font-semibold text-black mb-2">
-                Message
+{t('home.contact.message')}
               </label>
               <textarea
                 id="message"
@@ -692,12 +691,12 @@ export default function Home() {
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                <span>✅ Thank you, your consultation request has been received.</span>
+                <span>{t('home.contact.success')}</span>
               </div>
             )}
             {formStatus === "error" && (
               <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-xl">
-                Sorry, an error occurred. Please try again.
+{t('home.contact.error')}
               </div>
             )}
               <button
@@ -705,13 +704,13 @@ export default function Home() {
               disabled={formStatus === "submitting"}
               className="w-full bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-xl shadow-md transition-all duration-300 font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {formStatus === "submitting" ? "Sending..." : "Book Consultation"}
+{formStatus === "submitting" ? t('home.contact.submitting') : t('home.contact.submit')}
             </button>
           </form>
 
             <div className="mt-8 text-center">
             <p className="text-sm text-gray-600 mb-4">
-              We respect your privacy. Your information will not be shared with third parties.
+{t('home.contact.privacy')}
             </p>
           </div>
 
