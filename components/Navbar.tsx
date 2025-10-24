@@ -155,7 +155,7 @@ export default function Navbar() {
                 ) : (
                   <span className="text-lg">{languageOptions.find(l => l.code === language)?.flag || '🌐'}</span>
                 )}
-                <span className="font-medium text-sm">{language.toUpperCase()}</span>
+                <span className="font-medium text-sm">{languageOptions.find(l => l.code === language)?.label || language.toUpperCase()}</span>
                 <svg 
                   className={`w-4 h-4 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} 
                   fill="none" 
@@ -380,7 +380,7 @@ export default function Navbar() {
                 }`}
               >
                 <span>{lang.flag}</span>
-                <span className="text-xs">{lang.code.toUpperCase()}</span>
+                <span className="text-xs">{lang.label}</span>
               </button>
             ))}
           </div>
