@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type Language = 'en' | 'tr' | 'zh' | 'ar' | 'vi' | 'yue' | 'pa' | 'hi' | 'it' | 'el' | 'tl' | 'th';
+type Language = 'en' | 'tr' | 'zh' | 'ar' | 'vi' | 'yue' | 'pa' | 'hi' | 'it' | 'el' | 'tl' | 'th' | 'fr';
 
 export const languageOptions = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
@@ -17,6 +17,7 @@ export const languageOptions = [
   { code: 'el', label: 'Ελληνικά', flag: '🇬🇷' },
   { code: 'tl', label: 'Tagalog', flag: '🇵🇭' },
   { code: 'th', label: 'ไทย', flag: '🇹🇭' },
+  { code: 'fr', label: 'Français', flag: '🇫🇷' },
 ] as const;
 
 interface LanguageContextType {
@@ -142,6 +143,62 @@ const translations = {
     // Disclaimer
     'disclaimer.text': 'RevissaWay yalnızca organizasyon ve danışmanlık hizmetleri sunmaktadır. Tüm tıbbi prosedürler, Türkiye\'deki akredite ortak hastaneler ve lisanslı tıp uzmanlarının sorumluluğundadır. Sonuçlar kişiden kişiye değişebilir. Bu web sitesindeki bilgiler yalnızca genel bilgilendirme amaçlıdır ve tıbbi tavsiye niteliği taşımaz.',
   },
+  fr: {
+    // Navbar
+    'nav.home': 'Accueil',
+    'nav.services': 'Services',
+    'nav.about': 'À propos',
+    'nav.contact': 'Contact',
+    'nav.whyTurkey': 'Pourquoi la Turquie ?',
+    'nav.consultation': 'Consultation gratuite',
+    
+    // Services
+    'services.hairTransplant': 'Greffe de cheveux',
+    'services.cosmeticSurgery': 'Chirurgie esthétique',
+    'services.dentalAesthetics': 'Esthétique dentaire',
+    
+    // Footer
+    'footer.title': 'Votre pont vers le bien-être',
+    'footer.description': 'Découvrez un accès fiable aux cliniques de cosmétique, greffe de cheveux et esthétique dentaire de classe mondiale en Turquie — avec RevissaWay connectant l\'Australie, la Nouvelle-Zélande et la Turquie grâce à des partenariats médicaux certifiés.',
+    'footer.consultation': 'Réservez votre consultation gratuite',
+    'footer.address': 'ADRESSE',
+    'footer.phone': 'TÉLÉPHONE',
+    'footer.email': 'E-MAIL',
+    'footer.copyright': '© 2025 RevissaWay | Tous droits réservés.',
+    
+    // Home Page
+    'home.hero.title': 'Commencez votre parcours médical esthétique maintenant',
+    'home.hero.subtitle': 'Accès fiable depuis l\'Australie et la Nouvelle-Zélande vers les meilleures cliniques turques pour la greffe de cheveux, la chirurgie esthétique et l\'esthétique dentaire.',
+    'home.hero.cta': 'Obtenez une consultation gratuite sur WhatsApp',
+    'home.whyTurkey.title': 'Pourquoi la Turquie ?',
+    'home.contact.title': 'Réservez votre consultation gratuite',
+    'home.contact.subtitle': 'Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24 heures.',
+    'home.contact.firstName': 'Prénom',
+    'home.contact.lastName': 'Nom de famille',
+    'home.contact.email': 'E-mail',
+    'home.contact.phone': 'Téléphone',
+    'home.contact.preferredDate': 'Date préférée',
+    'home.contact.service': 'Service qui vous intéresse',
+    'home.contact.message': 'Message',
+    'home.contact.submit': 'Réserver une consultation',
+    'home.contact.submitting': 'Envoi en cours...',
+    'home.contact.success': '✅ Merci, votre demande de consultation a été reçue.',
+    'home.contact.error': 'Désolé, une erreur s\'est produite. Veuillez réessayer.',
+    'home.contact.whatsapp': 'Contacter via WhatsApp',
+    'home.contact.privacy': 'Nous respectons votre vie privée. Vos informations ne seront pas partagées avec des tiers.',
+    
+    // About Page
+    'about.title': 'À propos de RevissaWay',
+    'about.expertise.title': 'Expertise et partenariats',
+    'about.expertise.description': 'RevissaWay collabore avec plusieurs partenaires médicaux accrédités et licenciés à travers la Turquie — y compris Estego Turkey. Nous ne sommes liés à aucune institution unique ; au lieu de cela, nous opérons à travers un réseau de cliniques vérifiées qui respectent les normes de soins de santé nationales et internationales.',
+    'about.expertise.multiplePartners': 'Partenaires multiples',
+    'about.expertise.accreditedClinics': 'Cliniques accréditées',
+    'about.expertise.transparentCoordination': 'Coordination transparente',
+    'about.whyChoose.title': 'Pourquoi choisir RevissaWay',
+    
+    // Disclaimer
+    'disclaimer.text': 'RevissaWay fournit uniquement des services d\'organisation et de consultation. Toutes les procédures médicales sont de la responsabilité des hôpitaux partenaires accrédités et des professionnels médicaux licenciés en Turquie. Les résultats peuvent varier d\'une personne à l\'autre. Les informations sur ce site web sont uniquement à des fins d\'information générale et ne constituent pas des conseils médicaux.',
+  },
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
@@ -151,7 +208,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const savedLang = localStorage.getItem('language') as Language;
-    const validLanguages = ['en', 'tr', 'zh', 'ar', 'vi', 'yue', 'pa', 'hi', 'it', 'el', 'tl', 'th'];
+    const validLanguages = ['en', 'tr', 'zh', 'ar', 'vi', 'yue', 'pa', 'hi', 'it', 'el', 'tl', 'th', 'fr'];
     if (savedLang && validLanguages.includes(savedLang)) {
       setLanguageState(savedLang);
     }
@@ -299,9 +356,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const translatePage = async () => {
       // Reset for EN only (original language)
       if (language === 'en') {
-        document.querySelectorAll('[data-translated-tr], [data-translated-zh], [data-translated-ar], [data-translated-vi], [data-translated-yue], [data-translated-pa], [data-translated-hi], [data-translated-it], [data-translated-el], [data-translated-tl], [data-translated-th]').forEach(el => {
+        document.querySelectorAll('[data-translated-tr], [data-translated-zh], [data-translated-ar], [data-translated-vi], [data-translated-yue], [data-translated-pa], [data-translated-hi], [data-translated-it], [data-translated-el], [data-translated-tl], [data-translated-th], [data-translated-fr]').forEach(el => {
           // Remove all translation attributes
-          ['tr', 'zh', 'ar', 'vi', 'yue', 'pa', 'hi', 'it', 'el', 'tl', 'th'].forEach(lang => {
+          ['tr', 'zh', 'ar', 'vi', 'yue', 'pa', 'hi', 'it', 'el', 'tl', 'th', 'fr'].forEach(lang => {
             el.removeAttribute(`data-translated-${lang}`);
           });
         });
@@ -462,7 +519,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const t = (key: string): string => {
-    const langData = translations[language as 'en' | 'tr'] || translations.en;
+    const langData = translations[language as 'en' | 'tr' | 'fr'] || translations.en;
     return langData[key as keyof typeof translations.en] || key;
   };
 
