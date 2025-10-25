@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 import Analytics from "@/components/Analytics";
-import TranslationOverlayWrapper from "@/components/TranslationOverlayWrapper";
+// import TranslationOverlayWrapper from "@/components/TranslationOverlayWrapper";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
 export const metadata: Metadata = {
@@ -83,8 +83,8 @@ export default function RootLayout({
         <Analytics />
         
         <LanguageProvider>
-          {/* Translation Overlay */}
-          <TranslationOverlayWrapper />
+          {/* Translation Overlay - TEMPORARILY DISABLED */}
+          {/* <TranslationOverlayWrapper /> */}
           
           {/* Global Navbar */}
           <Navbar />
