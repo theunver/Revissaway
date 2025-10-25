@@ -534,134 +534,78 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
         return;
       }
 
-      // For static translation languages (tr, fr, es), don't use dynamic translation
-      if (['tr', 'fr', 'es'].includes(language)) {
+      // For static translation languages, just set the lang attribute and exit
+      if (['en', 'tr', 'fr', 'es'].includes(language)) {
+        setIsTranslating(false);
+        document.documentElement.lang = language;
         return;
       }
 
-      setIsTranslating(true);
+      // DISABLED: Dynamic translation to avoid API rate limits
+      // For other languages, show a warning and revert to English
+      setIsTranslating(false);
+      document.documentElement.lang = 'en';
+      console.warn(`Dynamic translation for language "${language}" is temporarily disabled due to API rate limits. Showing English version instead.`);
+      // Optionally: switch back to English automatically
+      // setLanguageState('en');
+      return;
 
-      try {
-        // Select all visible text elements
-        const selector = 'p, h1, h2, h3, h4, h5, h6, li, span, div, a, button, label, td, th, blockquote, figcaption';
-        const elements = Array.from(document.querySelectorAll(selector));
-
-        // Filter out unwanted elements
-        const filteredElements = elements.filter(el => {
-          const tagName = el.tagName.toLowerCase();
-          
-          // Exclude certain tags
-          if (['script', 'style', 'noscript', 'svg', 'path', 'iframe', 'code', 'pre'].includes(tagName)) {
-            return false;
-          }
-
-          // Exclude elements with specific classes or IDs (e.g., code blocks)
-          if (el.closest('script, style, noscript, svg, iframe, code, pre')) {
-            return false;
-          }
-
-          // Check if element is visible
-          const style = window.getComputedStyle(el);
-          if (style.display === 'none' || style.visibility === 'hidden' || style.opacity === '0') {
-            return false;
-          }
-
-          return true;
-        });
-
-        await translateElements(filteredElements);
-
-        // Translate placeholders
-        const placeholderElements = Array.from(document.querySelectorAll('[placeholder]')) as HTMLElement[];
-        for (const el of placeholderElements) {
-          const placeholder = el.getAttribute('placeholder');
-          if (placeholder && !el.hasAttribute(`data-placeholder-${language}`)) {
-            const cacheKey = `${language}:placeholder:${placeholder}`;
-            let translated = translationCache[cacheKey];
-
-            if (!translated) {
-              try {
-                const response = await fetch('/api/translate', {
-                  method: 'POST',
-                  headers: { 
-                    'Content-Type': 'application/json; charset=UTF-8',
-                    'Accept': 'application/json',
-                  },
-                  body: JSON.stringify({
-                    text: placeholder,
-                    targetLang: language,
-                    sourceLang: 'en',
-                  }),
-                });
-
-                if (response.ok) {
-                  const data = await response.json();
-                  if (data && data.translatedText) {
-                    translated = data.translatedText;
-                    translationCache[cacheKey] = translated;
-                  } else {
-                    translated = placeholder;
-                  }
-                } else {
-                  translated = placeholder;
-                }
-              } catch (error) {
-                console.error('Placeholder translation error:', error);
-                translated = placeholder;
-              }
-            }
-
-            if (translated) {
-              el.setAttribute('placeholder', translated);
-              el.setAttribute(`data-placeholder-${language}`, 'true');
-            }
-          }
+      /* DISABLED CODE - Uncomment when API limits are resolved
+      // Debounced translation trigger for dynamic languages
+      const triggerTranslation = () => {
+        if (translationTimeoutRef.current) {
+          clearTimeout(translationTimeoutRef.current);
         }
+        translationTimeoutRef.current = setTimeout(async () => {
+          const nodes = collectTranslatableNodes();
+          await translatePage(nodes);
+        }, 300); // Debounce by 300ms
+      };
 
-        // Update HTML lang attribute for better rendering
-        document.documentElement.lang = language;
+      // Initial translation for dynamic languages
+      triggerTranslation();
 
-        // Set up MutationObserver for dynamic content
-        const observer = new MutationObserver((mutations) => {
-          const newElements: Element[] = [];
-          
-          mutations.forEach((mutation) => {
-            mutation.addedNodes.forEach((node) => {
+      // Setup MutationObserver for dynamic content
+      observerRef.current = new MutationObserver((mutations) => {
+        let hasNewContent = false;
+        mutations.forEach((mutation) => {
+          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+            // Filter out script, style, and already translated elements
+            const meaningfulAdditions = Array.from(mutation.addedNodes).some(node => {
               if (node.nodeType === Node.ELEMENT_NODE) {
                 const el = node as Element;
-                const selector = 'p, h1, h2, h3, h4, h5, h6, li, span, div, a, button, label, td, th, blockquote, figcaption';
-                
-                // Check the element itself
-                if (el.matches(selector)) {
-                  newElements.push(el);
+                const tagName = el.tagName.toLowerCase();
+                if (['script', 'style', 'noscript', 'iframe', 'svg', 'code', 'pre'].includes(tagName)) {
+                  return false; // Skip these elements
                 }
-                
-                // Check child elements
-                const children = el.querySelectorAll(selector);
-                newElements.push(...Array.from(children));
+                // If it's an element that contains text, or could have translatable attributes
+                return el.textContent?.trim().length > 0 || el.hasAttribute('placeholder') || el.hasAttribute('aria-label');
               }
+              return node.nodeType === Node.TEXT_NODE && node.textContent?.trim().length > 0;
             });
-          });
-
-          if (newElements.length > 0) {
-            translateElements(newElements);
+            if (meaningfulAdditions) hasNewContent = true;
+          }
+          // Also consider character data changes for existing nodes that might become visible or have updated text
+          if (mutation.type === 'characterData' && mutation.target.textContent?.trim().length > 0) {
+            const parent = mutation.target.parentElement;
+            if (parent && !parent.hasAttribute('data-original-text')) { // Only if not already translated
+              hasNewContent = true; 
+            }
           }
         });
 
-        // Observe the body for changes
-        observer.observe(document.body, {
-          childList: true,
-          subtree: true,
-        });
+        if (hasNewContent) {
+          triggerTranslation();
+        }
+      });
 
-        // Store observer to disconnect later
-        (window as any).__translationObserver = observer;
-
-      } catch (error) {
-        console.error('Page translation error:', error);
-      } finally {
-        setIsTranslating(false);
-      }
+      observerRef.current.observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true, // Observe text changes in existing nodes
+        attributeFilter: ['placeholder', 'aria-label'] // Observe attribute changes
+      });
+      */
     };
 
     // Disconnect previous observer if exists
