@@ -4,7 +4,7 @@ import { useState } from "react";
 import OptimizedVideo from "@/components/OptimizedVideo";
 
 export default function CosmeticSurgeryPage() {
-  const whatsappLink = "https://api.whatsapp.com/send?phone=61483898360";
+  const whatsappLink = "https://api.whatsapp.com/send?phone=61435955386";
   const [processExpanded, setProcessExpanded] = useState(false);
 
   return (

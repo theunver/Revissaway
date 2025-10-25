@@ -18,7 +18,7 @@ export default function Home() {
   });
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const whatsappLink = "https://api.whatsapp.com/send?phone=61483898360";
+  const whatsappLink = "https://api.whatsapp.com/send?phone=61435955386";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

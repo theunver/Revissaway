@@ -26,7 +26,7 @@ export default function Footer() {
       {/* Social Media Links - Mobile Optimized */}
       <div className="max-w-6xl mx-auto flex flex-col items-center gap-2 mb-6">
         <div className="flex gap-4 mt-2">
-          <a href="https://api.whatsapp.com/send?phone=61483898360" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80">
+          <a href="https://api.whatsapp.com/send?phone=61435955386" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80">
             <FaWhatsapp className="text-[#9B7E3E] text-xl" />
             <span className="text-sm text-[#9B7E3E]">WhatsApp</span>
           </a>
@@ -54,7 +54,7 @@ export default function Footer() {
         
         <div className="mt-4">
           <h3 className="text-[#9B7E3E] font-semibold">{t('footer.phone')}</h3>
-          <p>International: +61 483 898 360</p>
+          <p>International: +61 435 955 386</p>
         </div>
         
         <div className="mt-4">

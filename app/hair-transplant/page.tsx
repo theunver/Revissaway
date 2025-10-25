@@ -10,7 +10,7 @@ export default function HairTransplantPage() {
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const whatsappLink = "https://api.whatsapp.com/send?phone=61483898360";
+  const whatsappLink = "https://api.whatsapp.com/send?phone=61435955386";
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
