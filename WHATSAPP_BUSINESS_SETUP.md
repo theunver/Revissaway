@@ -121,7 +121,7 @@ Create the following shortcuts:
 Email: info@revissaway.com.au
 Website: www.revissaway.com.au
 Phone: +61 435 955 386
-Address: 58 Clarke St, Southbank VIC 3006
+Address: Office 3877, Ground floor, 470 St Kilda Road, Melbourne VIC 3004
 ```
 
 **QR-3: Business Hours**
