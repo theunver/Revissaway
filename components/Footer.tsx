@@ -1,6 +1,6 @@
 "use client";
 
-import { FaWhatsapp, FaInstagram, FaTiktok, FaFacebookF } from "react-icons/fa";
+import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -30,15 +30,11 @@ export default function Footer() {
             <FaWhatsapp className="text-[#9B7E3E] text-xl" />
             <span className="text-sm text-[#9B7E3E]">WhatsApp</span>
           </a>
-          <a href="https://instagram.com/estheway" target="_blank" className="flex items-center gap-2 hover:opacity-80">
+          <a href="https://www.instagram.com/revissaway?igsh=a3FjZDlucjBmN2R6&utm_source=qr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80">
             <FaInstagram className="text-[#9B7E3E] text-xl" />
             <span className="text-sm text-[#9B7E3E]">Instagram</span>
           </a>
-          <a href="https://tiktok.com/@estheway" target="_blank" className="flex items-center gap-2 hover:opacity-80">
-            <FaTiktok className="text-[#9B7E3E] text-xl" />
-            <span className="text-sm text-[#9B7E3E]">Tiktok</span>
-          </a>
-          <a href="https://facebook.com/estheway" target="_blank" className="flex items-center gap-2 hover:opacity-80">
+          <a href="https://www.facebook.com/profile.php?id=61582103925829" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-80">
             <FaFacebookF className="text-[#9B7E3E] text-xl" />
             <span className="text-sm text-[#9B7E3E]">Facebook</span>
           </a>
