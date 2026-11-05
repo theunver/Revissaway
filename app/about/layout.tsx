@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/about",
+  },
   title: "About RevissaWay | Health Tourism Consultancy",
   description: "RevissaWay is an independent health tourism consultancy based in Australia, connecting clients from Australia and New Zealand with accredited medical and aesthetic clinics across Turkey.",
   robots: {

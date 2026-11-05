@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: "/dental-aesthetics",
+  },
   title: "Dental Aesthetics Turkey | Veneers, Implants, Hollywood Smile | RevissaWay",
   description: "Transform your smile with modern dental treatments in Turkey. Hollywood smile, veneers, implants, and crowns at internationally accredited clinics. Up to 70% savings.",
   keywords: ["dental aesthetics Turkey", "Hollywood smile Turkey", "dental veneers Turkey", "dental implants Turkey", "cosmetic dentistry Turkey", "dental crowns Turkey", "smile makeover Turkey"],

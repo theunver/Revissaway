@@ -12,15 +12,20 @@ export default function Navbar() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const { language, setLanguage, t, isLoading, isTranslating } = useLanguage();
 
-  // Prevent body scroll when mobile menu is open
+  // Prevent body scroll when mobile menu is open; allow closing with Escape
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
+    if (!isMobileMenuOpen) {
       document.body.style.overflow = 'unset';
+      return;
     }
+    document.body.style.overflow = 'hidden';
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
     return () => {
       document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', onKeyDown);
     };
   }, [isMobileMenuOpen]);
 
@@ -29,7 +34,7 @@ export default function Navbar() {
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md h-[55px]">
         <div className="flex items-center justify-between h-full px-4 md:px-8 max-w-[1920px] mx-auto">
           {/* Logo - Centered on mobile, left on desktop */}
-          <a href="/" className="flex items-center translate-y-2 absolute left-1/2 -translate-x-1/2 md:relative md:left-0 md:translate-x-0">
+          <a href="/" className="flex items-center translate-y-2 absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0">
             <Image 
               src="/logo.png" 
               alt="RevissaWay Logo" 
@@ -43,7 +48,7 @@ export default function Navbar() {
           </a>
 
         {/* Center Menu - Desktop Only */}
-        <div className="hidden md:flex items-center justify-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden lg:flex items-center justify-center space-x-6 absolute left-1/2 transform -translate-x-1/2">
             <a href="/#home" className="text-white hover:text-[#B8965A] transition-colors duration-200">
               {t('nav.home')}
             </a>
@@ -134,7 +139,7 @@ export default function Navbar() {
           </div>
 
         {/* Right Side Buttons - Desktop Only */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
             {/* Language Dropdown */}
             <div
               className="relative"
@@ -216,8 +221,10 @@ export default function Navbar() {
         {/* Hamburger Menu Button - Mobile Only */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+          className="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
           aria-label="Toggle Menu"
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
         >
           <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
           <span className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
@@ -228,15 +235,16 @@ export default function Navbar() {
 
     {/* Full-Screen Mobile Menu Overlay */}
     <div
-      className={`fixed inset-0 z-40 md:hidden transition-all duration-500 ${
+      id="mobile-menu"
+      className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${
         isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}
     >
       {/* Backdrop with blur */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#000000] to-[#1a1a1a] backdrop-blur-sm"></div>
-      
-      {/* Menu Content */}
-      <div className="relative h-full flex flex-col items-center justify-center px-6 py-20">
+
+      {/* Menu Content - starts below the fixed navbar/logo and scrolls on short screens */}
+      <div className="relative h-full overflow-y-auto overscroll-contain flex flex-col items-center px-6 pt-[120px] pb-12">
         
         {/* Navigation Links */}
         <nav className="flex flex-col items-center space-y-6 mb-12 w-full max-w-md">
@@ -253,6 +261,8 @@ export default function Navbar() {
             <button
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
               className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300 flex items-center justify-center gap-2 w-full"
+              aria-expanded={isMobileServicesOpen}
+              aria-controls="mobile-services-submenu"
             >
               {t('nav.services')}
               <svg 
@@ -266,9 +276,10 @@ export default function Navbar() {
             </button>
             
             {/* Services Submenu */}
-            <div 
+            <div
+              id="mobile-services-submenu"
               className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                isMobileServicesOpen ? 'max-h-48 opacity-100 mt-4' : 'max-h-0 opacity-0'
+                isMobileServicesOpen ? 'max-h-48 opacity-100 mt-4 visible' : 'max-h-0 opacity-0 invisible'
               }`}
             >
               <div className="bg-[#111111] rounded-lg py-2 px-4 space-y-3">

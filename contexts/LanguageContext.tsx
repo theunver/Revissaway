@@ -637,20 +637,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const t = (key: string): string => {
-    // For languages with static translations (en, tr, fr, es), use them
-    if (['en', 'tr', 'fr', 'es'].includes(language)) {
-      const langData = translations[language as 'en' | 'tr' | 'fr' | 'es'] || translations.en;
-      
-      // Check if the key exists directly in the translations
-      if (key in langData) {
-        return langData[key as keyof typeof langData] || key;
-      }
-      
-      // If not found, return the key
-      return key;
+    // Only en, tr, fr and es have reviewed static translations.
+    // Any other language, or any key missing from a language, falls back to
+    // the original English text so raw keys (e.g. "home.hero.title") never render.
+    const english = translations.en as Record<string, string>;
+    const fallback = english[key] || key;
+
+    if (['tr', 'fr', 'es'].includes(language)) {
+      const langData = translations[language as 'tr' | 'fr' | 'es'] as Record<string, string>;
+      return langData[key] || fallback;
     }
-    // For other languages, return the key (they use dynamic translation)
-    return key;
+
+    return fallback;
   };
 
   return (
