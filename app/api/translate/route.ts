@@ -3,7 +3,18 @@ import { NextRequest, NextResponse } from 'next/server';
 const GOOGLE_TRANSLATE_API_KEY = process.env.GOOGLE_TRANSLATE_API_KEY;
 const GOOGLE_TRANSLATE_API_URL = 'https://translation.googleapis.com/language/translate/v2';
 
+// SECURITY: This endpoint is disabled. The site no longer calls it (dynamic
+// translation in LanguageContext is turned off and TranslationOverlay is not
+// mounted), but while enabled it acted as an unauthenticated public proxy that
+// could consume the Google Translate API quota. Re-enabling requires a code
+// change plus authentication, rate limiting and input size limits.
+const TRANSLATE_API_ENABLED = false;
+
 export async function POST(request: NextRequest) {
+  if (!TRANSLATE_API_ENABLED) {
+    return NextResponse.json({ error: 'Not found' }, { status: 404 });
+  }
+
   try {
     const { text, targetLang, sourceLang = 'en' } = await request.json();
 
