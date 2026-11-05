@@ -93,7 +93,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    // data-scroll-behavior keeps Next.js <=15 behaviour: smooth in-page scrolling (globals.css)
+    // but instant scroll-to-top on route changes.
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="antialiased">
         <script
           type="application/ld+json"

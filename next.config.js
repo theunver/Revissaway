@@ -37,13 +37,14 @@ const nextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
+    // Next.js 16 only allows quality 75 by default; /about uses quality={90}.
+    qualities: [75, 90],
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
-  swcMinify: true,
   compiler: {
     // Strip debug logging in production but keep console.error/warn so server-side
     // security events (contact API failures, CSP reports) reach the Vercel logs.
@@ -51,6 +52,11 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['react-icons'],
+  },
+  // Pin the Turbopack workspace root to this project so a stray lockfile in a
+  // parent directory (e.g. the user's home folder) is never picked up.
+  turbopack: {
+    root: __dirname,
   },
   async headers() {
     return [
