@@ -1,90 +1,123 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import {
+  MAX_BODY_BYTES,
+  buildContactEmailHtml,
+  isAllowedOrigin,
+  validateContactPayload,
+} from "@/lib/contact";
+import { clientKey, createMemoryRateLimiter } from "@/lib/rate-limit";
 
-export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json();
-    const { name, firstName, lastName, email, phone, message, service, preferredDate } = body;
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
-    // Combine firstName and lastName if separate fields are used
-    const fullName = name || `${firstName || ''} ${lastName || ''}`.trim();
+// Best-effort only on serverless (see lib/rate-limit.ts): 5 submissions / 10 min per IP per instance.
+const limiter = createMemoryRateLimiter(5, 10 * 60 * 1000);
 
-    // Setup mail transporter (Gmail SMTP)
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER, // Gmail address
-        pass: process.env.GMAIL_PASS, // App password (not your Gmail login)
-      },
-    });
+type ErrorCode =
+  | "invalid_origin"
+  | "unsupported_media_type"
+  | "payload_too_large"
+  | "invalid_json"
+  | "invalid_fields"
+  | "rate_limited"
+  | "server_error";
 
-    // Email content
-    const mailOptions = {
-      from: `"RevissaWay Website" <${process.env.GMAIL_USER}>`,
-      to: "info@revissaway.com.au",
-      subject: "New Consultation / Contact Form Submission - RevissaWay",
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8f5f0; border-radius: 10px;">
-          <div style="background-color: #9B7E3E; padding: 20px; border-radius: 10px 10px 0 0; text-align: center;">
-            <h2 style="color: white; margin: 0;">New Inquiry from RevissaWay Website</h2>
-          </div>
-          
-          <div style="background-color: white; padding: 30px; border-radius: 0 0 10px 10px;">
-            <p style="color: #333; font-size: 16px; margin-bottom: 20px;">
-              You have received a new consultation request:
-            </p>
-            
-            <table style="width: 100%; border-collapse: collapse;">
-              <tr style="border-bottom: 1px solid #e0e0e0;">
-                <td style="padding: 12px 0; color: #9B7E3E; font-weight: bold; width: 40%;">Name:</td>
-                <td style="padding: 12px 0; color: #333;">${fullName || 'Not provided'}</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #e0e0e0;">
-                <td style="padding: 12px 0; color: #9B7E3E; font-weight: bold;">Email:</td>
-                <td style="padding: 12px 0; color: #333;">${email || 'Not provided'}</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #e0e0e0;">
-                <td style="padding: 12px 0; color: #9B7E3E; font-weight: bold;">Phone:</td>
-                <td style="padding: 12px 0; color: #333;">${phone || 'Not provided'}</td>
-              </tr>
-              ${service ? `
-              <tr style="border-bottom: 1px solid #e0e0e0;">
-                <td style="padding: 12px 0; color: #9B7E3E; font-weight: bold;">Service:</td>
-                <td style="padding: 12px 0; color: #333;">${service}</td>
-              </tr>
-              ` : ''}
-              ${preferredDate ? `
-              <tr style="border-bottom: 1px solid #e0e0e0;">
-                <td style="padding: 12px 0; color: #9B7E3E; font-weight: bold;">Preferred Date:</td>
-                <td style="padding: 12px 0; color: #333;">${preferredDate}</td>
-              </tr>
-              ` : ''}
-              <tr>
-                <td style="padding: 12px 0; color: #9B7E3E; font-weight: bold; vertical-align: top;">Message:</td>
-                <td style="padding: 12px 0; color: #333;">${message || 'No message provided'}</td>
-              </tr>
-            </table>
-            
-            <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid #9B7E3E;">
-              <p style="color: #666; font-size: 12px; margin: 0;">
-                Sent from RevissaWay Contact Form<br>
-                Time: ${new Date().toLocaleString('en-AU', { timeZone: 'Australia/Sydney' })}
-              </p>
-            </div>
-          </div>
-        </div>
-      `,
-    };
-
-    await transporter.sendMail(mailOptions);
-
-    return NextResponse.json({ success: true }, { status: 200 });
-  } catch (error: any) {
-    console.error("Email send error:", error);
-    return NextResponse.json(
-      { success: false, error: error.message }, 
-      { status: 500 }
-    );
-  }
+function reply(status: number, body: Record<string, unknown>, extraHeaders: Record<string, string> = {}) {
+  return NextResponse.json(body, {
+    status,
+    headers: { "Cache-Control": "no-store", ...extraHeaders },
+  });
 }
 
+const fail = (status: number, error: ErrorCode, extra: Record<string, unknown> = {}, headers?: Record<string, string>) =>
+  reply(status, { success: false, error, ...extra }, headers);
+
+async function readBodyWithLimit(req: NextRequest, maxBytes: number): Promise<string | null> {
+  if (!req.body) return "";
+  const reader = req.body.getReader();
+  const chunks: Uint8Array[] = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > maxBytes) {
+      await reader.cancel();
+      return null;
+    }
+    chunks.push(value);
+  }
+  return Buffer.concat(chunks).toString("utf8");
+}
+
+export async function POST(req: NextRequest) {
+  // 1. Same-origin browser requests only (blocks cross-site form/CSRF-style spam).
+  const host = req.headers.get("x-forwarded-host") || req.headers.get("host");
+  if (!isAllowedOrigin(req.headers.get("origin"), host, req.headers.get("sec-fetch-site"))) {
+    return fail(403, "invalid_origin");
+  }
+
+  // 2. JSON only.
+  const contentType = req.headers.get("content-type") || "";
+  if (!contentType.toLowerCase().startsWith("application/json")) {
+    return fail(415, "unsupported_media_type");
+  }
+
+  // 3. Size limit (header check, then enforced while reading).
+  const declaredLength = Number(req.headers.get("content-length") || 0);
+  if (declaredLength > MAX_BODY_BYTES) return fail(413, "payload_too_large");
+  const rawBody = await readBodyWithLimit(req, MAX_BODY_BYTES);
+  if (rawBody === null) return fail(413, "payload_too_large");
+
+  // 4. Rate limit (best-effort per instance).
+  const rate = await limiter.check(clientKey(req.headers));
+  if (!rate.allowed) {
+    return fail(429, "rate_limited", {}, { "Retry-After": String(rate.retryAfterSeconds) });
+  }
+
+  // 5. Parse + validate.
+  let payload: unknown;
+  try {
+    payload = JSON.parse(rawBody);
+  } catch {
+    return fail(400, "invalid_json");
+  }
+  const result = validateContactPayload(payload);
+  if (!result.ok) return fail(400, "invalid_fields", { fields: result.fields });
+
+  // 6. Honeypot: pretend success so bots get no signal, but send nothing.
+  if (result.isSpam) {
+    console.warn("[contact] honeypot triggered; submission discarded");
+    return reply(200, { success: true });
+  }
+
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_PASS;
+  if (!user || !pass) {
+    console.error("[contact] email transport is not configured (GMAIL_USER/GMAIL_PASS missing)");
+    return fail(500, "server_error");
+  }
+
+  try {
+    // Gmail SMTP (unchanged provider).
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: { user, pass },
+    });
+
+    await transporter.sendMail({
+      from: `"RevissaWay Website" <${user}>`,
+      to: "info@revissaway.com.au",
+      subject: "New Consultation / Contact Form Submission - RevissaWay",
+      html: buildContactEmailHtml(result.data),
+    });
+
+    return reply(200, { success: true });
+  } catch (error: unknown) {
+    // Log only a non-identifying error code; never the submission or credentials.
+    const code = (error as { code?: string; name?: string })?.code || (error as Error)?.name || "unknown";
+    console.error("[contact] email send failed:", code);
+    return fail(500, "server_error");
+  }
+}

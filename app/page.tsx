@@ -24,6 +24,9 @@ export default function Home() {
     e.preventDefault();
     setFormStatus("submitting");
 
+    // Spam honeypot: hidden from people, often auto-filled by bots.
+    const honeypot = (e.currentTarget as HTMLFormElement).elements.namedItem("website") as HTMLInputElement | null;
+
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -33,6 +36,7 @@ export default function Home() {
         body: JSON.stringify({
           ...formData,
           formType: "Consultation Request",
+          website: honeypot?.value || "",
         }),
       });
 
@@ -580,6 +584,11 @@ export default function Home() {
             </p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Spam honeypot - visually hidden, skipped by keyboard and screen readers */}
+            <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}>
+              <label htmlFor="website">Leave this field empty</label>
+              <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" defaultValue="" />
+            </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-semibold text-black mb-2">
