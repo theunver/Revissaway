@@ -585,13 +585,6 @@ export default function HairTransplantPage() {
               "availableLanguage": ["English", "Turkish"]
             },
             "medicalSpecialty": "Hair Replacement",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "128",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
             "offers": {
               "@type": "Offer",
               "priceCurrency": "USD",
@@ -604,23 +597,6 @@ export default function HairTransplantPage() {
                 "priceCurrency": "USD",
                 "price": "2500",
                 "valueAddedTaxIncluded": true
-              }
-            },
-            "review": {
-              "@type": "Review",
-              "name": "Great experience with RevissaWay",
-              "author": {
-                "@type": "Person",
-                "name": "John Carter",
-                "image": "https://www.revissaway.com.au/og/reviewer-john-carter.jpg"
-              },
-              "datePublished": "2025-02-20",
-              "reviewBody": "RevissaWay made my hair transplant journey in Turkey seamless and professional. Everything from travel coordination to clinic experience was top-notch.",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
               }
             },
             "founder": {
