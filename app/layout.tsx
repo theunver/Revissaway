@@ -71,6 +71,22 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "RevissaWay",
+  url: "https://www.revissaway.com.au",
+  telephone: "+61411854929",
+  email: "info@revissaway.com.au",
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+61411854929",
+    contactType: "customer service",
+    areaServed: ["AU", "NZ"],
+    availableLanguage: ["English", "Turkish"],
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -79,6 +95,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {/* Analytics Tracking (includes Meta Pixel and GA4) */}
         <Analytics />
         

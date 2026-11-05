@@ -3,7 +3,7 @@
 import OptimizedVideo from "@/components/OptimizedVideo";
 
 export default function DentalAestheticsPage() {
-  const whatsappLink = "https://api.whatsapp.com/send?phone=61435955386";
+  const whatsappLink = "https://wa.me/61411854929";
 
   return (
     <main className="min-h-screen">

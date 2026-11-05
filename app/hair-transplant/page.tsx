@@ -10,7 +10,7 @@ export default function HairTransplantPage() {
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const whatsappLink = "https://api.whatsapp.com/send?phone=61435955386";
+  const whatsappLink = "https://wa.me/61411854929";
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -579,7 +579,7 @@ export default function HairTransplantPage() {
             "openingHours": "Mo-Fr 09:00-18:00",
             "contactPoint": {
               "@type": "ContactPoint",
-              "telephone": "+61 400 123 456",
+              "telephone": "+61411854929",
               "contactType": "customer service",
               "areaServed": ["AU", "NZ", "TR"],
               "availableLanguage": ["English", "Turkish"]

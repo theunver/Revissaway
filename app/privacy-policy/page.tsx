@@ -97,7 +97,7 @@ export default function PrivacyPolicyPage() {
                   📧 <a href="mailto:info@revissaway.com.au" className="text-[#9B7E3E] hover:underline">info@revissaway.com.au</a>
                 </p>
                 <p className="text-gray-800">
-                  📞 <a href="tel:+61435955386" className="text-[#9B7E3E] hover:underline">+61 435 955 386</a>
+                  📞 <a href="tel:+61411854929" className="text-[#9B7E3E] hover:underline">+61 411 854 929</a>
                 </p>
               </div>
             </div>
@@ -174,7 +174,7 @@ export default function PrivacyPolicyPage() {
                   📧 <a href="mailto:info@revissaway.com.au" className="text-[#9B7E3E] hover:underline">info@revissaway.com.au</a>
                 </p>
                 <p className="text-gray-800">
-                  📞 <a href="tel:+61435955386" className="text-[#9B7E3E] hover:underline">+61 435 955 386</a>
+                  📞 <a href="tel:+61411854929" className="text-[#9B7E3E] hover:underline">+61 411 854 929</a>
                 </p>
               </div>
             </div>
