@@ -59,32 +59,34 @@ export default function Navbar() {
               onMouseEnter={() => setIsServicesOpen(true)}
               onMouseLeave={() => setIsServicesOpen(false)}
             >
-              <a
-                href="/#services"
-                className="text-white hover:text-[#B8965A] transition-colors duration-200 flex items-center gap-1"
-              >
-                {t('nav.services')}
+              {/* Link and toggle are siblings (a <button> inside an <a> is invalid HTML);
+                  colour/hover live on the wrapper so the look is unchanged. */}
+              <div className="text-white hover:text-[#B8965A] transition-colors duration-200 flex items-center gap-1">
+                <a href="/#services">
+                  {t('nav.services')}
+                </a>
                 <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setIsServicesOpen(!isServicesOpen);
-                  }}
+                  type="button"
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
                   className="ml-0"
+                  aria-label="Toggle services menu"
+                  aria-expanded={isServicesOpen}
+                  aria-controls="desktop-services-menu"
                 >
-                  <svg 
-                    className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
+                  <svg
+                    className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-              </a>
+              </div>
 
               {/* Dropdown Menu */}
               <div
+                id="desktop-services-menu"
                 className={`absolute left-0 mt-2 w-56 bg-black/95 backdrop-blur-md text-white rounded-lg shadow-xl overflow-hidden transition-all duration-200 ${
                   isServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
                 }`}
