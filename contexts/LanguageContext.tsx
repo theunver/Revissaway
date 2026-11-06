@@ -102,7 +102,7 @@ const translations = {
     'home.contact.success': '✅ Thank you, your consultation request has been received.',
     'home.contact.error': 'Sorry, an error occurred. Please try again.',
     'home.contact.whatsapp': 'Chat on WhatsApp',
-    'home.contact.privacy': 'We respect your privacy. Your information will not be shared with third parties.',
+    'home.contact.privacy': 'We respect your privacy. Your details are used to respond to your enquiry and are handled as described in our Privacy Policy.',
     
     // About Page
     'about.title': 'About RevissaWay',
@@ -186,7 +186,7 @@ const translations = {
     'home.contact.success': '✅ Teşekkürler, görüşme talebiniz alındı.',
     'home.contact.error': 'Üzgünüz, bir hata oluştu. Lütfen tekrar deneyin.',
     'home.contact.whatsapp': 'WhatsApp ile Sohbet',
-    'home.contact.privacy': 'Gizliliğinize saygı duyuyoruz. Bilgileriniz üçüncü taraflarla paylaşılmayacaktır.',
+    'home.contact.privacy': 'Gizliliğinize saygı duyuyoruz. Bilgileriniz talebinize yanıt vermek için kullanılır ve Gizlilik Politikamızda açıklandığı şekilde işlenir.',
     
     // About Page
     'about.title': 'RevissaWay Hakkında',
@@ -270,7 +270,7 @@ const translations = {
     'home.contact.success': '✅ Merci, votre demande de consultation a été reçue.',
     'home.contact.error': 'Désolé, une erreur s\'est produite. Veuillez réessayer.',
     'home.contact.whatsapp': 'Chat sur WhatsApp',
-    'home.contact.privacy': 'Nous respectons votre vie privée. Vos informations ne seront pas partagées avec des tiers.',
+    'home.contact.privacy': 'Nous respectons votre vie privée. Vos informations sont utilisées pour répondre à votre demande et sont traitées conformément à notre Politique de confidentialité.',
     
     // About Page
     'about.title': 'À propos de RevissaWay',
@@ -354,7 +354,7 @@ const translations = {
     'home.contact.success': '✅ Gracias, tu solicitud de consulta ha sido recibida.',
     'home.contact.error': 'Lo sentimos, ocurrió un error. Por favor intenta de nuevo.',
     'home.contact.whatsapp': 'Chat en WhatsApp',
-    'home.contact.privacy': 'Respetamos tu privacidad. Tu información no será compartida con terceros.',
+    'home.contact.privacy': 'Respetamos tu privacidad. Tus datos se utilizan para responder a tu consulta y se tratan según lo descrito en nuestra Política de Privacidad.',
     
     // About Page
     'about.title': 'Acerca de RevissaWay',
