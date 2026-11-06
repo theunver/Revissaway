@@ -307,7 +307,7 @@ export default function Home() {
             {/* Video */}
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
               <iframe
-                src="https://www.youtube.com/embed/iaVP0skLe68?si=h5dmjze6y4j2Fbva&autoplay=1&mute=1"
+                src="https://www.youtube-nocookie.com/embed/iaVP0skLe68?si=h5dmjze6y4j2Fbva&autoplay=1&mute=1"
                 title="Why Choose Turkey for Aesthetic Treatments?"
                 allowFullScreen
                 allow="autoplay; encrypted-media"

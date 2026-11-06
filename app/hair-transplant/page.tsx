@@ -451,7 +451,7 @@ export default function HairTransplantPage() {
               <div className="rounded-xl overflow-hidden shadow-sm aspect-video lg:h-[320px]">
                 <iframe
                   className="w-full h-full rounded-lg"
-                  src="https://www.youtube.com/embed/QvzQlwSnzTQ"
+                  src="https://www.youtube-nocookie.com/embed/QvzQlwSnzTQ"
                   title="Hair Transplant Procedure"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

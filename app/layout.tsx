@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Noto_Sans_Thai } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -69,6 +70,16 @@ export const metadata: Metadata = {
   },
 };
 
+// Self-hosted at build time (no request to Google from visitors). It stays a late
+// fallback in the font stacks in globals.css, exactly as with the former CSS @import.
+const notoSansThai = Noto_Sans_Thai({
+  subsets: ["thai", "latin", "latin-ext"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  preload: false,
+  variable: "--font-noto-thai",
+});
+
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -93,7 +104,7 @@ export default function RootLayout({
   return (
     // data-scroll-behavior keeps Next.js <=15 behaviour: smooth in-page scrolling (globals.css)
     // but instant scroll-to-top on route changes.
-    <html lang="en" data-scroll-behavior="smooth">
+    <html lang="en" data-scroll-behavior="smooth" className={notoSansThai.variable}>
       <body className="antialiased">
         <script
           type="application/ld+json"
