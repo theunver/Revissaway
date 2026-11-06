@@ -559,8 +559,8 @@ export default function HairTransplantPage() {
             "name": "RevissaWay Health & Aesthetics",
             "alternateName": "RevissaWay",
             "url": "https://www.revissaway.com.au/hair-transplant",
-            "image": "https://www.revissaway.com.au/og/og-hair-transplant.jpg",
-            "logo": "https://www.revissaway.com.au/og/revissaway-logo.png",
+            "image": "https://www.revissaway.com.au/logo.png",
+            "logo": "https://www.revissaway.com.au/logo.png",
             "description": "RevissaWay connects you with Turkey's most trusted hair transplant experts offering DHI, FUE, and Sapphire techniques.",
             "priceRange": "$$",
             "contactPoint": {
@@ -571,28 +571,13 @@ export default function HairTransplantPage() {
               "availableLanguage": ["English", "Turkish"]
             },
             "medicalSpecialty": "Hair Replacement",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "USD",
-              "price": "2500",
-              "priceValidUntil": "2025-12-31",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.revissaway.com.au/hair-transplant",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "priceCurrency": "USD",
-                "price": "2500",
-                "valueAddedTaxIncluded": true
-              }
-            },
             "founder": {
               "@type": "Person",
               "name": "Mehmet Ali Ünver"
             },
             "sameAs": [
-              "https://www.instagram.com/estheway",
-              "https://www.youtube.com/@estheway",
-              "https://www.facebook.com/estheway"
+              "https://www.instagram.com/revissaway",
+              "https://www.facebook.com/profile.php?id=61582103925829"
             ]
           }),
         }}
