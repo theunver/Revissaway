@@ -1,5 +1,14 @@
 /** @type {import('next').NextConfig} */
 
+// Coordinated privacy release gate: draft consent/privacy wording must never reach production.
+const privacyRelease = require('./privacy-release.json');
+if (process.env.VERCEL_ENV === 'production' && privacyRelease.approved !== true) {
+  throw new Error(
+    'Privacy release not approved (privacy-release.json). Draft consent banner, contact-form consent and ' +
+      'Privacy Policy must not be deployed to production. Preview deployments are allowed.'
+  );
+}
+
 // Content-Security-Policy is deployed in REPORT-ONLY mode first: browsers log
 // and report violations to /api/csp-report but block nothing. Review reports,
 // then switch the header name to "Content-Security-Policy" to enforce.
@@ -69,6 +78,11 @@ const nextConfig = {
     return [
       { source: '/:path*', headers: securityHeaders },
       { source: '/api/:path*', headers: [{ key: 'Cache-Control', value: 'no-store' }] },
+      // Treatment pages: links/navigation from them disclose only the origin, never the treatment URL.
+      ...['/hair-transplant', '/cosmetic-surgery', '/dental-aesthetics'].map((source) => ({
+        source,
+        headers: [{ key: 'Referrer-Policy', value: 'strict-origin' }],
+      })),
     ];
   },
 }

@@ -9,10 +9,10 @@ const eslintConfig = defineConfig([
     rules: {
       "react/no-unescaped-entities": "off",
       "@next/next/no-img-element": "off",
-      // Rules that became active/new with eslint-config-next 16 + react-hooks v7.
-      // Kept visible as warnings: fixing them changes navigation/analytics or
-      // component behaviour, so they are tracked as a separate follow-up task.
-      "@next/next/no-html-link-for-pages": "warn",
+      // Intentional: internal links are plain <a> (full page loads) so consent-gated
+      // analytics/ad tags never observe in-app navigation to treatment pages.
+      "@next/next/no-html-link-for-pages": "off",
+      // Became active with react-hooks v7; kept visible as a follow-up task.
       "react-hooks/set-state-in-effect": "warn",
     },
   },

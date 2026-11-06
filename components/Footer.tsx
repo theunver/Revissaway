@@ -3,9 +3,11 @@
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 import Image from "next/image";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useConsent } from "@/contexts/ConsentContext";
 
 export default function Footer() {
   const { t } = useLanguage();
+  const { openSettings } = useConsent();
   
   return (
     <footer className="bg-gradient-to-b from-white to-[#f5e9cc] px-4 py-8 md:px-8 md:py-12 text-[#3a3a3a] font-sans pb-16">
@@ -98,6 +100,14 @@ export default function Footer() {
           >
             About RevissaWay
           </a>
+          <span className="text-xs text-gray-400">|</span>
+          <button
+            type="button"
+            onClick={openSettings}
+            className="text-xs text-[#9B7E3E] hover:underline transition-colors"
+          >
+            Privacy settings
+          </button>
         </div>
         
         <p className="text-xs text-gray-500 mt-6">

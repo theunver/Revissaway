@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useLanguage, languageOptions } from "@/contexts/LanguageContext";
 
 export default function Navbar() {
@@ -250,13 +249,13 @@ export default function Navbar() {
         
         {/* Navigation Links */}
         <nav className="flex flex-col items-center space-y-6 mb-12 w-full max-w-md">
-          <Link 
+          <a 
             href="/#home" 
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
           >
             {t('nav.home')}
-          </Link>
+          </a>
           
           {/* Services Dropdown */}
           <div className="w-full">
@@ -285,7 +284,7 @@ export default function Navbar() {
               }`}
             >
               <div className="bg-[#111111] rounded-lg py-2 px-4 space-y-3">
-                <Link 
+                <a 
                   href="/hair-transplant" 
                   onClick={() => {
                     setIsMobileMenuOpen(false);
@@ -294,9 +293,9 @@ export default function Navbar() {
                   className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
                 >
                   {t('services.hairTransplant')}
-                </Link>
+                </a>
                 
-                <Link 
+                <a 
                   href="/dental-aesthetics" 
                   onClick={() => {
                     setIsMobileMenuOpen(false);
@@ -305,9 +304,9 @@ export default function Navbar() {
                   className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
                 >
                   {t('services.dentalAesthetics')}
-                </Link>
+                </a>
                 
-                <Link 
+                <a 
                   href="/cosmetic-surgery" 
                   onClick={() => {
                     setIsMobileMenuOpen(false);
@@ -316,26 +315,26 @@ export default function Navbar() {
                   className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
                 >
                   {t('services.cosmeticSurgery')}
-                </Link>
+                </a>
               </div>
             </div>
           </div>
           
-          <Link 
+          <a 
             href="/why-turkey" 
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
           >
             {t('nav.whyTurkey')}
-          </Link>
+          </a>
           
-          <Link 
+          <a 
             href="/about" 
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
           >
             {t('nav.about')}
-          </Link>
+          </a>
           
           <a 
             href="/#contact-info" 
@@ -358,7 +357,7 @@ export default function Navbar() {
         </nav>
 
         {/* Free Consultation Button */}
-        <Link
+        <a
           href="/#contact"
           onClick={() => {
             setIsMobileMenuOpen(false);
@@ -374,7 +373,7 @@ export default function Navbar() {
           className="w-full max-w-md bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-full shadow-lg transition-all duration-300 font-bold text-lg mb-8 text-center"
         >
           {t('nav.consultation')}
-        </Link>
+        </a>
 
         {/* Language Switcher - All Languages */}
         <div className="w-full max-w-md">

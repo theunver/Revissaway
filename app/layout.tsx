@@ -6,6 +6,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 import Analytics from "@/components/Analytics";
+import ConsentBanner from "@/components/ConsentBanner";
+import { ConsentProvider } from "@/contexts/ConsentContext";
 // import TranslationOverlayWrapper from "@/components/TranslationOverlayWrapper";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
@@ -110,9 +112,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
-        {/* Analytics Tracking (includes Meta Pixel and GA4) */}
+        <ConsentProvider>
+        {/* Consent-gated analytics: GA4 / Meta Pixel load only after opt-in, never on treatment pages */}
         <Analytics />
-        
+        <ConsentBanner />
+
         <LanguageProvider>
           {/* Translation Overlay - TEMPORARILY DISABLED */}
           {/* <TranslationOverlayWrapper /> */}
@@ -131,6 +135,7 @@ export default function RootLayout({
           {/* Global Disclaimer */}
           <GlobalDisclaimer />
         </LanguageProvider>
+        </ConsentProvider>
       </body>
     </html>
   );

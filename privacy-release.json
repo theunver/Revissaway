@@ -1,0 +1,5 @@
+{
+  "approved": false,
+  "policyVersion": "draft-2026-11-06",
+  "comment": "Coordinated privacy release gate. The consent banner, contact-form consent checkbox and Privacy Policy must ship together. Set approved=true and update policyVersion ONLY when the approved Privacy Policy text is published in the same release. While approved=false, production builds on Vercel (VERCEL_ENV=production) fail on purpose; preview builds are allowed."
+}
