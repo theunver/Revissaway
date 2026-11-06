@@ -8,29 +8,32 @@ export default function Navbar() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
-  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const { language, setLanguage, t, isLoading, isTranslating } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   // Prevent body scroll when mobile menu is open; allow closing with Escape
   useEffect(() => {
     if (!isMobileMenuOpen) {
       document.body.style.overflow = 'unset';
+      delete document.body.dataset.menuOpen;
       return;
     }
     document.body.style.overflow = 'hidden';
+    // Lets floating elements (e.g. the WhatsApp button) hide while the menu is open.
+    document.body.dataset.menuOpen = 'true';
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsMobileMenuOpen(false);
     };
     window.addEventListener('keydown', onKeyDown);
     return () => {
       document.body.style.overflow = 'unset';
+      delete document.body.dataset.menuOpen;
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isMobileMenuOpen]);
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md h-[55px]">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black/85 lg:bg-black/70 lg:backdrop-blur-md h-[55px]">
         <div className="flex items-center justify-between h-full px-4 md:px-8 max-w-[1920px] mx-auto">
           {/* Logo - Centered on mobile, left on desktop */}
           <a href="/" className="flex items-center translate-y-2 absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0">
@@ -141,64 +144,23 @@ export default function Navbar() {
 
         {/* Right Side Buttons - Desktop Only */}
         <div className="hidden lg:flex items-center gap-3">
-            {/* Language Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsLanguageOpen(true)}
-              onMouseLeave={() => setIsLanguageOpen(false)}
-            >
-              <button
-                onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                className="flex items-center gap-1 text-white hover:text-[#B8965A] transition-colors duration-200 px-2 py-2 rounded-lg hover:bg-white/10"
-                aria-label="Switch Language"
-                disabled={isTranslating}
-              >
-                {(isLoading || isTranslating) ? (
-                  <svg className="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                ) : (
-                  <span className="text-lg">{languageOptions.find(l => l.code === language)?.flag || '🌐'}</span>
-                )}
-                <span className="font-medium text-sm">{languageOptions.find(l => l.code === language)?.label || language.toUpperCase()}</span>
-                <svg 
-                  className={`w-4 h-4 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
+            {/* Language toggle (English default, Turkish) */}
+            <div role="group" aria-label="Language" className="flex items-center rounded-lg border border-[#9B7E3E]/70 overflow-hidden text-sm font-semibold">
+              {languageOptions.map((lang) => (
+                <button
+                  key={lang.code}
+                  type="button"
+                  lang={lang.code}
+                  title={lang.label}
+                  aria-pressed={language === lang.code}
+                  onClick={() => setLanguage(lang.code)}
+                  className={`px-2.5 py-1.5 transition-colors duration-200 ${
+                    language === lang.code ? 'bg-[#9B7E3E] text-white' : 'text-white hover:text-[#B8965A]'
+                  }`}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-
-              {/* Language Dropdown Menu */}
-              <div
-                className={`absolute right-0 mt-2 w-48 bg-black/95 backdrop-blur-md text-white rounded-lg shadow-xl overflow-hidden transition-all duration-200 max-h-80 overflow-y-auto ${
-                  isLanguageOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
-                }`}
-              >
-                {languageOptions.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => {
-                      setLanguage(lang.code as any);
-                      setIsLanguageOpen(false);
-                    }}
-                    className={`w-full text-left px-4 py-3 hover:bg-[#9B7E3E] transition-colors duration-200 border-b border-gray-700 last:border-b-0 flex items-center gap-3 ${
-                      language === lang.code ? 'bg-[#9B7E3E]/50' : ''
-                    }`}
-                  >
-                    <span className="text-xl">{lang.flag}</span>
-                    <span className="text-sm">{lang.label}</span>
-                    {language === lang.code && (
-                      <svg className="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    )}
-                  </button>
-                ))}
-              </div>
+                  {lang.short}
+                </button>
+              ))}
             </div>
 
             <a 
@@ -237,22 +199,22 @@ export default function Navbar() {
     {/* Full-Screen Mobile Menu Overlay */}
     <div
       id="mobile-menu"
-      className={`fixed inset-0 z-40 lg:hidden transition-all duration-500 ${
+      className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ${
         isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
       }`}
     >
-      {/* Backdrop with blur */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#000000] to-[#1a1a1a] backdrop-blur-sm"></div>
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000000] to-[#1a1a1a]"></div>
 
       {/* Menu Content - starts below the fixed navbar/logo and scrolls on short screens */}
-      <div className="relative h-full overflow-y-auto overscroll-contain flex flex-col items-center px-6 pt-[120px] pb-12">
+      <div className="relative h-full overflow-y-auto overscroll-contain flex flex-col items-center px-6 pt-[96px] pb-8">
         
         {/* Navigation Links */}
-        <nav className="flex flex-col items-center space-y-6 mb-12 w-full max-w-md">
+        <nav className="flex flex-col items-center w-full max-w-md mb-5 divide-y divide-white/10">
           <a 
             href="/#home" 
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+            className="block w-full py-2.5 text-center text-white text-lg font-medium hover:text-[#9B7E3E] transition-colors duration-200"
           >
             {t('nav.home')}
           </a>
@@ -261,7 +223,7 @@ export default function Navbar() {
           <div className="w-full">
             <button
               onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-              className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300 flex items-center justify-center gap-2 w-full"
+              className="py-2.5 text-white text-lg font-medium hover:text-[#9B7E3E] transition-colors duration-200 flex items-center justify-center gap-2 w-full"
               aria-expanded={isMobileServicesOpen}
               aria-controls="mobile-services-submenu"
             >
@@ -280,17 +242,17 @@ export default function Navbar() {
             <div
               id="mobile-services-submenu"
               className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                isMobileServicesOpen ? 'max-h-48 opacity-100 mt-4 visible' : 'max-h-0 opacity-0 invisible'
+                isMobileServicesOpen ? 'max-h-48 opacity-100 mb-2 visible' : 'max-h-0 opacity-0 invisible'
               }`}
             >
-              <div className="bg-[#111111] rounded-lg py-2 px-4 space-y-3">
+              <div className="bg-[#111111] rounded-lg py-1 px-4">
                 <a 
                   href="/hair-transplant" 
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     setIsMobileServicesOpen(false);
                   }}
-                  className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
+                  className="block py-2 text-center text-white/90 text-base font-normal hover:text-[#9B7E3E] transition-colors duration-200"
                 >
                   {t('services.hairTransplant')}
                 </a>
@@ -301,7 +263,7 @@ export default function Navbar() {
                     setIsMobileMenuOpen(false);
                     setIsMobileServicesOpen(false);
                   }}
-                  className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
+                  className="block py-2 text-center text-white/90 text-base font-normal hover:text-[#9B7E3E] transition-colors duration-200"
                 >
                   {t('services.dentalAesthetics')}
                 </a>
@@ -312,7 +274,7 @@ export default function Navbar() {
                     setIsMobileMenuOpen(false);
                     setIsMobileServicesOpen(false);
                   }}
-                  className="block text-white text-base font-normal hover:text-[#9B7E3E] transition-colors duration-300 pl-6"
+                  className="block py-2 text-center text-white/90 text-base font-normal hover:text-[#9B7E3E] transition-colors duration-200"
                 >
                   {t('services.cosmeticSurgery')}
                 </a>
@@ -323,7 +285,7 @@ export default function Navbar() {
           <a 
             href="/why-turkey" 
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+            className="block w-full py-2.5 text-center text-white text-lg font-medium hover:text-[#9B7E3E] transition-colors duration-200"
           >
             {t('nav.whyTurkey')}
           </a>
@@ -331,7 +293,7 @@ export default function Navbar() {
           <a 
             href="/about" 
             onClick={() => setIsMobileMenuOpen(false)}
-            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+            className="block w-full py-2.5 text-center text-white text-lg font-medium hover:text-[#9B7E3E] transition-colors duration-200"
           >
             {t('nav.about')}
           </a>
@@ -350,7 +312,7 @@ export default function Navbar() {
                 window.location.href = '/#contact-info';
               }
             }}
-            className="text-white text-xl font-medium hover:text-[#9B7E3E] transition-colors duration-300"
+            className="block w-full py-2.5 text-center text-white text-lg font-medium hover:text-[#9B7E3E] transition-colors duration-200"
           >
             {t('nav.contact')}
           </a>
@@ -370,32 +332,30 @@ export default function Navbar() {
               console.log('GA4 event fired: consultation_click');
             }
           }}
-          className="w-full max-w-md bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-4 rounded-full shadow-lg transition-all duration-300 font-bold text-lg mb-8 text-center"
+          className="w-full max-w-md bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-8 py-3 rounded-full shadow-lg transition-colors duration-200 font-bold text-base mb-5 text-center"
         >
           {t('nav.consultation')}
         </a>
 
-        {/* Language Switcher - All Languages */}
-        <div className="w-full max-w-md">
-          <p className="text-center text-sm text-white/70 mb-3 uppercase tracking-wider">
-            Select Language
-          </p>
-          <div className="grid grid-cols-3 gap-3">
-            {languageOptions.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => setLanguage(lang.code as any)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
-                  language === lang.code 
-                    ? 'bg-[#9B7E3E] border-2 border-[#9B7E3E] text-white' 
-                    : 'border-2 border-[#B8965A] text-white hover:bg-[#9B7E3E] hover:border-[#9B7E3E]'
-                }`}
-              >
-                <span>{lang.flag}</span>
-                <span className="text-xs">{lang.label}</span>
-              </button>
-            ))}
-          </div>
+        {/* Language toggle: English (default) / Turkish */}
+        <div role="group" aria-label="Language" className="w-full max-w-md grid grid-cols-2 gap-3">
+          {languageOptions.map((lang) => (
+            <button
+              key={lang.code}
+              type="button"
+              lang={lang.code}
+              aria-pressed={language === lang.code}
+              onClick={() => setLanguage(lang.code)}
+              className={`py-2 rounded-lg text-sm font-semibold transition-colors duration-200 flex items-center justify-center gap-2 border-2 ${
+                language === lang.code
+                  ? 'bg-[#9B7E3E] border-[#9B7E3E] text-white'
+                  : 'border-[#B8965A] text-white hover:bg-[#9B7E3E]/30'
+              }`}
+            >
+              <span aria-hidden="true">{lang.flag}</span>
+              <span>{lang.label}</span>
+            </button>
+          ))}
         </div>
       </div>
     </div>

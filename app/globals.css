@@ -110,3 +110,8 @@ video:-ms-fullscreen {
   background-color: #000000 !important;
 }
 
+
+/* Floating WhatsApp button is hidden while the mobile menu is open (see Navbar). */
+body[data-menu-open] [data-floating-whatsapp] {
+  display: none;
+}
