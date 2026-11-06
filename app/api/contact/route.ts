@@ -21,6 +21,7 @@ type ErrorCode =
   | "invalid_json"
   | "invalid_fields"
   | "rate_limited"
+  | "preview_submissions_disabled"
   | "server_error";
 
 function reply(status: number, body: Record<string, unknown>, extraHeaders: Record<string, string> = {}) {
@@ -86,6 +87,20 @@ export async function POST(req: NextRequest) {
   const result = validateContactPayload(payload);
   if (!result.ok) return fail(400, "invalid_fields", { fields: result.fields });
 
+  // 5b. Non-production deployments (Vercel Preview/Development) never accept real enquiries:
+  // only addresses listed in PREVIEW_TEST_EMAILS (comma-separated) are delivered, for testing.
+  const vercelEnv = process.env.VERCEL_ENV;
+  const isNonProduction = !!vercelEnv && vercelEnv !== "production";
+  if (isNonProduction) {
+    const allowed = (process.env.PREVIEW_TEST_EMAILS || "")
+      .split(",")
+      .map((e) => e.trim().toLowerCase())
+      .filter(Boolean);
+    if (!allowed.includes(result.data.email.toLowerCase())) {
+      return fail(403, "preview_submissions_disabled");
+    }
+  }
+
   // 6. Honeypot: pretend success so bots get no signal, but send nothing.
   if (result.isSpam) {
     console.warn("[contact] honeypot triggered; submission discarded");
@@ -109,7 +124,7 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: `"RevissaWay Website" <${user}>`,
       to: "info@revissaway.com.au",
-      subject: "New Consultation / Contact Form Submission - RevissaWay",
+      subject: `${isNonProduction ? "[PREVIEW TEST] " : ""}New Consultation / Contact Form Submission - RevissaWay`,
       html: buildContactEmailHtml(result.data),
     });
 

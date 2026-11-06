@@ -77,6 +77,10 @@ const nextConfig = {
   async headers() {
     return [
       { source: '/:path*', headers: securityHeaders },
+      // Keep Vercel Preview/Development deployments out of search engines.
+      ...(process.env.VERCEL_ENV && process.env.VERCEL_ENV !== 'production'
+        ? [{ source: '/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] }]
+        : []),
       { source: '/api/:path*', headers: [{ key: 'Cache-Control', value: 'no-store' }] },
       // Treatment pages: links/navigation from them disclose only the origin, never the treatment URL.
       ...['/hair-transplant', '/cosmetic-surgery', '/dental-aesthetics'].map((source) => ({

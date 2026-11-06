@@ -23,8 +23,11 @@ export default function Analytics() {
   const pathname = usePathname() || "/";
   const { analytics, marketing } = useConsent();
   const treatment = isTreatmentPath(pathname);
-  const gaOn = analytics && !treatment;
-  const metaOn = marketing && !treatment;
+  // Never load tags on Vercel preview/deployment URLs (*.vercel.app): test traffic must not reach
+  // Google Analytics or Meta, even if a tester accepts the banner.
+  const testHost = typeof window !== "undefined" && window.location.hostname.endsWith(".vercel.app");
+  const gaOn = analytics && !treatment && !testHost;
+  const metaOn = marketing && !treatment && !testHost;
 
   // Event helpers used across the site; they no-op unless the matching tag is allowed and loaded.
   useEffect(() => {
