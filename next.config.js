@@ -12,7 +12,7 @@ const cspReportOnly = [
   "font-src 'self' data: https://fonts.gstatic.com",
   "img-src 'self' data: blob: https://www.facebook.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://i.ytimg.com",
   "media-src 'self'",
-  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net https://formspree.io",
+  "connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://www.facebook.com https://connect.facebook.net",
   "frame-src https://www.youtube.com https://www.youtube-nocookie.com",
   "object-src 'none'",
   "base-uri 'self'",
@@ -57,6 +57,13 @@ const nextConfig = {
   // parent directory (e.g. the user's home folder) is never picked up.
   turbopack: {
     root: __dirname,
+  },
+  async redirects() {
+    return [
+      // The standalone /consultation page duplicated the homepage enquiry form
+      // (and posted to a separate third-party processor). Consolidated into /#contact.
+      { source: '/consultation', destination: '/#contact', permanent: true },
+    ];
   },
   async headers() {
     return [
