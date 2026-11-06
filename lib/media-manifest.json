@@ -1,0 +1,642 @@
+{
+ "/icons/Brazilian Butt Lift.jpg": {
+  "width": 5760,
+  "height": 3840,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-brazilian-butt-lift-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-brazilian-butt-lift-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-brazilian-butt-lift-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-brazilian-butt-lift-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-brazilian-butt-lift-2400.webp"
+   ]
+  ]
+ },
+ "/icons/Breast Implants.jpg": {
+  "width": 3840,
+  "height": 2160,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-breast-implants-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-breast-implants-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-breast-implants-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-breast-implants-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-breast-implants-2400.webp"
+   ]
+  ]
+ },
+ "/icons/Breast Reduction.jpg": {
+  "width": 5760,
+  "height": 3840,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-breast-reduction-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-breast-reduction-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-breast-reduction-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-breast-reduction-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-breast-reduction-2400.webp"
+   ]
+  ]
+ },
+ "/icons/Face Lift.jpg": {
+  "width": 3852,
+  "height": 3844,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-face-lift-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-face-lift-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-face-lift-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-face-lift-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-face-lift-2400.webp"
+   ]
+  ]
+ },
+ "/icons/Liposuction.jpg": {
+  "width": 5760,
+  "height": 3840,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-liposuction-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-liposuction-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-liposuction-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-liposuction-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-liposuction-2400.webp"
+   ]
+  ]
+ },
+ "/icons/Mummy Makeover.jpg": {
+  "width": 5872,
+  "height": 4000,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-mummy-makeover-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-mummy-makeover-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-mummy-makeover-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-mummy-makeover-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-mummy-makeover-2400.webp"
+   ]
+  ]
+ },
+ "/icons/Neck Lift.jpg": {
+  "width": 6000,
+  "height": 4000,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-neck-lift-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-neck-lift-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-neck-lift-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-neck-lift-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-neck-lift-2400.webp"
+   ]
+  ]
+ },
+ "/icons/Tummy Tuck.jpg": {
+  "width": 7999,
+  "height": 5332,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-tummy-tuck-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-tummy-tuck-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-tummy-tuck-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-tummy-tuck-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-tummy-tuck-2400.webp"
+   ]
+  ]
+ },
+ "/icons/rhinoplasty.jpg": {
+  "width": 7178,
+  "height": 7900,
+  "srcset": [
+   [
+    480,
+    "/media/img/icons-rhinoplasty-480.webp"
+   ],
+   [
+    768,
+    "/media/img/icons-rhinoplasty-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/icons-rhinoplasty-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/icons-rhinoplasty-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/icons-rhinoplasty-2400.webp"
+   ]
+  ]
+ },
+ "/images/0004.jpg": {
+  "width": 1563,
+  "height": 1563,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-0004-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-0004-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-0004-1080.webp"
+   ],
+   [
+    1563,
+    "/media/img/images-0004-1563.webp"
+   ]
+  ]
+ },
+ "/images/Dental Implants.jpg": {
+  "width": 5760,
+  "height": 3840,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-dental-implants-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-dental-implants-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-dental-implants-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/images-dental-implants-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/images-dental-implants-2400.webp"
+   ]
+  ]
+ },
+ "/images/Dental Veneers.jpg": {
+  "width": 5184,
+  "height": 3456,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-dental-veneers-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-dental-veneers-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-dental-veneers-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/images-dental-veneers-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/images-dental-veneers-2400.webp"
+   ]
+  ]
+ },
+ "/images/banner-dental.jpg": {
+  "width": 7500,
+  "height": 5000,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-banner-dental-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-banner-dental-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-banner-dental-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/images-banner-dental-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/images-banner-dental-2400.webp"
+   ]
+  ]
+ },
+ "/images/banner2.jpg": {
+  "width": 6000,
+  "height": 4000,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-banner2-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-banner2-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-banner2-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/images-banner2-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/images-banner2-2400.webp"
+   ]
+  ]
+ },
+ "/images/dental001.jpg": {
+  "width": 1290,
+  "height": 1299,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-dental001-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-dental001-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-dental001-1080.webp"
+   ],
+   [
+    1290,
+    "/media/img/images-dental001-1290.webp"
+   ]
+  ]
+ },
+ "/images/dental002.jpg": {
+  "width": 1290,
+  "height": 1297,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-dental002-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-dental002-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-dental002-1080.webp"
+   ],
+   [
+    1290,
+    "/media/img/images-dental002-1290.webp"
+   ]
+  ]
+ },
+ "/images/dental003.jpg": {
+  "width": 1290,
+  "height": 1290,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-dental003-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-dental003-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-dental003-1080.webp"
+   ],
+   [
+    1290,
+    "/media/img/images-dental003-1290.webp"
+   ]
+  ]
+ },
+ "/images/dental004.jpg": {
+  "width": 1290,
+  "height": 1292,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-dental004-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-dental004-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-dental004-1080.webp"
+   ],
+   [
+    1290,
+    "/media/img/images-dental004-1290.webp"
+   ]
+  ]
+ },
+ "/images/foto001.png": {
+  "width": 1152,
+  "height": 1536,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-foto001-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-foto001-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-foto001-1080.webp"
+   ],
+   [
+    1152,
+    "/media/img/images-foto001-1152.webp"
+   ]
+  ]
+ },
+ "/images/foto002.png": {
+  "width": 1194,
+  "height": 1792,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-foto002-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-foto002-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-foto002-1080.webp"
+   ],
+   [
+    1194,
+    "/media/img/images-foto002-1194.webp"
+   ]
+  ]
+ },
+ "/images/hair-banner.jpg": {
+  "width": 1280,
+  "height": 670,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-hair-banner-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-hair-banner-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-hair-banner-1080.webp"
+   ],
+   [
+    1280,
+    "/media/img/images-hair-banner-1280.webp"
+   ]
+  ]
+ },
+ "/images/revissaway-about.jpg": {
+  "width": 5195,
+  "height": 2598,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-revissaway-about-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-revissaway-about-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-revissaway-about-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/images-revissaway-about-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/images-revissaway-about-2400.webp"
+   ]
+  ]
+ },
+ "/images/services/cosmetic.jpg": {
+  "width": 7999,
+  "height": 5333,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-services-cosmetic-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-services-cosmetic-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-services-cosmetic-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/images-services-cosmetic-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/images-services-cosmetic-2400.webp"
+   ]
+  ]
+ },
+ "/images/services/dental.jpg": {
+  "width": 5760,
+  "height": 3840,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-services-dental-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-services-dental-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-services-dental-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/images-services-dental-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/images-services-dental-2400.webp"
+   ]
+  ]
+ },
+ "/images/services/hair.jpg": {
+  "width": 7900,
+  "height": 5269,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-services-hair-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-services-hair-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-services-hair-1080.webp"
+   ],
+   [
+    1600,
+    "/media/img/images-services-hair-1600.webp"
+   ],
+   [
+    2400,
+    "/media/img/images-services-hair-2400.webp"
+   ]
+  ]
+ },
+ "/images/whyphoto.jpg": {
+  "width": 1100,
+  "height": 1200,
+  "srcset": [
+   [
+    480,
+    "/media/img/images-whyphoto-480.webp"
+   ],
+   [
+    768,
+    "/media/img/images-whyphoto-768.webp"
+   ],
+   [
+    1080,
+    "/media/img/images-whyphoto-1080.webp"
+   ],
+   [
+    1100,
+    "/media/img/images-whyphoto-1100.webp"
+   ]
+  ]
+ }
+}
