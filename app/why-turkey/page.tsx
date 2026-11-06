@@ -1,8 +1,12 @@
 "use client";
 
 import OptimizedVideo from "@/components/OptimizedVideo";
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { useLocalized } from "@/contexts/LanguageContext";
+import { content } from "./content";
 
 export default function WhyTurkeyPage() {
+  const c = useLocalized(content);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-[#FFF8DC] to-white">
@@ -20,10 +24,10 @@ export default function WhyTurkeyPage() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-6">
           <h1 className="text-4xl md:text-6xl font-semibold">
-            Why Turkey?
+            {c.heroTitle}
           </h1>
           <p className="mt-4 max-w-2xl text-lg md:text-xl">
-            Discover why thousands choose Turkey for world-class aesthetics and care
+            {c.heroSubtitle}
           </p>
         </div>
       </div>
@@ -46,13 +50,13 @@ export default function WhyTurkeyPage() {
           {/* Text Content */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              World-Class Medical Excellence
+              {c.excellenceTitle}
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
-              RevissaWay is a trusted health tourism brand that works in collaboration with internationally accredited and licensed medical and aesthetic clinics across Turkey. RevissaWay does not provide medical treatment directly; it acts solely as a professional intermediary, ensuring that patients are connected only with certified hospitals, surgical centers, and clinics specialized in dental and aesthetic care.
+              {c.excellenceP1}
             </p>
             <p className="text-gray-700 leading-relaxed text-lg">
-              Through these partnerships, patients gain access to qualified physicians, experienced surgeons, and multidisciplinary healthcare teams. This network combines world-class clinical expertise, evidence-based medical practices, advanced technology, and genuine Turkish hospitality — providing patients with a safe, transparent, and professionally coordinated treatment journey from their initial consultation to full recovery.
+              {c.excellenceP2}
             </p>
           </div>
         </div>
@@ -62,28 +66,29 @@ export default function WhyTurkeyPage() {
           {/* Text Content - Left Side */}
           <div className="space-y-6">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
-              Comprehensive Care Journey in Turkey
+              {c.journeyTitle}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Choosing Turkey for medical tourism means accessing world-class healthcare that combines advanced medical expertise, internationally accredited hospitals, and exceptional hospitality.
-              RevissaWay acts as your trusted connection point — coordinating every aspect of your medical travel experience with certified hospitals and licensed aesthetic or dental clinics across Turkey.
+              {c.journeyP1}
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              From your first consultation to post-treatment follow-up, every step is planned with precision and transparency. Our coordination team ensures smooth communication between you and our partner clinics, assisting with travel arrangements, accommodation options, and appointment scheduling.
+              {c.journeyP2}
             </p>
             <p className="text-gray-700 leading-relaxed">
-              RevissaWay does not provide medical treatment directly. Instead, we facilitate your access to accredited medical institutions that meet global healthcare standards, ensuring safety, quality, and peace of mind throughout your treatment journey in Turkey.
+              {c.journeyP3}
             </p>
           </div>
 
           {/* Image - Right Side */}
           <div className="rounded-2xl overflow-hidden shadow-2xl">
-            <img 
+            <ResponsiveImage
               src="/images/whyphoto.jpg" 
-              alt="Medical tourism in Turkey" 
+               
+              alt={c.imageAlt} 
               className="w-full h-[420px] md:h-[520px] lg:h-[620px] object-cover object-center rounded-xl shadow-md"
-              loading="eager"
               style={{ opacity: 1 }}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              priority
             />
           </div>
         </div>
@@ -91,17 +96,17 @@ export default function WhyTurkeyPage() {
         {/* Why RevissaWay Section */}
         <div className="bg-white border border-[#9B7E3E]/30 rounded-2xl p-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-8">
-            Why Choose RevissaWay?
+            {c.whyTitle}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex gap-4">
               <div className="text-3xl">✓</div>
               <div>
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                  Accredited Partners Only
+                  {c.accreditedTitle}
                 </h4>
                 <p className="text-gray-700">
-                  We work exclusively with JCI-accredited clinics and licensed medical professionals.
+                  {c.accreditedText}
                 </p>
               </div>
             </div>
@@ -110,10 +115,10 @@ export default function WhyTurkeyPage() {
               <div className="text-3xl">✓</div>
               <div>
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                  Full Coordination
+                  {c.coordinationTitle}
                 </h4>
                 <p className="text-gray-700">
-                  From consultation to recovery, we handle every detail of your medical journey.
+                  {c.coordinationText}
                 </p>
               </div>
             </div>
@@ -122,10 +127,10 @@ export default function WhyTurkeyPage() {
               <div className="text-3xl">✓</div>
               <div>
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                  Transparent Pricing
+                  {c.pricingTitle}
                 </h4>
                 <p className="text-gray-700">
-                  Packages can include transfers, accommodation and aftercare. Flights are not included.
+                  {c.pricingText}
                 </p>
               </div>
             </div>
@@ -134,10 +139,10 @@ export default function WhyTurkeyPage() {
               <div className="text-3xl">✓</div>
               <div>
                 <h4 className="font-semibold text-lg text-gray-900 mb-2">
-                  Dedicated Support
+                  {c.supportTitle}
                 </h4>
                 <p className="text-gray-700">
-                  Your personal coordinator is available 24/7 throughout your entire journey.
+                  {c.supportText}
                 </p>
               </div>
             </div>

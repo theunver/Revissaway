@@ -115,7 +115,6 @@ export default function RootLayout({
         <ConsentProvider>
         {/* Consent-gated analytics: GA4 / Meta Pixel load only after opt-in, never on treatment pages */}
         <Analytics />
-        <ConsentBanner />
 
         <LanguageProvider>
           {/* Translation Overlay - TEMPORARILY DISABLED */}
@@ -134,6 +133,9 @@ export default function RootLayout({
 
           {/* Global Disclaimer */}
           <GlobalDisclaimer />
+
+          {/* Consent banner needs the active language for its (draft) wording */}
+          <ConsentBanner />
         </LanguageProvider>
         </ConsentProvider>
       </body>

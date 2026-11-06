@@ -4,8 +4,12 @@ import { useState } from "react";
 import OptimizedVideo from "@/components/OptimizedVideo";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { useLocalized } from "@/contexts/LanguageContext";
+import { content } from "./content";
 
 export default function HairTransplantPage() {
+  const c = useLocalized(content);
   const { language } = useLanguage();
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -18,120 +22,120 @@ export default function HairTransplantPage() {
 
   const faqs = [
     {
-      question: "How long does the procedure take?",
-      answer: "On average, the hair transplant procedure takes 6 to 8 hours. This may vary depending on the number of grafts to be transplanted."
+      question: c.t001,
+      answer: c.t002
     },
     {
-      question: "Do the transplanted hairs fall out?",
-      answer: "Yes, it's normal for transplanted hair to fall out within 2-4 weeks after the procedure. This is called 'shock loss' and is a natural part of the process. New, permanent hair will begin to grow from the transplanted follicles within 3-4 months."
+      question: c.t003,
+      answer: c.t004
     },
     {
-      question: "When will my hair start to grow?",
-      answer: "New hair growth typically begins 3-4 months after the procedure. You'll see noticeable improvement by 6 months, with full results visible after 12-18 months."
+      question: c.t005,
+      answer: c.t006
     },
     {
-      question: "Will I feel pain during the procedure?",
-      answer: "No, the procedure is performed under local anesthesia, making it virtually painless. You may feel slight pressure during the procedure, but no significant pain. Some mild discomfort may occur during the recovery period."
+      question: c.t007,
+      answer: c.t008
     },
     {
-      question: "Can women also undergo hair transplant?",
-      answer: "Yes, absolutely. Hair transplant procedures are suitable for both men and women experiencing hair loss. The technique and approach may vary based on individual hair loss patterns."
+      question: c.t009,
+      answer: c.t010
     },
     {
-      question: "When can I return to work?",
-      answer: "Most patients can return to work within 3-5 days after the procedure. However, it's recommended to avoid strenuous physical activities for at least 2 weeks."
+      question: c.t011,
+      answer: c.t012
     }
   ];
 
   const methods = [
     {
       id: 0,
-      title: "DHI Hair Transplant",
+      title: c.t013,
       shortName: "DHI",
-      description: "Direct Hair Implantation (DHI) is an advanced technique where hair follicles are implanted directly into the recipient area using a specialized implanter pen (Choi pen). This method allows for precise control over the depth, angle, and direction of each implanted hair follicle.",
+      description: c.t014,
       features: [
-        "No need for prior channel opening - grafts are placed directly",
-        "High density can be achieved, especially in small areas",
-        "Minimal handling of grafts reduces trauma",
-        "Faster recovery time compared to traditional methods",
-        "Performed under local anesthesia by specialist surgeons",
-        "Natural-looking results with proper hairline design",
+        c.t015,
+        c.t016,
+        c.t017,
+        c.t018,
+        c.t019,
+        c.t020,
       ],
       iconPath: "/icons/DHI.svg",
     },
     {
       id: 1,
-      title: "FUE Hair Transplant",
+      title: c.t021,
       shortName: "FUE",
-      description: "Follicular Unit Extraction (FUE) is one of the most popular hair transplant techniques worldwide. Individual hair follicles are extracted from the donor area (typically the back of the head) and carefully transplanted to the recipient area where hair loss has occurred.",
+      description: c.t022,
       features: [
-        "Minimal scarring - no linear scar like strip method",
-        "Faster healing and recovery period",
-        "Can be performed on various body areas",
-        "Suitable for both men and women",
-        "Natural-looking, permanent results",
-        "One of the most commonly used methods globally",
+        c.t023,
+        c.t024,
+        c.t025,
+        c.t026,
+        c.t027,
+        c.t028,
       ],
       iconPath: "/icons/FUE.svg",
     },
     {
       id: 2,
-      title: "Sapphire Hair Transplant",
+      title: c.t029,
       shortName: "Sapphire",
-      description: "Sapphire FUE is an enhanced version of the traditional FUE technique. Instead of steel blades, sapphire-tipped blades are used to create the recipient channels. These ultra-sharp, smooth blades allow for more precise incisions, potentially leading to better healing and more natural results.",
+      description: c.t030,
       features: [
-        "Uses sapphire blades for creating channels",
-        "Provides more precise and smaller incisions",
-        "May support faster healing and less tissue damage",
-        "Reduced risk of complications",
-        "Higher density placement possible",
-        "An advanced, premium form of FUE",
+        c.t031,
+        c.t032,
+        c.t033,
+        c.t034,
+        c.t035,
+        c.t036,
       ],
       iconPath: "/icons/SAPPHIRE.svg",
     },
     {
       id: 3,
-      title: "Beard Transplant",
+      title: c.t037,
       shortName: "Beard",
-      description: "Beard transplantation is a specialized procedure designed for men who want to achieve fuller, denser facial hair. Hair follicles are harvested from the scalp (donor area) and carefully transplanted to areas of the beard where growth is sparse, patchy, or absent.",
+      description: c.t038,
       features: [
-        "Ideal for men with patchy or thin beard growth",
-        "Hair follicles taken from the scalp (usually back of head)",
-        "Natural-looking beard density and shape",
-        "Duration depends on the number of grafts required",
-        "Permanent results when performed correctly",
-        "Can be combined with mustache or goatee design",
+        c.t039,
+        c.t040,
+        c.t041,
+        c.t042,
+        c.t043,
+        c.t044,
       ],
       iconPath: "/icons/BEARD.svg",
     },
     {
       id: 4,
-      title: "TDF Technique (Two Days FUE)",
+      title: c.t045,
       shortName: "TDF",
       description:
-        "TDF (Two Days FUE) is an advanced hair transplantation technique designed for patients with extensive hair loss and a strong donor area. Unlike traditional methods that require 6–8 months between sessions, TDF allows two consecutive transplantation sessions performed over two days — achieving faster, denser, and more natural results. This innovative approach is ideal for individuals with limited time who want to return to work or daily life quickly after the procedure.",
+        c.t046,
       features: [
-        "Two sessions performed on consecutive days",
-        "No need to wait months between procedures",
-        "High graft survival rate and natural density",
-        "Shorter downtime and faster recovery",
-        "Effective for large bald areas (front and back)",
-        "Performed by specialized surgical teams",
+        c.t047,
+        c.t048,
+        c.t049,
+        c.t050,
+        c.t051,
+        c.t052,
       ],
       iconPath: "/icons/TDF%20Technique.svg",
     },
     {
       id: 5,
-      title: "Female Hair Transplant",
+      title: c.t053,
       shortName: "Female",
-      description: "Female hair transplantation is specifically tailored to address hair loss patterns unique to women. Unlike male pattern baldness, women typically experience diffuse thinning rather than complete baldness. The procedure aims to restore volume and density while maintaining a natural, feminine hairline.",
+      description: c.t054,
       features: [
-        "Designed for female hair loss patterns (diffuse thinning)",
-        "Hairline design suited to female facial features",
-        "Aims to restore natural volume and density",
-        "Careful consideration of existing hair",
-        "Can be combined with other hair restoration treatments",
-        "Customized approach for each individual",
+        c.t055,
+        c.t056,
+        c.t057,
+        c.t058,
+        c.t059,
+        c.t060,
       ],
       iconPath: "/icons/FEMALE.svg",
     },
@@ -154,24 +158,28 @@ export default function HairTransplantPage() {
             console.log('Tracking error:', err);
           }
         }}
-        className="fixed bottom-4 right-4 md:bottom-8 md:right-6 z-50 bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-6 py-3 rounded-xl shadow-lg transition-all duration-300 font-semibold flex items-center gap-2"
+        data-floating-whatsapp
+        aria-label="WhatsApp"
+        className="fixed z-30 right-4 bottom-[calc(1rem+env(safe-area-inset-bottom))] md:bottom-8 md:right-6 bg-[#9B7E3E] hover:bg-[#B8965A] text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full md:rounded-xl shadow-lg transition-colors duration-300 font-semibold flex items-center justify-center gap-2"
       >
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-        WhatsApp
+        <span className="hidden md:inline">WhatsApp</span>
       </a>
 
       {/* Banner Section */}
       <section className="relative h-[80vh] flex items-center justify-center text-center">
         {/* Background image */}
-        <img
-          src="/images/hair-banner.jpg"
-          alt="Hair Transplant in Turkey"
+        <ResponsiveImage
+              src="/images/hair-banner.jpg"
+          
+          alt={c.t063}
           className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
           style={{ opacity: 1 }}
-        />
+              sizes="100vw"
+              priority
+            />
 
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/40"></div>
@@ -179,10 +187,10 @@ export default function HairTransplantPage() {
         {/* Text content */}
         <div className="relative z-10 px-6">
           <h1 className="text-5xl md:text-6xl font-bold text-white border-b-4 border-[#9B7E3E] inline-block pb-2">
-            Hair Transplant in Turkey
+            {c.t064}
           </h1>
           <p className="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
-            Restore your natural look with RevissaWay's advanced hair transplant methods and certified clinics in Turkey.
+            {c.t065}
           </p>
         </div>
       </section>
@@ -191,7 +199,7 @@ export default function HairTransplantPage() {
       <section className="bg-gradient-to-b from-[#fffaf3] to-[#f8f5f0] px-4 sm:px-6 md:px-10 lg:px-20 py-10 md:py-16">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Inside Our Partner Clinics
+            {c.t066}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Procedure Video 1 */}
@@ -315,7 +323,7 @@ export default function HairTransplantPage() {
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
                   <div className="w-1 h-6 bg-[#9B7E3E] rounded-full"></div>
-                  Key Features
+                  {c.t067}
                 </h3>
                 <ul className="space-y-3">
                   {methods[selectedMethod].features.map((feature, index) => (
@@ -340,7 +348,7 @@ export default function HairTransplantPage() {
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                   </svg>
-                  Get Free Consultation
+                  {c.t068}
                 </a>
               </div>
             </div>
@@ -356,25 +364,23 @@ export default function HairTransplantPage() {
             {/* Left Column - Text Content */}
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                How Our Partner Clinics Differ from Conventional Hair Transplant Centers
+                {c.t069}
               </h2>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                At the heart of RevissaWay's philosophy lies a truly personalized hair transplant experience.
-                Each patient receives one-to-one care, ensuring comfort, safety, and natural results at every step — from consultation to post-treatment follow-up.
+                {c.t070}
               </p>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                Our partner clinics accept only 1–2 patients per day, allowing the medical team to focus entirely on individual needs and maintain the highest standards of service. Every detail is carefully planned to ensure patients feel safe, connected, and comfortable during their stay in Türkiye — even small touches like portable Wi-Fi devices enhance the overall experience.
+                {c.t071}
               </p>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                One of our key advantages is the complimentary sedation hair transplant service, providing a completely pain-free and relaxing procedure while achieving high graft survival rates and natural density.
+                {c.t072}
               </p>
               
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                All procedures are performed in fully equipped private hospitals that meet international medical standards.
-                RevissaWay combines world-class medical expertise with genuine personalized care, ensuring safe, natural, and long-lasting results for every patient.
+                {c.t073}
               </p>
             </div>
 
@@ -385,13 +391,14 @@ export default function HairTransplantPage() {
               
               {/* Image Container */}
               <div className="relative">
-                <img
-                  src="/images/foto001.png"
-                  alt="Modern hair transplant facilities in Turkey"
+                <ResponsiveImage
+              src="/images/foto001.png"
+                  
+                  alt={c.t074}
                   className="w-full h-[400px] sm:h-[500px] lg:h-[600px] object-cover rounded-xl shadow-md"
-                  loading="lazy"
                   style={{ opacity: 1 }}
-                />
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
               </div>
             </div>
           </div>
@@ -405,7 +412,7 @@ export default function HairTransplantPage() {
           {/* Left Column - FAQ */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center lg:text-left">
-              Frequently Asked Questions
+              {c.t075}
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
@@ -443,22 +450,23 @@ export default function HairTransplantPage() {
           {/* Right Column - About Hair Transplant */}
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8 text-center lg:text-left">
-              About Hair Transplant
+              {c.t076}
             </h2>
 
             {/* YouTube Video Embed */}
             <div className="mb-8">
               <div className="rounded-xl overflow-hidden shadow-sm aspect-video lg:h-[320px]">
                 <iframe
+                loading="lazy"
                   className="w-full h-full rounded-lg"
                   src="https://www.youtube-nocookie.com/embed/QvzQlwSnzTQ"
-                  title="Hair Transplant Procedure"
+                  title={c.t077}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
               <p className="text-xs text-gray-400 text-center mt-2">
-                Informational purposes only
+                {c.t078}
               </p>
             </div>
 
@@ -471,8 +479,8 @@ export default function HairTransplantPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                   <div>
-                    <p className="text-xs text-gray-600 font-medium">Who Can Have It?</p>
-                    <p className="text-sm font-bold text-gray-900">Adults over 18</p>
+                    <p className="text-xs text-gray-600 font-medium">{c.t079}</p>
+                    <p className="text-sm font-bold text-gray-900">{c.t080}</p>
                   </div>
                 </div>
               </div>
@@ -484,8 +492,8 @@ export default function HairTransplantPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
                   <div>
-                    <p className="text-xs text-gray-600 font-medium">Techniques Used</p>
-                    <p className="text-sm font-bold text-gray-900">FUE, DHI, Sapphire</p>
+                    <p className="text-xs text-gray-600 font-medium">{c.t081}</p>
+                    <p className="text-sm font-bold text-gray-900">{c.t082}</p>
                   </div>
                 </div>
               </div>
@@ -497,8 +505,8 @@ export default function HairTransplantPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                   <div>
-                    <p className="text-xs text-gray-600 font-medium">Anesthesia Type</p>
-                    <p className="text-sm font-bold text-gray-900">Local – Painless</p>
+                    <p className="text-xs text-gray-600 font-medium">{c.t083}</p>
+                    <p className="text-sm font-bold text-gray-900">{c.t084}</p>
                   </div>
                 </div>
               </div>
@@ -510,8 +518,8 @@ export default function HairTransplantPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                   </svg>
                   <div>
-                    <p className="text-xs text-gray-600 font-medium">Accommodation</p>
-                    <p className="text-sm font-bold text-gray-900">2 Days</p>
+                    <p className="text-xs text-gray-600 font-medium">{c.t085}</p>
+                    <p className="text-sm font-bold text-gray-900">{c.t086}</p>
                   </div>
                 </div>
               </div>
@@ -523,8 +531,8 @@ export default function HairTransplantPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
-                    <p className="text-xs text-gray-600 font-medium">Operation Duration</p>
-                    <p className="text-sm font-bold text-gray-900">6–8 Hours</p>
+                    <p className="text-xs text-gray-600 font-medium">{c.t087}</p>
+                    <p className="text-sm font-bold text-gray-900">{c.t088}</p>
                   </div>
                 </div>
               </div>
@@ -536,8 +544,8 @@ export default function HairTransplantPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                   </svg>
                   <div>
-                    <p className="text-xs text-gray-600 font-medium">Recovery Period</p>
-                    <p className="text-sm font-bold text-gray-900">7–14 Days</p>
+                    <p className="text-xs text-gray-600 font-medium">{c.t089}</p>
+                    <p className="text-sm font-bold text-gray-900">{c.t090}</p>
                   </div>
                 </div>
               </div>

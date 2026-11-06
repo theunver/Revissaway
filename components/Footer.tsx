@@ -2,12 +2,19 @@
 
 import { FaWhatsapp, FaInstagram, FaFacebookF } from "react-icons/fa";
 import Image from "next/image";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, useLocalized } from "@/contexts/LanguageContext";
 import { useConsent } from "@/contexts/ConsentContext";
 
 export default function Footer() {
   const { t } = useLanguage();
   const { openSettings } = useConsent();
+  const f = useLocalized({
+    en: { international: "International:", privacy: "Privacy Policy", terms: "Terms of Use", about: "About RevissaWay", settings: "Privacy settings",
+      note: "RevissaWay is not a medical provider. It connects patients with accredited clinics in Türkiye. All medical procedures are performed by licensed partner clinics." },
+    // REVIEW:claim (note: "accredited" / "licensed" - evidence pending)
+    tr: { international: "Uluslararası:", privacy: "Gizlilik Politikası", terms: "Kullanım Şartları", about: "RevissaWay Hakkında", settings: "Gizlilik ayarları",
+      note: "RevissaWay bir sağlık hizmeti sağlayıcısı değildir. Hastaları Türkiye'deki akredite kliniklerle buluşturur. Tüm tıbbi işlemler lisanslı partner klinikler tarafından gerçekleştirilir." },
+  });
   
   return (
     <footer className="bg-gradient-to-b from-white to-[#f5e9cc] px-4 py-8 md:px-8 md:py-12 text-[#3a3a3a] font-sans pb-16">
@@ -51,7 +58,7 @@ export default function Footer() {
             <a href="tel:+61411854929" className="hover:underline">0411 854 929</a>
           </p>
           <p>
-            International: <a href="tel:+61411854929" className="hover:underline">+61 411 854 929</a>
+            {f.international} <a href="tel:+61411854929" className="hover:underline">+61 411 854 929</a>
           </p>
         </div>
         
@@ -84,21 +91,21 @@ export default function Footer() {
             href="/privacy-policy" 
             className="text-xs text-[#9B7E3E] hover:underline transition-colors"
           >
-            Privacy Policy
+            {f.privacy}
           </a>
           <span className="text-xs text-gray-400">|</span>
           <a 
             href="/terms" 
             className="text-xs text-[#9B7E3E] hover:underline transition-colors"
           >
-            Terms of Use
+            {f.terms}
           </a>
           <span className="text-xs text-gray-400">|</span>
           <a 
             href="/about" 
             className="text-xs text-[#9B7E3E] hover:underline transition-colors"
           >
-            About RevissaWay
+            {f.about}
           </a>
           <span className="text-xs text-gray-400">|</span>
           <button
@@ -106,13 +113,12 @@ export default function Footer() {
             onClick={openSettings}
             className="text-xs text-[#9B7E3E] hover:underline transition-colors"
           >
-            Privacy settings
+            {f.settings}
           </button>
         </div>
         
         <p className="text-xs text-gray-500 mt-6">
-          RevissaWay is not a medical provider. It connects patients with accredited clinics in Türkiye. 
-          All medical procedures are performed by licensed partner clinics.
+          {f.note}
         </p>
       </div>
     </footer>

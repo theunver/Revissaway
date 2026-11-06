@@ -1,24 +1,15 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
 
-type Language = 'en' | 'tr' | 'zh' | 'ar' | 'vi' | 'yue' | 'pa' | 'hi' | 'it' | 'el' | 'tl' | 'th' | 'fr' | 'es';
+// Supported languages: English (default) and Turkish only.
+export type Language = 'en' | 'tr';
+const SUPPORTED: readonly Language[] = ['en', 'tr'];
+const STORAGE_KEY = 'language';
 
 export const languageOptions = [
-  { code: 'en', label: 'English', flag: '🇬🇧' },
-  { code: 'tr', label: 'Türkçe', flag: '🇹🇷' },
-  { code: 'zh', label: '中文', flag: '🇨🇳' },
-  { code: 'ar', label: 'العربية', flag: '🇸🇦' },
-  { code: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
-  { code: 'yue', label: '廣東話', flag: '🇭🇰' },
-  { code: 'pa', label: 'ਪੰਜਾਬੀ', flag: '🇮🇳' },
-  { code: 'hi', label: 'हिन्दी', flag: '🇮🇳' },
-  { code: 'it', label: 'Italiano', flag: '🇮🇹' },
-  { code: 'el', label: 'Ελληνικά', flag: '🇬🇷' },
-  { code: 'tl', label: 'Tagalog', flag: '🇵🇭' },
-  { code: 'th', label: 'ไทย', flag: '🇹🇭' },
-  { code: 'fr', label: 'Français', flag: '🇫🇷' },
-  { code: 'es', label: 'Español', flag: '🇪🇸' },
+  { code: 'en', label: 'English', short: 'EN', flag: '🇬🇧' },
+  { code: 'tr', label: 'Türkçe', short: 'TR', flag: '🇹🇷' },
 ] as const;
 
 interface LanguageContextType {
@@ -199,460 +190,59 @@ const translations = {
     
     // Disclaimer
     'disclaimer.text': 'RevissaWay yalnızca organizasyon ve danışmanlık hizmetleri sunmaktadır. Tüm tıbbi prosedürler, Türkiye\'deki akredite ortak hastaneler ve lisanslı tıp uzmanlarının sorumluluğundadır. Sonuçlar kişiden kişiye değişebilir. Bu web sitesindeki bilgiler yalnızca genel bilgilendirme amaçlıdır ve tıbbi tavsiye niteliği taşımaz.',
-  },
-  fr: {
-    // Navbar
-    'nav.home': 'Accueil',
-    'nav.services': 'Services',
-    'nav.about': 'À propos',
-    'nav.contact': 'Contact',
-    'nav.whyTurkey': 'Pourquoi la Turquie ?',
-    'nav.consultation': 'Consultation gratuite',
-    
-    // Services
-    'services.hairTransplant': 'Greffe de cheveux',
-    'services.cosmeticSurgery': 'Chirurgie esthétique',
-    'services.dentalAesthetics': 'Esthétique dentaire',
-    
-    // Footer
-    'footer.title': 'Votre pont vers le bien-être',
-    'footer.description': 'Découvrez un accès fiable aux cliniques de cosmétique, greffe de cheveux et esthétique dentaire de classe mondiale en Turquie — avec RevissaWay connectant l\'Australie, la Nouvelle-Zélande et la Turquie grâce à des partenariats médicaux certifiés.',
-    'footer.consultation': 'Réservez votre consultation gratuite',
-    'footer.address': 'ADRESSE',
-    'footer.phone': 'TÉLÉPHONE',
-    'footer.email': 'E-MAIL',
-    'footer.copyright': '© {year} RevissaWay | Tous droits réservés.',
-    
-    // Home Page
-    'home.hero.title': 'Votre pont vers les experts les plus fiables en cheveux et esthétique de Turquie',
-    'home.hero.subtitle': 'RevissaWay connecte les patients d\'Australie et de Nouvelle-Zélande avec des cliniques accréditées en Turquie — offrant une qualité de classe mondiale, des chirurgiens experts et une coordination transparente.',
-    'home.hero.cta': 'Réserver une consultation gratuite',
-    'home.whyTurkey.title': 'Pourquoi la Turquie ?',
-    'home.whyTurkey.description': 'RevissaWay est une marque de tourisme médical de confiance qui travaille en collaboration avec des cliniques médicales et esthétiques accréditées et licenciées internationalement à travers la Turquie.',
-    'home.services.title': 'Nos services',
-    'home.services.hairTransplant.title': 'Greffe de cheveux',
-    'home.services.hairTransplant.description': 'Techniques avancées FUE, DHI et Sapphire avec des résultats naturels.',
-    'home.services.cosmeticSurgery.title': 'Chirurgie esthétique',
-    'home.services.cosmeticSurgery.description': 'Procédures esthétiques expertes incluant augmentation mammaire, liposuccion et chirurgies faciales.',
-    'home.services.dentalAesthetics.title': 'Esthétique dentaire',
-    'home.services.dentalAesthetics.description': 'Sourire Hollywood, implants dentaires et traitements esthétiques dentaires complets.',
-    'home.packageServices.title': 'Ce qui est inclus dans votre forfait',
-    'home.packageServices.transfer.title': 'Service de transfert',
-    'home.packageServices.transfer.description': 'Prise en charge et retour à l\'aéroport',
-    'home.packageServices.hotel.title': 'Hébergement hôtelier',
-    'home.packageServices.hotel.description': 'Séjour confortable dans un hôtel 4-5 étoiles',
-    'home.packageServices.vip.title': 'Support VIP',
-    'home.packageServices.vip.description': 'Coordinateur dédié tout au long de votre séjour',
-    'home.packageServices.followup.title': 'Suivi d\'1 an',
-    'home.packageServices.followup.description': 'Soins post-traitement et surveillance',
-    'home.process.title': 'Notre processus',
-    'home.process.step1.title': 'Consultation initiale gratuite',
-    'home.process.step1.description': 'Envoyez vos détails et recevez une évaluation initiale.',
-    'home.process.step2.title': 'Évaluation du médecin',
-    'home.process.step2.description': 'Examen médical expert et plan de traitement personnalisé.',
-    'home.process.step3.title': 'Planification du traitement',
-    'home.process.step3.description': 'Programmation détaillée et conseils de préparation.',
-    'home.process.step4.title': 'Procédure médicale',
-    'home.process.step4.description': 'Traitement professionnel par des spécialistes licenciés.',
-    'home.process.step5.title': 'Soins de suivi',
-    'home.process.step5.description': 'Support continu et surveillance pour des résultats optimaux.',
-    'home.contact.title': 'Réservez votre consultation gratuite',
-    'home.contact.subtitle': 'Remplissez le formulaire ci-dessous et nous vous répondrons dans les 24 heures.',
-    'home.contact.firstName': 'Prénom',
-    'home.contact.lastName': 'Nom de famille',
-    'home.contact.email': 'E-mail',
-    'home.contact.phone': 'Téléphone',
-    'home.contact.preferredDate': 'Date préférée',
-    'home.contact.service': 'Service qui vous intéresse',
-    'home.contact.message': 'Message',
-    'home.contact.submit': 'Réserver une consultation',
-    'home.contact.submitting': 'Envoi en cours...',
-    'home.contact.success': '✅ Merci, votre demande de consultation a été reçue.',
-    'home.contact.error': 'Désolé, une erreur s\'est produite. Veuillez réessayer.',
-    'home.contact.whatsapp': 'Chat sur WhatsApp',
-    'home.contact.privacy': 'Nous respectons votre vie privée. Vos informations sont utilisées pour répondre à votre demande et sont traitées conformément à notre Politique de confidentialité.',
-    
-    // About Page
-    'about.title': 'À propos de RevissaWay',
-    'about.expertise.title': 'Expertise et partenariats',
-    'about.expertise.description': 'RevissaWay collabore avec plusieurs partenaires médicaux accrédités et licenciés à travers la Turquie — y compris Estego Turkey. Nous ne sommes liés à aucune institution unique ; au lieu de cela, nous opérons à travers un réseau de cliniques vérifiées qui respectent les normes de soins de santé nationales et internationales.',
-    'about.expertise.multiplePartners': 'Partenaires multiples',
-    'about.expertise.accreditedClinics': 'Cliniques accréditées',
-    'about.expertise.transparentCoordination': 'Coordination transparente',
-    'about.whyChoose.title': 'Pourquoi choisir RevissaWay',
-    
-    // Disclaimer
-    'disclaimer.text': 'RevissaWay fournit uniquement des services d\'organisation et de consultation. Toutes les procédures médicales sont de la responsabilité des hôpitaux partenaires accrédités et des professionnels médicaux licenciés en Turquie. Les résultats peuvent varier d\'une personne à l\'autre. Les informations sur ce site web sont uniquement à des fins d\'information générale et ne constituent pas des conseils médicaux.',
-  },
-  es: {
-    // Navbar
-    'nav.home': 'Inicio',
-    'nav.services': 'Servicios',
-    'nav.about': 'Acerca de',
-    'nav.contact': 'Contacto',
-    'nav.whyTurkey': '¿Por qué Turquía?',
-    'nav.consultation': 'Consulta gratuita',
-    
-    // Services
-    'services.hairTransplant': 'Trasplante de cabello',
-    'services.cosmeticSurgery': 'Cirugía estética',
-    'services.dentalAesthetics': 'Estética dental',
-    
-    // Footer
-    'footer.title': 'Tu puente hacia el bienestar',
-    'footer.description': 'Descubre acceso confiable a clínicas de cosmética, trasplante de cabello y estética dental de clase mundial en Turquía — con RevissaWay conectando Australia, Nueva Zelanda y Turquía a través de asociaciones médicas certificadas.',
-    'footer.consultation': 'Reserva tu consulta gratuita',
-    'footer.address': 'DIRECCIÓN',
-    'footer.phone': 'TELÉFONO',
-    'footer.email': 'CORREO',
-    'footer.copyright': '© {year} RevissaWay | Todos los derechos reservados.',
-    
-    // Home Page
-    'home.hero.title': 'Tu puente hacia los expertos más confiables en cabello y estética de Turquía',
-    'home.hero.subtitle': 'RevissaWay conecta pacientes de Australia y Nueva Zelanda con clínicas acreditadas en Turquía — ofreciendo calidad de clase mundial, cirujanos expertos y coordinación transparente.',
-    'home.hero.cta': 'Reservar consulta gratuita',
-    'home.whyTurkey.title': '¿Por qué Turquía?',
-    'home.whyTurkey.description': 'RevissaWay es una marca de turismo médico de confianza que trabaja en colaboración con clínicas médicas y estéticas acreditadas y licenciadas internacionalmente en toda Turquía.',
-    'home.services.title': 'Nuestros servicios',
-    'home.services.hairTransplant.title': 'Trasplante de cabello',
-    'home.services.hairTransplant.description': 'Técnicas avanzadas FUE, DHI y Sapphire con resultados naturales.',
-    'home.services.cosmeticSurgery.title': 'Cirugía estética',
-    'home.services.cosmeticSurgery.description': 'Procedimientos estéticos expertos incluyendo aumento de senos, liposucción y cirugías faciales.',
-    'home.services.dentalAesthetics.title': 'Estética dental',
-    'home.services.dentalAesthetics.description': 'Sonrisa Hollywood, implantes dentales y tratamientos estéticos dentales completos.',
-    'home.packageServices.title': 'Qué está incluido en tu paquete',
-    'home.packageServices.transfer.title': 'Servicio de transfer',
-    'home.packageServices.transfer.description': 'Recogida y regreso al aeropuerto',
-    'home.packageServices.hotel.title': 'Alojamiento hotelero',
-    'home.packageServices.hotel.description': 'Estancia cómoda en hotel 4-5 estrellas',
-    'home.packageServices.vip.title': 'Soporte VIP',
-    'home.packageServices.vip.description': 'Coordinador dedicado durante toda tu estancia',
-    'home.packageServices.followup.title': 'Seguimiento de 1 año',
-    'home.packageServices.followup.description': 'Cuidados post-tratamiento y monitoreo',
-    'home.process.title': 'Nuestro proceso',
-    'home.process.step1.title': 'Consulta inicial gratuita',
-    'home.process.step1.description': 'Envía tus detalles y recibe una evaluación inicial.',
-    'home.process.step2.title': 'Evaluación del médico',
-    'home.process.step2.description': 'Revisión médica experta y plan de tratamiento personalizado.',
-    'home.process.step3.title': 'Planificación del tratamiento',
-    'home.process.step3.description': 'Programación detallada y guía de preparación.',
-    'home.process.step4.title': 'Procedimiento médico',
-    'home.process.step4.description': 'Tratamiento profesional por especialistas licenciados.',
-    'home.process.step5.title': 'Cuidados de seguimiento',
-    'home.process.step5.description': 'Soporte continuo y monitoreo para resultados óptimos.',
-    'home.contact.title': 'Reserva tu consulta gratuita',
-    'home.contact.subtitle': 'Completa el formulario a continuación y te responderemos en 24 horas.',
-    'home.contact.firstName': 'Nombre',
-    'home.contact.lastName': 'Apellido',
-    'home.contact.email': 'Correo electrónico',
-    'home.contact.phone': 'Teléfono',
-    'home.contact.preferredDate': 'Fecha preferida',
-    'home.contact.service': 'Servicio de interés',
-    'home.contact.message': 'Mensaje',
-    'home.contact.submit': 'Reservar consulta',
-    'home.contact.submitting': 'Enviando...',
-    'home.contact.success': '✅ Gracias, tu solicitud de consulta ha sido recibida.',
-    'home.contact.error': 'Lo sentimos, ocurrió un error. Por favor intenta de nuevo.',
-    'home.contact.whatsapp': 'Chat en WhatsApp',
-    'home.contact.privacy': 'Respetamos tu privacidad. Tus datos se utilizan para responder a tu consulta y se tratan según lo descrito en nuestra Política de Privacidad.',
-    
-    // About Page
-    'about.title': 'Acerca de RevissaWay',
-    'about.expertise.title': 'Experiencia y asociaciones',
-    'about.expertise.description': 'RevissaWay colabora con múltiples socios médicos acreditados y licenciados en toda Turquía — incluyendo Estego Turkey. No estamos vinculados a una sola institución; en su lugar, operamos a través de una red de clínicas verificadas que cumplen con los estándares de atención médica nacionales e internacionales.',
-    'about.expertise.multiplePartners': 'Múltiples socios',
-    'about.expertise.accreditedClinics': 'Clínicas acreditadas',
-    'about.expertise.transparentCoordination': 'Coordinación transparente',
-    'about.whyChoose.title': 'Por qué elegir RevissaWay',
-    
-    // Disclaimer
-    'disclaimer.text': 'RevissaWay proporciona únicamente servicios de organización y consultoría. Todos los procedimientos médicos son responsabilidad de hospitales socios acreditados y profesionales médicos licenciados en Turquía. Los resultados pueden variar de persona a persona. La información en este sitio web es únicamente para fines informativos generales y no constituye consejo médico.',
-  },
+  }
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en');
-  const [isLoading, setIsLoading] = useState(false);
-  const [isTranslating, setIsTranslating] = useState(false);
 
+  // Restore the visitor's choice after mount. Any previously stored, now unsupported
+  // language (e.g. 'fr', 'zh') falls back to English.
   useEffect(() => {
-    const savedLang = localStorage.getItem('language') as Language;
-    const validLanguages = ['en', 'tr', 'zh', 'ar', 'vi', 'yue', 'pa', 'hi', 'it', 'el', 'tl', 'th', 'fr', 'es'];
-    if (savedLang && validLanguages.includes(savedLang)) {
-      setLanguageState(savedLang);
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem(STORAGE_KEY);
+    } catch {
+      // storage unavailable
+    }
+    if (saved && (SUPPORTED as readonly string[]).includes(saved)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setLanguageState(saved as Language);
+    } else if (saved) {
+      try {
+        localStorage.setItem(STORAGE_KEY, 'en');
+      } catch {
+        // ignore
+      }
     }
   }, []);
 
-  // Translate all DOM content when language changes
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    
-    // Cache for translated texts
-    const translationCache: { [key: string]: string } = {};
-    
-    const translateElements = async (elements: Element[]) => {
-      if (elements.length === 0) return;
-
-      const toTranslate: { element: Element; text: string; originalText: string }[] = [];
-
-      for (const el of elements) {
-        const text = el.textContent?.trim() || '';
-        if (!text || text.length < 2) continue;
-
-        // Skip if already translated to this language
-        if (el.hasAttribute(`data-translated-${language}`)) continue;
-
-        // Get direct text content only (not nested elements)
-        const directText = Array.from(el.childNodes)
-          .filter(node => node.nodeType === Node.TEXT_NODE)
-          .map(node => node.textContent?.trim())
-          .filter(Boolean)
-          .join(' ');
-
-        if (directText && directText.length >= 2) {
-          toTranslate.push({ 
-            element: el, 
-            text: directText,
-            originalText: directText
-          });
-        }
-      }
-
-      if (toTranslate.length === 0) return;
-
-      // Translate in batches of 30
-      const batchSize = 30;
-      for (let i = 0; i < toTranslate.length; i += batchSize) {
-        const batch = toTranslate.slice(i, i + batchSize);
-        const textsToTranslate = batch.map(item => {
-          // Check cache first
-          const cacheKey = `${language}:${item.text}`;
-          if (translationCache[cacheKey]) {
-            return null; // Already cached
-          }
-          return item.text;
-        }).filter(Boolean) as string[];
-
-        if (textsToTranslate.length === 0) {
-          // All from cache
-          batch.forEach(item => {
-            const cacheKey = `${language}:${item.text}`;
-            if (translationCache[cacheKey]) {
-              // Replace text nodes only
-              Array.from(item.element.childNodes).forEach(node => {
-                if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
-                  node.textContent = translationCache[cacheKey];
-                }
-              });
-              item.element.setAttribute(`data-translated-${language}`, 'true');
-            }
-          });
-          continue;
-        }
-
-        try {
-          const response = await fetch('/api/translate', {
-            method: 'POST',
-            headers: { 
-              'Content-Type': 'application/json; charset=UTF-8',
-              'Accept': 'application/json',
-            },
-            body: JSON.stringify({
-              text: textsToTranslate,
-              targetLang: language,
-              sourceLang: 'en',
-            }),
-          });
-
-          if (!response.ok) {
-            console.error(`Translation API error: ${response.status} ${response.statusText}`);
-            // On error, mark items as translated with original text to avoid retries
-            batch.forEach(item => {
-              item.element.setAttribute(`data-translated-${language}`, 'true');
-            });
-            return;
-          }
-
-          const data = await response.json();
-          
-          if (!data || !data.translatedTexts) {
-            console.error('Invalid translation response:', data);
-            batch.forEach(item => {
-              item.element.setAttribute(`data-translated-${language}`, 'true');
-            });
-            return;
-          }
-
-          const translations = data.translatedTexts;
-
-          let translationIndex = 0;
-          batch.forEach(item => {
-            const cacheKey = `${language}:${item.text}`;
-            let translated: string;
-
-            if (translationCache[cacheKey]) {
-              translated = translationCache[cacheKey];
-            } else {
-              translated = translations[translationIndex] || item.text;
-              translationCache[cacheKey] = translated;
-              translationIndex++;
-            }
-
-            // Replace only text nodes, preserve child elements
-            Array.from(item.element.childNodes).forEach(node => {
-              if (node.nodeType === Node.TEXT_NODE && node.textContent?.trim()) {
-                node.textContent = translated;
-              }
-            });
-
-            item.element.setAttribute(`data-translated-${language}`, 'true');
-          });
-        } catch (error) {
-          console.error('Batch translation error:', error);
-          // Mark as translated to prevent infinite retries
-          batch.forEach(item => {
-            item.element.setAttribute(`data-translated-${language}`, 'true');
-          });
-        }
-
-        // Delay between batches to avoid rate limiting
-        if (i + batchSize < toTranslate.length) {
-          await new Promise(resolve => setTimeout(resolve, 150));
-        }
-      }
-    };
-
-    const translatePage = async () => {
-      // Reset for EN only (original language)
-      if (language === 'en') {
-        document.querySelectorAll('[data-translated-tr], [data-translated-zh], [data-translated-ar], [data-translated-vi], [data-translated-yue], [data-translated-pa], [data-translated-hi], [data-translated-it], [data-translated-el], [data-translated-tl], [data-translated-th], [data-translated-fr], [data-translated-es]').forEach(el => {
-          // Remove all translation attributes
-          ['tr', 'zh', 'ar', 'vi', 'yue', 'pa', 'hi', 'it', 'el', 'tl', 'th', 'fr', 'es'].forEach(lang => {
-            el.removeAttribute(`data-translated-${lang}`);
-          });
-        });
-        return;
-      }
-
-      // For static translation languages, just set the lang attribute and exit
-      if (['en', 'tr', 'fr', 'es'].includes(language)) {
-        setIsTranslating(false);
-        document.documentElement.lang = language;
-        return;
-      }
-
-      // DISABLED: Dynamic translation to avoid API rate limits
-      // For other languages, show a warning and revert to English
-      setIsTranslating(false);
-      document.documentElement.lang = 'en';
-      console.warn(`Dynamic translation for language "${language}" is temporarily disabled due to API rate limits. Showing English version instead.`);
-      // Optionally: switch back to English automatically
-      // setLanguageState('en');
-      return;
-
-      /* DISABLED CODE - Uncomment when API limits are resolved
-      // Debounced translation trigger for dynamic languages
-      const triggerTranslation = () => {
-        if (translationTimeoutRef.current) {
-          clearTimeout(translationTimeoutRef.current);
-        }
-        translationTimeoutRef.current = setTimeout(async () => {
-          const nodes = collectTranslatableNodes();
-          await translatePage(nodes);
-        }, 300); // Debounce by 300ms
-      };
-
-      // Initial translation for dynamic languages
-      triggerTranslation();
-
-      // Setup MutationObserver for dynamic content
-      observerRef.current = new MutationObserver((mutations) => {
-        let hasNewContent = false;
-        mutations.forEach((mutation) => {
-          if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
-            // Filter out script, style, and already translated elements
-            const meaningfulAdditions = Array.from(mutation.addedNodes).some(node => {
-              if (node.nodeType === Node.ELEMENT_NODE) {
-                const el = node as Element;
-                const tagName = el.tagName.toLowerCase();
-                if (['script', 'style', 'noscript', 'iframe', 'svg', 'code', 'pre'].includes(tagName)) {
-                  return false; // Skip these elements
-                }
-                // If it's an element that contains text, or could have translatable attributes
-                return el.textContent?.trim().length > 0 || el.hasAttribute('placeholder') || el.hasAttribute('aria-label');
-              }
-              return node.nodeType === Node.TEXT_NODE && node.textContent?.trim().length > 0;
-            });
-            if (meaningfulAdditions) hasNewContent = true;
-          }
-          // Also consider character data changes for existing nodes that might become visible or have updated text
-          if (mutation.type === 'characterData' && mutation.target.textContent?.trim().length > 0) {
-            const parent = mutation.target.parentElement;
-            if (parent && !parent.hasAttribute('data-original-text')) { // Only if not already translated
-              hasNewContent = true; 
-            }
-          }
-        });
-
-        if (hasNewContent) {
-          triggerTranslation();
-        }
-      });
-
-      observerRef.current.observe(document.body, {
-        childList: true,
-        subtree: true,
-        characterData: true, // Observe text changes in existing nodes
-        attributeFilter: ['placeholder', 'aria-label'] // Observe attribute changes
-      });
-      */
-    };
-
-    // Disconnect previous observer if exists
-    if ((window as any).__translationObserver) {
-      (window as any).__translationObserver.disconnect();
-    }
-
-    // Wait for page to be fully loaded
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', translatePage);
-    } else {
-      translatePage();
-    }
-
-    return () => {
-      if ((window as any).__translationObserver) {
-        (window as any).__translationObserver.disconnect();
-      }
-    };
+    document.documentElement.lang = language;
   }, [language]);
 
-  const setLanguage = async (lang: Language) => {
-    setIsLoading(true);
-    localStorage.setItem('language', lang);
-    
-    // Force full page reload for clean translation
-    // This ensures no cache conflicts between language switches
-    window.location.reload();
-  };
+  // Static dictionaries only: switching re-renders instantly, no page reload needed.
+  const setLanguage = useCallback((lang: Language) => {
+    const next: Language = (SUPPORTED as readonly string[]).includes(lang) ? lang : 'en';
+    try {
+      localStorage.setItem(STORAGE_KEY, next);
+    } catch {
+      // ignore
+    }
+    setLanguageState(next);
+  }, []);
 
   const t = (key: string): string => {
-    // Only en, tr, fr and es have reviewed static translations.
-    // Any other language, or any key missing from a language, falls back to
-    // the original English text so raw keys (e.g. "home.hero.title") never render.
     const english = translations.en as Record<string, string>;
     const fallback = english[key] || key;
-
-    if (['tr', 'fr', 'es'].includes(language)) {
-      const langData = translations[language as 'tr' | 'fr' | 'es'] as Record<string, string>;
-      return langData[key] || fallback;
+    if (language === 'tr') {
+      return (translations.tr as Record<string, string>)[key] || fallback;
     }
-
     return fallback;
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t, isLoading, isTranslating }}>
+    <LanguageContext.Provider value={{ language, setLanguage, t, isLoading: false, isTranslating: false }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -664,4 +254,10 @@ export function useLanguage() {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
+}
+
+/** Page-level bilingual content: pass { en, tr } and receive the active language's object. */
+export function useLocalized<T>(content: { en: T; tr: T }): T {
+  const { language } = useLanguage();
+  return language === 'tr' ? content.tr : content.en;
 }

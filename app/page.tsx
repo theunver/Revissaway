@@ -2,11 +2,15 @@
 
 import { useState } from "react";
 import OptimizedVideo from "@/components/OptimizedVideo";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useLanguage, useLocalized } from "@/contexts/LanguageContext";
+import { consentLabel } from "./consent-text";
 import privacyRelease from "@/privacy-release.json";
+import ResponsiveImage from "@/components/ResponsiveImage";
+import { content } from "./content";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const c = useLocalized(content);
+  const { t, language } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -69,8 +73,8 @@ export default function Home() {
 
   const services = [
     {
-      title: "Hair Transplant",
-      description: "Modern techniques at internationally accredited hospitals.",
+      title: c.t003,
+      description: c.t004,
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -78,8 +82,8 @@ export default function Home() {
       ),
     },
     {
-      title: "Esthetic Surgery Applications",
-      description: "Wide range of procedures performed by experienced surgeons.",
+      title: c.t005,
+      description: c.t006,
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -87,8 +91,8 @@ export default function Home() {
       ),
     },
     {
-      title: "Dental Aesthetics",
-      description: "Smile design and oral health with modern treatments.",
+      title: c.t007,
+      description: c.t008,
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -99,8 +103,8 @@ export default function Home() {
 
   const packageServices = [
     {
-      title: "Transfer Service",
-      description: "Comfortable and private transportation.",
+      title: c.t009,
+      description: c.t010,
       icon: (
         <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
@@ -108,8 +112,8 @@ export default function Home() {
       ),
     },
     {
-      title: "Luxury Hotel Accommodation",
-      description: "Stay at selected 4-5 star hotels.",
+      title: c.t011,
+      description: c.t012,
       icon: (
         <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -117,8 +121,8 @@ export default function Home() {
       ),
     },
     {
-      title: "VIP Service",
-      description: "End-to-end support for bookings, transfers, and appointments.",
+      title: c.t013,
+      description: c.t014,
       icon: (
         <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
@@ -126,8 +130,8 @@ export default function Home() {
       ),
     },
     {
-      title: "1 Year Dedicated Health Advisor",
-      description: "Monthly follow-up and ongoing communication post-procedure.",
+      title: c.t015,
+      description: c.t016,
       icon: (
         <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
@@ -139,51 +143,51 @@ export default function Home() {
   const processSteps = [
     {
       number: "1",
-      title: "Free Initial Consultation",
-      description: "Send your details and receive an initial assessment.",
+      title: c.t017,
+      description: c.t018,
     },
     {
       number: "2",
-      title: "Doctor Assessment",
-      description: "Specialists in Turkey review your case.",
+      title: c.t019,
+      description: c.t020,
     },
     {
       number: "3",
-      title: "Treatment Plan",
-      description: "Receive personalized pricing and plan.",
+      title: c.t021,
+      description: c.t022,
     },
     {
       number: "4",
-      title: "Procedure in Turkey",
-      description: "Your treatment at our partner hospital.",
+      title: c.t023,
+      description: c.t024,
     },
     {
       number: "5",
-      title: "1 Year Follow-up",
-      description: "Your advisor provides monthly check-ins.",
+      title: c.t025,
+      description: c.t026,
     },
   ];
 
   const faqs = [
     {
-      question: "Are flights included?",
-      answer: "Flights are not included in the package. However, we can assist you in planning suitable travel dates and provide guidance as needed.",
+      question: c.t027,
+      answer: c.t028,
     },
     {
-      question: "What happens if there are complications?",
-      answer: "All medical procedures are performed at accredited partner hospitals in Turkey. Any complications are handled according to hospital protocols, and your 1-year advisor support continues.",
+      question: c.t029,
+      answer: c.t030,
     },
     {
-      question: "What are the cancellation/refund terms?",
-      answer: "Cancellation and refund terms are detailed in the contract. Pre-procedure cancellation rules apply. Please review the contract details carefully.",
+      question: c.t031,
+      answer: c.t032,
     },
     {
-      question: "Is there a guarantee?",
-      answer: "Treatment outcomes may vary from person to person. Our partner hospitals provide internationally accredited services, but medical results cannot be guaranteed. 1-year follow-up support is provided.",
+      question: c.t033,
+      answer: c.t034,
     },
     {
-      question: "Is English support available?",
-      answer: "Yes, both Turkish and English communication support is available. Our advisors will stay in touch with you throughout the entire process.",
+      question: c.t035,
+      answer: c.t036,
     },
   ];
 
@@ -204,12 +208,14 @@ export default function Home() {
             console.log('Tracking error:', err);
           }
         }}
-        className="fixed bottom-4 right-4 md:bottom-8 md:right-6 z-50 bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-6 py-3 rounded-xl shadow-lg transition-all duration-300 font-semibold flex items-center gap-2"
+        data-floating-whatsapp
+        aria-label="WhatsApp"
+        className="fixed z-30 right-4 bottom-[calc(1rem+env(safe-area-inset-bottom))] md:bottom-8 md:right-6 bg-[#9B7E3E] hover:bg-[#B8965A] text-white w-14 h-14 md:w-auto md:h-auto md:px-6 md:py-3 rounded-full md:rounded-xl shadow-lg transition-colors duration-300 font-semibold flex items-center justify-center gap-2"
       >
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
-        WhatsApp
+        <span className="hidden md:inline">WhatsApp</span>
       </a>
 
       {/* Hero Section with Video Background */}
@@ -311,8 +317,9 @@ export default function Home() {
             {/* Video */}
             <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
               <iframe
+                loading="lazy"
                 src="https://www.youtube-nocookie.com/embed/iaVP0skLe68?si=h5dmjze6y4j2Fbva&autoplay=1&mute=1"
-                title="Why Choose Turkey for Aesthetic Treatments?"
+                title={c.t039}
                 allowFullScreen
                 allow="autoplay; encrypted-media"
                 className="w-full h-full"
@@ -334,8 +341,8 @@ export default function Home() {
               <div className="flex items-start">
                 <span className="text-[#9B7E3E] font-bold text-xl mr-3 flex-shrink-0">✔</span>
                 <div>
-                  <strong className="block text-gray-900 mb-2">Accredited Medical Partners</strong>
-                  <p className="text-sm">RevissaWay cooperates only with internationally accredited and licensed clinics, ensuring patients are connected to verified, trusted, and professional healthcare providers.</p>
+                  <strong className="block text-gray-900 mb-2">{c.t040}</strong>
+                  <p className="text-sm">{c.t041}</p>
                 </div>
               </div>
             </div>
@@ -343,8 +350,8 @@ export default function Home() {
               <div className="flex items-start">
                 <span className="text-[#9B7E3E] font-bold text-xl mr-3 flex-shrink-0">✔</span>
                 <div>
-                  <strong className="block text-gray-900 mb-2">Experienced Specialists</strong>
-                  <p className="text-sm">Treatments are performed by expert surgeons and doctors in partner clinics, many of whom have international training and experience.</p>
+                  <strong className="block text-gray-900 mb-2">{c.t042}</strong>
+                  <p className="text-sm">{c.t043}</p>
                 </div>
               </div>
             </div>
@@ -352,8 +359,8 @@ export default function Home() {
               <div className="flex items-start">
                 <span className="text-[#9B7E3E] font-bold text-xl mr-3 flex-shrink-0">✔</span>
                 <div>
-                  <strong className="block text-gray-900 mb-2">Transparent and Affordable</strong>
-                  <p className="text-sm">Patients receive premium-quality care through RevissaWay's trusted network at transparent and competitive costs, often up to 70% lower than in Western countries.</p>
+                  <strong className="block text-gray-900 mb-2">{c.t044}</strong>
+                  <p className="text-sm">{c.t045}</p>
                 </div>
               </div>
             </div>
@@ -361,8 +368,8 @@ export default function Home() {
               <div className="flex items-start">
                 <span className="text-[#9B7E3E] font-bold text-xl mr-3 flex-shrink-0">✔</span>
                 <div>
-                  <strong className="block text-gray-900 mb-2">Easy International Access</strong>
-                  <p className="text-sm">Turkey offers convenient travel connections, simplified visa processes, and multilingual assistance for global visitors.</p>
+                  <strong className="block text-gray-900 mb-2">{c.t046}</strong>
+                  <p className="text-sm">{c.t047}</p>
                 </div>
               </div>
             </div>
@@ -370,8 +377,8 @@ export default function Home() {
               <div className="flex items-start">
                 <span className="text-[#9B7E3E] font-bold text-xl mr-3 flex-shrink-0">✔</span>
                 <div>
-                  <strong className="block text-gray-900 mb-2">Comprehensive Experience</strong>
-                  <p className="text-sm">RevissaWay combines professional medical coordination with Turkey's cultural richness, providing patients a comfortable and memorable journey from arrival to recovery.</p>
+                  <strong className="block text-gray-900 mb-2">{c.t048}</strong>
+                  <p className="text-sm">{c.t049}</p>
                 </div>
               </div>
             </div>
@@ -390,14 +397,10 @@ export default function Home() {
             
             {/* Hair Transplant */}
             <div
-              className="relative rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(155,126,62,0.7)] min-h-[400px] will-change-transform"
-              style={{
-                backgroundImage: "url('/images/services/hair.jpg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+              className="relative rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(155,126,62,0.7)] min-h-[400px]"
             >
-              <div className="absolute inset-0 bg-black/50 backdrop-blur-[0.5px] hover:bg-black/40 transition-colors duration-300"></div>
+              <ResponsiveImage src="/images/services/hair.jpg" alt="" sizes="(min-width: 768px) 33vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/50 hover:bg-black/40 transition-colors duration-300"></div>
               <div className="relative p-8 text-center h-full flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
@@ -411,21 +414,17 @@ export default function Home() {
                   href="/hair-transplant"
                   className="inline-block bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
                 >
-                  Learn More
+                  {c.t050}
                 </a>
               </div>
             </div>
 
             {/* Cosmetic Surgery */}
             <div
-              className="relative rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(155,126,62,0.7)] min-h-[400px] will-change-transform"
-              style={{
-                backgroundImage: "url('/images/services/cosmetic.jpg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+              className="relative rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(155,126,62,0.7)] min-h-[400px]"
             >
-              <div className="absolute inset-0 bg-black/50 backdrop-blur-[0.5px] hover:bg-black/40 transition-colors duration-300"></div>
+              <ResponsiveImage src="/images/services/cosmetic.jpg" alt="" sizes="(min-width: 768px) 33vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/50 hover:bg-black/40 transition-colors duration-300"></div>
               <div className="relative p-8 text-center h-full flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
@@ -439,21 +438,17 @@ export default function Home() {
                   href="/cosmetic-surgery"
                   className="inline-block bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
                 >
-                  Learn More
+                  {c.t051}
                 </a>
               </div>
             </div>
 
             {/* Dental Aesthetics */}
             <div
-              className="relative rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(155,126,62,0.7)] min-h-[400px] will-change-transform"
-              style={{
-                backgroundImage: "url('/images/services/dental.jpg')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
+              className="relative rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(155,126,62,0.7)] min-h-[400px]"
             >
-              <div className="absolute inset-0 bg-black/50 backdrop-blur-[0.5px] hover:bg-black/40 transition-colors duration-300"></div>
+              <ResponsiveImage src="/images/services/dental.jpg" alt="" sizes="(min-width: 768px) 33vw, 100vw" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-black/50 hover:bg-black/40 transition-colors duration-300"></div>
               <div className="relative p-8 text-center h-full flex flex-col justify-between">
                 <div>
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">
@@ -467,7 +462,7 @@ export default function Home() {
                   href="/dental-aesthetics"
                   className="inline-block bg-[#9B7E3E] hover:bg-[#B8965A] text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
                 >
-                  Learn More
+                  {c.t052}
                 </a>
               </div>
             </div>
@@ -480,7 +475,7 @@ export default function Home() {
       <section className="bg-gradient-to-b from-[#FFF8DC] to-white py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">
-            Included in Your Package
+            {c.t053}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {packageServices.map((service, index) => (
@@ -507,7 +502,7 @@ export default function Home() {
       <section className="bg-gradient-to-b from-white to-[#FFF8DC] py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">
-            How Does It Work?
+            {c.t054}
           </h2>
           <div className="max-w-5xl mx-auto">
             <div className="grid md:grid-cols-5 gap-6">
@@ -538,7 +533,7 @@ export default function Home() {
       <section className="bg-white py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">
-            Frequently Asked Questions
+            {c.t055}
           </h2>
         <div className="max-w-3xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
@@ -679,10 +674,10 @@ export default function Home() {
                 onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500 text-black placeholder-gray-600"
               >
-                <option value="">Select a service</option>
-                <option value="Hair Transplant">Hair Transplant</option>
-                <option value="Esthetic Surgery Applications">Esthetic Surgery Applications</option>
-                <option value="Dental Aesthetics">Dental Aesthetics</option>
+                <option value="">{c.t061}</option>
+                <option value="Hair Transplant">{c.t062}</option>
+                <option value="Esthetic Surgery Applications">{c.t063}</option>
+                <option value="Dental Aesthetics">{c.t064}</option>
               </select>
             </div>
 
@@ -701,7 +696,7 @@ export default function Home() {
               />
               {/* DRAFT WORDING - pending legal approval (privacy-release.json) */}
               <p id="message-note" className="mt-2 text-xs text-gray-500">
-                Please don&apos;t include detailed medical history or photos here. We&apos;ll ask for what&apos;s needed later, with your consent.
+                {c.t065}
               </p>
             </div>
             {/* Required consent - DRAFT WORDING pending legal approval (privacy-release.json).
@@ -717,10 +712,7 @@ export default function Home() {
                 className="mt-1 h-4 w-4 shrink-0 accent-[#9B7E3E]"
               />
               <label htmlFor="consent" className="text-sm text-gray-700 leading-relaxed">
-                I consent to RevissaWay collecting and using the information in this form, including health information
-                (such as the treatment I am interested in and anything in my message), to respond to my enquiry. I understand
-                this information is handled by RevissaWay&apos;s service providers, some of which store data outside Australia,
-                as described in the <a href="/privacy-policy" className="text-[#9B7E3E] underline">Privacy Policy</a>.
+                {language === "tr" ? consentLabel.tr : consentLabel.en}
                 <span className="text-red-500"> *</span>
               </label>
             </div>
@@ -753,7 +745,7 @@ export default function Home() {
           </div>
 
           <div className="mt-6 text-center">
-            <p className="text-gray-600 mb-4">or contact us directly</p>
+            <p className="text-gray-600 mb-4">{c.t068}</p>
             <a
               href={whatsappLink}
               target="_blank"
@@ -773,7 +765,7 @@ export default function Home() {
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
               </svg>
-              Contact via WhatsApp
+              {c.t069}
             </a>
           </div>
           </div>
