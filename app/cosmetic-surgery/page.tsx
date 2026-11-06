@@ -142,27 +142,19 @@ export default function CosmeticSurgeryPage() {
             {/* Right: SEO text content */}
             <div className="space-y-5 order-1 md:order-2">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                How Our Partner Clinics Differ from Conventional Hair Transplant Centers
+                Personal Care Throughout Your Cosmetic Surgery Journey
               </h2>
 
               <p className="text-gray-700 leading-relaxed">
-                A truly <strong className="text-gray-900 font-semibold">personalized hair transplant experience</strong> is at the heart of our philosophy.
-                Each patient receives <strong className="text-gray-900 font-semibold">exclusive one-to-one care</strong>, ensuring comfort, safety, and natural results throughout every step — from consultation to aftercare.
+                RevissaWay supports you from your first consultation through to aftercare.
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                We accept only <strong className="text-gray-900 font-semibold">1–2 patients per day</strong>, allowing our medical team to focus completely on individual needs and maintain the highest standard of service.
-                Every detail is thoughtfully arranged — even small touches such as providing <strong className="text-gray-900 font-semibold">portable Wi-Fi devices</strong> so patients always feel connected, safe, and comfortable during their stay in Turkey.
+                RevissaWay helps coordinate your stay in Türkiye, including transfers, accommodation and appointment scheduling, so you can focus on your treatment and recovery.
               </p>
 
               <p className="text-gray-700 leading-relaxed">
-                One of the most valued advantages is our <strong className="text-gray-900 font-semibold">complimentary sedation hair transplant service</strong>, which ensures a completely painless and relaxed procedure.
-                Sedation allows patients to enjoy a stress-free experience while achieving <strong className="text-gray-900 font-semibold">high graft survival rates</strong> and <strong className="text-gray-900 font-semibold">natural density</strong>.
-              </p>
-
-              <p className="text-gray-700 leading-relaxed">
-                All procedures are performed in a <strong className="text-gray-900 font-semibold">fully equipped private hospital</strong>, where hygiene, safety, and professionalism meet international medical standards.
-                This approach elevates the <strong className="text-gray-900 font-semibold">hair transplant experience in Turkey</strong>, combining world-class expertise with genuine personal care — for results that look natural and last a lifetime.
+                Your surgeon will explain the procedure, its risks and the expected recovery before you decide.
               </p>
 
               
@@ -433,9 +425,8 @@ export default function CosmeticSurgeryPage() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Brazilian Butt Lift</h2>
             <p className="mb-6 text-gray-700 leading-relaxed">
-              A Brazilian Butt Lift (BBL) is a cosmetic procedure designed to reshape and enhance the buttocks. 
-              It involves removing excess fat and skin, and depending on the patient's needs, fat can be reduced 
-              or transferred to create a more defined and natural look.
+              A Brazilian Butt Lift (BBL) is a cosmetic procedure designed to reshape and enhance the buttocks.
+              Your surgeon will explain how the procedure is performed, its risks and the expected recovery.
             </p>
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div className="bg-white rounded-lg p-4 text-center shadow-md hover:shadow-lg transition-shadow">
