@@ -71,11 +71,10 @@ export default function AboutPage() {
           <p className="text-gray-300 leading-relaxed">
             RevissaWay is an independent health tourism consultancy based in Australia, 
             dedicated to connecting clients from Australia and New Zealand with accredited 
-            medical and aesthetic clinics across Turkey. We operate with transparency, 
-            professionalism, and compliance — coordinating each step of the medical journey 
-            through ethical partnerships. RevissaWay does not perform or advertise medical procedures; 
-            all treatments are delivered exclusively by independently licensed healthcare providers 
-            under applicable Turkish regulations.
+            medical and aesthetic clinics across Turkey. We aim to operate with transparency
+            and professionalism, coordinating each step of the medical journey.
+            RevissaWay does not perform medical procedures; all treatments are delivered by
+            independent healthcare providers in Türkiye.
           </p>
         </div>
         <div className="rounded-2xl shadow-lg w-full overflow-hidden h-[320px] md:h-[360px] relative">
