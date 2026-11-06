@@ -44,11 +44,6 @@ export default function Footer() {
       {/* Contact Info - Mobile Optimized */}
       <div id="contact-info" className="max-w-6xl mx-auto mt-6 flex flex-col items-center gap-1 text-sm text-[#9B7E3E] text-center">
         <div className="mt-4">
-          <h3 className="text-[#9B7E3E] font-semibold">{t('footer.address')}</h3>
-          <p>Office 3877, Ground floor<br />470 St Kilda Road<br />Melbourne VIC 3004</p>
-        </div>
-        
-        <div className="mt-4">
           <h3 className="text-[#9B7E3E] font-semibold">{t('footer.phone')}</h3>
           <p>
             <a href="tel:+61411854929" className="hover:underline">0411 854 929</a>

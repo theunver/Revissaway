@@ -563,20 +563,6 @@ export default function HairTransplantPage() {
             "logo": "https://www.revissaway.com.au/og/revissaway-logo.png",
             "description": "RevissaWay connects you with Turkey's most trusted hair transplant experts offering DHI, FUE, and Sapphire techniques.",
             "priceRange": "$$",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Level 10, 440 Collins Street",
-              "addressLocality": "Melbourne",
-              "addressRegion": "VIC",
-              "postalCode": "3000",
-              "addressCountry": "AU"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "-37.817",
-              "longitude": "144.957"
-            },
-            "openingHours": "Mo-Fr 09:00-18:00",
             "contactPoint": {
               "@type": "ContactPoint",
               "telephone": "+61411854929",
