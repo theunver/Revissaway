@@ -125,7 +125,7 @@ export default function WhyTurkeyPage() {
                   Transparent Pricing
                 </h4>
                 <p className="text-gray-700">
-                  All-inclusive packages with no hidden fees - transfers, accommodation, and aftercare included.
+                  Packages can include transfers, accommodation and aftercare. Flights are not included.
                 </p>
               </div>
             </div>
