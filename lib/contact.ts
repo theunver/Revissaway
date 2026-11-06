@@ -1,5 +1,9 @@
 // Pure helpers for the contact/consultation API: validation, escaping and email rendering.
 // Kept free of Next.js imports so they can be unit-tested in isolation.
+import privacyRelease from "@/privacy-release.json";
+
+/** Privacy Policy version the contact-form consent refers to (single source: privacy-release.json). */
+export const CONSENT_VERSION: string = privacyRelease.policyVersion;
 
 export const MAX_BODY_BYTES = 16 * 1024;
 
@@ -31,6 +35,7 @@ export interface ContactSubmission {
   message: string;
   service: string;
   preferredDate: string;
+  consentVersion: string;
 }
 
 export type ValidationResult =
@@ -96,13 +101,16 @@ export function validateContactPayload(input: unknown): ValidationResult {
   const preferredDate = v.preferredDate ?? "";
   if (preferredDate && !DATE_RE.test(preferredDate)) bad.push("preferredDate");
 
+  // Explicit consent (incl. health information) must be given for the current Privacy Policy version.
+  if (raw.consent !== true || raw.consentVersion !== CONSENT_VERSION) bad.push("consent");
+
   if (bad.length) return { ok: false, fields: [...new Set(bad)] };
 
   return {
     ok: true,
     // Honeypot: a hidden field real users never fill in.
     isSpam: Boolean(v.website),
-    data: { fullName, email, phone, message: v.message ?? "", service, preferredDate },
+    data: { fullName, email, phone, message: v.message ?? "", service, preferredDate, consentVersion: CONSENT_VERSION },
   };
 }
 
@@ -150,6 +158,10 @@ export function buildContactEmailHtml(d: ContactSubmission, now: Date = new Date
               <tr>
                 <td style="padding: 12px 0; color: #9B7E3E; font-weight: bold; vertical-align: top;">Message:</td>
                 <td style="padding: 12px 0; color: #333;">${message}</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 0; color: #9B7E3E; font-weight: bold; vertical-align: top;">Consent:</td>
+                <td style="padding: 12px 0; color: #333;">Given in the website form (Privacy Policy version ${escapeHtml(d.consentVersion)})</td>
               </tr>
             </table>
 

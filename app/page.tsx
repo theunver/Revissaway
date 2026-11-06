@@ -3,6 +3,7 @@
 import { useState } from "react";
 import OptimizedVideo from "@/components/OptimizedVideo";
 import { useLanguage } from "@/contexts/LanguageContext";
+import privacyRelease from "@/privacy-release.json";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -15,6 +16,7 @@ export default function Home() {
     preferredDate: "",
     service: "",
     message: "",
+    consent: false,
   });
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
@@ -37,6 +39,7 @@ export default function Home() {
           ...formData,
           formType: "Consultation Request",
           website: honeypot?.value || "",
+          consentVersion: privacyRelease.policyVersion,
         }),
       });
 
@@ -50,6 +53,7 @@ export default function Home() {
           preferredDate: "",
           service: "",
           message: "",
+          consent: false,
         });
         // Reset success message after 5 seconds
         setTimeout(() => setFormStatus("idle"), 5000);
@@ -693,7 +697,32 @@ export default function Home() {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-gold-500 text-black placeholder-gray-600"
+                aria-describedby="message-note"
               />
+              {/* DRAFT WORDING - pending legal approval (privacy-release.json) */}
+              <p id="message-note" className="mt-2 text-xs text-gray-500">
+                Please don&apos;t include detailed medical history or photos here. We&apos;ll ask for what&apos;s needed later, with your consent.
+              </p>
+            </div>
+            {/* Required consent - DRAFT WORDING pending legal approval (privacy-release.json).
+                Validated again on the server together with the Privacy Policy version. */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="consent"
+                name="consent"
+                required
+                checked={formData.consent}
+                onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                className="mt-1 h-4 w-4 shrink-0 accent-[#9B7E3E]"
+              />
+              <label htmlFor="consent" className="text-sm text-gray-700 leading-relaxed">
+                I consent to RevissaWay collecting and using the information in this form, including health information
+                (such as the treatment I am interested in and anything in my message), to respond to my enquiry. I understand
+                this information is handled by RevissaWay&apos;s service providers, some of which store data outside Australia,
+                as described in the <a href="/privacy-policy" className="text-[#9B7E3E] underline">Privacy Policy</a>.
+                <span className="text-red-500"> *</span>
+              </label>
             </div>
             {formStatus === "success" && (
               <div className="bg-green-50 border border-green-200 text-green-800 px-4 py-3 rounded-xl flex items-center gap-2">
