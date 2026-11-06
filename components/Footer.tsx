@@ -70,7 +70,11 @@ export default function Footer() {
           loading="eager"
           style={{ opacity: 1 }}
         />
-        <p className="text-xs text-gray-600 mt-4">{t('footer.copyright')}</p>
+        {/* Year is filled in at render time; suppressHydrationWarning covers a page
+            prerendered in one year and viewed in the next. */}
+        <p className="text-xs text-gray-600 mt-4" suppressHydrationWarning>
+          {t('footer.copyright').replace('{year}', String(new Date().getFullYear()))}
+        </p>
         
         {/* Legal Links */}
         <div className="mt-3 flex gap-4 justify-center">

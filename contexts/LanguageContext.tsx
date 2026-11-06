@@ -53,7 +53,7 @@ const translations = {
     'footer.address': 'ADDRESS',
     'footer.phone': 'PHONE',
     'footer.email': 'EMAIL',
-    'footer.copyright': '© 2025 RevissaWay | All rights reserved.',
+    'footer.copyright': '© {year} RevissaWay | All rights reserved.',
     
     // Home Page
     'home.hero.title': 'Your Bridge to Turkey\'s Most Trusted Hair & Aesthetic Experts',
@@ -137,7 +137,7 @@ const translations = {
     'footer.address': 'ADRES',
     'footer.phone': 'TELEFON',
     'footer.email': 'E-POSTA',
-    'footer.copyright': '© 2025 RevissaWay | Tüm hakları saklıdır.',
+    'footer.copyright': '© {year} RevissaWay | Tüm hakları saklıdır.',
     
     // Home Page
     'home.hero.title': 'Türkiye\'nin En Güvenilir Saç ve Estetik Uzmanlarına Köprünüz',
@@ -221,7 +221,7 @@ const translations = {
     'footer.address': 'ADRESSE',
     'footer.phone': 'TÉLÉPHONE',
     'footer.email': 'E-MAIL',
-    'footer.copyright': '© 2025 RevissaWay | Tous droits réservés.',
+    'footer.copyright': '© {year} RevissaWay | Tous droits réservés.',
     
     // Home Page
     'home.hero.title': 'Votre pont vers les experts les plus fiables en cheveux et esthétique de Turquie',
@@ -305,7 +305,7 @@ const translations = {
     'footer.address': 'DIRECCIÓN',
     'footer.phone': 'TELÉFONO',
     'footer.email': 'CORREO',
-    'footer.copyright': '© 2025 RevissaWay | Todos los derechos reservados.',
+    'footer.copyright': '© {year} RevissaWay | Todos los derechos reservados.',
     
     // Home Page
     'home.hero.title': 'Tu puente hacia los expertos más confiables en cabello y estética de Turquía',
