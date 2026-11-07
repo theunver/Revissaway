@@ -4,8 +4,8 @@
 const privacyRelease = require('./privacy-release.json');
 if (process.env.VERCEL_ENV === 'production' && privacyRelease.approved !== true) {
   throw new Error(
-    'Privacy release not approved (privacy-release.json). Draft consent banner, contact-form consent and ' +
-      'Privacy Policy must not be deployed to production. Preview deployments are allowed.'
+    'Privacy release not approved (privacy-release.json). Draft consent banner, contact-form consent, ' +
+      'Privacy Policy and Terms of Use must not be deployed to production. Preview deployments are allowed.'
   );
 }
 
