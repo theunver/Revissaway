@@ -10,12 +10,16 @@ import ConsentBanner from "@/components/ConsentBanner";
 import { ConsentProvider } from "@/contexts/ConsentContext";
 // import TranslationOverlayWrapper from "@/components/TranslationOverlayWrapper";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { pageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.revissaway.com.au"),
-  title: "Hair Transplant & Esthetic Surgery Applications in Turkey | RevissaWay",
-  description: "Connect with Türkiye's most trusted clinics for hair transplant, cosmetic, and dental aesthetics. RevissaWay serves patients from Australia and New Zealand with expert coordination and transparency.",
-  keywords: ["hair transplant Turkey", "cosmetic surgery Turkey", "dental aesthetics Turkey", "medical tourism Australia", "health tourism Turkey", "RevissaWay"],
+  metadataBase: new URL(SITE_URL),
+  ...pageMetadata({
+    path: "/",
+    title: "Treatment in Turkey from Australia – Hair, Cosmetic & Dental | RevissaWay",
+    description:
+      "RevissaWay is an Australian-based coordination service helping patients from Australia and New Zealand explore hair transplant, cosmetic surgery and dental treatment with independent healthcare providers in Türkiye.",
+  }),
   authors: [{ name: "RevissaWay" }],
   creator: "RevissaWay",
   publisher: "RevissaWay",
@@ -28,38 +32,6 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    alternateLocale: "tr_TR",
-    url: "https://www.revissaway.com.au",
-    title: "RevissaWay | Health & Aesthetics Tourism",
-    description: "Premium aesthetic and health tourism services in Turkey. Connecting Australia, New Zealand, and Turkey.",
-    siteName: "RevissaWay",
-    images: [
-      {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "RevissaWay - Health & Aesthetics",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "RevissaWay | Health & Aesthetics Tourism",
-    description: "Premium aesthetic and health tourism services in Turkey.",
-    images: ["/logo.png"],
-  },
-  alternates: {
-    canonical: "https://www.revissaway.com.au",
-    languages: {
-      'en-US': 'https://www.revissaway.com.au',
-      'en-AU': 'https://www.revissaway.com.au',
-      'en-NZ': 'https://www.revissaway.com.au',
-      'tr-TR': 'https://www.revissaway.com.au',
     },
   },
   other: {
@@ -82,13 +54,24 @@ const notoSansThai = Noto_Sans_Thai({
   variable: "--font-noto-thai",
 });
 
+// Single Organization entity for the whole site. Only facts shown on the site: RevissaWay is a
+// coordination service (not a medical provider), so no MedicalBusiness / medicalSpecialty markup.
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
   name: "RevissaWay",
-  url: "https://www.revissaway.com.au",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  description:
+    "Australian-based health tourism coordination service connecting patients from Australia and New Zealand with independent healthcare providers in Türkiye. RevissaWay does not provide medical treatment.",
   telephone: "+61411854929",
   email: "info@revissaway.com.au",
+  areaServed: ["AU", "NZ"],
+  sameAs: [
+    "https://www.instagram.com/revissaway",
+    "https://www.facebook.com/profile.php?id=61582103925829",
+  ],
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+61411854929",

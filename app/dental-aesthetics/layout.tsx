@@ -1,35 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/dental-aesthetics",
-  },
-  title: "Dental Aesthetics Turkey | Veneers, Implants, Hollywood Smile | RevissaWay",
-  description: "Transform your smile with modern dental treatments in Turkey. Hollywood smile, veneers, implants, and crowns at internationally accredited clinics. Up to 70% savings.",
-  keywords: ["dental aesthetics Turkey", "Hollywood smile Turkey", "dental veneers Turkey", "dental implants Turkey", "cosmetic dentistry Turkey", "dental crowns Turkey", "smile makeover Turkey"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  openGraph: {
-    title: "Dental Aesthetics Turkey | RevissaWay",
-    description: "Professional dental aesthetic treatments at accredited clinics in Turkey. Hollywood smile, veneers, implants at affordable prices.",
-    url: "https://www.revissaway.com.au/dental-aesthetics",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dental Aesthetics Turkey | RevissaWay",
-    description: "Transform your smile with modern dental treatments in Turkey.",
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  path: "/dental-aesthetics",
+  title: "Dental Treatment in Turkey from Australia – Implants, Veneers, Crowns | RevissaWay",
+  description:
+    "Information on dental implants, crowns, veneers and Hollywood smile treatment with independent dental clinics in Türkiye, coordinated for patients from Australia and New Zealand by RevissaWay.",
+});
 
 export default function DentalAestheticsLayout({
   children,
@@ -38,4 +15,3 @@ export default function DentalAestheticsLayout({
 }) {
   return <>{children}</>;
 }
-

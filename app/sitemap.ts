@@ -1,57 +1,10 @@
 import { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/seo'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://www.revissaway.com.au'
+// Indexable English pages. lastModified/changeFrequency/priority are omitted on purpose: Google ignores
+// changefreq/priority and only uses lastmod when it is consistently accurate (it was "build time" before).
+const PATHS = ['', '/hair-transplant', '/cosmetic-surgery', '/dental-aesthetics', '/why-turkey', '/about', '/privacy-policy', '/terms']
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/hair-transplant`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/cosmetic-surgery`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/dental-aesthetics`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/why-turkey`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ]
+export default function sitemap(): MetadataRoute.Sitemap {
+  return PATHS.map((path) => ({ url: `${SITE_URL}${path}` }))
 }
-

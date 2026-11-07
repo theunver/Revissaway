@@ -26,7 +26,10 @@ export default function AboutPage() {
         />
         {/* Gradient overlay for better text visibility if needed */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
-        <div className="relative z-10">        </div>
+        <div className="relative z-10">
+          {/* Page H1 for search engines and screen readers; the banner image carries the visual heading. */}
+          <h1 className="sr-only">{language === "tr" ? "RevissaWay Hakkında" : "About RevissaWay"}</h1>
+        </div>
       </section>
 
       {/* TÜRKIYE BY THE NUMBERS - Moved to top */}

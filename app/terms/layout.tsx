@@ -1,22 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/terms",
-  },
-  title: "Terms of Use | RevissaWay Health & Aesthetics",
-  description: "Review the terms and conditions for using RevissaWay. Transparent, compliant, and patient-focused health tourism coordination for Australia and New Zealand.",
-  keywords: ["terms of use", "terms and conditions", "RevissaWay terms", "medical tourism terms", "health coordination terms", "Australian consumer law"],
-  openGraph: {
-    title: "Terms of Use | RevissaWay Health & Aesthetics",
-    description: "Review the terms and conditions for using RevissaWay. Transparent and patient-focused health tourism coordination.",
-    url: "https://www.revissaway.com.au/terms",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  path: "/terms",
+  title: "Terms of Use | RevissaWay",
+  description:
+    "The terms that apply when you use the RevissaWay website and health tourism coordination service, including our role as an intermediary.",
+});
 
 export default function TermsLayout({
   children,
@@ -25,4 +15,3 @@ export default function TermsLayout({
 }) {
   return <>{children}</>;
 }
-

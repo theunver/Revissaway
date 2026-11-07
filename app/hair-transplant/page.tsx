@@ -556,40 +556,8 @@ export default function HairTransplantPage() {
         </div>
       </section>
 
-      {/* JSON-LD Structured Data for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "MedicalBusiness",
-            "@id": "https://www.revissaway.com.au/hair-transplant",
-            "name": "RevissaWay Health & Aesthetics",
-            "alternateName": "RevissaWay",
-            "url": "https://www.revissaway.com.au/hair-transplant",
-            "image": "https://www.revissaway.com.au/logo.png",
-            "logo": "https://www.revissaway.com.au/logo.png",
-            "description": "RevissaWay connects you with Turkey's most trusted hair transplant experts offering DHI, FUE, and Sapphire techniques.",
-            "priceRange": "$$",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+61411854929",
-              "contactType": "customer service",
-              "areaServed": ["AU", "NZ", "TR"],
-              "availableLanguage": ["English", "Turkish"]
-            },
-            "medicalSpecialty": "Hair Replacement",
-            "founder": {
-              "@type": "Person",
-              "name": "Mehmet Ali Ünver"
-            },
-            "sameAs": [
-              "https://www.instagram.com/revissaway",
-              "https://www.facebook.com/profile.php?id=61582103925829"
-            ]
-          }),
-        }}
-      />
+      {/* Structured data: the site-wide Organization JSON-LD lives in app/layout.tsx. RevissaWay is a
+          coordination service, so no MedicalBusiness / medicalSpecialty markup here. */}
     </main>
   );
 }

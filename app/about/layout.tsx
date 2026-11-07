@@ -1,29 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  alternates: {
-    canonical: "/about",
-  },
-  title: "About RevissaWay | Health Tourism Consultancy",
-  description: "RevissaWay is an independent health tourism consultancy based in Australia, connecting clients from Australia and New Zealand with accredited medical and aesthetic clinics across Turkey.",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  openGraph: {
-    title: "About RevissaWay | Health Tourism Consultancy",
-    description: "RevissaWay is an independent health tourism consultancy based in Australia, connecting clients from Australia and New Zealand with accredited medical and aesthetic clinics across Turkey.",
-    url: "https://www.revissaway.com.au/about",
-    type: "website",
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  path: "/about",
+  title: "About RevissaWay | Australian Health Tourism Coordination Service",
+  description:
+    "RevissaWay is an Australian-based coordination and referral service. We don't provide medical treatment; we help patients from Australia and New Zealand connect with independent healthcare providers in Türkiye.",
+});
 
 export default function AboutLayout({
   children,
@@ -32,4 +15,3 @@ export default function AboutLayout({
 }) {
   return <>{children}</>;
 }
-
