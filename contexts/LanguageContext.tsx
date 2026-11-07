@@ -30,7 +30,7 @@ const translations = {
     'nav.about': 'About',
     'nav.contact': 'Contact',
     'nav.whyTurkey': 'Why Turkey?',
-    'nav.consultation': 'Free Consultation',
+    'nav.consultation': 'Free Enquiry',
     
     // Services
     'services.hairTransplant': 'Hair Transplant',
@@ -39,24 +39,24 @@ const translations = {
     
     // Footer
     'footer.title': 'Your Bridge to Wellness',
-    'footer.description': 'Discover trusted access to world-class cosmetic, hair transplant, and dental aesthetic clinics in Turkey — with RevissaWay connecting Australia, New Zealand, and Turkey through certified medical partnerships.',
-    'footer.consultation': 'Book Your Free Consultation',
+    'footer.description': 'Coordinating hair, cosmetic and dental treatment in Türkiye for patients from Australia and New Zealand — with clear information at every step.',
+    'footer.consultation': 'Send a Free Enquiry',
     'footer.address': 'ADDRESS',
     'footer.phone': 'PHONE',
     'footer.email': 'EMAIL',
     'footer.copyright': '© {year} RevissaWay | All rights reserved.',
     
     // Home Page
-    'home.hero.title': 'Your Bridge to Turkey\'s Most Trusted Hair & Aesthetic Experts',
-    'home.hero.subtitle': 'RevissaWay connects patients from Australia and New Zealand with accredited clinics in Turkey — offering world-class quality, expert surgeons, and transparent coordination.',
-    'home.hero.cta': 'Book Free Consultation',
+    'home.hero.title': 'Your Bridge to Hair, Cosmetic and Dental Treatment in Türkiye',
+    'home.hero.subtitle': 'RevissaWay helps patients from Australia and New Zealand explore treatment with independent clinics in Türkiye — with clear information and coordination from your first enquiry.',
+    'home.hero.cta': 'Make a Free Enquiry',
     'home.whyTurkey.title': 'Why Turkey?',
-    'home.whyTurkey.description': 'RevissaWay is a trusted health tourism brand that works in collaboration with internationally accredited and licensed medical and aesthetic clinics across Turkey. RevissaWay does not provide medical treatment directly; it acts solely as a professional intermediary, ensuring that patients are connected only with certified hospitals, surgical centers, and clinics specialized in dental and aesthetic care. Through these partnerships, patients gain access to qualified physicians, experienced surgeons, and multidisciplinary healthcare teams. This network combines world-class clinical expertise, evidence-based medical practices, advanced technology, and genuine Turkish hospitality — providing patients with a safe, transparent, and professionally coordinated treatment journey from their initial consultation to full recovery.',
+    'home.whyTurkey.description': 'RevissaWay is an Australian-based coordination service. We don\'t provide medical treatment; we help you connect with independent hospitals and clinics in Türkiye, pass on their assessment and quotation, and help with non-medical arrangements such as accommodation and airport transfers. Our service is free for patients — you decide whether to proceed, you pay the clinic directly, and the clinic is responsible for your medical care.',
     'home.services.title': 'Our Services',
     'home.services.hairTransplant.title': 'Hair Transplant',
-    'home.services.hairTransplant.description': 'Advanced FUE, DHI, and Sapphire techniques with natural-looking results.',
+    'home.services.hairTransplant.description': 'FUE, DHI and Sapphire techniques — your clinic will advise which suits you.',
     'home.services.cosmeticSurgery.title': 'Cosmetic Surgery',
-    'home.services.cosmeticSurgery.description': 'Expert cosmetic procedures including breast augmentation, liposuction, and facial surgeries.',
+    'home.services.cosmeticSurgery.description': 'Procedures including breast surgery, liposuction and facial surgery.',
     'home.services.dentalAesthetics.title': 'Dental Aesthetics',
     'home.services.dentalAesthetics.description': 'Hollywood smile, dental implants, and comprehensive dental aesthetic treatments.',
     'home.packageServices.title': 'What\'s Included in Your Package',
@@ -79,8 +79,8 @@ const translations = {
     'home.process.step4.description': 'Professional treatment by licensed specialists.',
     'home.process.step5.title': 'Follow-Up Care',
     'home.process.step5.description': 'Ongoing support and monitoring for optimal results.',
-    'home.contact.title': 'Book Your Free Consultation',
-    'home.contact.subtitle': 'Fill out the form below and we\'ll get back to you within 24 hours.',
+    'home.contact.title': 'Make a Free Enquiry',
+    'home.contact.subtitle': 'Fill out the form below and we\'ll get back to you as soon as we can.',
     'home.contact.firstName': 'First Name',
     'home.contact.lastName': 'Last Name',
     'home.contact.email': 'Email',
@@ -88,9 +88,9 @@ const translations = {
     'home.contact.preferredDate': 'Preferred Date',
     'home.contact.service': 'Service Interested In',
     'home.contact.message': 'Message',
-    'home.contact.submit': 'Book Consultation',
+    'home.contact.submit': 'Send Enquiry',
     'home.contact.submitting': 'Sending...',
-    'home.contact.success': '✅ Thank you, your consultation request has been received.',
+    'home.contact.success': '✅ Thank you, your enquiry has been received.',
     'home.contact.error': 'Sorry, an error occurred. Please try again.',
     'home.contact.whatsapp': 'Chat on WhatsApp',
     'home.contact.privacy': 'We respect your privacy. Your details are used to respond to your enquiry and are handled as described in our Privacy Policy.',
@@ -105,7 +105,7 @@ const translations = {
     'about.whyChoose.title': 'Why Choose RevissaWay',
     
     // Disclaimer
-    'disclaimer.text': 'RevissaWay provides organization and consultation services only. All medical procedures are the responsibility of accredited partner hospitals and licensed medical professionals in Turkey. Results may vary from person to person. Information on this website is for general informational purposes only and does not constitute medical advice.',
+    'disclaimer.text': 'RevissaWay provides coordination services only and does not provide medical advice or treatment. Medical procedures are the responsibility of the independent provider that performs them. Results vary from person to person. Information on this website is general information only and is not medical advice.',
   },
   tr: {
     // Navbar
@@ -114,7 +114,7 @@ const translations = {
     'nav.about': 'Hakkımızda',
     'nav.contact': 'İletişim',
     'nav.whyTurkey': 'Neden Türkiye?',
-    'nav.consultation': 'Ücretsiz Görüşme',
+    'nav.consultation': 'Ücretsiz Bilgi Talebi',
     
     // Services
     'services.hairTransplant': 'Saç Ekimi',
@@ -123,24 +123,24 @@ const translations = {
     
     // Footer
     'footer.title': 'Sağlığınıza Köprü',
-    'footer.description': 'Türkiye\'deki dünya standartlarında kozmetik, saç ekimi ve diş estetiği kliniklerine güvenilir erişim keşfedin — RevissaWay, Avustralya, Yeni Zelanda ve Türkiye\'yi sertifikalı tıbbi ortaklıklar aracılığıyla birleştiriyor.',
-    'footer.consultation': 'Ücretsiz Görüşme Rezervasyonu',
+    'footer.description': 'Avustralya ve Yeni Zelanda\'daki hastalar için Türkiye\'de saç, estetik ve diş tedavisi koordinasyonu — her adımda açık bilgiyle.',
+    'footer.consultation': 'Ücretsiz Bilgi Talebi Gönderin',
     'footer.address': 'ADRES',
     'footer.phone': 'TELEFON',
     'footer.email': 'E-POSTA',
     'footer.copyright': '© {year} RevissaWay | Tüm hakları saklıdır.',
     
     // Home Page
-    'home.hero.title': 'Türkiye\'nin En Güvenilir Saç ve Estetik Uzmanlarına Köprünüz',
-    'home.hero.subtitle': 'RevissaWay, Avustralya ve Yeni Zelanda\'dan Türkiye\'deki akredite kliniklerle hastaları birleştiriyor — dünya standartlarında kalite, uzman cerrahlar ve şeffaf koordinasyon sunuyor.',
-    'home.hero.cta': 'Ücretsiz Görüşme Ayırt',
+    'home.hero.title': 'Türkiye\'de Saç, Estetik ve Diş Tedavisine Köprünüz',
+    'home.hero.subtitle': 'RevissaWay, Avustralya ve Yeni Zelanda\'daki hastaların Türkiye\'deki bağımsız kliniklerde tedavi seçeneklerini değerlendirmesine yardımcı olur — ilk talebinizden itibaren açık bilgi ve koordinasyonla.',
+    'home.hero.cta': 'Ücretsiz Bilgi Talebi',
     'home.whyTurkey.title': 'Neden Türkiye?',
-    'home.whyTurkey.description': 'RevissaWay, Türkiye genelinde uluslararası akredite ve lisanslı tıbbi ve estetik kliniklerle işbirliği içinde çalışan güvenilir bir sağlık turizmi markasıdır.',
+    'home.whyTurkey.description': 'RevissaWay, Avustralya merkezli bir koordinasyon hizmetidir. Tıbbi tedavi sunmayız; Türkiye\'deki bağımsız hastane ve kliniklerle bağlantı kurmanıza yardımcı olur, değerlendirmelerini ve fiyat tekliflerini size iletir, konaklama ve havalimanı transferi gibi tıbbi olmayan düzenlemelerde destek oluruz. Hizmetimiz hastalar için ücretsizdir — devam edip etmeyeceğinize siz karar verirsiniz, ödemeyi doğrudan kliniğe yaparsınız ve tıbbi bakımınızdan klinik sorumludur.',
     'home.services.title': 'Hizmetlerimiz',
     'home.services.hairTransplant.title': 'Saç Ekimi',
-    'home.services.hairTransplant.description': 'Gelişmiş FUE, DHI ve Sapphire teknikleri ile doğal görünümlü sonuçlar.',
+    'home.services.hairTransplant.description': 'FUE, DHI ve Sapphire teknikleri — size hangisinin uygun olduğunu kliniğiniz söyler.',
     'home.services.cosmeticSurgery.title': 'Estetik Cerrahi',
-    'home.services.cosmeticSurgery.description': 'Meme büyütme, liposuction ve yüz cerrahisi dahil uzman estetik prosedürler.',
+    'home.services.cosmeticSurgery.description': 'Meme cerrahisi, liposuction ve yüz cerrahisi dahil işlemler.',
     'home.services.dentalAesthetics.title': 'Diş Estetiği',
     'home.services.dentalAesthetics.description': 'Hollywood gülüşü, diş implantları ve kapsamlı diş estetik tedavileri.',
     'home.packageServices.title': 'Paketinizde Neler Dahil',
@@ -163,8 +163,8 @@ const translations = {
     'home.process.step4.description': 'Lisanslı uzmanlar tarafından profesyonel tedavi.',
     'home.process.step5.title': 'Takip Bakımı',
     'home.process.step5.description': 'Optimal sonuçlar için sürekli destek ve izleme.',
-    'home.contact.title': 'Ücretsiz Görüşmenizi Ayırtın',
-    'home.contact.subtitle': 'Aşağıdaki formu doldurun, 24 saat içinde size geri dönelim.',
+    'home.contact.title': 'Ücretsiz Bilgi Talebi Gönderin',
+    'home.contact.subtitle': 'Aşağıdaki formu doldurun, size en kısa sürede dönüş yapalım.',
     'home.contact.firstName': 'Ad',
     'home.contact.lastName': 'Soyad',
     'home.contact.email': 'E-posta',
@@ -172,9 +172,9 @@ const translations = {
     'home.contact.preferredDate': 'Tercih Edilen Tarih',
     'home.contact.service': 'İlgilendiğiniz Hizmet',
     'home.contact.message': 'Mesaj',
-    'home.contact.submit': 'Görüşme Ayırt',
+    'home.contact.submit': 'Talebi Gönder',
     'home.contact.submitting': 'Gönderiliyor...',
-    'home.contact.success': '✅ Teşekkürler, görüşme talebiniz alındı.',
+    'home.contact.success': '✅ Teşekkürler, talebiniz alındı.',
     'home.contact.error': 'Üzgünüz, bir hata oluştu. Lütfen tekrar deneyin.',
     'home.contact.whatsapp': 'WhatsApp ile Sohbet',
     'home.contact.privacy': 'Gizliliğinize saygı duyuyoruz. Bilgileriniz talebinize yanıt vermek için kullanılır ve Gizlilik Politikamızda açıklandığı şekilde işlenir.',
@@ -189,7 +189,7 @@ const translations = {
     'about.whyChoose.title': 'Neden RevissaWay\'i Seçmelisiniz',
     
     // Disclaimer
-    'disclaimer.text': 'RevissaWay yalnızca organizasyon ve danışmanlık hizmetleri sunmaktadır. Tüm tıbbi prosedürler, Türkiye\'deki akredite ortak hastaneler ve lisanslı tıp uzmanlarının sorumluluğundadır. Sonuçlar kişiden kişiye değişebilir. Bu web sitesindeki bilgiler yalnızca genel bilgilendirme amaçlıdır ve tıbbi tavsiye niteliği taşımaz.',
+    'disclaimer.text': 'RevissaWay yalnızca koordinasyon hizmeti sunar; tıbbi tavsiye veya tedavi vermez. Tıbbi işlemlerin sorumluluğu, işlemi gerçekleştiren bağımsız sağlayıcıya aittir. Sonuçlar kişiden kişiye değişir. Bu web sitesindeki bilgiler yalnızca genel bilgi niteliğindedir ve tıbbi tavsiye değildir.',
   }
 };
 

@@ -42,7 +42,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
-                  <AnimatedCounter target={1500000} suffix="+" duration={2500} />
+                  <AnimatedCounter target={3} duration={2500} />
                 </div>
                 <p className="text-[#9B7E3E] font-semibold">
                   {c.t003}
@@ -58,7 +58,7 @@ export default function AboutPage() {
               </div>
               <div>
                 <div className="text-5xl font-bold text-[#9B7E3E] mb-2">
-                  <span className="animate-pulse">#1</span>
+                  <span className="animate-pulse">EN &amp; TR</span>
                 </div>
                 <p className="text-[#9B7E3E] font-semibold">
                   {c.t006}

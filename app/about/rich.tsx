@@ -1,55 +1,52 @@
-// About page paragraphs with inline emphasis. EN = original copy (unchanged); TR = faithful translation.
-// REVIEW:claim — accreditation / licensing / compliance / reputation statements (evidence pending, Batch 3 Group 3).
+// About page paragraphs with inline emphasis. SEO-2: factual wording (no accreditation/reputation claims); TR = faithful translation.
 import type { ReactNode } from "react";
 
 export const rich: { en: Record<"p1" | "p2" | "p3", ReactNode>; tr: Record<"p1" | "p2" | "p3", ReactNode> } = {
   en: {
     p1: (
       <>
-        RevissaWay operates in close collaboration with <strong>accredited, licensed, and internationally recognized medical partners across Turkey</strong>.
-        Each clinic is carefully selected for its <strong>high ethical standards</strong>, <strong>advanced medical technology</strong>,
-        <strong>experienced specialists</strong>, and <strong>proven record of patient satisfaction</strong>.
+        RevissaWay works with <strong>more than one independent clinic and hospital across Türkiye</strong>, so we&apos;re not tied to a single institution.
+        We pass on each clinic&apos;s <strong>assessment, treatment proposal and quotation</strong>, and you can ask the clinic about its
+        <strong>qualifications, licences and accreditation</strong> before you decide.
       </>
     ),
     p2: (
       <>
-        At RevissaWay, our goal is not only to connect clients with medical treatments but to create a <strong>comfortable, safe, and fully supported health travel experience</strong>.
-        From initial consultation and clinic matching to accommodation and transportation coordination, we ensure that every stage of the journey
+        At RevissaWay, our goal is not only to connect clients with medical treatments but to create a <strong>comfortable and well-organised health travel experience</strong>.
+        From your first enquiry and clinic matching to accommodation and transportation coordination, we ensure that every stage of the journey
         is managed with <strong>transparency, professionalism, and trust</strong>.
       </>
     ),
     p3: (
       <>
-        Our mission is to <strong>bridge clients from Australia and New Zealand</strong> with Turkey&apos;s most reputable and trusted healthcare providers,
-        delivering a <strong>personalized, ethical, and internationally compliant medical experience</strong>.
-        RevissaWay acts solely as an <strong>independent health tourism consultancy</strong>, partnering only with
-        <strong>licensed and accredited healthcare institutions</strong> that meet both <strong>national and international medical standards</strong>.
+        Our mission is to make it easier for <strong>people in Australia and New Zealand</strong> to explore treatment in Türkiye,
+        with <strong>clear information and honest communication</strong> at every step.
+        RevissaWay acts solely as an <strong>independent health tourism coordination service</strong>; our service is free for patients, and
+        treatment is provided by <strong>independent healthcare providers</strong> that patients pay directly.
       </>
     ),
   },
   tr: {
-    // REVIEW:claim
     p1: (
       <>
-        RevissaWay, <strong>Türkiye genelindeki akredite, lisanslı ve uluslararası alanda tanınan tıbbi partnerlerle</strong> yakın iş birliği içinde çalışır.
-        Her klinik; <strong>yüksek etik standartları</strong>, <strong>ileri tıbbi teknolojisi</strong>,{" "}
-        <strong>deneyimli uzmanları</strong> ve <strong>kanıtlanmış hasta memnuniyeti geçmişi</strong> gözetilerek özenle seçilir.
+        RevissaWay, <strong>Türkiye genelinde birden fazla bağımsız klinik ve hastaneyle</strong> çalışır; tek bir kuruma bağlı değildir.
+        Her kliniğin <strong>değerlendirmesini, tedavi önerisini ve fiyat teklifini</strong> size iletiriz; karar vermeden önce kliniğe{" "}
+        <strong>niteliklerini, lisanslarını ve akreditasyonunu</strong> sorabilirsiniz.
       </>
     ),
     p2: (
       <>
-        RevissaWay olarak amacımız, danışanlarımızı yalnızca tıbbi tedavilerle buluşturmak değil; aynı zamanda <strong>konforlu, güvenli ve her aşamada desteklenen bir sağlık seyahati deneyimi</strong> sunmaktır.
-        İlk konsültasyon ve klinik eşleştirmeden konaklama ve ulaşım koordinasyonuna kadar sürecin her aşamasının{" "}
+        RevissaWay olarak amacımız, danışanlarımızı yalnızca tıbbi tedavilerle buluşturmak değil; aynı zamanda <strong>konforlu ve iyi organize edilmiş bir sağlık seyahati deneyimi</strong> sunmaktır.
+        İlk talebiniz ve klinik eşleştirmeden konaklama ve ulaşım koordinasyonuna kadar sürecin her aşamasının{" "}
         <strong>şeffaflık, profesyonellik ve güvenle</strong> yönetilmesini sağlarız.
       </>
     ),
-    // REVIEW:claim
     p3: (
       <>
-        Misyonumuz, <strong>Avustralya ve Yeni Zelanda&apos;daki danışanları</strong> Türkiye&apos;nin en saygın ve güvenilir sağlık hizmeti sağlayıcılarıyla buluşturarak{" "}
-        <strong>kişiye özel, etik ve uluslararası standartlara uygun bir tıbbi deneyim</strong> sunmaktır.
-        RevissaWay yalnızca <strong>bağımsız bir sağlık turizmi danışmanlığı</strong> olarak faaliyet gösterir ve yalnızca{" "}
-        <strong>hem ulusal hem de uluslararası tıbbi standartları karşılayan</strong> <strong>lisanslı ve akredite sağlık kuruluşlarıyla</strong> iş birliği yapar.
+        Misyonumuz, <strong>Avustralya ve Yeni Zelanda&apos;daki insanların</strong> Türkiye&apos;deki tedavi seçeneklerini{" "}
+        <strong>açık bilgi ve dürüst iletişimle</strong> her adımda kolayca değerlendirebilmesini sağlamaktır.
+        RevissaWay yalnızca <strong>bağımsız bir sağlık turizmi koordinasyon hizmeti</strong> olarak faaliyet gösterir; hizmetimiz hastalar için ücretsizdir ve
+        tedavi, hastaların doğrudan ödeme yaptığı <strong>bağımsız sağlık hizmeti sağlayıcıları</strong> tarafından verilir.
       </>
     ),
   },

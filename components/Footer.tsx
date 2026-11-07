@@ -10,10 +10,9 @@ export default function Footer() {
   const { openSettings } = useConsent();
   const f = useLocalized({
     en: { international: "International:", privacy: "Privacy Policy", terms: "Terms of Use", about: "About RevissaWay", settings: "Privacy settings",
-      note: "RevissaWay is not a medical provider. It connects patients with accredited clinics in Türkiye. All medical procedures are performed by licensed partner clinics." },
-    // REVIEW:claim (note: "accredited" / "licensed" - evidence pending)
+      note: "RevissaWay is not a medical provider. It connects patients with independent healthcare providers in Türkiye, which perform all medical procedures." },
     tr: { international: "Uluslararası:", privacy: "Gizlilik Politikası", terms: "Kullanım Şartları", about: "RevissaWay Hakkında", settings: "Gizlilik ayarları",
-      note: "RevissaWay bir sağlık hizmeti sağlayıcısı değildir. Hastaları Türkiye'deki akredite kliniklerle buluşturur. Tüm tıbbi işlemler lisanslı partner klinikler tarafından gerçekleştirilir." },
+      note: "RevissaWay bir sağlık hizmeti sağlayıcısı değildir. Hastaları, tüm tıbbi işlemleri gerçekleştiren Türkiye'deki bağımsız sağlık hizmeti sağlayıcılarıyla buluşturur." },
   });
   
   return (

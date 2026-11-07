@@ -21,7 +21,7 @@ export const REVIEW: Record<string, string> = {
 export const content = {
   en: {
     "t003": "Dental Aesthetics",
-    "t004": "Transform your smile with modern dental treatments at internationally accredited clinics in Turkey.",
+    "t004": "Transform your smile with modern dental treatments at independent dental clinics in Türkiye.",
     "t005": "Inside Our Partner Clinics",
     "t006": "Excellence in Dental Aesthetics",
     "t007": "A beautiful smile plays a vital role in enhancing self-confidence and overall attractiveness. Aesthetic dental treatments are designed to improve the appearance of teeth and help individuals achieve their ideal smile. These modern dental solutions focus on enhancing tooth color, closing gaps, aligning teeth, and perfecting overall harmony. In addition to creating a more appealing smile, they also boost confidence and quality of life.",
@@ -35,7 +35,7 @@ export const content = {
     "t015": "Once treatment is complete, results are maintained through regular checkups and professional aftercare.",
     "t016": "Dental Implants & Restorations",
     "t017": "Dental Implants",
-    "t018": "Most effective solution for missing teeth with natural look, permanent result, and high success rates.",
+    "t018": "A common option for replacing missing teeth. Implants need healthy gums and enough jawbone, and good oral care and regular check-ups help them last.",
     "t019": "1–3 Hours",
     "t020": "Operation Duration",
     "t021": "5–7 Days",
@@ -65,7 +65,7 @@ export const content = {
     "t045": "Comprehensive smile makeover with veneers and advanced dental technology for a radiant, picture-perfect smile.",
     "t046": "Dental Aesthetics Before & After",
     "t047": "Discover the transformation achieved through our partner clinics' dental aesthetic procedures. Each treatment is designed to enhance both function and appearance, delivering healthy and confident smiles.",
-    "t048": "From dental implants to Hollywood smiles, our accredited partners use state-of-the-art technology and proven techniques to create natural-looking, long-lasting results.",
+    "t048": "Results depend on the treatment chosen and on each person's teeth and gums. Your dentist will explain what is realistic for you.",
     "t049": "Dental Aesthetics Before & After 1",
     "t050": "Dental Aesthetics Before & After 2",
     "t051": "Dental Aesthetics Before & After 3",
@@ -77,13 +77,13 @@ export const content = {
     "t057": "Recovery Process",
     "t058": "Recovery varies by treatment; most patients resume normal activities within days to a week.",
     "t059": "Expected Results",
-    "t060": "Natural-looking, long-lasting dental restorations achieved through modern techniques and materials.",
+    "t060": "Results vary by treatment. Veneers and crowns may need replacing over time; your dentist will explain how long they're likely to last.",
     "t061": "Ready to Transform Your Smile?",
-    "t062": "Contact us today for a free consultation and personalized treatment plan."
+    "t062": "Contact us today for a free enquiry — we will pass on a personalised treatment proposal from the clinic."
 },
   tr: {
     "t003": "Diş Estetiği",
-    "t004": "Türkiye'deki uluslararası akreditasyona sahip kliniklerde modern diş tedavileriyle gülüşünüzü dönüştürün.",
+    "t004": "Türkiye'deki bağımsız diş kliniklerinde modern diş tedavileriyle gülüşünüzü yenileyin.",
     "t005": "Partner Kliniklerimizin İçinden",
     "t006": "Diş Estetiğinde Mükemmellik",
     "t007": "Güzel bir gülüş, özgüveni ve genel çekiciliği artırmada önemli bir rol oynar. Estetik diş tedavileri, dişlerin görünümünü iyileştirmek ve kişilerin ideal gülüşlerine ulaşmalarına yardımcı olmak için tasarlanmıştır. Bu modern diş çözümleri; diş rengini iyileştirmeye, boşlukları kapatmaya, dişleri hizalamaya ve genel uyumu mükemmelleştirmeye odaklanır. Daha çekici bir gülüş oluşturmanın yanı sıra özgüveni ve yaşam kalitesini de artırır.",
@@ -97,7 +97,7 @@ export const content = {
     "t015": "Tedavi tamamlandıktan sonra sonuçlar düzenli kontroller ve profesyonel bakımla korunur.",
     "t016": "Diş İmplantları ve Restorasyonlar",
     "t017": "Diş İmplantları",
-    "t018": "Doğal görünüm, kalıcı sonuç ve yüksek başarı oranlarıyla eksik dişler için en etkili çözüm.",
+    "t018": "Eksik dişlerin yerine konmasında yaygın bir seçenektir. İmplantlar için sağlıklı diş eti ve yeterli çene kemiği gerekir; iyi ağız bakımı ve düzenli kontroller implantların ömrünü uzatır.",
     "t019": "1–3 Saat",
     "t020": "Operasyon Süresi",
     "t021": "5–7 Gün",
@@ -127,7 +127,7 @@ export const content = {
     "t045": "Parlak ve kusursuz bir gülüş için kaplamalar ve ileri diş teknolojisiyle yapılan kapsamlı gülüş tasarımı.",
     "t046": "Diş Estetiği Öncesi ve Sonrası",
     "t047": "Partner kliniklerimizin diş estetiği uygulamalarıyla elde edilen dönüşümü keşfedin. Her tedavi hem işlevi hem de görünümü iyileştirmek, sağlıklı ve özgüvenli gülüşler sunmak için tasarlanır.",
-    "t048": "Diş implantlarından Hollywood gülüşüne kadar akredite partnerlerimiz, doğal görünümlü ve uzun ömürlü sonuçlar elde etmek için son teknoloji ve kanıtlanmış teknikler kullanır.",
+    "t048": "Sonuçlar seçilen tedaviye ve her kişinin diş ve diş eti yapısına bağlıdır. Diş hekiminiz sizin için neyin gerçekçi olduğunu açıklayacaktır.",
     "t049": "Diş Estetiği Öncesi ve Sonrası 1",
     "t050": "Diş Estetiği Öncesi ve Sonrası 2",
     "t051": "Diş Estetiği Öncesi ve Sonrası 3",
@@ -139,8 +139,8 @@ export const content = {
     "t057": "İyileşme Süreci",
     "t058": "İyileşme tedaviye göre değişir; çoğu hasta birkaç gün ile bir hafta içinde normal aktivitelerine döner.",
     "t059": "Beklenen Sonuçlar",
-    "t060": "Modern teknikler ve malzemelerle elde edilen doğal görünümlü, uzun ömürlü diş restorasyonları.",
+    "t060": "Sonuçlar tedaviye göre değişir. Lamina ve kronların zamanla yenilenmesi gerekebilir; diş hekiminiz ne kadar dayanabileceklerini açıklayacaktır.",
     "t061": "Gülüşünüzü Dönüştürmeye Hazır mısınız?",
-    "t062": "Ücretsiz konsültasyon ve kişiye özel tedavi planı için bugün bize ulaşın."
+    "t062": "Ücretsiz bilgi talebi için bugün bize ulaşın — kliniğin kişiye özel tedavi önerisini size iletelim."
 },
 };
