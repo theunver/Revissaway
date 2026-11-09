@@ -10,7 +10,7 @@ export default function Footer() {
   const { openSettings } = useConsent();
   const f = useLocalized({
     en: { international: "International:", privacy: "Privacy Policy", terms: "Terms of Use", about: "About RevissaWay", settings: "Privacy settings",
-      note: "RevissaWay is not a medical provider. It connects patients with independent healthcare providers in Türkiye, which perform all medical procedures." },
+      note: "RevissaWay is not a medical provider. It connects patients with independent healthcare providers in Turkey, which perform all medical procedures." },
     tr: { international: "Uluslararası:", privacy: "Gizlilik Politikası", terms: "Kullanım Şartları", about: "RevissaWay Hakkında", settings: "Gizlilik ayarları",
       note: "RevissaWay bir sağlık hizmeti sağlayıcısı değildir. Hastaları, tüm tıbbi işlemleri gerçekleştiren Türkiye'deki bağımsız sağlık hizmeti sağlayıcılarıyla buluşturur." },
   });

@@ -5,13 +5,13 @@
 export const content = {
   en: {
     heroTitle: "Why Turkey?",
-    heroSubtitle: "Why people from Australia and New Zealand consider Türkiye for treatment",
-    excellenceTitle: "Medical Tourism in Türkiye",
+    heroSubtitle: "Why people from Australia and New Zealand consider Turkey for treatment",
+    excellenceTitle: "Why Australians Consider Turkey for Treatment",
     excellenceP1:
-      "RevissaWay is an Australian-based coordination service. We don't provide medical treatment; we act as an intermediary, connecting patients with independent hospitals and clinics in Türkiye that offer hair, cosmetic and dental treatment.",
+      "RevissaWay is an Australian-based coordination service. We don't provide medical treatment; we act as an intermediary, connecting patients with independent hospitals and clinics in Turkey that offer hair, cosmetic and dental treatment.",
     excellenceP2:
-      "Türkiye is a well-established destination for medical travel. The clinic assesses your information, prepares a treatment proposal and quotation, and is responsible for your medical care. We pass the proposal on to you, answer your questions and help with travel arrangements, so you can make an informed decision.",
-    journeyTitle: "Planning Treatment in Türkiye from Australia",
+      "Turkey is a well-established destination for medical travel. The clinic assesses your information, prepares a treatment proposal and quotation, and is responsible for your medical care. We pass the proposal on to you, answer your questions and help with travel arrangements, so you can make an informed decision.",
+    journeyTitle: "Planning Treatment in Turkey from Australia",
     journeyP1:
       "1. Before you enquire. Think about why you want the treatment and talk to your GP about your general health and any medications. Consider how much time off work you can take, your budget (including a buffer for a longer stay), and whether someone can travel with you.",
     journeyP2:
@@ -21,7 +21,7 @@ export const content = {
     imageAlt: "Medical tourism in Turkey",
     whyTitle: "Why Choose RevissaWay?",
     accreditedTitle: "Independent Providers",
-    accreditedText: "Treatment is provided by independent clinics and hospitals in Türkiye. You can ask each provider about its licences and accreditation before you decide.",
+    accreditedText: "Treatment is provided by independent clinics and hospitals in Turkey. You can ask each provider about its licences and accreditation before you decide.",
     coordinationTitle: "Coordination",
     coordinationText: "We help with communication, appointments and the travel arrangements you ask for.",
     pricingTitle: "Transparent Pricing",
@@ -34,7 +34,7 @@ export const content = {
     // REVIEW:claim
     heroSubtitle: "Avustralya ve Yeni Zelanda'dan insanlar tedavi için neden Türkiye'yi değerlendiriyor",
     // REVIEW:claim
-    excellenceTitle: "Türkiye'de Sağlık Turizmi",
+    excellenceTitle: "Avustralyalılar Tedavi İçin Neden Türkiye'yi Değerlendiriyor",
     // REVIEW:claim
     excellenceP1:
       "RevissaWay, Avustralya merkezli bir koordinasyon hizmetidir. Tıbbi tedavi sunmayız; aracı olarak hastaları Türkiye'de saç, estetik ve diş tedavisi sunan bağımsız hastane ve kliniklerle buluştururuz.",

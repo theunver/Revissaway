@@ -16,9 +16,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...pageMetadata({
     path: "/",
-    title: "Treatment in Turkey from Australia – Hair, Cosmetic & Dental | RevissaWay",
+    title: "Hair, Dental & Cosmetic Treatment in Turkey from Australia | RevissaWay",
     description:
-      "RevissaWay is an Australian-based coordination service helping patients from Australia and New Zealand explore hair transplant, cosmetic surgery and dental treatment with independent healthcare providers in Türkiye.",
+      "RevissaWay is an Australian-based coordination service helping patients from Australia and New Zealand explore hair transplants, dental implants and veneers, and cosmetic surgery with independent clinics in Turkey. Free enquiry.",
   }),
   // Existing logo as the site icon (avoids the browser's /favicon.ico 404 request).
   icons: { icon: "/logo.png", apple: "/logo.png" },
@@ -66,7 +66,7 @@ const organizationJsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/logo.png`,
   description:
-    "Australian-based health tourism coordination service connecting patients from Australia and New Zealand with independent healthcare providers in Türkiye. RevissaWay does not provide medical treatment.",
+    "Australian-based health tourism coordination service connecting patients from Australia and New Zealand with independent healthcare providers in Turkey. RevissaWay does not provide medical treatment.",
   telephone: "+61411854929",
   email: "info@revissaway.com.au",
   areaServed: ["AU", "NZ"],

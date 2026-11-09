@@ -39,7 +39,7 @@ const translations = {
     
     // Footer
     'footer.title': 'Your Bridge to Wellness',
-    'footer.description': 'Coordinating hair, cosmetic and dental treatment in Türkiye for patients from Australia and New Zealand — with clear information at every step.',
+    'footer.description': 'Coordinating hair, cosmetic and dental treatment in Turkey for patients from Australia and New Zealand — with clear information at every step.',
     'footer.consultation': 'Send a Free Enquiry',
     'footer.address': 'ADDRESS',
     'footer.phone': 'PHONE',
@@ -47,11 +47,11 @@ const translations = {
     'footer.copyright': '© {year} RevissaWay | All rights reserved.',
     
     // Home Page
-    'home.hero.title': 'Your Bridge to Hair, Cosmetic and Dental Treatment in Türkiye',
-    'home.hero.subtitle': 'RevissaWay helps patients from Australia and New Zealand explore treatment with independent clinics in Türkiye — with clear information and coordination from your first enquiry.',
+    'home.hero.title': 'Your Bridge to Hair, Dental and Cosmetic Treatment in Turkey',
+    'home.hero.subtitle': 'RevissaWay helps patients from Australia and New Zealand explore treatment with independent clinics in Turkey — with clear information and coordination from your first enquiry.',
     'home.hero.cta': 'Make a Free Enquiry',
     'home.whyTurkey.title': 'Why Turkey?',
-    'home.whyTurkey.description': 'RevissaWay is an Australian-based coordination service. We don\'t provide medical treatment; we help you connect with independent hospitals and clinics in Türkiye, pass on their assessment and quotation, and help with non-medical arrangements such as accommodation and airport transfers. Our service is free for patients — you decide whether to proceed, you pay the clinic directly, and the clinic is responsible for your medical care.',
+    'home.whyTurkey.description': 'RevissaWay is an Australian-based coordination service. We don\'t provide medical treatment; we help you connect with independent hospitals and clinics in Turkey, pass on their assessment and quotation, and help with non-medical arrangements such as accommodation and airport transfers. Our service is free for patients — you decide whether to proceed, you pay the clinic directly, and the clinic is responsible for your medical care.',
     'home.services.title': 'Our Services',
     'home.services.hairTransplant.title': 'Hair Transplant',
     'home.services.hairTransplant.description': 'FUE, DHI and Sapphire techniques — your clinic will advise which suits you.',
@@ -131,7 +131,7 @@ const translations = {
     'footer.copyright': '© {year} RevissaWay | Tüm hakları saklıdır.',
     
     // Home Page
-    'home.hero.title': 'Türkiye\'de Saç, Estetik ve Diş Tedavisine Köprünüz',
+    'home.hero.title': 'Türkiye\'de Saç, Diş ve Estetik Tedaviye Köprünüz',
     'home.hero.subtitle': 'RevissaWay, Avustralya ve Yeni Zelanda\'daki hastaların Türkiye\'deki bağımsız kliniklerde tedavi seçeneklerini değerlendirmesine yardımcı olur — ilk talebinizden itibaren açık bilgi ve koordinasyonla.',
     'home.hero.cta': 'Ücretsiz Bilgi Talebi',
     'home.whyTurkey.title': 'Neden Türkiye?',

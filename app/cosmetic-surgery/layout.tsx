@@ -3,9 +3,9 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   path: "/cosmetic-surgery",
-  title: "Cosmetic Surgery in Turkey from Australia – Rhinoplasty, Facelift, BBL | RevissaWay",
+  title: "Plastic & Cosmetic Surgery in Turkey from Australia | RevissaWay",
   description:
-    "Information on rhinoplasty, face and neck lift, tummy tuck, liposuction, BBL, breast surgery and mummy makeover with independent providers in Türkiye, coordinated from Australia by RevissaWay. Every procedure carries risks.",
+    "Considering plastic or cosmetic surgery in Turkey? Learn about nose jobs (rhinoplasty), tummy tucks, mummy makeovers, breast surgery and liposuction with independent surgeons, and how to plan from Australia. Every procedure carries risks.",
 });
 
 export default function CosmeticSurgeryLayout({

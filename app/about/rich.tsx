@@ -5,7 +5,7 @@ export const rich: { en: Record<"p1" | "p2" | "p3", ReactNode>; tr: Record<"p1" 
   en: {
     p1: (
       <>
-        RevissaWay works with <strong>more than one independent clinic and hospital across Türkiye</strong>, so we&apos;re not tied to a single institution.
+        RevissaWay works with <strong>more than one independent clinic and hospital across Turkey</strong>, so we&apos;re not tied to a single institution.
         We pass on each clinic&apos;s <strong>assessment, treatment proposal and quotation</strong>, and you can ask the clinic about its
         <strong>qualifications, licences and accreditation</strong> before you decide.
       </>
@@ -19,7 +19,7 @@ export const rich: { en: Record<"p1" | "p2" | "p3", ReactNode>; tr: Record<"p1" 
     ),
     p3: (
       <>
-        Our mission is to make it easier for <strong>people in Australia and New Zealand</strong> to explore treatment in Türkiye,
+        Our mission is to make it easier for <strong>people in Australia and New Zealand</strong> to explore treatment in Turkey,
         with <strong>clear information and honest communication</strong> at every step.
         RevissaWay acts solely as an <strong>independent health tourism coordination service</strong>; our service is free for patients, and
         treatment is provided by <strong>independent healthcare providers</strong> that patients pay directly.

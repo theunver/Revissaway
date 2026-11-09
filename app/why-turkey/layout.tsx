@@ -3,9 +3,9 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   path: "/why-turkey",
-  title: "Travelling from Australia to Turkey for Treatment | RevissaWay",
+  title: "Why Turkey for Treatment? Planning Your Trip from Australia | RevissaWay",
   description:
-    "Why patients from Australia and New Zealand consider Türkiye for hair, cosmetic and dental treatment, and how RevissaWay coordinates enquiries with independent healthcare providers.",
+    "Why do Australians go to Turkey for hair transplants, dental work and cosmetic surgery? A practical guide to what to check before you enquire, before you travel and after you return home.",
 });
 
 export default function WhyTurkeyLayout({

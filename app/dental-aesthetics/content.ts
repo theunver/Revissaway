@@ -20,8 +20,8 @@ export const REVIEW: Record<string, string> = {
 
 export const content = {
   en: {
-    "t003": "Dental Implants, Veneers & Crowns",
-    "t004": "Transform your smile with modern dental treatments at independent dental clinics in Türkiye.",
+    "t003": "Dental Implants & Veneers in Turkey",
+    "t004": "Transform your smile with modern dental treatments at independent dental clinics in Turkey.",
     "t005": "Inside Our Partner Clinics",
     "t006": "Cosmetic and Restorative Dentistry",
     "t007": "A beautiful smile plays a vital role in enhancing self-confidence and overall attractiveness. Aesthetic dental treatments are designed to improve the appearance of teeth and help individuals achieve their ideal smile. These modern dental solutions focus on enhancing tooth color, closing gaps, aligning teeth, and perfecting overall harmony. In addition to creating a more appealing smile, they also boost confidence and quality of life.",
@@ -80,20 +80,20 @@ export const content = {
     "t060": "Results vary by treatment. Veneers and crowns may need replacing over time; your dentist will explain how long they're likely to last.",
     "t061": "Ready to Transform Your Smile?",
     "t062": "Contact us today for a free enquiry — we will pass on a personalised treatment proposal from the clinic.",
-    "faqTitle": "Dental Treatment in Türkiye: Common Questions",
-    "faq1Q": "Will I need more than one trip to Türkiye?",
+    "faqTitle": "Dental Treatment in Turkey: Common Questions",
+    "faq1Q": "Will I need more than one trip to Turkey?",
     "faq1A": "It depends on your treatment plan. Some treatments, such as dental implants, are often carried out in stages with healing time in between, which can mean more than one visit. Ask your dentist for a written timeline before you book.",
     "faq2Q": "What's the difference between veneers and crowns?",
     "faq2A": "Veneers cover the front surface of a tooth, while crowns cover the whole tooth. Both usually involve removing some natural tooth structure, which can't be undone, so ask your dentist which option suits your teeth and why.",
     "faq3Q": "What should I ask before I book?",
     "faq3A": "Ask for a written treatment plan showing which teeth will be treated, the materials and brands used, the timeline, the cost of each item and what follow-up is included.",
     "faq4Q": "What follow-up care will I need at home?",
-    "faq4A": "Keep up regular check-ups with a dentist in Australia. Bring your records from Türkiye — X-rays, your treatment plan and details of any implants or materials — so your dentist knows what was done.",
+    "faq4A": "Keep up regular check-ups with a dentist in Australia. Bring your records from Turkey — X-rays, your treatment plan and details of any implants or materials — so your dentist knows what was done.",
     "faq5Q": "What if something goes wrong after I'm home?",
     "faq5A": "Contact the clinic first — we can help you get in touch. If you need treatment in Australia, it may involve extra costs, so ask the clinic before you book how adjustments and problems after you return are handled."
 },
   tr: {
-    "t003": "Diş İmplantı, Lamina ve Kron",
+    "t003": "Türkiye'de Diş İmplantı ve Lamina",
     "t004": "Türkiye'deki bağımsız diş kliniklerinde modern diş tedavileriyle gülüşünüzü yenileyin.",
     "t005": "Partner Kliniklerimizin İçinden",
     "t006": "Estetik ve Restoratif Diş Tedavisi",
