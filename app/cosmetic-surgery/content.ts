@@ -24,8 +24,8 @@ export const content = {
   en: {
     "readMore": "Read More ▼",
     "readLess": "Read Less ▲",
-    "t003": "Esthetic Surgery Applications Banner",
-    "t004": "Esthetic Surgery Applications",
+    "t003": "Cosmetic surgery in Türkiye",
+    "t004": "Cosmetic Surgery in Türkiye",
     "t005": "Some of the procedures offered by independent aesthetic, plastic and reconstructive surgeons in Türkiye are listed below.",
     "t006": "Inside Our Partner Clinics",
     "t007": "Aesthetic surgery facilities in Turkey",
@@ -147,8 +147,8 @@ export const content = {
   tr: {
     "readMore": "Devamını Oku ▼",
     "readLess": "Daha Az Göster ▲",
-    "t003": "Estetik Cerrahi Uygulamaları Banner Görseli",
-    "t004": "Estetik Cerrahi Uygulamaları",
+    "t003": "Türkiye'de estetik cerrahi",
+    "t004": "Türkiye'de Estetik Cerrahi",
     "t005": "Türkiye'deki bağımsız estetik, plastik ve rekonstrüktif cerrahların sunduğu işlemlerden bazıları aşağıda listelenmiştir.",
     "t006": "Partner Kliniklerimizin İçinden",
     "t007": "Türkiye'deki estetik cerrahi tesisleri",

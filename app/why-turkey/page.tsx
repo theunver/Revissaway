@@ -2,11 +2,34 @@
 
 import OptimizedVideo from "@/components/OptimizedVideo";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { useLocalized } from "@/contexts/LanguageContext";
+import Link from "next/link";
+import type { ReactNode } from "react";
+import { useLanguage, useLocalized } from "@/contexts/LanguageContext";
 import { content } from "./content";
+
+// Contextual internal links to the treatment pages inside existing copy (first match of each phrase, in order).
+const TREATMENT_LINKS = {
+  en: [["hair", "/hair-transplant"], ["cosmetic", "/cosmetic-surgery"], ["dental treatment", "/dental-aesthetics"]],
+  tr: [["saç", "/hair-transplant"], ["estetik", "/cosmetic-surgery"], ["diş tedavisi", "/dental-aesthetics"]],
+} as const;
+
+function withTreatmentLinks(text: string, lang: "en" | "tr"): ReactNode {
+  const out: ReactNode[] = [];
+  let pos = 0;
+  for (const [phrase, href] of TREATMENT_LINKS[lang]) {
+    const i = text.indexOf(phrase, pos);
+    if (i < 0) continue;
+    out.push(text.slice(pos, i));
+    out.push(<Link key={href} href={href} className="text-[#9B7E3E] underline hover:no-underline">{phrase}</Link>);
+    pos = i + phrase.length;
+  }
+  out.push(text.slice(pos));
+  return out;
+}
 
 export default function WhyTurkeyPage() {
   const c = useLocalized(content);
+  const { language } = useLanguage();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-[#FFF8DC] to-white">
@@ -53,7 +76,7 @@ export default function WhyTurkeyPage() {
               {c.excellenceTitle}
             </h2>
             <p className="text-gray-700 leading-relaxed text-lg">
-              {c.excellenceP1}
+              {withTreatmentLinks(c.excellenceP1, language === "tr" ? "tr" : "en")}
             </p>
             <p className="text-gray-700 leading-relaxed text-lg">
               {c.excellenceP2}

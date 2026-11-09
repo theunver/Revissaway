@@ -34,8 +34,8 @@ const translations = {
     
     // Services
     'services.hairTransplant': 'Hair Transplant',
-    'services.cosmeticSurgery': 'Esthetic Surgery Applications',
-    'services.dentalAesthetics': 'Dental Aesthetics',
+    'services.cosmeticSurgery': 'Cosmetic Surgery',
+    'services.dentalAesthetics': 'Dental Implants & Veneers',
     
     // Footer
     'footer.title': 'Your Bridge to Wellness',
@@ -57,7 +57,7 @@ const translations = {
     'home.services.hairTransplant.description': 'FUE, DHI and Sapphire techniques — your clinic will advise which suits you.',
     'home.services.cosmeticSurgery.title': 'Cosmetic Surgery',
     'home.services.cosmeticSurgery.description': 'Procedures including breast surgery, liposuction and facial surgery.',
-    'home.services.dentalAesthetics.title': 'Dental Aesthetics',
+    'home.services.dentalAesthetics.title': 'Dental Implants & Veneers',
     'home.services.dentalAesthetics.description': 'Hollywood smile, dental implants, and comprehensive dental aesthetic treatments.',
     'home.packageServices.title': 'What\'s Included in Your Package',
     'home.packageServices.transfer.title': 'Transfer Service',
@@ -119,7 +119,7 @@ const translations = {
     // Services
     'services.hairTransplant': 'Saç Ekimi',
     'services.cosmeticSurgery': 'Estetik Cerrahi',
-    'services.dentalAesthetics': 'Diş Estetiği',
+    'services.dentalAesthetics': 'Diş İmplantı ve Lamina',
     
     // Footer
     'footer.title': 'Sağlığınıza Köprü',
@@ -141,7 +141,7 @@ const translations = {
     'home.services.hairTransplant.description': 'FUE, DHI ve Sapphire teknikleri — size hangisinin uygun olduğunu kliniğiniz söyler.',
     'home.services.cosmeticSurgery.title': 'Estetik Cerrahi',
     'home.services.cosmeticSurgery.description': 'Meme cerrahisi, liposuction ve yüz cerrahisi dahil işlemler.',
-    'home.services.dentalAesthetics.title': 'Diş Estetiği',
+    'home.services.dentalAesthetics.title': 'Diş İmplantı ve Lamina',
     'home.services.dentalAesthetics.description': 'Hollywood gülüşü, diş implantları ve kapsamlı diş estetik tedavileri.',
     'home.packageServices.title': 'Paketinizde Neler Dahil',
     'home.packageServices.transfer.title': 'Transfer Hizmeti',

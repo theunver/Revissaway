@@ -173,7 +173,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Rhinoplasty Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
+      <section id="rhinoplasty" className="scroll-mt-20 bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div>
@@ -215,7 +215,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Face Lift Section */}
-      <section className="bg-white py-12">
+      <section id="face-lift" className="scroll-mt-20 bg-white py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
           {/* Image */}
@@ -258,7 +258,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Neck Lift Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
+      <section id="neck-lift" className="scroll-mt-20 bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
           {/* Text Content */}
@@ -301,7 +301,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Mummy Makeover Section */}
-      <section className="bg-white py-12">
+      <section id="mummy-makeover" className="scroll-mt-20 bg-white py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
           {/* Image */}
@@ -344,7 +344,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Tummy Tuck Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
+      <section id="tummy-tuck" className="scroll-mt-20 bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
           {/* Text Content */}
@@ -387,7 +387,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Liposuction Section */}
-      <section className="bg-white py-12">
+      <section id="liposuction" className="scroll-mt-20 bg-white py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
           {/* Image */}
@@ -430,7 +430,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Brazilian Butt Lift Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
+      <section id="brazilian-butt-lift" className="scroll-mt-20 bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
           {/* Text Content */}
@@ -473,7 +473,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Breast Reduction Section */}
-      <section className="bg-white py-12">
+      <section id="breast-reduction" className="scroll-mt-20 bg-white py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
           {/* Image */}
@@ -516,7 +516,7 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Breast Implants Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
+      <section id="breast-implants" className="scroll-mt-20 bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           
           {/* Text Content */}

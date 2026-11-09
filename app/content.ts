@@ -20,9 +20,9 @@ export const content = {
   en: {
     "t003": "Hair Transplant",
     "t004": "FUE, DHI and Sapphire techniques with independent clinics in Türkiye.",
-    "t005": "Esthetic Surgery Applications",
+    "t005": "Cosmetic Surgery",
     "t006": "A wide range of cosmetic procedures with independent surgeons in Türkiye.",
-    "t007": "Dental Aesthetics",
+    "t007": "Dental Implants & Veneers",
     "t008": "Smile design and oral health with modern treatments.",
     "t009": "Airport Transfers",
     "t010": "Help arranging transport between the airport, your hotel and the clinic.",
@@ -80,9 +80,9 @@ export const content = {
   tr: {
     "t003": "Saç Ekimi",
     "t004": "Türkiye'deki bağımsız kliniklerde FUE, DHI ve Sapphire teknikleri.",
-    "t005": "Estetik Cerrahi Uygulamaları",
+    "t005": "Estetik Cerrahi",
     "t006": "Türkiye'deki bağımsız cerrahlarla geniş bir estetik işlem yelpazesi.",
-    "t007": "Diş Estetiği",
+    "t007": "Diş İmplantı ve Lamina",
     "t008": "Modern tedavilerle gülüş tasarımı ve ağız sağlığı.",
     "t009": "Havalimanı Transferi",
     "t010": "Havalimanı, otel ve klinik arasında ulaşımı ayarlamanıza yardımcı oluruz.",

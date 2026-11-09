@@ -530,7 +530,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-white py-16">
+      <section id="faq" className="bg-white py-16 scroll-mt-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-black mb-12">
             {c.t055}
@@ -542,6 +542,10 @@ export default function Home() {
               className="bg-white border border-[#9B7E3E]/30 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <button
+                type="button"
+                id={`faq-question-${index + 1}`}
+                aria-expanded={openFaq === index}
+                aria-controls={`faq-answer-${index + 1}`}
                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
                 className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors duration-200"
               >
@@ -559,11 +563,16 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {openFaq === index && (
-                <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                  <p className="text-gray-600">{faq.answer}</p>
-                </div>
-              )}
+              {/* Answers are always in the HTML (crawlable, accessible); collapsed ones use the native hidden attribute. */}
+              <div
+                id={`faq-answer-${index + 1}`}
+                role="region"
+                aria-labelledby={`faq-question-${index + 1}`}
+                hidden={openFaq !== index}
+                className="px-6 py-4 bg-gray-50 border-t border-gray-200"
+              >
+                <p className="text-gray-600">{faq.answer}</p>
+              </div>
             </div>
           ))}
         </div>

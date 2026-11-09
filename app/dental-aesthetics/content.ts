@@ -20,10 +20,10 @@ export const REVIEW: Record<string, string> = {
 
 export const content = {
   en: {
-    "t003": "Dental Aesthetics",
+    "t003": "Dental Implants, Veneers & Crowns",
     "t004": "Transform your smile with modern dental treatments at independent dental clinics in Türkiye.",
     "t005": "Inside Our Partner Clinics",
-    "t006": "Excellence in Dental Aesthetics",
+    "t006": "Cosmetic and Restorative Dentistry",
     "t007": "A beautiful smile plays a vital role in enhancing self-confidence and overall attractiveness. Aesthetic dental treatments are designed to improve the appearance of teeth and help individuals achieve their ideal smile. These modern dental solutions focus on enhancing tooth color, closing gaps, aligning teeth, and perfecting overall harmony. In addition to creating a more appealing smile, they also boost confidence and quality of life.",
     "t008": "Examination and Evaluation:",
     "t009": "The journey begins with a detailed examination by a specialist who creates a personalized treatment plan based on the patient's smile goals.",
@@ -63,7 +63,7 @@ export const content = {
     "t043": "Follow-up",
     "t044": "Hollywood Smile",
     "t045": "Comprehensive smile makeover with veneers and advanced dental technology for a radiant, picture-perfect smile.",
-    "t046": "Dental Aesthetics Before & After",
+    "t046": "Dental Treatment Before & After",
     "t047": "Discover the transformation achieved through our partner clinics' dental aesthetic procedures. Each treatment is designed to enhance both function and appearance, delivering healthy and confident smiles.",
     "t048": "Results depend on the treatment chosen and on each person's teeth and gums. Your dentist will explain what is realistic for you.",
     "t049": "Dental Aesthetics Before & After 1",
@@ -82,10 +82,10 @@ export const content = {
     "t062": "Contact us today for a free enquiry — we will pass on a personalised treatment proposal from the clinic."
 },
   tr: {
-    "t003": "Diş Estetiği",
+    "t003": "Diş İmplantı, Lamina ve Kron",
     "t004": "Türkiye'deki bağımsız diş kliniklerinde modern diş tedavileriyle gülüşünüzü yenileyin.",
     "t005": "Partner Kliniklerimizin İçinden",
-    "t006": "Diş Estetiğinde Mükemmellik",
+    "t006": "Estetik ve Restoratif Diş Tedavisi",
     "t007": "Güzel bir gülüş, özgüveni ve genel çekiciliği artırmada önemli bir rol oynar. Estetik diş tedavileri, dişlerin görünümünü iyileştirmek ve kişilerin ideal gülüşlerine ulaşmalarına yardımcı olmak için tasarlanmıştır. Bu modern diş çözümleri; diş rengini iyileştirmeye, boşlukları kapatmaya, dişleri hizalamaya ve genel uyumu mükemmelleştirmeye odaklanır. Daha çekici bir gülüş oluşturmanın yanı sıra özgüveni ve yaşam kalitesini de artırır.",
     "t008": "Muayene ve Değerlendirme:",
     "t009": "Süreç, hastanın gülüş hedeflerine göre kişiye özel bir tedavi planı oluşturan bir uzmanın ayrıntılı muayenesiyle başlar.",
@@ -125,7 +125,7 @@ export const content = {
     "t043": "Kontrol",
     "t044": "Hollywood Gülüşü",
     "t045": "Parlak ve kusursuz bir gülüş için kaplamalar ve ileri diş teknolojisiyle yapılan kapsamlı gülüş tasarımı.",
-    "t046": "Diş Estetiği Öncesi ve Sonrası",
+    "t046": "Diş Tedavisi Öncesi ve Sonrası",
     "t047": "Partner kliniklerimizin diş estetiği uygulamalarıyla elde edilen dönüşümü keşfedin. Her tedavi hem işlevi hem de görünümü iyileştirmek, sağlıklı ve özgüvenli gülüşler sunmak için tasarlanır.",
     "t048": "Sonuçlar seçilen tedaviye ve her kişinin diş ve diş eti yapısına bağlıdır. Diş hekiminiz sizin için neyin gerçekçi olduğunu açıklayacaktır.",
     "t049": "Diş Estetiği Öncesi ve Sonrası 1",

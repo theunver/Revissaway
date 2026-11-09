@@ -132,7 +132,7 @@ export default function DentalAestheticsPage() {
       </section>
 
       {/* 1️⃣ Dental Implants & Restorations Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
+      <section id="dental-implants" className="scroll-mt-20 bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
           {/* Text Content */}
@@ -158,7 +158,7 @@ export default function DentalAestheticsPage() {
               </div>
             </div>
 
-            <h3 className="text-xl font-semibold mb-2 mt-8 text-gray-900">{c.t025}</h3>
+            <h3 id="dental-crowns" className="scroll-mt-24 text-xl font-semibold mb-2 mt-8 text-gray-900">{c.t025}</h3>
             <p className="mb-4 text-gray-700">
               {c.t026}
             </p>
@@ -192,7 +192,7 @@ export default function DentalAestheticsPage() {
       </section>
 
       {/* 2️⃣ Dental Veneers & Cosmetic Enhancements Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
+      <section id="veneers" className="scroll-mt-20 bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-12">
         <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 
           {/* Image */}
@@ -229,7 +229,7 @@ export default function DentalAestheticsPage() {
               </div>
             </div>
 
-            <h3 className="text-xl font-semibold mb-2 mt-8 text-gray-900">{c.t044}</h3>
+            <h3 id="hollywood-smile" className="scroll-mt-24 text-xl font-semibold mb-2 mt-8 text-gray-900">{c.t044}</h3>
             <p className="mb-4 text-gray-700">
               {c.t045}
             </p>
@@ -238,7 +238,7 @@ export default function DentalAestheticsPage() {
       </section>
 
       {/* Dental Aesthetics Before & After Section */}
-      <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-16">
+      <section id="before-and-after" className="scroll-mt-20 bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-16">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12">
             {/* Left: Text Content */}

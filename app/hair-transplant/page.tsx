@@ -1,6 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+// Stable, language-independent anchors for the method tabs (e.g. /hair-transplant#fue).
+const METHOD_SLUGS = ["dhi", "fue", "sapphire-fue", "beard-transplant", "tdf", "female-hair-transplant"];
 import OptimizedVideo from "@/components/OptimizedVideo";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -18,6 +21,31 @@ export default function HairTransplantPage() {
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
+  };
+
+  // Deep links: /hair-transplant#fue selects that method tab and scrolls to it.
+  useEffect(() => {
+    const fromHash = () => {
+      const i = METHOD_SLUGS.indexOf(window.location.hash.slice(1));
+      if (i < 0) return;
+      setSelectedMethod(i);
+      requestAnimationFrame(() => document.getElementById(METHOD_SLUGS[i])?.scrollIntoView({ block: "start" }));
+    };
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
+    return () => window.removeEventListener("hashchange", fromHash);
+  }, []);
+
+  // ARIA tabs keyboard support: arrow keys move between method tabs.
+  const onTabKey = (e: React.KeyboardEvent, i: number) => {
+    const n = METHOD_SLUGS.length;
+    const next = e.key === "ArrowRight" || e.key === "ArrowDown" ? (i + 1) % n
+      : e.key === "ArrowLeft" || e.key === "ArrowUp" ? (i - 1 + n) % n
+      : e.key === "Home" ? 0 : e.key === "End" ? n - 1 : -1;
+    if (next < 0) return;
+    e.preventDefault();
+    setSelectedMethod(next);
+    document.getElementById(`tab-${METHOD_SLUGS[next]}`)?.focus();
   };
 
   const faqs = [
@@ -263,10 +291,17 @@ export default function HairTransplantPage() {
         <div className="grid lg:grid-cols-12 gap-8">
           {/* Left Column - Method Cards */}
           <div className="lg:col-span-5">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 sticky top-24">
+            <div role="tablist" aria-label={language === "tr" ? "Saç ekimi yöntemleri" : "Hair transplant methods"}className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-4 sticky top-24">
               {methods.map((method) => (
                 <button
                   key={method.id}
+                  type="button"
+                  role="tab"
+                  id={`tab-${METHOD_SLUGS[method.id]}`}
+                  aria-selected={selectedMethod === method.id}
+                  aria-controls={METHOD_SLUGS[method.id]}
+                  tabIndex={selectedMethod === method.id ? 0 : -1}
+                  onKeyDown={(e) => onTabKey(e, method.id)}
                   onClick={() => setSelectedMethod(method.id)}
                   className={`relative p-6 rounded-xl transition-all duration-300 group ${
                     selectedMethod === method.id
@@ -309,33 +344,45 @@ export default function HairTransplantPage() {
           {/* Right Column - Method Description */}
           <div className="lg:col-span-7">
             <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-white/20">
-              {/* Title */}
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-                {methods[selectedMethod].title}
-              </h2>
+              {/* All method panels are in the HTML (crawlable); only the selected one is shown (native hidden attribute). */}
+              {methods.map((method) => (
+                <div
+                  key={method.id}
+                  id={METHOD_SLUGS[method.id]}
+                  role="tabpanel"
+                  aria-labelledby={`tab-${METHOD_SLUGS[method.id]}`}
+                  hidden={selectedMethod !== method.id}
+                  className="scroll-mt-24"
+                >
+                  {/* Title */}
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    {method.title}
+                  </h2>
 
-              {/* Description */}
-              <p className="text-lg text-gray-800 mb-8 leading-relaxed">
-                {methods[selectedMethod].description}
-              </p>
+                  {/* Description */}
+                  <p className="text-lg text-gray-800 mb-8 leading-relaxed">
+                    {method.description}
+                  </p>
 
-              {/* Features List */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <div className="w-1 h-6 bg-[#9B7E3E] rounded-full"></div>
-                  {c.t067}
-                </h3>
-                <ul className="space-y-3">
-                  {methods[selectedMethod].features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3 text-gray-800">
-                      <svg className="w-6 h-6 text-[#9B7E3E] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                  {/* Features List */}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                      <div className="w-1 h-6 bg-[#9B7E3E] rounded-full"></div>
+                      {c.t067}
+                    </h3>
+                    <ul className="space-y-3">
+                      {method.features.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-3 text-gray-800">
+                          <svg className="w-6 h-6 text-[#9B7E3E] flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
 
               {/* CTA Button */}
               <div className="mt-8">
@@ -418,6 +465,10 @@ export default function HairTransplantPage() {
               {faqs.map((faq, index) => (
                 <div key={index} className="bg-white rounded-xl border border-[#9B7E3E]/20 overflow-hidden shadow-md">
                   <button
+                    type="button"
+                    id={`hair-faq-question-${index + 1}`}
+                    aria-expanded={openFaq === index}
+                    aria-controls={`hair-faq-answer-${index + 1}`}
                     onClick={() => toggleFaq(index)}
                     className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200"
                   >
@@ -434,6 +485,10 @@ export default function HairTransplantPage() {
                     </svg>
                   </button>
                   <div
+                    id={`hair-faq-answer-${index + 1}`}
+                    role="region"
+                    aria-labelledby={`hair-faq-question-${index + 1}`}
+                    aria-hidden={openFaq !== index}
                     className={`overflow-hidden transition-all duration-300 ${
                       openFaq === index ? 'max-h-96' : 'max-h-0'
                     }`}
