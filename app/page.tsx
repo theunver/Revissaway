@@ -189,6 +189,13 @@ export default function Home() {
       question: c.t035,
       answer: c.t036,
     },
+    // SEO-4B: planning treatment from Australia (answers server-rendered like the others)
+    { question: c.faqAuWorkQ, answer: c.faqAuWorkA },
+    { question: c.faqQuoteQ, answer: c.faqQuoteA },
+    { question: c.faqInsuranceQ, answer: c.faqInsuranceA },
+    { question: c.faqStayQ, answer: c.faqStayA },
+    { question: c.faqFlyQ, answer: c.faqFlyA },
+    { question: c.faqReturnQ, answer: c.faqReturnA },
   ];
 
   return (

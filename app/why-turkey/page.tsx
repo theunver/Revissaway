@@ -27,6 +27,22 @@ function withTreatmentLinks(text: string, lang: "en" | "tr"): ReactNode {
   return out;
 }
 
+// Planning-guide steps: bold "1. Before you enquire." label; "Smartraveller" links to the official site.
+function guideStep(text: string): ReactNode {
+  const m = text.match(/^(\d\.\s[^.]+\.)\s([\s\S]*)$/);
+  const label = m ? m[1] : "";
+  const body = m ? m[2] : text;
+  const i = body.indexOf("Smartraveller");
+  const rest: ReactNode = i < 0 ? body : (
+    <>
+      {body.slice(0, i)}
+      <a href="https://www.smartraveller.gov.au" target="_blank" rel="noopener noreferrer" className="text-[#9B7E3E] underline hover:no-underline">Smartraveller</a>
+      {body.slice(i + "Smartraveller".length)}
+    </>
+  );
+  return label ? <><strong className="text-gray-900">{label}</strong> {rest}</> : rest;
+}
+
 export default function WhyTurkeyPage() {
   const c = useLocalized(content);
   const { language } = useLanguage();
@@ -92,13 +108,13 @@ export default function WhyTurkeyPage() {
               {c.journeyTitle}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              {c.journeyP1}
+              {guideStep(c.journeyP1)}
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              {c.journeyP2}
+              {guideStep(c.journeyP2)}
             </p>
             <p className="text-gray-700 leading-relaxed">
-              {c.journeyP3}
+              {guideStep(c.journeyP3)}
             </p>
           </div>
 

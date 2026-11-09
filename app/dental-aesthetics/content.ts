@@ -79,7 +79,18 @@ export const content = {
     "t059": "Expected Results",
     "t060": "Results vary by treatment. Veneers and crowns may need replacing over time; your dentist will explain how long they're likely to last.",
     "t061": "Ready to Transform Your Smile?",
-    "t062": "Contact us today for a free enquiry — we will pass on a personalised treatment proposal from the clinic."
+    "t062": "Contact us today for a free enquiry — we will pass on a personalised treatment proposal from the clinic.",
+    "faqTitle": "Dental Treatment in Türkiye: Common Questions",
+    "faq1Q": "Will I need more than one trip to Türkiye?",
+    "faq1A": "It depends on your treatment plan. Some treatments, such as dental implants, are often carried out in stages with healing time in between, which can mean more than one visit. Ask your dentist for a written timeline before you book.",
+    "faq2Q": "What's the difference between veneers and crowns?",
+    "faq2A": "Veneers cover the front surface of a tooth, while crowns cover the whole tooth. Both usually involve removing some natural tooth structure, which can't be undone, so ask your dentist which option suits your teeth and why.",
+    "faq3Q": "What should I ask before I book?",
+    "faq3A": "Ask for a written treatment plan showing which teeth will be treated, the materials and brands used, the timeline, the cost of each item and what follow-up is included.",
+    "faq4Q": "What follow-up care will I need at home?",
+    "faq4A": "Keep up regular check-ups with a dentist in Australia. Bring your records from Türkiye — X-rays, your treatment plan and details of any implants or materials — so your dentist knows what was done.",
+    "faq5Q": "What if something goes wrong after I'm home?",
+    "faq5A": "Contact the clinic first — we can help you get in touch. If you need treatment in Australia, it may involve extra costs, so ask the clinic before you book how adjustments and problems after you return are handled."
 },
   tr: {
     "t003": "Diş İmplantı, Lamina ve Kron",
@@ -141,6 +152,17 @@ export const content = {
     "t059": "Beklenen Sonuçlar",
     "t060": "Sonuçlar tedaviye göre değişir. Lamina ve kronların zamanla yenilenmesi gerekebilir; diş hekiminiz ne kadar dayanabileceklerini açıklayacaktır.",
     "t061": "Gülüşünüzü Dönüştürmeye Hazır mısınız?",
-    "t062": "Ücretsiz bilgi talebi için bugün bize ulaşın — kliniğin kişiye özel tedavi önerisini size iletelim."
+    "t062": "Ücretsiz bilgi talebi için bugün bize ulaşın — kliniğin kişiye özel tedavi önerisini size iletelim.",
+    "faqTitle": "Türkiye'de Diş Tedavisi: Sık Sorulan Sorular",
+    "faq1Q": "Türkiye'ye birden fazla seyahat etmem gerekecek mi?",
+    "faq1A": "Bu, tedavi planınıza bağlıdır. Diş implantı gibi bazı tedaviler genellikle aralarında iyileşme süresi olan aşamalarla yapılır; bu da birden fazla ziyaret anlamına gelebilir. Rezervasyondan önce diş hekiminizden yazılı bir zaman çizelgesi isteyin.",
+    "faq2Q": "Lamina ile kron arasındaki fark nedir?",
+    "faq2A": "Lamina dişin ön yüzeyini, kron ise dişin tamamını kaplar. Her ikisi de genellikle doğal diş dokusunun bir kısmının aşındırılmasını gerektirir ve bu geri alınamaz; bu nedenle dişlerinize hangi seçeneğin uygun olduğunu ve nedenini diş hekiminize sorun.",
+    "faq3Q": "Rezervasyondan önce neler sormalıyım?",
+    "faq3A": "Hangi dişlerin tedavi edileceğini, kullanılacak malzeme ve markaları, zaman çizelgesini, her kalemin maliyetini ve hangi takibin dahil olduğunu gösteren yazılı bir tedavi planı isteyin.",
+    "faq4Q": "Evde nasıl bir takip gerekecek?",
+    "faq4A": "Avustralya'da bir diş hekimiyle düzenli kontrollerinizi sürdürün. Diş hekiminizin ne yapıldığını bilmesi için Türkiye'deki kayıtlarınızı — röntgenler, tedavi planınız ve kullanılan implant veya malzemelerin bilgileri — yanınızda getirin.",
+    "faq5Q": "Eve döndükten sonra bir sorun çıkarsa ne olur?",
+    "faq5A": "Önce klinikle iletişime geçin — iletişim kurmanıza yardımcı olabiliriz. Avustralya'da tedavi gerekirse ek maliyet doğabilir; bu nedenle rezervasyondan önce, döndükten sonra ayarlamaların ve sorunların nasıl ele alındığını kliniğe sorun."
 },
 };

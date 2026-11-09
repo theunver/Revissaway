@@ -11,13 +11,13 @@ export const content = {
       "RevissaWay is an Australian-based coordination service. We don't provide medical treatment; we act as an intermediary, connecting patients with independent hospitals and clinics in Türkiye that offer hair, cosmetic and dental treatment.",
     excellenceP2:
       "Türkiye is a well-established destination for medical travel. The clinic assesses your information, prepares a treatment proposal and quotation, and is responsible for your medical care. We pass the proposal on to you, answer your questions and help with travel arrangements, so you can make an informed decision.",
-    journeyTitle: "Your Treatment Journey in Türkiye",
+    journeyTitle: "Planning Treatment in Türkiye from Australia",
     journeyP1:
-      "Choosing treatment overseas is a big decision. RevissaWay coordinates your enquiry with independent hospitals and clinics across Türkiye and keeps you informed at every step.",
+      "1. Before you enquire. Think about why you want the treatment and talk to your GP about your general health and any medications. Consider how much time off work you can take, your budget (including a buffer for a longer stay), and whether someone can travel with you.",
     journeyP2:
-      "From your first enquiry to your return home, our coordination team keeps communication clear between you and the clinic, and helps with travel arrangements, accommodation options and appointment scheduling.",
+      "2. Before you travel. Read the clinic's written proposal and quotation carefully, ask your questions, and take time to decide. Arrange travel insurance, check current entry and visa requirements on Smartraveller, and confirm accommodation, transfers and appointment times in writing.",
     journeyP3:
-      "RevissaWay does not provide medical treatment. Your clinic is responsible for your care; we help with information, communication and the non-medical arrangements you ask for.",
+      "3. After you return. Bring home a written summary of your treatment, share it with your GP or dentist, and follow your aftercare plan. RevissaWay stays in touch and helps you contact the clinic. RevissaWay does not provide medical treatment — your clinic is responsible for your care.",
     imageAlt: "Medical tourism in Turkey",
     whyTitle: "Why Choose RevissaWay?",
     accreditedTitle: "Independent Providers",
@@ -25,7 +25,7 @@ export const content = {
     coordinationTitle: "Coordination",
     coordinationText: "We help with communication, appointments and the travel arrangements you ask for.",
     pricingTitle: "Transparent Pricing",
-    pricingText: "Packages can include transfers, accommodation and aftercare. Flights are not included.",
+    pricingText: "You receive the clinic's written quotation before you decide. Packages can include transfers, accommodation and aftercare; flights are not included.",
     supportTitle: "Dedicated Support",
     supportText: "Your coordinator stays in contact with you throughout your trip.",
   },
@@ -41,15 +41,15 @@ export const content = {
     // REVIEW:claim
     excellenceP2:
       "Türkiye, sağlık turizminde köklü bir destinasyondur. Klinik bilgilerinizi değerlendirir, tedavi önerisi ve fiyat teklifi hazırlar ve tıbbi bakımınızdan sorumludur. Biz öneriyi size iletir, sorularınızı yanıtlar ve seyahat düzenlemelerinde yardımcı oluruz; böylece bilinçli bir karar verebilirsiniz.",
-    journeyTitle: "Türkiye'deki Tedavi Yolculuğunuz",
+    journeyTitle: "Avustralya'dan Türkiye'de Tedavi Planlamak",
     // REVIEW:claim
     journeyP1:
-      "Yurt dışında tedavi olmak büyük bir karardır. RevissaWay, talebinizi Türkiye genelindeki bağımsız hastane ve kliniklerle koordine eder ve sizi her adımda bilgilendirir.",
+      "1. Talepte bulunmadan önce. Tedaviyi neden istediğinizi düşünün ve genel sağlığınızı ve kullandığınız ilaçları aile hekiminizle (GP) konuşun. İşten ne kadar izin alabileceğinizi, bütçenizi (daha uzun kalma ihtimaline karşı pay dahil) ve size eşlik edebilecek biri olup olmadığını değerlendirin.",
     journeyP2:
-      "İlk talebinizden eve dönüşünüze kadar koordinasyon ekibimiz sizinle klinik arasındaki iletişimi açık tutar; seyahat düzenlemeleri, konaklama seçenekleri ve randevu planlamasında yardımcı olur.",
+      "2. Seyahatten önce. Kliniğin yazılı önerisini ve teklifini dikkatle okuyun, sorularınızı sorun ve karar vermek için kendinize zaman tanıyın. Seyahat sigortası yaptırın, güncel giriş ve vize koşullarını Smartraveller'dan kontrol edin; konaklama, transfer ve randevu saatlerini yazılı olarak teyit edin.",
     // REVIEW:claim
     journeyP3:
-      "RevissaWay tıbbi tedavi sunmaz. Bakımınızdan kliniğiniz sorumludur; biz bilgi, iletişim ve talep ettiğiniz tıbbi olmayan düzenlemelerde yardımcı oluruz.",
+      "3. Döndükten sonra. Tedavinizin yazılı özetini yanınızda getirin, aile hekiminiz veya diş hekiminizle paylaşın ve bakım planınızı uygulayın. RevissaWay sizinle iletişimde kalır ve klinikle iletişim kurmanıza yardımcı olur. RevissaWay tıbbi tedavi sunmaz — bakımınızdan kliniğiniz sorumludur.",
     imageAlt: "Türkiye'de sağlık turizmi",
     whyTitle: "Neden RevissaWay?",
     accreditedTitle: "Bağımsız Sağlayıcılar",
@@ -58,7 +58,7 @@ export const content = {
     coordinationTitle: "Koordinasyon",
     coordinationText: "İletişim, randevular ve talep ettiğiniz seyahat düzenlemelerinde yardımcı oluruz.",
     pricingTitle: "Şeffaf Fiyatlandırma",
-    pricingText: "Paketler transfer, konaklama ve tedavi sonrası bakımı içerebilir. Uçak biletleri dahil değildir.",
+    pricingText: "Karar vermeden önce kliniğin yazılı teklifini alırsınız. Paketler transfer, konaklama ve tedavi sonrası bakımı içerebilir; uçak biletleri dahil değildir.",
     supportTitle: "Size Özel Destek",
     // REVIEW:claim (24/7 availability - business confirmation pending)
     supportText: "Koordinatörünüz seyahatiniz boyunca sizinle iletişimde kalır.",

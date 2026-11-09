@@ -2,6 +2,7 @@
 
 import OptimizedVideo from "@/components/OptimizedVideo";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import FaqAccordion from "@/components/FaqAccordion";
 import { useLocalized } from "@/contexts/LanguageContext";
 import { content } from "./content";
 
@@ -342,6 +343,19 @@ export default function DentalAestheticsPage() {
           </div>
         </div>
       </section>
+
+      {/* SEO-4B: treatment-planning FAQ (same component/design as the homepage FAQ) */}
+      <FaqAccordion
+        id="dental-faq"
+        title={c.faqTitle}
+        items={[
+          { question: c.faq1Q, answer: c.faq1A },
+          { question: c.faq2Q, answer: c.faq2A },
+          { question: c.faq3Q, answer: c.faq3A },
+          { question: c.faq4Q, answer: c.faq4A },
+          { question: c.faq5Q, answer: c.faq5A },
+        ]}
+      />
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-[#FFF8DC] to-[#f8f5f0] py-20">

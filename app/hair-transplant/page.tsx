@@ -418,17 +418,15 @@ export default function HairTransplantPage() {
                 {c.t070}
               </p>
               
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                {c.t071}
-              </p>
-              
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                {c.t072}
-              </p>
-              
-              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                {c.t073}
-              </p>
+              {/* SEO-4B: question groups — the leading question is emphasised */}
+              {[c.t071, c.t072, c.t073].map((text, i) => {
+                const q = text.indexOf("?") + 1;
+                return (
+                  <p key={i} className="text-base sm:text-lg text-gray-700 leading-relaxed">
+                    <strong className="text-gray-900">{text.slice(0, q)}</strong>{text.slice(q)}
+                  </p>
+                );
+              })}
             </div>
 
             {/* Right Column - Image with Background Shape */}

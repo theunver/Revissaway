@@ -75,7 +75,19 @@ export const content = {
     "t064": "Dental Aesthetics",
     "t065": "Please don't include detailed medical history or photos here. We'll ask for what's needed later, with your consent.",
     "t068": "or contact us directly",
-    "t069": "Contact via WhatsApp"
+    "t069": "Contact via WhatsApp",
+    "faqAuWorkQ": "How does RevissaWay work if I live in Australia?",
+    "faqAuWorkA": "Send us a free enquiry and tell us which treatment you're considering. An independent clinic in Türkiye reviews your information and prepares a treatment proposal and written quotation, which we pass on to you. If you decide to go ahead, you book and pay the clinic directly, and we help coordinate non-medical arrangements such as accommodation and airport transfers. Our service is free for patients — we receive a referral commission from the clinic.",
+    "faqQuoteQ": "What does a clinic's quotation usually include?",
+    "faqQuoteA": "It depends on the clinic and the treatment, so always check the written quotation. Look for: the procedure itself, anaesthetic, medications and aftercare products, follow-up appointments in Türkiye, accommodation and airport transfers (if offered), the currency, deposit and payment terms, and how long the quote is valid. Flights aren't included unless your quotation says so.",
+    "faqInsuranceQ": "Do I need travel insurance?",
+    "faqInsuranceA": "Yes — arrange travel insurance before you go, and read the policy wording carefully. Some policies don't cover planned medical treatment or its complications, so check what is and isn't covered and ask the insurer if you're unsure. Smartraveller has more information for Australians travelling overseas.",
+    "faqStayQ": "How long should I plan to stay in Türkiye?",
+    "faqStayA": "It depends on your treatment and your clinic's advice. Ask the clinic for a written plan covering your consultation, the procedure, recovery and any follow-up appointments before you fly home, and allow a few spare days in case you need to stay longer.",
+    "faqFlyQ": "When is it safe to fly home after treatment?",
+    "faqFlyA": "Your treating doctor or dentist should tell you when it's safe to fly. According to healthdirect, recent surgery and long-haul flights are both risk factors for blood clots, so ask your doctor how to reduce your risk — for example by moving about, drinking plenty of fluids, and whether compression stockings are a good idea. If you develop chest pain or sudden shortness of breath, call triple zero (000).",
+    "faqReturnQ": "What happens when I'm back in Australia?",
+    "faqReturnA": "Before you leave Türkiye, ask the clinic for a written summary in English — the procedure, any implants or materials used, medications and your follow-up plan — and share it with your GP. Keep the clinic's contact details handy; we can help you get in touch. If you need urgent care, seek medical help in Australia straight away. Any further treatment in Australia may involve extra costs."
 },
   tr: {
     "t003": "Saç Ekimi",
@@ -135,6 +147,18 @@ export const content = {
     "t064": "Diş Estetiği",
     "t065": "Lütfen buraya ayrıntılı tıbbi geçmiş veya fotoğraf eklemeyin. Gerekli olanları daha sonra, onayınızla birlikte isteyeceğiz.",
     "t068": "veya bize doğrudan ulaşın",
-    "t069": "WhatsApp ile İletişime Geçin"
+    "t069": "WhatsApp ile İletişime Geçin",
+    "faqAuWorkQ": "Avustralya'da yaşıyorsam RevissaWay nasıl çalışır?",
+    "faqAuWorkA": "Bize ücretsiz bir bilgi talebi gönderin ve düşündüğünüz tedaviyi belirtin. Türkiye'deki bağımsız bir klinik bilgilerinizi inceler, bir tedavi önerisi ve yazılı fiyat teklifi hazırlar; biz de bunları size iletiriz. Devam etmeye karar verirseniz rezervasyonu ve ödemeyi doğrudan kliniğe yaparsınız; biz de konaklama ve havalimanı transferi gibi tıbbi olmayan düzenlemelerin koordinasyonuna yardımcı oluruz. Hizmetimiz hastalar için ücretsizdir — klinikten yönlendirme komisyonu alırız.",
+    "faqQuoteQ": "Kliniğin teklifi genellikle neleri kapsar?",
+    "faqQuoteA": "Bu, kliniğe ve tedaviye göre değişir; bu nedenle yazılı teklifi mutlaka kontrol edin. Şunlara bakın: işlemin kendisi, anestezi, ilaçlar ve bakım ürünleri, Türkiye'deki kontrol randevuları, (sunuluyorsa) konaklama ve havalimanı transferi, para birimi, depozito ve ödeme koşulları ve teklifin geçerlilik süresi. Teklifinizde belirtilmedikçe uçak biletleri dahil değildir.",
+    "faqInsuranceQ": "Seyahat sigortasına ihtiyacım var mı?",
+    "faqInsuranceA": "Evet — yola çıkmadan önce seyahat sigortası yaptırın ve poliçe metnini dikkatle okuyun. Bazı poliçeler planlı tıbbi tedaviyi veya bu tedavinin komplikasyonlarını kapsamaz; neyin kapsandığını ve kapsanmadığını kontrol edin, emin değilseniz sigorta şirketine sorun. Yurt dışına seyahat eden Avustralyalılar için Smartraveller'da daha fazla bilgi bulabilirsiniz.",
+    "faqStayQ": "Türkiye'de ne kadar kalmayı planlamalıyım?",
+    "faqStayA": "Bu, tedavinize ve kliniğinizin önerisine bağlıdır. Klinikten konsültasyon, işlem, iyileşme ve eve dönmeden önceki kontrol randevularını kapsayan yazılı bir plan isteyin ve daha uzun kalmanız gerekebileceği ihtimaline karşı birkaç gün pay bırakın.",
+    "faqFlyQ": "Tedaviden sonra uçmak ne zaman güvenli?",
+    "faqFlyA": "Uçmanın ne zaman güvenli olduğunu tedavinizi yapan doktor veya diş hekimi söylemelidir. healthdirect'e göre yakın zamanda geçirilen ameliyat ve uzun uçuşlar kan pıhtısı için risk faktörleridir; bu nedenle riskinizi nasıl azaltabileceğinizi doktorunuza sorun — örneğin hareket etmek, bol sıvı tüketmek ve kompresyon çorabının uygun olup olmadığı. Göğüs ağrısı veya ani nefes darlığı yaşarsanız triple zero'yu (000) arayın.",
+    "faqReturnQ": "Avustralya'ya döndüğümde ne olur?",
+    "faqReturnA": "Türkiye'den ayrılmadan önce klinikten İngilizce yazılı bir özet isteyin — yapılan işlem, kullanılan implant veya malzemeler, ilaçlar ve takip planınız — ve bunu aile hekiminizle (GP) paylaşın. Kliniğin iletişim bilgilerini yanınızda bulundurun; iletişim kurmanıza yardımcı olabiliriz. Acil bakıma ihtiyacınız olursa hemen Avustralya'da tıbbi yardım alın. Avustralya'da yapılacak ek tedaviler ek maliyet doğurabilir."
 },
 };

@@ -142,7 +142,20 @@ export const content = {
     "t118": "Understanding your cosmetic surgery journey is key to achieving the best outcome. Learn how RevissaWay guides you through consultation, operation, and recovery phases.",
     "t119": "During your consultation, your surgeon assesses your goals and medical history and discusses a surgical plan with you.",
     "t120": "The operation is performed by your surgeon's team at the provider's hospital or clinic. Ask about the facility, the anaesthetic and how long you'll need to stay in Türkiye before flying home.",
-    "t121": "After surgery, RevissaWay stays in touch and helps you contact your provider about follow-up care. Medical aftercare is provided by your surgeon."
+    "t121": "After surgery, RevissaWay stays in touch and helps you contact your provider about follow-up care. Medical aftercare is provided by your surgeon.",
+    "faqTitle": "Planning Cosmetic Surgery in Türkiye: Your Questions Answered",
+    "faq1Q": "Will I speak with my surgeon before I travel?",
+    "faq1A": "Ask the clinic whether you can have a consultation with your surgeon — for example by video — before you book your trip. You should know who your surgeon is, and have the chance to discuss your goals, medical history, risks and recovery before you commit. We can ask the clinic for you.",
+    "faq2Q": "What should I ask about my surgeon?",
+    "faq2A": "Ask for your surgeon's name, qualifications and registration, and how often they perform the procedure you're considering. Ask the clinic for these details in writing so you can check them.",
+    "faq3Q": "How long will I need to stay in Türkiye?",
+    "faq3A": "This depends on the procedure and your surgeon's advice. Ask for a written recovery plan before you book, and allow extra time and budget in case you need to stay longer — for example if a complication needs treatment.",
+    "faq4Q": "When can I fly home?",
+    "faq4A": "Your surgeon should confirm when it's safe to fly. Recent surgery and long-haul flights both increase the risk of blood clots, so ask how to reduce your risk on the way home (see healthdirect's information on blood clots).",
+    "faq5Q": "What aftercare will I need?",
+    "faq5A": "Your surgeon will give you aftercare instructions — for example wound care, medications, any compression garments and follow-up appointments. Ask for them in writing, in English, and share them with your GP when you're home.",
+    "faq6Q": "What if I have a complication?",
+    "faq6A": "Complications are managed by the treating clinic. Before you book, ask how complications and revisions are handled, whether there are extra costs, and what happens if you've already returned to Australia. Follow-up care in Australia may involve additional costs."
 },
   tr: {
     "readMore": "Devamını Oku ▼",
@@ -265,6 +278,19 @@ export const content = {
     "t118": "Estetik cerrahi sürecinizi anlamak, en iyi sonuca ulaşmanın anahtarıdır. RevissaWay'in konsültasyon, operasyon ve iyileşme aşamalarında size nasıl rehberlik ettiğini öğrenin.",
     "t119": "Konsültasyonunuz sırasında cerrahınız hedeflerinizi ve tıbbi geçmişinizi değerlendirir ve sizinle bir cerrahi plan üzerinde konuşur.",
     "t120": "Operasyon, cerrahınızın ekibi tarafından sağlayıcının hastane veya kliniğinde gerçekleştirilir. Tesisi, anesteziyi ve eve dönmeden önce Türkiye'de ne kadar kalmanız gerektiğini sorun.",
-    "t121": "Ameliyattan sonra RevissaWay sizinle iletişimde kalır ve takip bakımı için sağlayıcınıza ulaşmanıza yardımcı olur. Tıbbi bakımı cerrahınız sağlar."
+    "t121": "Ameliyattan sonra RevissaWay sizinle iletişimde kalır ve takip bakımı için sağlayıcınıza ulaşmanıza yardımcı olur. Tıbbi bakımı cerrahınız sağlar.",
+    "faqTitle": "Türkiye'de Estetik Cerrahi Planlaması: Sorularınızın Yanıtları",
+    "faq1Q": "Seyahat etmeden önce cerrahımla görüşecek miyim?",
+    "faq1A": "Seyahatinizi planlamadan önce cerrahınızla — örneğin görüntülü — bir konsültasyon yapıp yapamayacağınızı kliniğe sorun. Karar vermeden önce cerrahınızın kim olduğunu bilmeli ve hedeflerinizi, tıbbi geçmişinizi, riskleri ve iyileşme sürecini konuşma fırsatınız olmalıdır. Bunu sizin için kliniğe sorabiliriz.",
+    "faq2Q": "Cerrahım hakkında neler sormalıyım?",
+    "faq2A": "Cerrahınızın adını, niteliklerini ve kaydını, düşündüğünüz işlemi ne sıklıkla yaptığını sorun. Kontrol edebilmeniz için bu bilgileri klinikten yazılı olarak isteyin.",
+    "faq3Q": "Türkiye'de ne kadar kalmam gerekecek?",
+    "faq3A": "Bu, işleme ve cerrahınızın önerisine bağlıdır. Rezervasyondan önce yazılı bir iyileşme planı isteyin ve — örneğin bir komplikasyonun tedavisi gerekirse — daha uzun kalma ihtimaline karşı ek zaman ve bütçe ayırın.",
+    "faq4Q": "Eve ne zaman uçabilirim?",
+    "faq4A": "Uçmanın ne zaman güvenli olduğunu cerrahınız onaylamalıdır. Yakın zamanda geçirilen ameliyat ve uzun uçuşlar kan pıhtısı riskini artırır; bu nedenle dönüş yolunda riskinizi nasıl azaltabileceğinizi sorun (healthdirect'in kan pıhtısı bilgilerine bakın).",
+    "faq5Q": "Nasıl bir bakım gerekecek?",
+    "faq5A": "Cerrahınız size bakım talimatları verecektir — örneğin yara bakımı, ilaçlar, gerekiyorsa kompresyon giysileri ve kontrol randevuları. Bunları İngilizce ve yazılı olarak isteyin ve eve döndüğünüzde aile hekiminizle paylaşın.",
+    "faq6Q": "Komplikasyon yaşarsam ne olur?",
+    "faq6A": "Komplikasyonlar tedaviyi yapan klinik tarafından yönetilir. Rezervasyondan önce komplikasyonların ve revizyonların nasıl ele alındığını, ek maliyet olup olmadığını ve Avustralya'ya dönmüş olmanız durumunda ne olacağını sorun. Avustralya'daki takip bakımı ek maliyet doğurabilir."
 },
 };

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import OptimizedVideo from "@/components/OptimizedVideo";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import FaqAccordion from "@/components/FaqAccordion";
 import { useLocalized } from "@/contexts/LanguageContext";
 import { content } from "./content";
 
@@ -643,6 +644,20 @@ export default function CosmeticSurgeryPage() {
           </div>
         </div>
       </section>
+
+      {/* SEO-4B: planning FAQ (same component/design as the homepage FAQ) */}
+      <FaqAccordion
+        id="cosmetic-faq"
+        title={c.faqTitle}
+        items={[
+          { question: c.faq1Q, answer: c.faq1A },
+          { question: c.faq2Q, answer: c.faq2A },
+          { question: c.faq3Q, answer: c.faq3A },
+          { question: c.faq4Q, answer: c.faq4A },
+          { question: c.faq5Q, answer: c.faq5A },
+          { question: c.faq6Q, answer: c.faq6A },
+        ]}
+      />
     </main>
   );
 }
