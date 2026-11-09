@@ -141,9 +141,9 @@ export default function WhyTurkeyPage() {
             <div className="flex gap-4">
               <div className="text-3xl">✓</div>
               <div>
-                <h4 className="font-semibold text-lg text-gray-900 mb-2">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">
                   {c.accreditedTitle}
-                </h4>
+                </h3>
                 <p className="text-gray-700">
                   {c.accreditedText}
                 </p>
@@ -153,9 +153,9 @@ export default function WhyTurkeyPage() {
             <div className="flex gap-4">
               <div className="text-3xl">✓</div>
               <div>
-                <h4 className="font-semibold text-lg text-gray-900 mb-2">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">
                   {c.coordinationTitle}
-                </h4>
+                </h3>
                 <p className="text-gray-700">
                   {c.coordinationText}
                 </p>
@@ -165,9 +165,9 @@ export default function WhyTurkeyPage() {
             <div className="flex gap-4">
               <div className="text-3xl">✓</div>
               <div>
-                <h4 className="font-semibold text-lg text-gray-900 mb-2">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">
                   {c.pricingTitle}
-                </h4>
+                </h3>
                 <p className="text-gray-700">
                   {c.pricingText}
                 </p>
@@ -177,9 +177,9 @@ export default function WhyTurkeyPage() {
             <div className="flex gap-4">
               <div className="text-3xl">✓</div>
               <div>
-                <h4 className="font-semibold text-lg text-gray-900 mb-2">
+                <h3 className="font-semibold text-lg text-gray-900 mb-2">
                   {c.supportTitle}
-                </h4>
+                </h3>
                 <p className="text-gray-700">
                   {c.supportText}
                 </p>

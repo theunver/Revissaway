@@ -129,7 +129,8 @@ export default function CosmeticSurgeryPage() {
       </section>
 
       {/* Hair Transplant Highlight Section (below banner) */}
-      <section className="bg-gradient-to-r from-[#fffaf3] to-[#f8f5f0] py-16 md:py-20">
+      {/* overflow-x-clip: the rotated decorative shape behind the image must not widen the page on mobile */}
+      <section className="overflow-x-clip bg-gradient-to-r from-[#fffaf3] to-[#f8f5f0] py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Grid */}

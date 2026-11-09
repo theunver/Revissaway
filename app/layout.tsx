@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     description:
       "RevissaWay is an Australian-based coordination service helping patients from Australia and New Zealand explore hair transplant, cosmetic surgery and dental treatment with independent healthcare providers in Türkiye.",
   }),
+  // Existing logo as the site icon (avoids the browser's /favicon.ico 404 request).
+  icons: { icon: "/logo.png", apple: "/logo.png" },
   authors: [{ name: "RevissaWay" }],
   creator: "RevissaWay",
   publisher: "RevissaWay",

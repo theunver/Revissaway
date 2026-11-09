@@ -405,7 +405,8 @@ export default function HairTransplantPage() {
       </section>
 
       {/* Partner Clinics Difference Section */}
-      <section className="bg-gradient-to-b from-[#FFF8DC] to-[#fffaf3] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24">
+      {/* overflow-x-clip: the rotated decorative shape behind the image must not widen the page on mobile */}
+      <section className="overflow-x-clip bg-gradient-to-b from-[#FFF8DC] to-[#fffaf3] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
