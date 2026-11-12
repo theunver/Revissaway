@@ -137,7 +137,13 @@ export const content = {
     "t087": "Operation Duration",
     "t088": "6–8 Hours",
     "t089": "Recovery Period",
-    "t090": "7–14 Days"
+    "t090": "7–14 Days",
+    "faqCostQ": "How much does a hair transplant in Turkey cost?",
+    "faqCostA": "There isn't one fixed price. Each clinic prepares a written quotation after assessing your hair loss and donor area, usually from photos you send. The main factors are the number of grafts you need, the technique, whether sedation is used, and what the package includes. RevissaWay doesn't publish prices because they depend on that assessment — send us a free enquiry and we'll pass on the clinic's written quotation so you can compare it with any other quotes you have.",
+    "faqQuoteQ": "What's usually included in a hair transplant quotation?",
+    "faqQuoteA": "It varies by clinic, so check the written quote. Common items are the procedure, local anaesthetic, medications and aftercare products, a post-procedure check and hair wash, and — if offered — accommodation and airport transfers. Flights aren't included unless the quotation says so. Ask what happens if more grafts are needed on the day, and whether follow-up after you return to Australia is included.",
+    "faqVsAusQ": "Should I have a hair transplant in Turkey or Australia?",
+    "faqVsAusA": "It's a personal decision, and it's worth comparing more than price. Consider who will perform each step and their qualifications, how much time you can spend in Turkey for the procedure and recovery, the long flight home, and how follow-up will work once you're back. In Australia, follow-up with your treating clinic is easier to arrange; overseas, ask in writing how the clinic will review your progress and what happens if you need further treatment. Getting written quotations from both can help you decide."
 },
   tr: {
     "t001": "İşlem ne kadar sürer?",
@@ -227,6 +233,12 @@ export const content = {
     "t087": "Operasyon Süresi",
     "t088": "6–8 Saat",
     "t089": "İyileşme Süresi",
-    "t090": "7–14 Gün"
+    "t090": "7–14 Gün",
+    "faqCostQ": "Türkiye'de saç ekimi ne kadar tutar?",
+    "faqCostA": "Tek bir sabit fiyat yoktur. Her klinik, genellikle gönderdiğiniz fotoğraflar üzerinden saç kaybınızı ve donör bölgenizi değerlendirdikten sonra yazılı bir teklif hazırlar. Başlıca etkenler gereken greft sayısı, teknik, sedasyon kullanılıp kullanılmadığı ve paketin neleri kapsadığıdır. Fiyatlar bu değerlendirmeye bağlı olduğu için RevissaWay fiyat yayınlamaz — bize ücretsiz bir bilgi talebi gönderin, kliniğin yazılı teklifini size iletelim; böylece elinizdeki diğer tekliflerle karşılaştırabilirsiniz.",
+    "faqQuoteQ": "Saç ekimi teklifine genellikle neler dahildir?",
+    "faqQuoteA": "Bu, kliniğe göre değişir; bu nedenle yazılı teklifi kontrol edin. Sık rastlanan kalemler işlemin kendisi, lokal anestezi, ilaçlar ve bakım ürünleri, işlem sonrası kontrol ve saç yıkama ile — sunuluyorsa — konaklama ve havalimanı transferidir. Teklifte belirtilmedikçe uçak biletleri dahil değildir. İşlem günü daha fazla greft gerekirse ne olacağını ve Avustralya'ya döndükten sonraki takibin dahil olup olmadığını sorun.",
+    "faqVsAusQ": "Saç ekimini Türkiye'de mi Avustralya'da mı yaptırmalıyım?",
+    "faqVsAusA": "Bu kişisel bir karardır ve yalnızca fiyatı karşılaştırmamak gerekir. Her adımı kimin gerçekleştireceğini ve niteliklerini, işlem ve iyileşme için Türkiye'de ne kadar zaman ayırabileceğinizi, uzun dönüş uçuşunu ve döndükten sonra takibin nasıl yapılacağını değerlendirin. Avustralya'da tedaviyi yapan klinikle takip daha kolay ayarlanır; yurt dışında ise kliniğin ilerlemenizi nasıl değerlendireceğini ve ek tedavi gerekirse ne olacağını yazılı olarak sorun. Her ikisinden de yazılı teklif almak karar vermenize yardımcı olabilir."
 },
 };

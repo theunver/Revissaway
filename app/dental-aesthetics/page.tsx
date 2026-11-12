@@ -8,7 +8,7 @@ import { content } from "./content";
 
 export default function DentalAestheticsPage() {
   const c = useLocalized(content);
-  const whatsappLink = "https://wa.me/61411854929";
+  const whatsappLink = "https://wa.me/61481334272";
 
   return (
     <main className="min-h-screen">
@@ -354,6 +354,9 @@ export default function DentalAestheticsPage() {
           { question: c.faq3Q, answer: c.faq3A },
           { question: c.faq4Q, answer: c.faq4A },
           { question: c.faq5Q, answer: c.faq5A },
+          // SEO-6B (links: EN + TR phrases; only the phrase present in the active language is linked)
+          { question: c.faq6Q, answer: c.faq6A, links: [{ text: "send a free enquiry", href: "/#contact" }, { text: "ücretsiz bir bilgi talebi gönderin", href: "/#contact" }] },
+          { question: c.faq7Q, answer: c.faq7A, links: [{ text: "Crowns", href: "/dental-aesthetics#dental-crowns" }, { text: "veneers are different treatments", href: "/dental-aesthetics#veneers" }, { text: "Kron", href: "/dental-aesthetics#dental-crowns" }, { text: "lamina farklı tedavilerdir", href: "/dental-aesthetics#veneers" }] },
         ]}
       />
 

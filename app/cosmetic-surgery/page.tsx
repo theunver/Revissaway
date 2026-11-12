@@ -9,7 +9,7 @@ import { content } from "./content";
 
 export default function CosmeticSurgeryPage() {
   const c = useLocalized(content);
-  const whatsappLink = "https://wa.me/61411854929";
+  const whatsappLink = "https://wa.me/61481334272";
   const [processExpanded, setProcessExpanded] = useState(false);
 
   return (

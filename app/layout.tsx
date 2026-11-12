@@ -67,7 +67,7 @@ const organizationJsonLd = {
   logo: `${SITE_URL}/logo.png`,
   description:
     "Australian-based health tourism coordination service connecting patients from Australia and New Zealand with independent healthcare providers in Turkey. RevissaWay does not provide medical treatment.",
-  telephone: "+61411854929",
+  telephone: "+61481334272",
   email: "info@revissaway.com.au",
   areaServed: ["AU", "NZ"],
   sameAs: [
@@ -76,7 +76,7 @@ const organizationJsonLd = {
   ],
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+61411854929",
+    telephone: "+61481334272",
     contactType: "customer service",
     areaServed: ["AU", "NZ"],
     availableLanguage: ["English", "Turkish"],

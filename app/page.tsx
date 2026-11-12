@@ -24,7 +24,7 @@ export default function Home() {
   });
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const whatsappLink = "https://wa.me/61411854929";
+  const whatsappLink = "https://wa.me/61481334272";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

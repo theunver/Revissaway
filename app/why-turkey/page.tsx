@@ -2,6 +2,7 @@
 
 import OptimizedVideo from "@/components/OptimizedVideo";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import FaqAccordion from "@/components/FaqAccordion";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { useLanguage, useLocalized } from "@/contexts/LanguageContext";
@@ -189,6 +190,24 @@ export default function WhyTurkeyPage() {
         </div>
       </section>
 
+      {/* SEO-6B: safety / provider-check FAQ (existing FaqAccordion component and styling), appended after existing sections */}
+      <FaqAccordion
+        id="why-turkey-faq"
+        title={c.faqTitle}
+        items={[
+          {
+            question: c.faqSafeQ,
+            answer: c.faqSafeA,
+            links: [
+              { text: "a written treatment and aftercare plan", href: "/cosmetic-surgery#cosmetic-faq" },
+              { text: "your travel insurance", href: "/#faq" },
+              { text: "yazılı tedavi ve bakım planını", href: "/cosmetic-surgery#cosmetic-faq" },
+              { text: "seyahat sigortanızı", href: "/#faq" },
+            ],
+          },
+          { question: c.faqCheckQ, answer: c.faqCheckA },
+        ]}
+      />
     </div>
   );
 }

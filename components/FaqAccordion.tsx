@@ -1,6 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
+
+export type FaqLink = { text: string; href: string };
+
+/** Turns the first occurrence of each link text in an answer into an internal link (same style as other text links). */
+export function withLinks(answer: string, links: FaqLink[] = []): ReactNode {
+  const out: ReactNode[] = [];
+  let pos = 0;
+  const found = links
+    .map((l) => ({ ...l, i: answer.indexOf(l.text) }))
+    .filter((l) => l.i >= 0)
+    .sort((a, b) => a.i - b.i);
+  for (const l of found) {
+    if (l.i < pos) continue;
+    out.push(answer.slice(pos, l.i));
+    out.push(<a key={l.href + l.i} href={l.href} className="text-[#9B7E3E] underline hover:no-underline">{l.text}</a>);
+    pos = l.i + l.text.length;
+  }
+  out.push(answer.slice(pos));
+  return out;
+}
 
 // Same look and behaviour as the homepage FAQ: one answer open at a time.
 // All answers are in the HTML (crawlable, accessible); collapsed ones use the native hidden attribute.
@@ -11,7 +31,7 @@ export default function FaqAccordion({
 }: {
   id: string;
   title: string;
-  items: { question: string; answer: string }[];
+  items: { question: string; answer: string; links?: FaqLink[] }[];
 }) {
   const [open, setOpen] = useState<number | null>(null);
   return (
@@ -49,7 +69,7 @@ export default function FaqAccordion({
                 hidden={open !== index}
                 className="px-6 py-4 bg-gray-50 border-t border-gray-200"
               >
-                <p className="text-gray-600">{item.answer}</p>
+                <p className="text-gray-600">{withLinks(item.answer, item.links)}</p>
               </div>
             </div>
           ))}

@@ -90,7 +90,11 @@ export const content = {
     "faq4Q": "What follow-up care will I need at home?",
     "faq4A": "Keep up regular check-ups with a dentist in Australia. Bring your records from Turkey — X-rays, your treatment plan and details of any implants or materials — so your dentist knows what was done.",
     "faq5Q": "What if something goes wrong after I'm home?",
-    "faq5A": "Contact the clinic first — we can help you get in touch. If you need treatment in Australia, it may involve extra costs, so ask the clinic before you book how adjustments and problems after you return are handled."
+    "faq5A": "Contact the clinic first — we can help you get in touch. If you need treatment in Australia, it may involve extra costs, so ask the clinic before you book how adjustments and problems after you return are handled.",
+    "faq6Q": "How much do dental implants or veneers cost in Turkey?",
+    "faq6A": "The cost depends on your treatment plan, so the clinic gives you a written quotation after reviewing your dental records — usually X-rays or photos. Key factors are how many teeth are treated, the type of treatment (implants, crowns or veneers), the materials and implant system used, whether extractions or other preparatory work are needed, and how many visits are involved. We don't publish prices; send a free enquiry and we'll pass on the clinic's written quotation.",
+    "faq7Q": "What does \"Turkey teeth\" mean?",
+    "faq7A": "\"Turkey teeth\" is an informal term used in Australia and the UK, usually for a full set of very white crowns or veneers done overseas. It isn't a treatment name. Crowns and veneers are different treatments, and both usually involve removing some natural tooth structure, which can't be undone. Australian dental advice highlights that problems can be costly to fix later and that follow-up is easier close to home — so ask your dentist exactly what will be done to each tooth, why, and what the alternatives are, before you decide."
 },
   tr: {
     "t003": "Türkiye'de Diş İmplantı ve Lamina",
@@ -163,6 +167,10 @@ export const content = {
     "faq4Q": "Evde nasıl bir takip gerekecek?",
     "faq4A": "Avustralya'da bir diş hekimiyle düzenli kontrollerinizi sürdürün. Diş hekiminizin ne yapıldığını bilmesi için Türkiye'deki kayıtlarınızı — röntgenler, tedavi planınız ve kullanılan implant veya malzemelerin bilgileri — yanınızda getirin.",
     "faq5Q": "Eve döndükten sonra bir sorun çıkarsa ne olur?",
-    "faq5A": "Önce klinikle iletişime geçin — iletişim kurmanıza yardımcı olabiliriz. Avustralya'da tedavi gerekirse ek maliyet doğabilir; bu nedenle rezervasyondan önce, döndükten sonra ayarlamaların ve sorunların nasıl ele alındığını kliniğe sorun."
+    "faq5A": "Önce klinikle iletişime geçin — iletişim kurmanıza yardımcı olabiliriz. Avustralya'da tedavi gerekirse ek maliyet doğabilir; bu nedenle rezervasyondan önce, döndükten sonra ayarlamaların ve sorunların nasıl ele alındığını kliniğe sorun.",
+    "faq6Q": "Türkiye'de diş implantı veya lamina ne kadar tutar?",
+    "faq6A": "Maliyet tedavi planınıza bağlıdır; bu nedenle klinik, diş kayıtlarınızı — genellikle röntgen veya fotoğrafları — inceledikten sonra size yazılı bir teklif verir. Başlıca etkenler tedavi edilecek diş sayısı, tedavinin türü (implant, kron veya lamina), kullanılan malzemeler ve implant sistemi, diş çekimi veya başka hazırlık işlemlerinin gerekip gerekmediği ve kaç ziyaret gerektiğidir. Fiyat yayınlamıyoruz; ücretsiz bir bilgi talebi gönderin, kliniğin yazılı teklifini size iletelim.",
+    "faq7Q": "\"Turkey teeth\" ne demek?",
+    "faq7A": "\"Turkey teeth\", Avustralya ve İngiltere'de, yurt dışında yapılan ve genellikle çok beyaz görünen tam set kron veya lamina için kullanılan gayriresmî bir ifadedir; bir tedavi adı değildir. Kron ve lamina farklı tedavilerdir ve her ikisi de genellikle doğal diş dokusunun bir kısmının geri dönüşsüz olarak aşındırılmasını gerektirir. Avustralya'daki diş hekimliği kaynakları, sorunların sonradan düzeltilmesinin maliyetli olabileceğini ve takibin eve yakın yerde daha kolay olduğunu vurgular — bu nedenle karar vermeden önce diş hekiminize her dişe tam olarak ne yapılacağını, nedenini ve alternatifleri sorun."
 },
 };

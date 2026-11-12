@@ -28,6 +28,11 @@ export const content = {
     pricingText: "You receive the clinic's written quotation before you decide. Packages can include transfers, accommodation and aftercare; flights are not included.",
     supportTitle: "Dedicated Support",
     supportText: "Your coordinator stays in contact with you throughout your trip.",
+    "faqTitle": "Common Questions About Treatment in Turkey",
+    "faqSafeQ": "Is it safe to have surgery in Turkey?",
+    "faqSafeA": "All surgery carries risks, wherever it's performed, and travelling adds some of its own — including long flights after surgery and getting follow-up care once you're home. The Australian Society of Plastic Surgeons advises against overseas cosmetic surgery tourism, citing limited contact with the surgeon before and after surgery and the cost of fixing complications in Australia. If you're considering treatment in Turkey, check your surgeon's qualifications and registration, the facility, a written treatment and aftercare plan, your travel insurance, and allow extra time and budget. RevissaWay doesn't provide medical advice; talk to your GP before deciding.",
+    "faqCheckQ": "How do I check a clinic or surgeon in Turkey?",
+    "faqCheckA": "Ask the clinic in writing for the full name of the surgeon or dentist, their qualifications and registration, how often they perform your procedure, and the name and address of the facility. Ask who else will be involved in your treatment, and what happens if there's a complication. We pass your questions to the clinic and send you its answers, but you should make your own checks and take time to decide."
   },
   tr: {
     heroTitle: "Neden Türkiye?",
@@ -62,5 +67,10 @@ export const content = {
     supportTitle: "Size Özel Destek",
     // REVIEW:claim (24/7 availability - business confirmation pending)
     supportText: "Koordinatörünüz seyahatiniz boyunca sizinle iletişimde kalır.",
+    "faqTitle": "Türkiye'de Tedavi Hakkında Sık Sorulan Sorular",
+    "faqSafeQ": "Türkiye'de ameliyat olmak güvenli mi?",
+    "faqSafeA": "Her ameliyat, nerede yapılırsa yapılsın risk taşır; seyahat ise kendi risklerini ekler — ameliyattan sonraki uzun uçuşlar ve eve döndükten sonra takip bakımına erişim gibi. Avustralya Plastik Cerrahlar Derneği (ASPS), ameliyat öncesi ve sonrasında cerrahla sınırlı temas ve komplikasyonların Avustralya'da düzeltilmesinin maliyeti gibi gerekçelerle yurt dışında estetik cerrahi turizmine karşı uyarıda bulunur. Türkiye'de tedavi düşünüyorsanız cerrahınızın niteliklerini ve kaydını, tesisi, yazılı tedavi ve bakım planını, seyahat sigortanızı kontrol edin; ek zaman ve bütçe ayırın. RevissaWay tıbbi tavsiye vermez; karar vermeden önce aile hekiminizle görüşün.",
+    "faqCheckQ": "Türkiye'deki bir kliniği veya cerrahı nasıl kontrol ederim?",
+    "faqCheckA": "Kliniğe yazılı olarak cerrahın veya diş hekiminin tam adını, niteliklerini ve kaydını, işleminizi ne sıklıkla yaptığını ve tesisin adını ve adresini sorun. Tedavinizde başka kimlerin yer alacağını ve bir komplikasyon olursa ne olacağını da sorun. Sorularınızı kliniğe iletir ve yanıtlarını size göndeririz; ancak kendi kontrollerinizi yapmalı ve karar vermek için kendinize zaman tanımalısınız."
   },
 };

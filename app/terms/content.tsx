@@ -204,7 +204,7 @@ export function TermsEN() {
 
       <H3>14. Contact</H3>
       <Para>
-        RevissaWay (phone and WhatsApp: +61 411 854 929; postal address: <Pending>postal address, if any</Pending>)
+        RevissaWay (phone and WhatsApp: +61 481 334 272; postal address: <Pending>postal address, if any</Pending>)
       </Para>
       <ContactBox />
     </>
@@ -422,7 +422,7 @@ export function TermsTR() {
 
       <H3>14. İletişim</H3>
       <Para>
-        RevissaWay (telefon ve WhatsApp: +61 411 854 929; posta adresi: <Pending>varsa posta adresi</Pending>)
+        RevissaWay (telefon ve WhatsApp: +61 481 334 272; posta adresi: <Pending>varsa posta adresi</Pending>)
       </Para>
       <ContactBox />
     </>

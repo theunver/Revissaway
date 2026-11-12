@@ -8,6 +8,7 @@ import OptimizedVideo from "@/components/OptimizedVideo";
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import { withLinks, type FaqLink } from "@/components/FaqAccordion";
 import { useLocalized } from "@/contexts/LanguageContext";
 import { content } from "./content";
 
@@ -17,7 +18,7 @@ export default function HairTransplantPage() {
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const whatsappLink = "https://wa.me/61411854929";
+  const whatsappLink = "https://wa.me/61481334272";
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -72,8 +73,20 @@ export default function HairTransplantPage() {
     {
       question: c.t011,
       answer: c.t012
-    }
-  ];
+    },
+    // SEO-6B: cost, quotation and Turkey-vs-Australia (links: EN + TR phrases; only the active language's phrase matches)
+    {
+      question: c.faqCostQ,
+      answer: c.faqCostA,
+      links: [{ text: "send us a free enquiry", href: "/#contact" }, { text: "ücretsiz bir bilgi talebi gönderin", href: "/#contact" }],
+    },
+    { question: c.faqQuoteQ, answer: c.faqQuoteA },
+    {
+      question: c.faqVsAusQ,
+      answer: c.faqVsAusA,
+      links: [{ text: "who will perform each step", href: "/hair-transplant#questions-to-ask" }, { text: "Her adımı kimin gerçekleştireceğini", href: "/hair-transplant#questions-to-ask" }],
+    },
+  ] as { question: string; answer: string; links?: FaqLink[] }[];
 
   const methods = [
     {
@@ -406,7 +419,7 @@ export default function HairTransplantPage() {
 
       {/* Partner Clinics Difference Section */}
       {/* overflow-x-clip: the rotated decorative shape behind the image must not widen the page on mobile */}
-      <section className="overflow-x-clip bg-gradient-to-b from-[#FFF8DC] to-[#fffaf3] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24">
+      <section id="questions-to-ask" className="overflow-x-clip scroll-mt-20 bg-gradient-to-b from-[#FFF8DC] to-[#fffaf3] px-4 sm:px-6 md:px-10 lg:px-20 py-16 md:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 lg:gap-16 items-center">
             {/* Left Column - Text Content */}
@@ -493,7 +506,7 @@ export default function HairTransplantPage() {
                     }`}
                   >
                     <div className="px-6 py-4 bg-gray-50 border-t border-[#9B7E3E]/10">
-                      <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                      <p className="text-gray-700 leading-relaxed">{withLinks(faq.answer, faq.links)}</p>
                     </div>
                   </div>
                 </div>
