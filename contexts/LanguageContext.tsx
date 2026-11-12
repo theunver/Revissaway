@@ -92,6 +92,8 @@ const translations = {
     'home.contact.submitting': 'Sending...',
     'home.contact.success': '✅ Thank you, your enquiry has been received.',
     'home.contact.error': 'Sorry, an error occurred. Please try again.',
+    'home.contact.errorPreview': 'Test submissions are disabled on this preview site, so your enquiry was not sent.',
+    'home.contact.errorFallback': 'You can also contact us directly on',
     'home.contact.whatsapp': 'Chat on WhatsApp',
     'home.contact.privacy': 'We respect your privacy. Your details are used to respond to your enquiry and are handled as described in our Privacy Policy.',
     
@@ -176,6 +178,8 @@ const translations = {
     'home.contact.submitting': 'Gönderiliyor...',
     'home.contact.success': '✅ Teşekkürler, talebiniz alındı.',
     'home.contact.error': 'Üzgünüz, bir hata oluştu. Lütfen tekrar deneyin.',
+    'home.contact.errorPreview': 'Bu önizleme sitesinde test gönderimleri devre dışıdır; talebiniz gönderilmedi.',
+    'home.contact.errorFallback': 'Bize doğrudan şu kanallardan da ulaşabilirsiniz:',
     'home.contact.whatsapp': 'WhatsApp ile Sohbet',
     'home.contact.privacy': 'Gizliliğinize saygı duyuyoruz. Bilgileriniz talebinize yanıt vermek için kullanılır ve Gizlilik Politikamızda açıklandığı şekilde işlenir.',
     

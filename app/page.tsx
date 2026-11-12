@@ -23,6 +23,7 @@ export default function Home() {
     consent: false,
   });
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [formError, setFormError] = useState<"preview_submissions_disabled" | "other" | null>(null);
 
   const whatsappLink = "https://wa.me/61481334272";
 
@@ -48,6 +49,7 @@ export default function Home() {
       });
 
       if (response.ok) {
+        setFormError(null);
         setFormStatus("success");
         setFormData({
           firstName: "",
@@ -62,12 +64,15 @@ export default function Home() {
         // Reset success message after 5 seconds
         setTimeout(() => setFormStatus("idle"), 5000);
       } else {
+        // Show a specific message for the Preview test-address restriction; otherwise the generic error.
+        // The error (with WhatsApp/phone alternatives) stays visible until the next submit attempt.
+        const body = await response.json().catch(() => null);
+        setFormError(body?.error === "preview_submissions_disabled" ? "preview_submissions_disabled" : "other");
         setFormStatus("error");
-        setTimeout(() => setFormStatus("idle"), 5000);
       }
-    } catch (error) {
+    } catch {
+      setFormError("other");
       setFormStatus("error");
-      setTimeout(() => setFormStatus("idle"), 5000);
     }
   };
 
@@ -741,8 +746,12 @@ export default function Home() {
               </div>
             )}
             {formStatus === "error" && (
-              <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-xl">
-{t('home.contact.error')}
+              <div role="alert" className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-xl">
+                {formError === "preview_submissions_disabled" ? t('home.contact.errorPreview') : t('home.contact.error')}{" "}
+                {t('home.contact.errorFallback')}{" "}
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="underline font-semibold">WhatsApp</a>
+                {" · "}
+                <a href="tel:+61481334272" className="underline font-semibold">+61 481 334 272</a>
               </div>
             )}
               <button

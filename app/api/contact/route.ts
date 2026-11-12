@@ -24,6 +24,14 @@ type ErrorCode =
   | "preview_submissions_disabled"
   | "server_error";
 
+// Enquiry recipient: CONTACT_TO (single address, set in Vercel) or the business mailbox by default.
+// An invalid value falls back to the default rather than silently dropping enquiries.
+const DEFAULT_CONTACT_TO = "info@revissaway.com.au";
+function contactRecipient(): string {
+  const v = (process.env.CONTACT_TO || "").trim();
+  return /^[^\s@<>(),;:"]+@[^\s@<>(),;:"]+\.[^\s@<>(),;:"]{2,}$/.test(v) ? v : DEFAULT_CONTACT_TO;
+}
+
 function reply(status: number, body: Record<string, unknown>, extraHeaders: Record<string, string> = {}) {
   return NextResponse.json(body, {
     status,
@@ -122,8 +130,10 @@ export async function POST(req: NextRequest) {
     });
 
     await transporter.sendMail({
+      // From stays the authenticated business sender; replies go to the validated enquirer address.
       from: `"RevissaWay Website" <${user}>`,
-      to: "info@revissaway.com.au",
+      to: contactRecipient(),
+      replyTo: result.data.email,
       subject: `${isNonProduction ? "[PREVIEW TEST] " : ""}New Consultation / Contact Form Submission - RevissaWay`,
       html: buildContactEmailHtml(result.data),
     });
