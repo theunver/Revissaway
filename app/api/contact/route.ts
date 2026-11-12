@@ -4,6 +4,8 @@ import {
   MAX_BODY_BYTES,
   buildContactEmailHtml,
   isAllowedOrigin,
+  parseEmailList,
+  resolveContactRecipient,
   validateContactPayload,
 } from "@/lib/contact";
 import { clientKey, createMemoryRateLimiter } from "@/lib/rate-limit";
@@ -23,14 +25,6 @@ type ErrorCode =
   | "rate_limited"
   | "preview_submissions_disabled"
   | "server_error";
-
-// Enquiry recipient: CONTACT_TO (single address, set in Vercel) or the business mailbox by default.
-// An invalid value falls back to the default rather than silently dropping enquiries.
-const DEFAULT_CONTACT_TO = "info@revissaway.com.au";
-function contactRecipient(): string {
-  const v = (process.env.CONTACT_TO || "").trim();
-  return /^[^\s@<>(),;:"]+@[^\s@<>(),;:"]+\.[^\s@<>(),;:"]{2,}$/.test(v) ? v : DEFAULT_CONTACT_TO;
-}
 
 function reply(status: number, body: Record<string, unknown>, extraHeaders: Record<string, string> = {}) {
   return NextResponse.json(body, {
@@ -96,15 +90,15 @@ export async function POST(req: NextRequest) {
   if (!result.ok) return fail(400, "invalid_fields", { fields: result.fields });
 
   // 5b. Non-production deployments (Vercel Preview/Development) never accept real enquiries:
-  // only addresses listed in PREVIEW_TEST_EMAILS (comma-separated) are delivered, for testing.
+  // only addresses listed in PREVIEW_TEST_EMAILS are delivered, for testing (exact address match;
+  // separators/quotes/case are normalised so a correctly intended value is not rejected by formatting).
   const vercelEnv = process.env.VERCEL_ENV;
   const isNonProduction = !!vercelEnv && vercelEnv !== "production";
   if (isNonProduction) {
-    const allowed = (process.env.PREVIEW_TEST_EMAILS || "")
-      .split(",")
-      .map((e) => e.trim().toLowerCase())
-      .filter(Boolean);
+    const allowed = parseEmailList(process.env.PREVIEW_TEST_EMAILS);
     if (!allowed.includes(result.data.email.toLowerCase())) {
+      // Diagnostic without addresses: tells whether the allowlist is configured at all on this deployment.
+      console.warn(`[contact] preview submission refused (allowlist entries: ${allowed.length})`);
       return fail(403, "preview_submissions_disabled");
     }
   }
@@ -113,6 +107,14 @@ export async function POST(req: NextRequest) {
   if (result.isSpam) {
     console.warn("[contact] honeypot triggered; submission discarded");
     return reply(200, { success: true });
+  }
+
+  // Recipient: CONTACT_TO or the default business mailbox. A set-but-invalid CONTACT_TO is a configuration
+  // error: fail loudly (error + WhatsApp/phone on the form) instead of mailing a different address.
+  const to = resolveContactRecipient(process.env.CONTACT_TO);
+  if (!to) {
+    console.error("[contact] CONTACT_TO is set but is not a valid email address");
+    return fail(500, "server_error");
   }
 
   const user = process.env.GMAIL_USER;
@@ -129,15 +131,21 @@ export async function POST(req: NextRequest) {
       auth: { user, pass },
     });
 
-    await transporter.sendMail({
+    const info = await transporter.sendMail({
       // From stays the authenticated business sender; replies go to the validated enquirer address.
       from: `"RevissaWay Website" <${user}>`,
-      to: contactRecipient(),
+      to,
       replyTo: result.data.email,
       subject: `${isNonProduction ? "[PREVIEW TEST] " : ""}New Consultation / Contact Form Submission - RevissaWay`,
       html: buildContactEmailHtml(result.data),
     });
 
+    // Success only when the SMTP server accepted the recipient. This confirms hand-off to Gmail,
+    // not arrival in the inbox (bounces arrive later in the GMAIL_USER mailbox).
+    const accepted = Array.isArray(info.accepted) ? info.accepted.length : 0;
+    const rejected = Array.isArray(info.rejected) ? info.rejected.length : 0;
+    console.info(`[contact] smtp result: accepted=${accepted} rejected=${rejected} sameMailbox=${to.toLowerCase() === user.toLowerCase()}`);
+    if (accepted === 0 || rejected > 0) return fail(500, "server_error");
     return reply(200, { success: true });
   } catch (error: unknown) {
     // Log only a non-identifying error code; never the submission or credentials.

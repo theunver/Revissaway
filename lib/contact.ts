@@ -49,6 +49,35 @@ const DATE_RE = /^\d{4}-\d{2}-\d{2}(T\d{2}:\d{2}(:\d{2})?)?$/;
 const CONTROL_RE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g;
 const LINEBREAK_RE = /[\r\n\t]+/g;
 
+/** Strip whitespace and one pair of surrounding quotes (a common copy/paste artefact in dashboard env values). */
+function unquote(value: string): string {
+  const t = value.trim();
+  return /^(["'`]).*\1$/.test(t) ? t.slice(1, -1).trim() : t;
+}
+
+/**
+ * PREVIEW_TEST_EMAILS parser: comma-, semicolon- or whitespace-separated, case-insensitive, quotes ignored.
+ * Only formatting is normalised — an address must still match exactly to be allowed.
+ */
+export function parseEmailList(value: string | undefined): string[] {
+  return unquote(value || "")
+    .split(/[,;\s]+/)
+    .map((e) => unquote(e).toLowerCase())
+    .filter((e) => EMAIL_RE.test(e));
+}
+
+export const DEFAULT_CONTACT_TO = "info@revissaway.com.au";
+
+/**
+ * Enquiry recipient from CONTACT_TO. Unset/empty → default business mailbox.
+ * Set but invalid → null, so the caller fails loudly instead of silently mailing a different address.
+ */
+export function resolveContactRecipient(value: string | undefined): string | null {
+  const v = unquote(value || "");
+  if (!v) return DEFAULT_CONTACT_TO;
+  return EMAIL_RE.test(v) ? v : null;
+}
+
 export function escapeHtml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
