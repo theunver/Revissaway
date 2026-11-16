@@ -10,7 +10,7 @@ export default function HairTransplantPage() {
   const [selectedMethod, setSelectedMethod] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const whatsappLink = "https://api.whatsapp.com/send?phone=61435955386";
+  const whatsappLink = "https://wa.me/61481334272";
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -548,93 +548,7 @@ export default function HairTransplantPage() {
         </div>
       </section>
 
-      {/* JSON-LD Structured Data for SEO */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "MedicalBusiness",
-            "@id": "https://www.revissaway.com.au/hair-transplant",
-            "name": "RevissaWay Health & Aesthetics",
-            "alternateName": "RevissaWay",
-            "url": "https://www.revissaway.com.au/hair-transplant",
-            "image": "https://www.revissaway.com.au/og/og-hair-transplant.jpg",
-            "logo": "https://www.revissaway.com.au/og/revissaway-logo.png",
-            "description": "RevissaWay connects you with Turkey's most trusted hair transplant experts offering DHI, FUE, and Sapphire techniques.",
-            "priceRange": "$$",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "Level 10, 440 Collins Street",
-              "addressLocality": "Melbourne",
-              "addressRegion": "VIC",
-              "postalCode": "3000",
-              "addressCountry": "AU"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "-37.817",
-              "longitude": "144.957"
-            },
-            "openingHours": "Mo-Fr 09:00-18:00",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "telephone": "+61 400 123 456",
-              "contactType": "customer service",
-              "areaServed": ["AU", "NZ", "TR"],
-              "availableLanguage": ["English", "Turkish"]
-            },
-            "medicalSpecialty": "Hair Replacement",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "128",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "USD",
-              "price": "2500",
-              "priceValidUntil": "2025-12-31",
-              "availability": "https://schema.org/InStock",
-              "url": "https://www.revissaway.com.au/hair-transplant",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "priceCurrency": "USD",
-                "price": "2500",
-                "valueAddedTaxIncluded": true
-              }
-            },
-            "review": {
-              "@type": "Review",
-              "name": "Great experience with RevissaWay",
-              "author": {
-                "@type": "Person",
-                "name": "John Carter",
-                "image": "https://www.revissaway.com.au/og/reviewer-john-carter.jpg"
-              },
-              "datePublished": "2025-02-20",
-              "reviewBody": "RevissaWay made my hair transplant journey in Turkey seamless and professional. Everything from travel coordination to clinic experience was top-notch.",
-              "reviewRating": {
-                "@type": "Rating",
-                "ratingValue": "5",
-                "bestRating": "5",
-                "worstRating": "1"
-              }
-            },
-            "founder": {
-              "@type": "Person",
-              "name": "Mehmet Ali Ünver"
-            },
-            "sameAs": [
-              "https://www.instagram.com/estheway",
-              "https://www.youtube.com/@estheway",
-              "https://www.facebook.com/estheway"
-            ]
-          }),
-        }}
-      />
+      {/* Structured data: the site-wide Organization JSON-LD lives in app/layout.tsx. */}
     </main>
   );
 }

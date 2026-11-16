@@ -7,12 +7,16 @@ import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 import Analytics from "@/components/Analytics";
 // import TranslationOverlayWrapper from "@/components/TranslationOverlayWrapper";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { pageMetadata, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.revissaway.com.au"),
-  title: "Hair Transplant & Esthetic Surgery Applications in Turkey | RevissaWay",
-  description: "Connect with Türkiye's most trusted clinics for hair transplant, cosmetic, and dental aesthetics. RevissaWay serves patients from Australia and New Zealand with expert coordination and transparency.",
-  keywords: ["hair transplant Turkey", "cosmetic surgery Turkey", "dental aesthetics Turkey", "medical tourism Australia", "health tourism Turkey", "RevissaWay"],
+  metadataBase: new URL(SITE_URL),
+  ...pageMetadata({
+    path: "/",
+    title: "Hair, Dental & Cosmetic Treatment in Turkey from Australia | RevissaWay",
+    description:
+      "RevissaWay is an Australian-based coordination service helping patients from Australia and New Zealand explore hair transplants, dental implants and veneers, and cosmetic surgery with clinics in Turkey.",
+  }),
   authors: [{ name: "RevissaWay" }],
   creator: "RevissaWay",
   publisher: "RevissaWay",
@@ -27,47 +31,39 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    alternateLocale: "tr_TR",
-    url: "https://www.revissaway.com.au",
-    title: "RevissaWay | Health & Aesthetics Tourism",
-    description: "Premium aesthetic and health tourism services in Turkey. Connecting Australia, New Zealand, and Turkey.",
-    siteName: "RevissaWay",
-    images: [
-      {
-        url: "/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "RevissaWay - Health & Aesthetics",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "RevissaWay | Health & Aesthetics Tourism",
-    description: "Premium aesthetic and health tourism services in Turkey.",
-    images: ["/logo.png"],
-  },
-  alternates: {
-    canonical: "https://www.revissaway.com.au",
-    languages: {
-      'en-US': 'https://www.revissaway.com.au',
-      'en-AU': 'https://www.revissaway.com.au',
-      'en-NZ': 'https://www.revissaway.com.au',
-      'tr-TR': 'https://www.revissaway.com.au',
-    },
-  },
   other: {
     'geo.region': 'AU, NZ',
     'geo.placename': 'Australia, New Zealand',
-    'geo.position': '-33.8688;151.2093',
-    'ICBM': '-33.8688,151.2093',
     'facebook-domain-verification': 'knjdf967wkbfnojvoneqycherufakb',
   },
   verification: {
     google: '_8urZPE4UoCqVJf2e8zLMc-ln5xd2cAWCuBmHuQS_Uk',
+  },
+};
+
+// Single, factual Organization entity (no ratings, reviews, prices, address or medical specialty).
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#organization`,
+  name: "RevissaWay",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  description:
+    "Australian-based health tourism coordination service connecting patients from Australia and New Zealand with independent healthcare providers in Turkey. RevissaWay does not provide medical treatment.",
+  telephone: "+61481334272",
+  email: "info@revissaway.com.au",
+  areaServed: ["AU", "NZ"],
+  sameAs: [
+    "https://www.instagram.com/revissaway",
+    "https://www.facebook.com/profile.php?id=61582103925829",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+61481334272",
+    contactType: "customer service",
+    areaServed: ["AU", "NZ"],
+    availableLanguage: ["English", "Turkish"],
   },
 };
 
@@ -79,6 +75,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {/* Analytics Tracking (includes Meta Pixel and GA4) */}
         <Analytics />
         

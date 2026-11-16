@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Hair Transplant Methods - DHI, FUE, Sapphire | RevissaWay",
-  description: "Explore hair transplant methods including DHI, FUE, Sapphire, beard, eyebrow, and female hair transplants. Performed by specialists at accredited facilities in Turkey.",
-  keywords: [
-    "TDF Technique",
-    "Two Days FUE",
-    "Hair transplant Turkey",
-    "FUE hair transplant",
-    "DHI",
-    "Sapphire FUE",
-    "High graft survival",
-    "Fast recovery",
-  ],
-};
+export const metadata: Metadata = pageMetadata({
+  path: "/hair-transplant",
+  title: "Hair Transplant in Turkey from Australia – FUE, DHI & Sapphire | RevissaWay",
+  description:
+    "Learn about FUE, DHI, Sapphire, TDF, beard and female hair transplant options with clinics in Turkey, coordinated for patients from Australia and New Zealand by RevissaWay.",
+});
 
 export default function HairTransplantLayout({
   children,
@@ -22,4 +15,3 @@ export default function HairTransplantLayout({
 }) {
   return children;
 }
-

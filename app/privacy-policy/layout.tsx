@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | RevissaWay Health & Aesthetics",
-  description: "Learn how RevissaWay collects, uses, and protects your information. Privacy-first health tourism coordination for Australia and New Zealand patients.",
-  keywords: ["privacy policy", "data protection", "RevissaWay privacy", "medical tourism privacy", "GDPR", "Australian Privacy Principles"],
-  openGraph: {
-    title: "Privacy Policy | RevissaWay Health & Aesthetics",
-    description: "Learn how RevissaWay collects, uses, and protects your information. Privacy-first health tourism coordination.",
-    url: "https://www.revissaway.com.au/privacy-policy",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+export const metadata: Metadata = pageMetadata({
+  path: "/privacy-policy",
+  title: "Privacy Policy | RevissaWay",
+  description:
+    "How RevissaWay collects, uses and protects the personal information you share with us.",
+});
 
 export default function PrivacyPolicyLayout({
   children,
@@ -22,4 +15,3 @@ export default function PrivacyPolicyLayout({
 }) {
   return <>{children}</>;
 }
-
